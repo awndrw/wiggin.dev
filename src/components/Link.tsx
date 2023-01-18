@@ -4,12 +4,7 @@ import Icon from "./Icon";
 import c from "classnames";
 import styles from "./Link.module.scss";
 
-export const LinkType = {
-  INTERNAL: "internal",
-  EXTERNAL: "external",
-} as const;
-
-export type LinkType = (typeof LinkType)[keyof typeof LinkType];
+type LinkType = "internal" | "external";
 
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
