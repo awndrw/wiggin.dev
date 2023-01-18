@@ -1,18 +1,19 @@
 @use "sass:map";
 @use './base';
+@use 'theme/util';
 
 $modes: (
         "light": (
-                "text": #1a1c1e,
-                "background": #fdfcfe,
-                "container-text": #000000,
-                "container-background": #e4e4e4,
+                "text": (26 28 30),
+                "background": (253 252 254),
+                "container-text": (0 0 0),
+                "container-background": (228 228 228),
         ),
         "dark": (
-                "text": #e3e2e4,
-                "background": #1a1c1e,
-                "container-text": #ffffff,
-                "container-background": #515151,
+                "text": (227 226 228),
+                "background": (26 28 30),
+                "container-text": (255 255 255),
+                "container-background": (81 81 81),
         ),
 );
 
@@ -20,7 +21,11 @@ $modes: (
   @if map.has-key($modes, $mode) {
     @each $color-name, $color-value in map.get($modes, $mode) {
       $var: map.get(base.$obfuscated-vars, $color-name);
-      --#{$var}: #{$color-value};
+      $rgb: rgb($color-value);
+      $displayP3: util.displayP3($color-value);
+      --#{$var}: #{$rgb};
+      // TODO: Implement displayP3 when Safari supports displayP3 hover animations
+      // --#{$var}: #{$displayP3};
     }
   } @else {
     @warn "Mode not found: #{$mode}";

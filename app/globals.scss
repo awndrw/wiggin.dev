@@ -1,32 +1,6 @@
 @use 'theme/color';
 
-:root {
-  --color-text: rgb(26, 28, 30);
-  --color-background: rgb(253, 252, 254);
-  --color-container-text: rgb(0, 0, 0);
-  --color-container-background: rgb(228, 228, 228);
-
-  @media (prefers-color-scheme: dark) {
-    --color-text: rgb(227, 226, 228);
-    --color-background: rgb(26, 28, 30);
-    --color-container-text: rgb(255, 255, 255);
-    --color-container-background: rgb(81, 81, 81);
-  }
-
-  /*@supports (color: color(display-p3 1 1 1)) {
-    --color-text: color(display-p3 0.10196, 0.1098, 0.11765);
-    --color-background: color(display-p3 0.99216, 0.98824, 0.99608);
-    --color-container-text: color(display-p3 0, 0, 0);
-    --color-container-background: color(display-p3 0.89412, 0.89412, 0.89412);
-
-    @media (prefers-color-scheme: dark) {
-      --color-text: color(display-p3 0.8902, 0.88627, 0.89412);
-      --color-background: color(display-p3 0.10196, 0.1098, 0.11765);
-      --color-container-text: color(display-p3 1, 1, 1);
-      --color-container-background: color(display-p3 0.31765, 0.31765, 0.31765);
-    }
-  }*/
-}
+@include color.init;
 
 * {
   box-sizing: border-box;
@@ -50,8 +24,8 @@ body {
 }
 
 body {
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: color.$text;
+  background-color: color.$background;
   display: grid;
   align-items: center;
 }

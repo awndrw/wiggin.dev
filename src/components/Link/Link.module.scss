@@ -1,3 +1,5 @@
+@use 'theme/color';
+
 $hover-transition: 200ms ease;
 
 .link {
@@ -14,14 +16,14 @@ $hover-transition: 200ms ease;
     inset: 2px 0 2px -3px;
     border-radius: 8px;
     z-index: -1;
-    background-color: var(--color-container-background);
+    background-color: color.$container-background;
     opacity: 0;
     transition: opacity $hover-transition;
   }
 
   &:hover, &:focus-visible {
     outline: none;
-    color: var(--color-container-text);
+    color: color.$container-text;
 
     &::before {
         opacity: 1;
