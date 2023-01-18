@@ -1,3 +1,5 @@
+@use 'theme/color';
+
 .link {
   display: inline-flex;
   align-items: center;
@@ -19,7 +21,7 @@
     inset: 4px -4px;
     border-radius: 8px;
     z-index: -1;
-    background-color: var(--callout-rgb);
+    background-color: color.$container;
     opacity: 0;
     transition: opacity 400ms ease;
   }
