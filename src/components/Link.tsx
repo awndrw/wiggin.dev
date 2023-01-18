@@ -11,6 +11,7 @@ export interface LinkProps
     React.PropsWithChildren {
   href: string;
   type?: LinkType;
+  srOnly?: boolean;
 }
 
 export default function Link({
@@ -18,19 +19,28 @@ export default function Link({
   type = "internal",
   className,
   children,
+  srOnly = false,
+  ...linkProps
 }: LinkProps) {
   const LinkComponent = type === "internal" ? NextLink : "a";
-  const iconName = type === "internal" ? "arrow-right" : "arrow-up-right";
+  const linkComponentProps = {
+    ...linkProps,
+    href,
+    title: typeof children === "string" ? children : undefined,
+  };
+
+  if (srOnly) {
+    return <LinkComponent {...linkComponentProps}>{children}</LinkComponent>;
+  }
 
   return (
     <LinkComponent
-      href={href}
+      {...linkComponentProps}
       className={c(styles.link, className)}
-      title={typeof children === "string" ? children : undefined}
     >
       {children}
       <Icon
-        iconName={iconName}
+        iconName={type === "internal" ? "arrow-right" : "arrow-up-right"}
         className={styles.icon}
         aria-hidden
         focusable={false}

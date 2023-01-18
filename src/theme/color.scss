@@ -4,24 +4,28 @@ $modes: (
         "light": (
                 "text": #1a1c1e,
                 "background": #fdfcfe,
-                "container": #eeeeee,
+                "container-text": #000000,
+                "container-background": #dbdbdb,
         ),
         "dark": (
                 "text": #e3e2e4,
                 "background": #1a1c1e,
-                "container": #56585d,
+                "container-text": #ffffff,
+                "container-background": #515151,
         ),
 );
 
 $obfuscated-vars: (
         "text": "PJ6CVS",
         "background": "XaPDZ",
-        "container": "DofEm",
+        "container-text": "DofEm",
+        "container-background": "GiDeE",
 );
 
 $text: var(--#{map.get($obfuscated-vars, "text")});
 $background: var(--#{map.get($obfuscated-vars, "background")});
-$container: var(--#{map.get($obfuscated-vars, "container")});
+$container-text: var(--#{map.get($obfuscated-vars, "container-text")});
+$container-background: var(--#{map.get($obfuscated-vars, "container-background")});
 
 $modes-list: map.keys($modes);
 

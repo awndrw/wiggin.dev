@@ -26,6 +26,8 @@ const hashOnlyIdent = (context, _, exportName) => {
   return scrub(hash);
 };
 
+// TODO: Add CSP. Currently blocked by NextJS dev I believe
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,

@@ -1,19 +1,14 @@
 @use 'theme/color';
 
+$hover-transition: 200ms ease;
+
 .link {
   display: inline-flex;
   align-items: center;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  transition: text-decoration-color 400ms ease;
   position: relative;
-
-  &:hover {
-    text-decoration-color: currentColor;
-  }
+  text-decoration: none;
+  color: inherit;
+  transition: color $hover-transition;
 
   &::before {
     content: '';
@@ -21,13 +16,14 @@
     inset: 4px -4px;
     border-radius: 8px;
     z-index: -1;
-    background-color: color.$container;
+    background-color: color.$container-background;
     opacity: 0;
-    transition: opacity 400ms ease;
+    transition: opacity $hover-transition;
   }
 
-  &:focus-visible {
+  &:hover, &:focus-visible {
     outline: none;
+    color: color.$container-text;
 
     &::before {
         opacity: 1;
