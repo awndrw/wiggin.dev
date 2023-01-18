@@ -1,0 +1,38 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 400ms ease;
+  position: relative;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 4px -4px;
+    border-radius: 8px;
+    z-index: -1;
+    background-color: var(--callout-rgb);
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+        opacity: 1;
+    }
+  }
+}
+
+.icon {
+  display: inline;
+}
