@@ -1,7 +1,7 @@
 import Balancer from "react-wrap-balancer";
 import styles from "./page.module.scss";
 import Link from "components/Link";
-import Icon from "../src/components/Icon";
+import Icon from "components/Icon";
 import VisuallyHidden from "components/VisuallyHidden";
 
 export default function Page() {

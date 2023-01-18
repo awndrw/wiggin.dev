@@ -1,11 +1,6 @@
 @use 'theme/color';
 
-:root {
-  @include color.make-theme("light");
-  @media (prefers-color-scheme: dark) {
-      @include color.make-theme("dark");
-  }
-}
+@include color.init;
 
 * {
   box-sizing: border-box;

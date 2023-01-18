@@ -9,11 +9,11 @@ type AvailableSvgProps = Omit<
   "viewBox" | "xmlns" | "strokeWidth"
 >;
 
-interface IconProps extends AvailableSvgProps {
+export interface IconProps extends AvailableSvgProps {
   iconName: IconName;
 }
 
-export default function Icon({ iconName, className, ...svgProps }: IconProps) {
+export function Icon({ iconName, className, ...svgProps }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

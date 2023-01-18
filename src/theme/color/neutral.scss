@@ -1,4 +1,5 @@
 @use "sass:map";
+@use './base';
 
 $modes: (
         "light": (
@@ -15,27 +16,22 @@ $modes: (
         ),
 );
 
-$obfuscated-vars: (
-        "text": "PJ6CVS",
-        "background": "XaPDZ",
-        "container-text": "DofEm",
-        "container-background": "GiDeE",
-);
-
-$text: var(--#{map.get($obfuscated-vars, "text")});
-$background: var(--#{map.get($obfuscated-vars, "background")});
-$container-text: var(--#{map.get($obfuscated-vars, "container-text")});
-$container-background: var(--#{map.get($obfuscated-vars, "container-background")});
-
-$modes-list: map.keys($modes);
-
 @mixin make-theme($mode) {
   @if map.has-key($modes, $mode) {
     @each $color-name, $color-value in map.get($modes, $mode) {
-      $var: map.get($obfuscated-vars, $color-name);
+      $var: map.get(base.$obfuscated-vars, $color-name);
       --#{$var}: #{$color-value};
     }
   } @else {
     @warn "Mode not found: #{$mode}";
+  }
+}
+
+@mixin init {
+  :root {
+    @include make-theme("light");
+    @media (prefers-color-scheme: dark) {
+      @include make-theme("dark");
+    }
   }
 }

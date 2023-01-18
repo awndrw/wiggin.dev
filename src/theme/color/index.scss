@@ -1,0 +1,14 @@
+@use './primary';
+@use './neutral';
+@use './base';
+@use 'sass:map';
+
+$text: var(--#{map.get(base.$obfuscated-vars, "text")});
+$background: var(--#{map.get(base.$obfuscated-vars, "background")});
+$container-text: var(--#{map.get(base.$obfuscated-vars, "container-text")});
+$container-background: var(--#{map.get(base.$obfuscated-vars, "container-background")});
+
+@mixin init {
+  @include primary.init;
+  @include neutral.init;
+}

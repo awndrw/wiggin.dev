@@ -1,6 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
-import Icon from "./Icon";
+import Icon from "components/Icon";
 import c from "classnames";
 import styles from "./Link.module.scss";
 
@@ -14,7 +14,7 @@ export interface LinkProps
   srOnly?: boolean;
 }
 
-export default function Link({
+export function Link({
   href,
   type = "internal",
   className,
