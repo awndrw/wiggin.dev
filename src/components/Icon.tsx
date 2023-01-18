@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import c from "classnames";
 import styles from "./Icon.module.scss";
