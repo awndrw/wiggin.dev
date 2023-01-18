@@ -89,7 +89,7 @@ $modes: (
 
 @mixin init {
   @each $color in map.keys($colors) {
-    @at-root html.#{$color} {
+    @at-root body.#{$color} {
       @include make-defaults($color);
       @each $mode in map.keys($modes) {
         &.#{$mode} {
@@ -101,7 +101,7 @@ $modes: (
     @at-root *.#{$color} {
       @include make-defaults($color);
       @each $mode in map.keys($modes) {
-        html.#{$mode} & {
+        body.#{$mode} & {
           @include make($color, $mode);
         }
       }
