@@ -13,7 +13,7 @@ $hover-transition: 200ms ease;
   &::before {
     content: '';
     position: absolute;
-    inset: 4px 0 4px -4px;
+    inset: 2px 0 2px -3px;
     border-radius: 8px;
     z-index: -1;
     background-color: color.$container-background;

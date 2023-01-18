@@ -19,11 +19,11 @@ export default function Page() {
       <Balancer as="p" aria-hidden>
         I&apos;m an <abbr title="New York City">nyc</abbr> based design engineer
         excited by design systems, motion design and accessibility. Check out my{" "}
-        <Link href="/resume.pdf" type="internal">
+        <Link href="/resume.pdf" type="internal" aria-hidden>
           resume
         </Link>{" "}
         or send me an{" "}
-        <Link href="mailto:andrew@wiggin.dev" type="external">
+        <Link href="mailto:andrew@wiggin.dev" type="external" aria-hidden>
           email
         </Link>
         .
