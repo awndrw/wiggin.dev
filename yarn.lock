@@ -238,19 +238,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-accessible-icon@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@radix-ui/react-accessible-icon@npm:1.0.1"
-  dependencies:
-    "@babel/runtime": ^7.13.10
-    "@radix-ui/react-visually-hidden": 1.0.1
-  peerDependencies:
-    react: ^16.8 || ^17.0 || ^18.0
-    react-dom: ^16.8 || ^17.0 || ^18.0
-  checksum: 5a5be6bb91b8ca574eabcb92bd57e0282d8bc325097cd87d7fda3a13dbf4866cfb932ff9c95859839f207a927d0a0fa342aa8d933375e1804ffa3bc888b5bd98
-  languageName: node
-  linkType: hard
-
 "@radix-ui/react-compose-refs@npm:1.0.0":
   version: 1.0.0
   resolution: "@radix-ui/react-compose-refs@npm:1.0.0"
@@ -287,7 +274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-visually-hidden@npm:1.0.1":
+"@radix-ui/react-visually-hidden@npm:^1.0.1":
   version: 1.0.1
   resolution: "@radix-ui/react-visually-hidden@npm:1.0.1"
   dependencies:
@@ -2849,7 +2836,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@next/font": 13.1.2
-    "@radix-ui/react-accessible-icon": ^1.0.1
+    "@radix-ui/react-visually-hidden": ^1.0.1
     "@types/node": 18.11.18
     "@types/prettier": ^2
     "@types/react": 18.0.26
