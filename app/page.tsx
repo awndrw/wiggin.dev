@@ -22,7 +22,7 @@ export default function Page() {
         <Link href="/resume.pdf" type="internal" aria-hidden>
           resume
         </Link>{" "}
-        or send me an{" "}
+        or reach out via{" "}
         <Link href="mailto:andrew@wiggin.dev" type="external" aria-hidden>
           email
         </Link>
@@ -30,7 +30,7 @@ export default function Page() {
       </Balancer>
       <VisuallyHidden
         asChild
-        aria-label="I'm a New York City based design engineer excited by design systems, motion design and accessibility. Check out my resume or send me an email."
+        aria-label="I'm a New York City based design engineer excited by design systems, motion design and accessibility. Check out my resume or reach out via email."
       >
         <p>
           <Link href="/resume.pdf" type="internal" srOnly>

@@ -13,11 +13,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const color = getColorCookie();
+  // const color = getColorCookie();
 
   return (
     <html lang="en">
-      <body className={c(sora.className, color)}>{children}</body>
+      <body className={c(sora.className)}>{children}</body>
     </html>
   );
 }

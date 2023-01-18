@@ -6,10 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@next/font": "13.1.2",
+    "@prismicio/client": "^6.7.3",
+    "@prismicio/helpers": "^2.3.8",
+    "@prismicio/next": "^1.0.2",
+    "@prismicio/react": "^2.5.1",
+    "@prismicio/slice-simulator-react": "^0.2.3",
+    "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-visually-hidden": "^1.0.1",
     "classnames": "^2.3.2",
     "next": "13.1.2",
@@ -20,6 +27,7 @@
   },
   "packageManager": "yarn@3.3.1",
   "devDependencies": {
+    "@prismicio/types": "^0.2.7",
     "@types/node": "18.11.18",
     "@types/prettier": "^2",
     "@types/react": "18.0.26",
@@ -30,6 +38,7 @@
     "loader-utils": "^3.2.1",
     "prettier": "^2.8.3",
     "sass": "^1.57.1",
+    "slice-machine-ui": "^0.6.0",
     "typescript": "4.9.4"
   }
 }
