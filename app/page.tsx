@@ -18,7 +18,7 @@ export default function Page() {
       <Balancer as="p">
         I&apos;m an nyc based design engineer excited by design systems, motion
         design and accessibility. Check out my{" "}
-        <Link href="/resume">resume</Link> or send me an{" "}
+        <Link href="/resume.pdf">resume</Link> or send me an{" "}
         <Link href="mailto:andrew@wiggin.dev" type="external">
           email
         </Link>
