@@ -1,0 +1,21 @@
+@use 'theme/color';
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 24px;
+}
+
+.link {
+  width: 80%;
+  max-width: 768px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid color.$text;
+}

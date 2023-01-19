@@ -20,7 +20,7 @@ export default function Page() {
       <Balancer ratio={0.3} as="p" className={styles.text} aria-hidden>
         I&apos;m an <abbr title="New York City">nyc</abbr> based design engineer
         excited by design systems, motion design and accessibility. Check out my{" "}
-        <Link href="/resume.pdf" type="internal" aria-hidden>
+        <Link href="/resume" type="internal" aria-hidden>
           resume
         </Link>{" "}
         or reach out via{" "}
