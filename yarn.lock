@@ -450,6 +450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/edge-config@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@vercel/edge-config@npm:0.1.1"
+  checksum: e7036d5a3fb09edf24e384cc672b9357da90c87edcb49b7ea3d938a6a05a966d7b35ca51e65cad5b4adac30793c880b2d0c87400c844aaa9cbbc3577ce18a56a
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -2883,6 +2890,7 @@ __metadata:
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
     "@vercel/analytics": ^0.1.8
+    "@vercel/edge-config": ^0.1.1
     classnames: ^2.3.2
     cookies-next: ^2.1.1
     eslint: 8.32.0

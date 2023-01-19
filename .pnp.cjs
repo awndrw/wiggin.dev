@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.8"],\
+            ["@vercel/edge-config", "npm:0.1.1"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\
             ["eslint", "npm:8.32.0"],\
@@ -655,6 +656,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@vercel/edge-config", [\
+        ["npm:0.1.1", {\
+          "packageLocation": "./.yarn/cache/@vercel-edge-config-npm-0.1.1-73d2bf88c8-e7036d5a3f.zip/node_modules/@vercel/edge-config/",\
+          "packageDependencies": [\
+            ["@vercel/edge-config", "npm:0.1.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3516,6 +3526,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.8"],\
+            ["@vercel/edge-config", "npm:0.1.1"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\
             ["eslint", "npm:8.32.0"],\
