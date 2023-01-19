@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import c from "classnames";
 import { Color } from "utils/theme";
 import Providers from "components/Providers";
+import Analytics from "components/Analytics";
 
 import "./globals.scss";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={c(sora.className, color)}>
         <Providers initialColor={color}>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
