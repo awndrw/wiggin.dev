@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@next/font": "13.1.2",
-    "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-visually-hidden": "^1.0.1",
     "classnames": "^2.3.2",
     "next": "13.1.2",
