@@ -17,7 +17,7 @@ export default function Page() {
           focusable={false}
         />
       </h1>
-      <Balancer ratio={0.4} as="p" className={styles.text} aria-hidden>
+      <Balancer ratio={0.3} as="p" className={styles.text} aria-hidden>
         I&apos;m an <abbr title="New York City">nyc</abbr> based design engineer
         excited by design systems, motion design and accessibility. Check out my{" "}
         <Link href="/resume.pdf" type="internal" aria-hidden>

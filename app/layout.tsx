@@ -2,7 +2,7 @@ import React from "react";
 import { Sora } from "@next/font/google";
 import { cookies } from "next/headers";
 import c from "classnames";
-import { colorSchema } from "utils/theme";
+import { Color } from "utils/theme";
 import Providers from "components/Providers";
 
 import "./globals.scss";
@@ -14,19 +14,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const color = getColorCookie();
+  const color = getColorCookie();
 
   return (
     <html lang="en">
-      <body className={c(sora.className)}>
-        <Providers>{children}</Providers>
+      <body className={c(sora.className, color)}>
+        <Providers initialColor={color}>{children}</Providers>
       </body>
     </html>
   );
 }
 
-function getColorCookie() {
+function getColorCookie(): Color {
   const cookie = cookies().get("color")?.value;
-  const color = colorSchema.safeParse(cookie);
-  return color.success ? color.data : undefined;
+  const color = Color.safeParse(cookie);
+  return color.success ? color.data : "neutral";
 }

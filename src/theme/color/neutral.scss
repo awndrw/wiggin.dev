@@ -4,7 +4,7 @@
 
 $modes: (
         "light": (
-                "text": (26 28 30),
+                "text": (46 47 48),
                 "background": (253 252 254),
                 "container-text": (0 0 0),
                 "container-background": (228 228 228),
@@ -37,6 +37,21 @@ $modes: (
     @include make-theme("light");
     @media (prefers-color-scheme: dark) {
       @include make-theme("dark");
+    }
+
+    *.neutral {
+      @include make-theme("light");
+      @media (prefers-color-scheme: dark) {
+        @include make-theme("dark");
+      }
+
+      body.light & {
+        @include make-theme("light");
+      }
+
+      body.dark & {
+        @include make-theme("dark");
+      }
     }
   }
 }
