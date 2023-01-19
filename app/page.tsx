@@ -1,3 +1,4 @@
+import React from "react";
 import Balancer from "react-wrap-balancer";
 import styles from "./page.module.scss";
 import Link from "components/Link";
@@ -7,7 +8,7 @@ import VisuallyHidden from "components/VisuallyHidden";
 export default function Page() {
   return (
     <main className={styles.main}>
-      <h1>
+      <h1 className={styles.text}>
         Hi, I&apos;m Andrew
         <Icon
           iconName="smile"
@@ -16,7 +17,7 @@ export default function Page() {
           focusable={false}
         />
       </h1>
-      <Balancer as="p" aria-hidden>
+      <Balancer ratio={0.4} as="p" className={styles.text} aria-hidden>
         I&apos;m an <abbr title="New York City">nyc</abbr> based design engineer
         excited by design systems, motion design and accessibility. Check out my{" "}
         <Link href="/resume.pdf" type="internal" aria-hidden>

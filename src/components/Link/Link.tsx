@@ -26,8 +26,11 @@ export function Link({
   const linkComponentProps = {
     ...linkProps,
     href,
-    title: typeof children === "string" ? children : undefined,
   };
+  linkComponentProps.target =
+    linkProps.target ?? type === "internal" ? undefined : "_blank";
+  linkComponentProps.rel =
+    linkProps.rel ?? type === "internal" ? undefined : "noopener noreferrer";
 
   if (srOnly) {
     return <LinkComponent {...linkComponentProps}>{children}</LinkComponent>;

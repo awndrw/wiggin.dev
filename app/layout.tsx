@@ -3,6 +3,7 @@ import { Sora } from "@next/font/google";
 import { cookies } from "next/headers";
 import c from "classnames";
 import { colorSchema } from "utils/theme";
+import Providers from "components/Providers";
 
 import "./globals.scss";
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={c(sora.className)}>{children}</body>
+      <body className={c(sora.className)}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
