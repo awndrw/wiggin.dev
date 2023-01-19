@@ -3,6 +3,7 @@ import resumePage1 from "../../public/resume1.jpg";
 import resumePage2 from "../../public/resume2.jpg";
 import styles from "./page.module.scss";
 import Link from "next/link";
+import BackButton from "./BackButton";
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
           className={styles.image}
         />
       </Link>
+      <BackButton />
     </div>
   );
 }

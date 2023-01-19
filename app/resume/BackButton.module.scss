@@ -1,0 +1,21 @@
+@use 'theme/color';
+
+.button {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: color.$background;
+  border: 1px solid color.$text;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}

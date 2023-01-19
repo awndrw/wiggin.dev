@@ -2,7 +2,7 @@ import React from "react";
 import c from "classnames";
 import styles from "./Icon.module.scss";
 
-type IconName = "arrow-up-right" | "arrow-right" | "smile";
+type IconName = "arrow-up-right" | "arrow-right" | "smile" | "arrow-left";
 
 type AvailableSvgProps = Omit<
   React.SVGAttributes<SVGSVGElement>,
@@ -50,6 +50,13 @@ const getIconPath = (name: IconName) => {
           <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
           <line x1="9" y1="9" x2="9.01" y2="9"></line>
           <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </>
+      );
+    case "arrow-left":
+      return (
+        <>
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
         </>
       );
   }
