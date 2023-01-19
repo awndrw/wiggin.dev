@@ -1,4 +1,5 @@
 @use 'theme/color';
+@use 'theme/util';
 
 .page {
   display: flex;
@@ -10,9 +11,13 @@
 }
 
 .link {
-  width: 80%;
+  width: 95%;
   max-width: 768px;
   margin-bottom: 48px;
+
+  @include util.mw-md {
+    width: 80%;
+  }
 }
 
 .image {
