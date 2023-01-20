@@ -5,10 +5,10 @@ import Link from "components/Link";
 import Icon from "components/Icon";
 import VisuallyHidden from "components/VisuallyHidden";
 import Themed from "components/Themed";
-import { get } from "@vercel/edge-config";
+import { env } from "../src/utils/env";
 
 export default async function Page() {
-  const showSecondPage = process.env.NODE_ENV === "development";
+  const showSecondPage = env.VERCEL_ENV !== "production";
 
   return (
     <>
