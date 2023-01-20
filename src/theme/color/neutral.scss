@@ -31,27 +31,3 @@ $modes: (
     @warn "Mode not found: #{$mode}";
   }
 }
-
-@mixin init {
-  :root {
-    @include make-theme("light");
-    @media (prefers-color-scheme: dark) {
-      @include make-theme("dark");
-    }
-
-    *.neutral {
-      @include make-theme("light");
-      @media (prefers-color-scheme: dark) {
-        @include make-theme("dark");
-      }
-
-      body.light & {
-        @include make-theme("light");
-      }
-
-      body.dark & {
-        @include make-theme("dark");
-      }
-    }
-  }
-}

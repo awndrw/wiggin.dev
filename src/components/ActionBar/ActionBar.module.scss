@@ -1,0 +1,45 @@
+@use 'theme/color';
+
+.container {
+  position: fixed;
+  bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.actionbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 44px;
+  background-color: color.$container-background;
+  pointer-events: auto;
+}
+
+.button {
+  all: unset;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.colorSelectorContainer {
+  touch-action: none;
+}
+
+.colorSelector {
+  background-color: color.$background;
+  border: 2px solid color.$text;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.backButton {
+  stroke: color.$container-text;
+}

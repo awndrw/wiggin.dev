@@ -35,3 +35,21 @@ $xl-min: 1280px;
   $blue: list.nth($rgbValues, 3) / 255;
   @return color(display-p3, $red, $green, $blue);
 }
+
+@mixin all {
+  &,
+  &::before,
+  &::after,
+  & ::before,
+  & ::after {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media(hover: hover) and (pointer: fine) {
+    &:hover, &:focus-visible {
+      @content;
+    }
+  }
+}

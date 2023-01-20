@@ -64,7 +64,7 @@ $modes: (
         ),
 );
 
-@mixin make($color, $mode) {
+@mixin make-theme($color, $mode) {
   @if map.has-key($colors, $color) and map.has-key($modes, $mode) {
     @each $color-name, $tone in map.get($modes, $mode) {
       $var: map.get(base.$obfuscated-vars, $color-name);
@@ -73,38 +73,5 @@ $modes: (
     }
   } @else {
     @warn "Color or mode not found: #{$color}, #{$mode}";
-  }
-}
-
-@mixin make-defaults($color) {
-  @if map.has-key($colors, $color) {
-    @include make($color, 'light');
-    @media (prefers-color-scheme: dark) {
-      @include make($color, 'dark');
-    }
-  } @else {
-    @warn "Color not found: #{$color}";
-  }
-}
-
-@mixin init {
-  @each $color in map.keys($colors) {
-    @at-root body.#{$color} {
-      @include make-defaults($color);
-      @each $mode in map.keys($modes) {
-        &.#{$mode} {
-          @include make($color, $mode);
-        }
-      }
-    }
-    // Create local theme (by applying the color to a specific element)
-    @at-root *.#{$color} {
-      @include make-defaults($color);
-      @each $mode in map.keys($modes) {
-        body.#{$mode} & {
-          @include make($color, $mode);
-        }
-      }
-    }
   }
 }

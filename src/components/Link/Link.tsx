@@ -20,34 +20,44 @@ export function Link({
   className,
   children,
   srOnly = false,
+  target,
+  rel,
   ...linkProps
 }: LinkProps) {
-  const LinkComponent = type === "internal" ? NextLink : "a";
-  const linkComponentProps = {
-    ...linkProps,
-    href,
-  };
-  linkComponentProps.target =
-    linkProps.target ?? type === "internal" ? undefined : "_blank";
-  linkComponentProps.rel =
-    linkProps.rel ?? type === "internal" ? undefined : "noopener noreferrer";
-
-  if (srOnly) {
-    return <LinkComponent {...linkComponentProps}>{children}</LinkComponent>;
+  if (type === "internal") {
+    return (
+      <NextLink
+        href={href}
+        scroll={false}
+        className={c(styles.link, className)}
+        {...linkProps}
+      >
+        {children}
+        <Icon
+          iconName="arrow-right"
+          className={styles.icon}
+          aria-hidden
+          focusable={false}
+        />
+      </NextLink>
+    );
+  } else {
+    return (
+      <a
+        href={href}
+        target={target ?? "_blank"}
+        rel={rel ?? "noreferrer"}
+        className={c(styles.link, className)}
+        {...linkProps}
+      >
+        {children}
+        <Icon
+          iconName="arrow-up-right"
+          className={styles.icon}
+          aria-hidden
+          focusable={false}
+        />
+      </a>
+    );
   }
-
-  return (
-    <LinkComponent
-      {...linkComponentProps}
-      className={c(styles.link, className)}
-    >
-      {children}
-      <Icon
-        iconName={type === "internal" ? "arrow-right" : "arrow-up-right"}
-        className={styles.icon}
-        aria-hidden
-        focusable={false}
-      />
-    </LinkComponent>
-  );
 }
