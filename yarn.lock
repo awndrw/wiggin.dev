@@ -404,6 +404,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/milliseconds@npm:^0.0.30":
+  version: 0.0.30
+  resolution: "@types/milliseconds@npm:0.0.30"
+  checksum: 4db2f6c6d8bf79d4c28d797be69e6c389c3bcee6f78c1616dec3e3656b9718ecef5a0165814fc5410544068e772ebc1856b1754c55357adeb86deb88c31930dc
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:18.11.18":
   version: 18.11.18
   resolution: "@types/node@npm:18.11.18"
@@ -2486,6 +2493,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"milliseconds@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "milliseconds@npm:1.0.3"
+  checksum: f270a77417014333f5460aa0387b094e2f0fd4c191f0b94e6aca50df1415fbce0bd32ae557afecd1b9aeaa8cc776b294d239bd1e7dc029e0b6ce5d3c342300c4
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^3.0.4, minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
@@ -2968,6 +2982,7 @@ __metadata:
     "@radix-ui/react-slot": ^1.0.1
     "@radix-ui/react-visually-hidden": ^1.0.1
     "@react-spring/web": ^9.6.1
+    "@types/milliseconds": ^0.0.30
     "@types/node": 18.11.18
     "@types/prettier": ^2
     "@types/react": 18.0.26
@@ -2980,6 +2995,7 @@ __metadata:
     eslint-config-next: 13.1.2
     eslint-config-prettier: ^8.6.0
     loader-utils: ^3.2.1
+    milliseconds: ^1.0.3
     next: 13.1.2
     prettier: ^2.8.3
     react: 18.2.0

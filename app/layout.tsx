@@ -1,22 +1,26 @@
 import React from "react";
 import { Sora } from "@next/font/google";
-import { cookies } from "next/headers";
+import { cookies as nextCookies } from "next/headers";
 import Providers from "providers";
 import Analytics from "components/Analytics";
 import ActionBar from "components/ActionBar";
 import ScrollTopOnRouteChange from "components/ScrollTopOnRouteChange";
 import { Color } from "utils/theme";
+import { StorageKey } from "utils/constants";
 
 import "./globals.scss";
 
 const sora = Sora({ subsets: ["latin"] });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const color = getColorCookie();
+  const cookies = nextCookies();
+
+  const colorCookie = Color.safeParse(cookies.get(StorageKey.COLOR)?.value);
+  const color = colorCookie.success ? colorCookie.data : "neutral";
 
   return (
     <html lang="en">
@@ -31,10 +35,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-export function getColorCookie(): Color {
-  const cookie = cookies().get("color")?.value;
-  const color = Color.safeParse(cookie);
-  return color.success ? color.data : "neutral";
 }
