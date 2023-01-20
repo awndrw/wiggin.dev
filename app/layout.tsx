@@ -1,7 +1,7 @@
 import { Sora } from "@next/font/google";
-import ActionBar from "components/ActionBar";
-import Analytics from "components/Analytics";
-import ScrollTopOnRouteChange from "components/ScrollTopOnRouteChange";
+import { ActionBar } from "components/ActionBar";
+import { Analytics } from "components/Analytics";
+import { ScrollTopOnRouteChange } from "components/ScrollTopOnRouteChange";
 import { cookies as nextCookies } from "next/headers";
 import Providers from "providers";
 import React from "react";

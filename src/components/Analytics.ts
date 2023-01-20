@@ -1,5 +1,3 @@
 "use client";
 
-import { Analytics } from "@vercel/analytics/react";
-
-export default Analytics;
+export * from "@vercel/analytics/react";

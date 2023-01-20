@@ -1,4 +1,4 @@
-import Themed from "components/Themed";
+import { Themed } from "components/Themed";
 import Image from "next/image";
 import Link from "next/link";
 import resumePage1 from "../../public/resume1.jpg";

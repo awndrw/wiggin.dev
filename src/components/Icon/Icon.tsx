@@ -2,7 +2,13 @@ import c from "classnames";
 import React from "react";
 import styles from "./Icon.module.scss";
 
-type IconName = "arrow-up-right" | "arrow-right" | "smile" | "arrow-left";
+export const IconName = {
+  ARROW_UP_RIGHT: "arrow-up-right",
+  ARROW_RIGHT: "arrow-right",
+  SMILE: "smile",
+  ARROW_LEFT: "arrow-left",
+} as const;
+export type IconName = (typeof IconName)[keyof typeof IconName];
 
 type AvailableSvgProps = Omit<
   React.SVGAttributes<SVGSVGElement>,
