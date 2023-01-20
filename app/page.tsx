@@ -64,14 +64,18 @@ export default async function Page() {
                 parental supervision
               </Link>
             </Themed>{" "}
-            at Instagram and{" "}
-            <Themed>
-              <Link href="/life" type="internal" aria-hidden>
-                living
-              </Link>
-            </Themed>{" "}
-            in Brooklyn with my partner and our pets.
+            at Instagram and playing with CSS and WebAssembly in my free time.
           </Paragraph>
+          <VisuallyHidden
+            asChild
+            aria-label="I've been working on parental supervision at Instagram and playing with CSS and WebAssembly in my free time."
+          >
+            <p>
+              <Link href="https://familycenter.meta.com" type="external" srOnly>
+                parental supervision at Instagram
+              </Link>
+            </p>
+          </VisuallyHidden>
         </section>
       )}
     </>

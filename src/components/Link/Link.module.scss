@@ -4,36 +4,24 @@
 $hover-transition: 200ms ease;
 
 .link {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+  display: inline;
   text-decoration: none;
+  border-radius: 8px;
   color: color.$text;
-  transition: color $hover-transition;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 2px 0 2px -3px;
-    border-radius: 8px;
-    z-index: -1;
-    background-color: color.$container-background;
-    opacity: 0;
-    transition: opacity $hover-transition;
-  }
+  transition: color $hover-transition, background-color $hover-transition;
+  margin-left: -2px;
+  padding-left: 2px;
+  box-decoration-break: clone;
 
   @include util.hover {
     outline: none;
     color: color.$container-text;
-
-    &::before {
-      opacity: 1;
-    }
+    background-color: color.$container-background;
   }
 }
 
 .icon {
   width: 0.8em;
   height: 0.8em;
+  vertical-align: middle;
 }
