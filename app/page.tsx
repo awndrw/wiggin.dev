@@ -1,11 +1,11 @@
+import Icon from "components/Icon";
+import Link from "components/Link";
+import Themed from "components/Themed";
+import VisuallyHidden from "components/VisuallyHidden";
 import React from "react";
 import Balancer from "react-wrap-balancer";
+import { env } from "utils/env";
 import styles from "./page.module.scss";
-import Link from "components/Link";
-import Icon from "components/Icon";
-import VisuallyHidden from "components/VisuallyHidden";
-import Themed from "components/Themed";
-import { env } from "../src/utils/env";
 
 export default async function Page() {
   const showSecondPage = env.VERCEL_ENV !== "production";

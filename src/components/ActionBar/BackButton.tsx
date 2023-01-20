@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Icon } from "components/Icon";
 import c from "classnames";
+import { Icon } from "components/Icon";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./ActionBar.module.scss";
 
 export default function BackButton() {

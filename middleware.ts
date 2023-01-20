@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import milliseconds from "milliseconds";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import { StorageKey } from "utils/constants";
 
 export function middleware(req: NextRequest) {

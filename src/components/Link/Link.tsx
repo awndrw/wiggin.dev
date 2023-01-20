@@ -1,7 +1,7 @@
-import React from "react";
-import NextLink from "next/link";
-import Icon from "components/Icon";
 import c from "classnames";
+import Icon from "components/Icon";
+import NextLink from "next/link";
+import React from "react";
 import styles from "./Link.module.scss";
 
 type LinkType = "internal" | "external";

@@ -1,11 +1,11 @@
 "use client";
 
+import Themed from "components/Themed";
 import React from "react";
 import styles from "./ActionBar.module.scss";
-import Themed from "components/Themed";
-import ColorSelector from "./ColorSelector";
-import BackButton from "./BackButton";
 import AnimateSlideIn from "./AnimateSlideIn";
+import BackButton from "./BackButton";
+import ColorSelector from "./ColorSelector";
 
 export default function ActionBar() {
   return (

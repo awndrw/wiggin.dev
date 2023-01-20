@@ -1,5 +1,5 @@
+import { animated, config, useSpring } from "@react-spring/web";
 import React from "react";
-import { useSpring, animated, config } from "@react-spring/web";
 
 // const AnimatedSlot = animated(Slot);
 type AnimateSlideInProps = React.PropsWithChildren<

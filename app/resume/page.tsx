@@ -1,9 +1,9 @@
+import Themed from "components/Themed";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.scss";
 import resumePage1 from "../../public/resume1.jpg";
 import resumePage2 from "../../public/resume2.jpg";
-import Themed from "components/Themed";
+import styles from "./page.module.scss";
 
 export default function Page() {
   return (

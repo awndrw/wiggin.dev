@@ -1,5 +1,5 @@
-import React from "react";
 import c from "classnames";
+import React from "react";
 import styles from "./Icon.module.scss";
 
 type IconName = "arrow-up-right" | "arrow-right" | "smile" | "arrow-left";

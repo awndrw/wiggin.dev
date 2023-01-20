@@ -1,8 +1,8 @@
 "use client";
 
+import { setCookie } from "cookies-next";
 import React from "react";
 import { Color } from "utils/theme";
-import { setCookie } from "cookies-next";
 
 export interface Context {
   setColor: (color: Color) => void;
