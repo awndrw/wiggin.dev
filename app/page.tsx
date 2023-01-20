@@ -8,7 +8,7 @@ import Themed from "components/Themed";
 import { get } from "@vercel/edge-config";
 
 export default async function Page() {
-  const showSecondPage = await get("showSecondPage");
+  const showSecondPage = process.env.NODE_ENV === "development";
 
   return (
     <>
