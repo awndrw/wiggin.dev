@@ -2,17 +2,19 @@
 
 import { Themed } from "components/Themed";
 import React from "react";
+import NavButton from "components/ActionBar/NavButton";
 import styles from "./ActionBar.module.scss";
 import AnimateSlideIn from "./AnimateSlideIn";
-import BackButton from "./BackButton";
 import ColorSelector from "./ColorSelector";
 
 export function ActionBar() {
+  const shouldRenderBackButton = 0;
+
   return (
     <Themed>
       <AnimateSlideIn className={styles.container}>
         <div role="region" aria-label="Action Bar" className={styles.actionbar}>
-          <BackButton />
+          <NavButton />
           <div
             role="radiogroup"
             aria-label="Theme selector"

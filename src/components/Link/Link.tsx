@@ -31,7 +31,10 @@ export function Link({
   if (type === "internal") {
     return (
       <NextLink
-        href={href}
+        href={{
+          pathname: href,
+          query: { ref: "internal" },
+        }}
         scroll={false}
         className={c(styles.link, className)}
         {...linkProps}
