@@ -42,6 +42,21 @@ const nextConfig = {
     // TODO: Remove this when eslint build errors are fixed
     ignoreDuringBuilds: true,
   },
+  async headers() {
+    const headers = [];
+    if (process.env.VERCEL_ENV !== "production") {
+      headers.push({
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+        source: "/:path*",
+      });
+    }
+    return headers;
+  },
   webpack: (config, { dev }) => {
     const oneOfRule = config.module.rules.find(
       (rule) => typeof rule.oneOf === "object"
