@@ -1,7 +1,7 @@
 "use client";
 
 import { Slot } from "@radix-ui/react-slot";
-import { Context as ColorContext } from "providers/Color";
+import { Context as ColorContext } from "client/providers/Color";
 import React from "react";
 
 export function Themed({ children }: { children: React.ReactNode }) {

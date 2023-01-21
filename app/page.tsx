@@ -1,7 +1,7 @@
 import { Icon } from "components/Icon";
 import { Link } from "components/Link";
-import { Themed } from "components/Themed";
-import { VisuallyHidden } from "components/VisuallyHidden";
+import { Themed } from "client/Themed";
+import { VisuallyHidden } from "client/VisuallyHidden";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import { env } from "utils/env";

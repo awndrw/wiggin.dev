@@ -1,8 +1,8 @@
 "use client";
 
-import { Themed } from "components/Themed";
+import { Themed } from "client/Themed";
 import React from "react";
-import NavButton from "components/ActionBar/NavButton";
+import NavButton from "./NavButton";
 import styles from "./ActionBar.module.scss";
 import AnimateSlideIn from "./AnimateSlideIn";
 import ColorSelector from "./ColorSelector";

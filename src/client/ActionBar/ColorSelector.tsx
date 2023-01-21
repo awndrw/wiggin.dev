@@ -2,10 +2,10 @@
 
 import { animated } from "@react-spring/web";
 import c from "classnames";
-import { Context as ColorContext } from "providers/Color";
+import { Context as ColorContext } from "client/providers/Color";
 import React from "react";
 import { Color } from "utils/theme";
-import useTimedSpring from "utils/useTimedSpring";
+import useTimedSpring from "client/useTimedSpring";
 import styles from "./ActionBar.module.scss";
 
 export default function ColorSelector({ color }: { color: Color }) {
