@@ -1,7 +1,7 @@
 import milliseconds from "milliseconds";
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { StorageKey } from "utils/constants";
+import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   let uid = req.cookies.get(StorageKey.USER_ID)?.value;

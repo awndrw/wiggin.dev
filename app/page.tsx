@@ -41,7 +41,7 @@ export default async function Page() {
             aria-label="I'm a New York City based design engineer excited by design systems, motion design and accessibility. Check out my resume or reach out via email."
           >
             <p>
-              <Link href="/resume.pdf" type="internal" srOnly>
+              <Link href="/resume/resume.pdf" type="internal" srOnly>
                 resume
               </Link>
               <Link href="mailto:andrew@wiggin.dev" type="external" srOnly>
