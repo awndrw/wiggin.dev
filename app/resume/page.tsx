@@ -1,8 +1,8 @@
 import { Themed } from "components/Themed";
 import Image from "next/image";
 import Link from "next/link";
-import resumePage1 from "../../public/resume1.jpg";
-import resumePage2 from "../../public/resume2.jpg";
+import resumePage1 from "../../public/resume/page1.jpg";
+import resumePage2 from "../../public/resume/page2.jpg";
 import styles from "./page.module.scss";
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
     <Themed>
       <div className={styles.page}>
         <Link
-          href="/resume.pdf"
+          href="/resume/resume.pdf"
           aria-label="Resume"
           target="_blank"
           className={styles.link}

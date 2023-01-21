@@ -1,7 +1,8 @@
+"use client";
+
 import { animated, config, useSpring } from "@react-spring/web";
 import React from "react";
 
-// const AnimatedSlot = animated(Slot);
 type AnimateSlideInProps = React.PropsWithChildren<
   React.HTMLAttributes<HTMLDivElement>
 >;
