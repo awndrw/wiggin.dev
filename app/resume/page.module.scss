@@ -15,6 +15,10 @@
   max-width: 768px;
   margin-bottom: 48px;
 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   @include util.mw-md {
     width: 80%;
   }

@@ -21,12 +21,16 @@ export default function Page() {
             priority
             width={768}
             className={styles.image}
+            placeholder="blur"
+            aria-hidden
           />
           <Image
             src={resumePage2}
             alt="Resume page 2"
             width={768}
             className={styles.image}
+            placeholder="blur"
+            aria-hidden
           />
         </Link>
       </div>
