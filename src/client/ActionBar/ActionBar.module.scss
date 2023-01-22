@@ -20,6 +20,7 @@
   border-radius: 44px;
   background-color: color.$container-background;
   pointer-events: auto;
+  transition: transform 1000ms ease;
 }
 
 .button {
