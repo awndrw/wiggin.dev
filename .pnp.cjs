@@ -51,7 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.8.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.3.0"],\
+            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
             ["sass", "npm:1.57.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
             ["zod", "npm:3.20.2"]\
@@ -3725,7 +3725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.8.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.3.0"],\
+            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
             ["sass", "npm:1.57.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
             ["zod", "npm:3.20.2"]\
@@ -3870,17 +3870,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["react-wrap-balancer", [\
-        ["npm:0.3.0", {\
-          "packageLocation": "./.yarn/cache/react-wrap-balancer-npm-0.3.0-f6fb98da8e-f0e930889e.zip/node_modules/react-wrap-balancer/",\
+        ["npm:0.4.0", {\
+          "packageLocation": "./.yarn/cache/react-wrap-balancer-npm-0.4.0-7ec8d2e0d9-c43e9ecc57.zip/node_modules/react-wrap-balancer/",\
           "packageDependencies": [\
-            ["react-wrap-balancer", "npm:0.3.0"]\
+            ["react-wrap-balancer", "npm:0.4.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-wrap-balancer-virtual-cbd01643c9/0/cache/react-wrap-balancer-npm-0.3.0-f6fb98da8e-f0e930889e.zip/node_modules/react-wrap-balancer/",\
+        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-wrap-balancer-virtual-ad8e3fcf3f/0/cache/react-wrap-balancer-npm-0.4.0-7ec8d2e0d9-c43e9ecc57.zip/node_modules/react-wrap-balancer/",\
           "packageDependencies": [\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.3.0"],\
+            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
             ["@types/react", "npm:18.0.27"],\
             ["react", "npm:18.2.0"]\
           ],\
