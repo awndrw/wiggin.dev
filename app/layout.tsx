@@ -1,5 +1,4 @@
 import { Sora } from "@next/font/google";
-import { ActionBar } from "client/ActionBar";
 import { Analytics } from "client/Analytics";
 import { ScrollTopOnRouteChange } from "client/ScrollTopOnRouteChange";
 import { cookies as nextCookies } from "next/headers";
@@ -8,6 +7,7 @@ import React from "react";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color } from "utils/theme";
+import { ActionBar } from "./ActionBar";
 
 import "./globals.scss";
 

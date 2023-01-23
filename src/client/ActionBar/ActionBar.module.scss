@@ -1,28 +1,5 @@
 @use 'theme/color';
 
-.container {
-  position: fixed;
-  bottom: 24px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.actionbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 44px;
-  background-color: color.$container-background;
-  pointer-events: auto;
-  transition: transform 1000ms ease;
-}
-
 .button {
   all: unset;
   width: 20px;

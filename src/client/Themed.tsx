@@ -7,5 +7,5 @@ import React from "react";
 export function Themed({ children }: { children: React.ReactNode }) {
   const { color } = React.useContext(ColorContext);
 
-  return <Slot className={color}>{children}</Slot>;
+  return <Slot data-color={color}>{children}</Slot>;
 }

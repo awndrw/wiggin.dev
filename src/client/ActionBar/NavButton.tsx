@@ -3,12 +3,16 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import c from "classnames";
 import { Icon } from "components/Icon";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import styles from "./ActionBar.module.scss";
 
 export default function NavButton() {
+  const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const shouldShowButton = pathname !== "/";
+  if (!shouldShowButton) return null;
 
   const isBackButton = searchParams.get("ref") === "internal";
 

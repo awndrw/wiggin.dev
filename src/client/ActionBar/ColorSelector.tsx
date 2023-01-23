@@ -25,9 +25,9 @@ export default function ColorSelector({ color }: { color: Color }) {
   return (
     <animated.button
       style={style}
-      className={c(styles.button, styles.colorSelector, color)}
-      role="radio"
-      aria-checked={color === currentColor}
+      className={c(styles.button, styles.colorSelector)}
+      data-color={color}
+      aria-pressed={color === currentColor}
       aria-label={color}
       onClick={onClick}
     />
