@@ -3,6 +3,11 @@
 @use 'theme/color/primary';
 @use 'theme/color/neutral';
 @use 'theme/util';
+@use 'theme/size';
+
+:root {
+  @include size.init;
+}
 
 // Neutral colors are applied at root
 :root,
