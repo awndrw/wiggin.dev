@@ -1,6 +1,6 @@
 import c from "classnames";
 import { Icon } from "components/Icon";
-import NextLink from "next/link";
+import { InternalLink } from "components/InternalLink";
 import React from "react";
 import styles from "./Link.module.scss";
 
@@ -30,12 +30,8 @@ export function Link({
 }: LinkProps) {
   if (type === "internal") {
     return (
-      <NextLink
-        href={{
-          pathname: href,
-          query: { ref: "internal" },
-        }}
-        scroll={false}
+      <InternalLink
+        href={href}
         className={c(styles.link, className)}
         {...linkProps}
       >
@@ -46,7 +42,7 @@ export function Link({
           aria-hidden
           focusable={false}
         />
-      </NextLink>
+      </InternalLink>
     );
   } else {
     return (
