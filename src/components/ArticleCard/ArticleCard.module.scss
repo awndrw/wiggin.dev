@@ -1,0 +1,33 @@
+@use 'theme/color';
+
+.card {
+  font-size: 1rem;
+  max-width: 300px;
+}
+
+.cardBox {
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  gap: 16px;
+  background-color: color.$container-background;
+  color: color.$container-text;
+}
+
+.title {
+  font-size: 1.6rem;
+}
+
+.date {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.title, .date {
+  font-weight: 400;
+}
+
+.description {
+  padding-block-start: 16px;
+  padding-inline: 20px;
+}
