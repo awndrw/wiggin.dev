@@ -2377,7 +2377,9 @@ export type FocalPoint = {
   y: Scalars['FloatType'];
 };
 
-export type AllPostsQueryVariables = Exact<{ [key: string]: never; }>;
+export type AllPostsQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['IntType']>;
+}>;
 
 
 export type AllPostsQuery = { __typename?: 'Query', allPosts: Array<{ __typename?: 'PostRecord', title?: string | null, slug?: string | null, description?: string | null, _status: ItemStatus, _publishedAt?: any | null }>, _allPostsMeta: { __typename?: 'CollectionMetadata', count: any } };
@@ -2396,8 +2398,8 @@ export type PostBySlugQuery = { __typename?: 'Query', post?: { __typename?: 'Pos
 
 
 export const AllPostsDocument = /*#__PURE__*/ gql`
-    query AllPosts {
-  allPosts(orderBy: _publishedAt_DESC, first: 20) {
+    query AllPosts($first: IntType = 20) {
+  allPosts(orderBy: _publishedAt_DESC, first: $first) {
     title
     slug
     description

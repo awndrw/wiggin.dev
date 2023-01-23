@@ -14,7 +14,7 @@ export default async function Page() {
   const showSecondPage = false;
   const showWriting = env.VERCEL_ENV !== "production";
 
-  const allPosts = await sdk.AllPosts();
+  const allPosts = await sdk.AllPosts({ first: 6 });
 
   return (
     <div className={styles.page}>

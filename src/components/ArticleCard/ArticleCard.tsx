@@ -1,7 +1,8 @@
 import { Themed } from "client/Themed";
 import { AllPostsQuery } from "cms/generated";
-import NextLink from "next/link";
+import { InternalLink } from "components/InternalLink";
 import React from "react";
+import Balancer from "react-wrap-balancer";
 import styles from "./ArticleCard.module.scss";
 
 type ArticleCardProps = AllPostsQuery["allPosts"][number];
@@ -22,21 +23,19 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
 
   return (
     <Themed>
-      <NextLink
-        href={{
-          pathname: `/posts/${slug}`,
-          query: { ref: "internal" },
-        }}
-        className={styles.card}
-      >
+      <InternalLink href={`/posts/${slug}`} className={styles.card}>
         <div className={styles.cardBox}>
           <h3 className={styles.title}>{title}</h3>
-          <span className={styles.date}>{formattedDate}</span>
+          {formattedDate && (
+            <span className={styles.date}>{formattedDate}</span>
+          )}
         </div>
-        <p data-color="neutral" className={styles.description}>
-          {description}
-        </p>
-      </NextLink>
+        {description && (
+          <p data-color="neutral" className={styles.description}>
+            {description}
+          </p>
+        )}
+      </InternalLink>
     </Themed>
   );
 };

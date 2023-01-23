@@ -2,8 +2,6 @@
 @use 'theme/size';
 
 .card {
-  --height: 100%;
-
   max-width: 400px;
   text-decoration: none;
   color: color.$text;
@@ -18,7 +16,7 @@
 }
 
 .cardBox {
-  padding: size.$spacing-small;
+  padding: size.$spacing-large;
   border-radius: size.$border-radius-large;
   display: grid;
   gap: size.$spacing-small;
@@ -46,7 +44,8 @@
 .description {
   font-size: size.$font-small;
   padding-block-start: size.$spacing-small;
-  padding-inline: size.$spacing-small;
+  padding-inline: size.$spacing-large;
   color: color.$text;
   font-weight: 300;
+  width: 100%;
 }
