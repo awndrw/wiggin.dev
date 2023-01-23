@@ -1,19 +1,26 @@
+import c from "classnames";
+import { ArticleCard } from "components/ArticleCard";
 import { Icon } from "components/Icon";
 import { Link } from "components/Link";
 import { Themed } from "client/Themed";
 import { VisuallyHidden } from "client/VisuallyHidden";
 import React from "react";
 import Balancer from "react-wrap-balancer";
+import { sdk } from "cms";
 import { env } from "utils/env";
+import { Separator } from "client/Separator";
 import styles from "./page.module.scss";
 
 export default async function Page() {
-  const showSecondPage = env.VERCEL_ENV !== "production";
+  const showSecondPage = false;
+  const showWriting = env.VERCEL_ENV !== "production";
+
+  const allPosts = await sdk.AllPosts();
 
   return (
-    <>
+    <div className={styles.page}>
       <Themed>
-        <main className={styles.part1}>
+        <main className={styles.hero}>
           <h1 className={styles.text}>
             Hi, I&apos;m Andrew
             <Icon
@@ -51,6 +58,19 @@ export default async function Page() {
           </VisuallyHidden>
         </main>
       </Themed>
+      <Themed>
+        <Separator orientation="horizontal" className={styles.separator} />
+      </Themed>
+      {showWriting && (
+        <section>
+          <h2 className={c(styles.text, styles.heading)}>Writing</h2>
+          <div className={styles.articleList}>
+            {allPosts.allPosts.map((post) => (
+              <ArticleCard {...post} key={post.slug} />
+            ))}
+          </div>
+        </section>
+      )}
       {showSecondPage && (
         <section className={styles.part2}>
           <Paragraph>
@@ -78,7 +98,7 @@ export default async function Page() {
           </VisuallyHidden>
         </section>
       )}
-    </>
+    </div>
   );
 }
 

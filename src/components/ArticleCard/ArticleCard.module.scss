@@ -1,8 +1,20 @@
 @use 'theme/color';
 
 .card {
+  --height: 100%;
+
   font-size: 1rem;
-  max-width: 300px;
+  max-width: 400px;
+  text-decoration: none;
+  color: color.$text;
+  border-radius: 20px;
+  position: relative;
+
+  &:hover .cardBox {
+    background-color: color.$container-background;
+    color: color.$container-text;
+    border-color: transparent;
+  }
 }
 
 .cardBox {
@@ -10,8 +22,12 @@
   border-radius: 20px;
   display: grid;
   gap: 16px;
-  background-color: color.$container-background;
-  color: color.$container-text;
+  position: relative;
+  background-color: color.$background;
+  color: color.$text;
+  border: 1px solid color.$text;
+  transition-property: background-color, color, border-color;
+  transition-duration: 200ms;
 }
 
 .title {
@@ -28,6 +44,6 @@
 }
 
 .description {
-  padding-block-start: 16px;
-  padding-inline: 20px;
+  padding: 16px 20px;
+  color: color.$text;
 }

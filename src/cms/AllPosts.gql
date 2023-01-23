@@ -1,0 +1,13 @@
+query AllPosts {
+    allPosts(orderBy: _publishedAt_DESC, first: 20) {
+        title
+        slug
+        description
+        _status
+        _publishedAt
+    }
+
+    _allPostsMeta {
+        count
+    }
+}

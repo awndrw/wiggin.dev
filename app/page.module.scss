@@ -1,18 +1,24 @@
 @use 'theme/color';
 @use 'theme/util';
 
-.part1 {
+.page {
+  padding-left: 24px;
+
+  main, section {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+.hero {
   background-color: color.$background;
   color: color.$text;
 }
 
-.part1, .part2 {
+.hero, .part2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 24px;
-  min-height: 100vh;
-  min-height: 100dvh;
 }
 
 .text {
@@ -38,4 +44,24 @@
   margin-left: 6px;
   width: 0.8em;
   height: 0.8em;
+}
+
+.separator {
+  background-color: color.$text;
+  height: 1px;
+  width: calc(100% + 48px);
+  margin: 0 -24px;
+}
+
+.heading {
+  margin: 40px 0;
+  font-size: 3rem;
+}
+
+.articleList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 20px;
+  max-width: 920px;
 }
