@@ -2,11 +2,17 @@
 @use 'theme/size';
 
 .page {
-  padding-left: 24px;
+  padding-inline: size.$spacing-large;
+  padding-block-end: 48px;
 
   main, section {
     min-height: 100vh;
-    min-height: 100dvh;
+    padding: size.$spacing-large 0;
+    font-size: size.$font-large;
+
+    & > h2 {
+      margin: size.$spacing-large 0;
+    }
   }
 }
 
@@ -19,15 +25,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: size.$spacing-large;
-  min-height: 100vh;
-  min-height: 100dvh;
 }
 
 .text {
   font-weight: 400;
   line-height: 1.3;
-  font-size: var(--font-size-large);
+  font-size: size.$font-large;
 }
 
 .smile {
@@ -39,13 +42,8 @@
 .separator {
   background-color: color.$text;
   height: 1px;
-  width: calc(100% + 48px);
-  margin: 0 -24px;
-}
-
-.heading {
-  margin: 40px 0;
-  font-size: 3rem;
+  width: calc(100% + #{size.$spacing-large});
+  margin: 0 calc(-1 * #{size.$spacing-large});
 }
 
 .articleList {
@@ -54,4 +52,5 @@
   row-gap: 40px;
   column-gap: 20px;
   max-width: 920px;
+  padding-top: size.$spacing-large;
 }

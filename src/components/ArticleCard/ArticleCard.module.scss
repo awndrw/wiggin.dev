@@ -1,13 +1,13 @@
 @use 'theme/color';
+@use 'theme/size';
 
 .card {
   --height: 100%;
 
-  font-size: 1rem;
   max-width: 400px;
   text-decoration: none;
   color: color.$text;
-  border-radius: 20px;
+  border-radius: size.$border-radius-large;
   position: relative;
 
   &:hover .cardBox {
@@ -18,10 +18,10 @@
 }
 
 .cardBox {
-  padding: 20px;
-  border-radius: 20px;
+  padding: size.$spacing-small;
+  border-radius: size.$border-radius-large;
   display: grid;
-  gap: 16px;
+  gap: size.$spacing-small;
   position: relative;
   background-color: color.$background;
   color: color.$text;
@@ -31,11 +31,11 @@
 }
 
 .title {
-  font-size: 1.6rem;
+  font-size: size.$font-normal;
 }
 
 .date {
-  font-size: 1rem;
+  font-size: size.$font-small;
   opacity: 0.7;
 }
 
@@ -44,6 +44,9 @@
 }
 
 .description {
-  padding: 16px 20px;
+  font-size: size.$font-small;
+  padding-block-start: size.$spacing-small;
+  padding-inline: size.$spacing-small;
   color: color.$text;
+  font-weight: 300;
 }

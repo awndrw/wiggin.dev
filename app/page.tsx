@@ -1,4 +1,3 @@
-import c from "classnames";
 import { ArticleCard } from "components/ArticleCard";
 import { Icon } from "components/Icon";
 import { Link } from "components/Link";
@@ -61,16 +60,6 @@ export default async function Page() {
       <Themed>
         <Separator orientation="horizontal" className={styles.separator} />
       </Themed>
-      {showWriting && (
-        <section>
-          <h2 className={c(styles.text, styles.heading)}>Writing</h2>
-          <div className={styles.articleList}>
-            {allPosts.allPosts.map((post) => (
-              <ArticleCard {...post} key={post.slug} />
-            ))}
-          </div>
-        </section>
-      )}
       {showSecondPage && (
         <section className={styles.part2}>
           <Paragraph>
@@ -98,6 +87,16 @@ export default async function Page() {
           </VisuallyHidden>
         </section>
       )}
+      {showWriting && (
+        <section>
+          <h2 className={styles.text}>Writing</h2>
+          <div className={styles.articleList}>
+            {allPosts.allPosts.map((post) => (
+              <ArticleCard {...post} key={post.slug} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
@@ -107,7 +106,7 @@ function Paragraph({
   ...props
 }: React.ComponentProps<typeof Balancer>) {
   return (
-    <Balancer ratio={0.3} as="p" className={styles.text} aria-hidden {...props}>
+    <Balancer ratio={0.4} as="p" className={styles.text} aria-hidden {...props}>
       {children}
     </Balancer>
   );

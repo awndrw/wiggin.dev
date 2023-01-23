@@ -31,7 +31,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
       >
         <div className={styles.cardBox}>
           <h3 className={styles.title}>{title}</h3>
-          <h4 className={styles.date}>{formattedDate}</h4>
+          <span className={styles.date}>{formattedDate}</span>
         </div>
         <p data-color="neutral" className={styles.description}>
           {description}
