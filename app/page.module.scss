@@ -1,5 +1,6 @@
 @use 'theme/color';
 @use 'theme/size';
+@use 'theme/util';
 
 .page {
   padding-inline: size.$spacing-large;
@@ -48,8 +49,14 @@
 
 .articleList {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: size.$spacing-large;
-  max-width: 920px;
+  grid-template-columns: repeat(
+        auto-fill,
+                  minmax(
+                                  min(360px, 100%), 1fr
+                  )
+    );
+  width: fit-content;
+  max-width: 80%;
+  gap: size.$spacing-large calc(2 * #{size.$spacing-large});
   padding-top: size.$spacing-large;
 }

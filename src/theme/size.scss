@@ -2,7 +2,6 @@ $font-small: var(--font-size-small);
 $font-normal: var(--font-size-normal);
 $font-medium: var(--font-size-medium);
 $font-large: var(--font-size-large);
-$font-xlarge: var(--font-size-xlarge);
 
 $spacing-small: var(--spacing-size-small);
 $spacing-large: var(--spacing-size-large);
@@ -15,7 +14,6 @@ $border-radius-large: 20px;
   --font-size-normal: 1rem;
   --font-size-medium: 1.2rem;
   --font-size-large: 2rem;
-  --font-size-xlarge: 4rem;
   --spacing-size-small: 12px;
   --spacing-size-large: 16px;
 
@@ -24,7 +22,6 @@ $border-radius-large: 20px;
     --font-size-normal: 1.25rem;
     --font-size-medium: 1.6rem;
     --font-size-large: 3rem;
-    --font-size-xlarge: 5rem;
     --spacing-size-small: 16px;
     --spacing-size-large: 24px;
   }
@@ -34,7 +31,6 @@ $border-radius-large: 20px;
     --font-size-normal: 1.5rem;
     --font-size-medium: 2rem;
     --font-size-large: 4rem;
-    --font-size-xlarge: 6.5rem;
     --spacing-size-small: 20px;
     --spacing-size-large: 40px;
   }
