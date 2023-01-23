@@ -1,8 +1,9 @@
 @use 'theme/color';
+@use 'theme/size';
 
 .container {
   position: fixed;
-  bottom: 24px;
+  bottom: size.$spacing-large;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -27,7 +28,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: size.$spacing-small;
   padding: 6px 10px;
   border-radius: 44px;
   background-color: color.$container-background;

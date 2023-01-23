@@ -1,4 +1,5 @@
 @use 'theme/color';
+@use 'theme/size';
 @use 'theme/util';
 
 .page {
@@ -6,7 +7,7 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  padding: 24px;
+  padding: size.$spacing-large;
   position: relative;
 }
 
@@ -27,6 +28,6 @@
 .image {
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: size.$border-radius-large;
   border: 1px solid color.$text;
 }

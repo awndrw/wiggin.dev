@@ -1,12 +1,13 @@
 @use 'theme/color';
 @use 'theme/util';
+@use 'theme/size';
 
 $hover-transition: 200ms ease;
 
 .link {
   display: inline;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: size.$border-radius-small;
   color: color.$text;
   transition: color $hover-transition, background-color $hover-transition;
   margin-left: -2px;
