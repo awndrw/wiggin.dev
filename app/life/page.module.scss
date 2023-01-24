@@ -1,18 +1,13 @@
 @use 'theme/color';
 @use 'theme/size';
+@use 'theme/layout';
 
 .page {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+  @include layout.page;
 }
 
-.container {
-  width: 95%;
-  max-width: 768px;
-  margin-bottom: 48px;
-  padding: size.$spacing-large;
-
+.section {
+  @include layout.section('accent');
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -20,7 +15,7 @@
 }
 
 .image {
-  max-width: 250px;
+  max-width: 300px;
   height: auto;
   border-radius: size.$border-radius-large;
   border: 1px solid color.$accent-primary;

@@ -11,7 +11,7 @@ const images = [image1, image2, image3, image4, image5];
 export default function Page() {
   return (
     <div className={styles.page}>
-      <div className={styles.container}>
+      <section className={styles.section}>
         {images.map((image) => (
           <Image
             src={image}
@@ -21,7 +21,7 @@ export default function Page() {
             placeholder="blur"
           />
         ))}
-      </div>
+      </section>
     </div>
   );
 }

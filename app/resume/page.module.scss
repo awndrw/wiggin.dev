@@ -1,14 +1,15 @@
 @use 'theme/color';
 @use 'theme/size';
 @use 'theme/util';
+@use 'theme/layout';
 
 .page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  padding: size.$spacing-large;
-  position: relative;
+  @include layout.page;
+  & > section {
+    @include layout.section('accent');
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .link {

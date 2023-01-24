@@ -8,7 +8,6 @@ import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
 import { ActionBar } from "./ActionBar";
-import styles from "./layout.module.scss";
 
 import "./globals.scss";
 
@@ -30,13 +29,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={sora.className} data-color={color}>
-        <div className={styles.pageWrapper}>
-          <Providers initialColor={color}>
-            <ScrollTopOnRouteChange>{children}</ScrollTopOnRouteChange>
-            <ActionBar />
-          </Providers>
-          <Analytics mode={analyticsMode} />
-        </div>
+        <Providers initialColor={color}>
+          <ScrollTopOnRouteChange>{children}</ScrollTopOnRouteChange>
+          <ActionBar />
+        </Providers>
+        <Analytics mode={analyticsMode} />
       </body>
     </html>
   );

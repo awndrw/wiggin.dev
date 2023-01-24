@@ -1,0 +1,27 @@
+@use 'sass:list';
+@use 'theme/color';
+@use 'theme/size';
+
+@mixin page {
+  & > *:last-child {
+    // ActionBar affordance
+    padding-block-end: 96px;
+  }
+}
+
+$themes: 'accent' 'neutral';
+
+@mixin section($theme: 'accent') {
+  @if not list.index($themes, $theme) {
+    @error "Theme not found: #{$theme}";
+  }
+  min-height: calc(100vh - 1px);
+  padding: size.$spacing-large;
+  @if $theme == 'accent' {
+      background-color: color.$accent-primary-contrast;
+      color: color.$accent-primary;
+  } @else if $theme == 'neutral' {
+      background-color: color.$accent-tertiary-variant;
+      color: color.$text-primary;
+  }
+}
