@@ -78,7 +78,7 @@ export default async function Page() {
           </Link>
           .{" "}
           <span className={styles.displayP3}>
-            These vivid colors were brought to you by{" "}
+            These colors were brought to you by{" "}
             <span style={{ display: "inline-block" }}>
               <Link
                 href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/"
