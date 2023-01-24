@@ -3,9 +3,9 @@
 @use 'sass:color';
 
 $hues: (
-  'red': 354,
-  'blue': 203,
-  'green': 143
+        'red': 354,
+        'blue': 203,
+        'green': 143
 );
 
 $colors: map.keys($hues);
@@ -29,21 +29,24 @@ $hslValues: (
         ),
 );
 
-@mixin make-theme($color, $mode) {
-  @if map.has-key($hues, $color) and map.has-key($hslValues, $mode) {
-    @each $color-name, $saturation-lightness in map.get($hslValues, $mode) {
-      $hue: map.get($hues, $color);
-      $saturation: list.nth($saturation-lightness, 1);
-      $lightness: list.nth($saturation-lightness, 2);
-      $hsl: hsl($hue $saturation $lightness);
-      --color-accent-#{$color-name}: #{$hsl};
-      // display p3
-      $red: color.red($hsl) / 255;
-      $green: color.green($hsl) / 255;
-      $blue: color.blue($hsl) / 255;
-      --color-accent-#{$color-name}: color(display-p3 #{$red} #{$green} #{$blue});
+@mixin make-theme($mode) {
+  @if not map.has-key($hslValues, $mode) {
+    @error "Mode not found: #{$mode}";
+  }
+  @each $color in $colors {
+    *[data-color="#{$color}"] {
+      @each $color-name, $saturation-lightness in map.get($hslValues, $mode) {
+        $hue: map.get($hues, $color);
+        $saturation: list.nth($saturation-lightness, 1);
+        $lightness: list.nth($saturation-lightness, 2);
+        $hsl: hsl($hue $saturation $lightness);
+        --color-accent-#{$color-name}: #{$hsl};
+        // display p3
+        $red: color.red($hsl) / 255;
+        $green: color.green($hsl) / 255;
+        $blue: color.blue($hsl) / 255;
+        --color-accent-#{$color-name}: color(display-p3 #{$red} #{$green} #{$blue});
+      }
     }
-  } @else {
-    @warn "Color or mode not found: #{$color}, #{$mode}";
   }
 }

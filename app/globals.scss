@@ -1,20 +1,9 @@
 @use 'theme/color';
-@use 'theme/color/primary';
 @use 'theme/size';
 
 :root {
   @include color.init;
   @include size.init;
-}
-
-// TODO: Move primary colors to the `color` initializer
-@each $color in primary.$colors {
-  *[data-color="#{$color}"] {
-    @include primary.make-theme($color, 'light');
-    @media (prefers-color-scheme: dark) {
-      @include primary.make-theme($color, 'dark');
-    }
-  }
 }
 
 

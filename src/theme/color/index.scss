@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use './primary';
 
 $text-primary: var(--color-text-primary);
 $text-secondary: var(--color-text-secondary);
@@ -11,11 +12,13 @@ $accent-tertiary: var(--color-accent-tertiary);
 $accent-tertiary-variant: var(--color-accent-tertiary-variant);
 
 @mixin init {
+  @include primary.make-theme('light');
   --color-text-primary: hsl(210, 2%, 18%);
   --color-text-secondary: hsl(220, 2%, 34%);
   --color-background: hsl(270, 50%, 99%);
 
   @media (prefers-color-scheme: dark) {
+    @include primary.make-theme('dark');
     --color-text-primary: hsl(270, 4%, 89%);
     --color-text-secondary: hsl(270, 2%, 76%);
     --color-background: hsl(210, 7%, 11%);
