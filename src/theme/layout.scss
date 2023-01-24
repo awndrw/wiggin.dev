@@ -3,6 +3,9 @@
 @use 'theme/size';
 
 @mixin page {
+  position: relative;
+  overflow-x: hidden;
+
   & > *:last-child {
     // ActionBar affordance
     padding-block-end: 96px;
@@ -20,6 +23,7 @@ $themes: 'accent' 'neutral';
   min-height: 100vh;
   min-height: 100svh;
   padding: size.$spacing-large;
+  position: relative;
   @if $theme == 'accent' {
       background-color: color.$accent-primary-contrast;
       color: color.$accent-primary;
