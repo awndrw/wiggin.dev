@@ -1,6 +1,6 @@
 import { Sora } from "@next/font/google";
 import { Analytics } from "client/Analytics";
-import { ScrollTopOnRouteChange } from "client/ScrollTopOnRouteChange";
+import { RouteChangeHandler } from "client/RouteChangeHandler";
 import { cookies as nextCookies } from "next/headers";
 import Providers from "client/providers";
 import React from "react";
@@ -30,7 +30,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={sora.className} data-color={color}>
         <Providers initialColor={color}>
-          <ScrollTopOnRouteChange>{children}</ScrollTopOnRouteChange>
+          <RouteChangeHandler>{children}</RouteChangeHandler>
           <ActionBar />
         </Providers>
         <Analytics mode={analyticsMode} />
