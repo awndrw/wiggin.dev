@@ -58,7 +58,7 @@ export default async function Page() {
         </>
       )}
       <Separator orientation="horizontal" className={styles.separator} />
-      <section className={styles.about}>
+      <section data-about="true" className={styles.about}>
         <Balancer ratio={BALANCER_RATIO} as="p">
           I&apos;ve been working on{" "}
           <Link href="https://familycenter.meta.com" type="external">
