@@ -34,6 +34,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
+    scrollRestoration: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
