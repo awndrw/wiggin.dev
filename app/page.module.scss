@@ -25,16 +25,17 @@
 
 .scribble {
   position: absolute;
-  bottom: -20%;
   right: 8%;
   z-index: 0;
-  display: none;
+  height: 60%;
+  bottom: -12%;
   @include util.mw-sm {
-    display: block;
-    height: 75%
+    height: 75%;
+    bottom: -20%;
   }
   @include util.mw-md {
-      height: 95%
+      height: 95%;
+      bottom: -25%;
   }
   & path {
     fill: color.$accent-secondary-contrast;
