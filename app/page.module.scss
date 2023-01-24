@@ -24,21 +24,25 @@
 }
 
 .scribble {
+  stroke: color.$accent-secondary-contrast;
+  stroke-width: 24px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  overflow: visible;
+
   position: absolute;
   right: 8%;
   z-index: 0;
-  height: 60%;
-  bottom: -12%;
+  height: 100%;
+  bottom: -45%;
   @include util.mw-sm {
-    height: 75%;
-    bottom: -20%;
+    height: 120%;
+    bottom: -60%;
   }
   @include util.mw-md {
-      height: 95%;
-      bottom: -25%;
-  }
-  & path {
-    fill: color.$accent-secondary-contrast;
+      height: 140%;
+      bottom: -70%;
   }
 }
 
@@ -46,7 +50,7 @@
   @include layout.section('neutral');
   &[class] {
     // ActionBar affordance not needed here
-    padding-block-end: 0;
+    padding-block: 0;
   }
 }
 

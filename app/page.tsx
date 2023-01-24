@@ -9,7 +9,7 @@ import { Separator } from "client/Separator";
 import { Scribble } from "./Scribble";
 import styles from "./page.module.scss";
 
-const BALANCER_RATIO = 0.35;
+const BALANCER_RATIO = 0.45;
 
 export default async function Page() {
   const showWriting = false;
