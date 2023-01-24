@@ -8,7 +8,7 @@ import { sdk } from "cms";
 import { Separator } from "client/Separator";
 import styles from "./page.module.scss";
 
-const BALANCER_RATIO = 0.5;
+const BALANCER_RATIO = 0.35;
 
 export default async function Page() {
   const showWriting = false;
