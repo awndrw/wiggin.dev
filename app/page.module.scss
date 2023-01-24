@@ -15,11 +15,27 @@
     font-weight: 400;
     line-height: 1.3;
     font-size: size.$font-large;
+    z-index: 1;
   }
 }
 
 .hero {
   @include layout.section('accent');
+}
+
+.scribble {
+  position: absolute;
+  bottom: -20%;
+  right: 8%;
+  height: 95%;
+  z-index: 0;
+  display: none;
+  @include util.mw-md {
+    display: block;
+  }
+  & path {
+    fill: color.$accent-secondary-contrast;
+  }
 }
 
 .about {
