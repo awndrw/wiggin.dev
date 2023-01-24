@@ -11,7 +11,7 @@ export interface Context {
 
 export const Context = React.createContext<Context>({
   setColor: () => null,
-  color: "neutral",
+  color: "red",
 });
 
 export function Provider({
@@ -26,7 +26,7 @@ export function Provider({
   const setColor = React.useCallback(
     (newColor: Color) => {
       if (newColor === color) return;
-
+      document.body.setAttribute("data-color", newColor);
       setCookie("color", newColor, { maxAge: 2_592_000 });
       setColorRaw(newColor);
     },

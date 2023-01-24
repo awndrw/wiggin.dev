@@ -10,10 +10,10 @@
 
 .colorSelector {
   background-color: color.$background;
-  border: 2px solid color.$text;
+  border: 2px solid color.$accent-primary;
   -webkit-tap-highlight-color: transparent;
 }
 
 .navButton {
-  stroke: color.$container-text;
+  stroke: color.$accent-secondary;
 }

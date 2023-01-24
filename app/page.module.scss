@@ -2,30 +2,26 @@
 @use 'theme/size';
 @use 'theme/util';
 
-.page {
-  padding-inline: size.$spacing-large;
-  padding-block-end: 48px;
-
-  main, section {
-    min-height: 100vh;
-    padding: size.$spacing-large 0;
-    font-size: size.$font-large;
-
-    & > h2 {
-      margin: size.$spacing-large 0;
-    }
-  }
-}
-
-.hero {
-  background-color: color.$background;
-  color: color.$text;
-}
-
-.hero, .part2 {
+.textcolumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hero {
+  background-color: color.$accent-primary-contrast;
+  color: color.$accent-primary;
+}
+
+.neutral {
+  background-color: color.$accent-tertiary-variant;
+  color: color.$text-primary;
+}
+
+.writing {
+  h2 {
+    margin-block: size.$spacing-small;
+  }
 }
 
 .text {
@@ -41,7 +37,7 @@
 }
 
 .separator {
-  background-color: color.$text;
+  background-color: color.$accent-primary;
   height: 1px;
   width: calc(100% + #{size.$spacing-large});
   margin: 0 calc(-1 * #{size.$spacing-large});
@@ -56,7 +52,19 @@
                   )
     );
   width: fit-content;
-  max-width: 80%;
   gap: size.$spacing-large calc(2 * #{size.$spacing-large});
-  padding-top: size.$spacing-large;
+  padding-block: size.$spacing-large size.$spacing-small;
+  // max-height: 60vh;
+  // overflow-y: visible;
+
+  @include util.mw-md {
+    max-width: 80%;
+  }
+}
+
+.displayP3 {
+  display: none;
+  @supports (color: color(display-p3 0 0 0)) {
+    display: inline;
+  }
 }

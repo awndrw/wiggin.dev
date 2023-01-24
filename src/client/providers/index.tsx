@@ -2,21 +2,19 @@
 
 import React from "react";
 import { Provider as ReactWrapProvider } from "react-wrap-balancer";
-import { Color as ThemeColor } from "utils/theme";
-import * as Color from "./Color";
-
-export { Color };
+import { Provider as ColorProvider } from "client/providers/Color";
+import type { Color } from "utils/theme";
 
 export default function Providers({
-  initialColor,
   children,
+  initialColor,
 }: {
-  initialColor: ThemeColor;
+  initialColor: Color;
   children: React.ReactNode;
 }) {
   return (
     <ReactWrapProvider>
-      <Color.Provider initialColor={initialColor}>{children}</Color.Provider>
+      <ColorProvider initialColor={initialColor}>{children}</ColorProvider>
     </ReactWrapProvider>
   );
 }

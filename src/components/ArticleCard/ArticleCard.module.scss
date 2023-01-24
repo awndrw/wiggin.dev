@@ -2,28 +2,21 @@
 @use 'theme/size';
 
 .card {
-  max-width: 400px;
-  text-decoration: none;
-  color: color.$text;
+  max-width: 425px;
+  color: color.$text-primary;
   border-radius: size.$border-radius-large;
   position: relative;
-
-  &:hover .cardBox {
-    background-color: color.$container-background;
-    color: color.$container-text;
-    border-color: transparent;
-  }
 }
 
 .cardBox {
+  text-decoration: none;
   padding: size.$spacing-large;
   border-radius: size.$border-radius-large;
   display: grid;
   gap: size.$spacing-small;
   position: relative;
-  background-color: color.$background;
-  color: color.$text;
-  border: 1px solid color.$text;
+  background-color: color.$accent-tertiary;
+  color: color.$text-primary;
   transition-property: background-color, color, border-color;
   transition-duration: 200ms;
 }
@@ -45,7 +38,7 @@
   font-size: size.$font-small;
   padding-block-start: size.$spacing-small;
   padding-inline: size.$spacing-large;
-  color: color.$text;
+  color: color.$text-primary;
   font-weight: 300;
   width: 100%;
 }

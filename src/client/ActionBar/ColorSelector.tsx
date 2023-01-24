@@ -9,16 +9,15 @@ import useTimedSpring from "client/useTimedSpring";
 import styles from "./ActionBar.module.scss";
 
 export default function ColorSelector({ color }: { color: Color }) {
-  const { setColor, color: currentColor } = React.useContext(ColorContext);
-
   const [style, trigger] = useTimedSpring();
+  const { color: currentColor, setColor } = React.useContext(ColorContext);
 
   const onClick = React.useCallback(() => {
+    setColor(color);
     if (color === currentColor) {
       trigger({ rotation: -4, x: -4 });
     } else {
       trigger({ y: 3 });
-      setColor(color);
     }
   }, [color, currentColor, setColor, trigger]);
 
@@ -27,6 +26,7 @@ export default function ColorSelector({ color }: { color: Color }) {
       style={style}
       className={c(styles.button, styles.colorSelector)}
       data-color={color}
+      // TODO: figure out aria-pressed without state
       aria-pressed={color === currentColor}
       aria-label={color}
       onClick={onClick}

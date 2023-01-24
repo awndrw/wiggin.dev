@@ -1,7 +1,24 @@
 @use 'sass:map';
-@use './base';
 
-$text: var(--#{map.get(base.$obfuscated-vars, "text")});
-$background: var(--#{map.get(base.$obfuscated-vars, "background")});
-$container-text: var(--#{map.get(base.$obfuscated-vars, "container-text")});
-$container-background: var(--#{map.get(base.$obfuscated-vars, "container-background")});
+$text-primary: var(--color-text-primary);
+$text-secondary: var(--color-text-secondary);
+$background: var(--color-background);
+$accent-primary: var(--color-accent-primary);
+$accent-primary-contrast: var(--color-accent-primary-contrast);
+$accent-secondary: var(--color-accent-secondary);
+$accent-secondary-contrast: var(--color-accent-secondary-contrast);
+$accent-tertiary: var(--color-accent-tertiary);
+$accent-tertiary-variant: var(--color-accent-tertiary-variant);
+
+@mixin init {
+  --color-text-primary: hsl(210, 2%, 18%);
+  --color-text-secondary: hsl(220, 2%, 34%);
+  --color-background: hsl(270, 50%, 99%);
+
+  @media (prefers-color-scheme: dark) {
+    --color-text-primary: hsl(270, 4%, 89%);
+    --color-text-secondary: hsl(270, 2%, 76%);
+    --color-background: hsl(210, 7%, 11%);
+  }
+}
+

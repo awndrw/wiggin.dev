@@ -1,44 +1,22 @@
-@use 'sass:map';
 @use 'theme/color';
 @use 'theme/color/primary';
-@use 'theme/color/neutral';
-@use 'theme/util';
 @use 'theme/size';
 
 :root {
+  @include color.init;
   @include size.init;
 }
 
-// Neutral colors are applied at root
-:root,
-::before,
-::after {
-  @include neutral.make-theme('light');
-  @media (prefers-color-scheme: dark) {
-    @include neutral.make-theme('dark');
-  }
-}
-
-*[data-color="neutral"] {
-  @include util.all {
-    @include neutral.make-theme('light');
-    @media (prefers-color-scheme: dark) {
-      @include neutral.make-theme('dark');
-    }
-  }
-}
-
-// Primary colors are scoped (.blue, .red, etc.)
-@each $color in map.keys(primary.$colors) {
+// TODO: Move primary colors to the `color` initializer
+@each $color in primary.$colors {
   *[data-color="#{$color}"] {
-    @include util.all {
-      @include primary.make-theme($color, 'light');
-      @media (prefers-color-scheme: dark) {
-        @include primary.make-theme($color, 'dark');
-      }
+    @include primary.make-theme($color, 'light');
+    @media (prefers-color-scheme: dark) {
+      @include primary.make-theme($color, 'dark');
     }
   }
 }
+
 
 * {
   box-sizing: border-box;
@@ -64,7 +42,7 @@ body {
 }
 
 body {
-  color: color.$text;
+  color: color.$text-primary;
   background-color: color.$background;
   display: grid;
   align-items: center;

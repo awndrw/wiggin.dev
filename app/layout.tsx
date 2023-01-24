@@ -6,8 +6,9 @@ import Providers from "client/providers";
 import React from "react";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
-import { Color } from "utils/theme";
+import { Color, DEFAULT_COLOR } from "utils/theme";
 import { ActionBar } from "./ActionBar";
+import styles from "./layout.module.scss";
 
 import "./globals.scss";
 
@@ -21,21 +22,21 @@ export default async function RootLayout({
   const cookies = nextCookies();
 
   const colorCookie = Color.safeParse(cookies.get(StorageKey.COLOR)?.value);
-  const color = colorCookie.success ? colorCookie.data : "neutral";
+  const color = colorCookie.success ? colorCookie.data : DEFAULT_COLOR;
 
   const analyticsMode =
     env.VERCEL_ENV === "production" ? "production" : "development";
 
   return (
     <html lang="en">
-      <body className={sora.className}>
-        <ScrollTopOnRouteChange>
+      <body className={sora.className} data-color={color}>
+        <div className={styles.pageWrapper}>
           <Providers initialColor={color}>
-            {children}
+            <ScrollTopOnRouteChange>{children}</ScrollTopOnRouteChange>
             <ActionBar />
-            <Analytics mode={analyticsMode} />
           </Providers>
-        </ScrollTopOnRouteChange>
+          <Analytics mode={analyticsMode} />
+        </div>
       </body>
     </html>
   );

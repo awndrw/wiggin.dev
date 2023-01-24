@@ -1,75 +1,47 @@
 @use 'sass:map';
-@use './base';
+@use 'sass:list';
+@use 'sass:color';
 
-$colors: (
-        'blue': (
-                0: #000000,
-                10: #001d35,
-                20: #003256,
-                30: #00497a,
-                40: #0062a0,
-                50: #2d7bbd,
-                60: #4d95d9,
-                70: #6bb0f5,
-                80: #9ccaff,
-                90: #d0e4ff,
-                95: #e9f1ff,
-                99: #fcfcff,
-                100: #ffffff,
-        ),
-        'green': (
-                0: #000000,
-                10: #002116,
-                20: #003829,
-                30: #00513c,
-                40: #006c51,
-                50: #008767,
-                60: #1fa37e,
-                70: #46bf98,
-                80: #65dbb3,
-                90: #83f8ce,
-                95: #bbffe2,
-                99: #f4fff7,
-                100: #ffffff,
-        ),
-        'red': (
-                0: #000000,
-                10: #410006,
-                20: #601216,
-                30: #7f292a,
-                40: #9e4040,
-                50: #bd5757,
-                60: #dd706e,
-                70: #fd8a87,
-                80: #ffb3b0,
-                90: #ffdad8,
-                95: #ffedeb,
-                99: #fffbfb,
-                100: #ffffff,
-        )
+$hues: (
+  'red': 354,
+  'blue': 203,
+  'green': 165
 );
 
-$modes: (
+$colors: map.keys($hues);
+
+$hslValues: (
         'light': (
-                'text': 40,
-                'background': 99,
-                'container-text': 10,
-                'container-background': 90,
+                'primary': 42% 44%,
+                'primary-contrast': 100% 99%,
+                'secondary': 100% 13%,
+                'secondary-contrast': 100% 92%,
+                'tertiary': 100% 97%,
+                'tertiary-variant': 100% 100%,
         ),
         'dark': (
-                'text': 80,
-                'background': 20,
-                'container-text': 90,
-                'container-background': 30,
+                'primary': 100% 85%,
+                'primary-contrast': 68% 22%,
+                'secondary': 100% 92%,
+                'secondary-contrast': 51% 33%,
+                'tertiary': 20% 17%,
+                'tertiary-variant': 45% 8%,
         ),
 );
 
 @mixin make-theme($color, $mode) {
-  @if map.has-key($colors, $color) and map.has-key($modes, $mode) {
-    @each $color-name, $tone in map.get($modes, $mode) {
-      $var: map.get(base.$obfuscated-vars, $color-name);
-      $hex: map.get($colors, $color, $tone);
-      --#{$var}: #{$hex};
+  @if map.has-key($hues, $color) and map.has-key($hslValues, $mode) {
+    @each $color-name, $saturation-lightness in map.get($hslValues, $mode) {
+      $hue: map.get($hues, $color);
+      $saturation: list.nth($saturation-lightness, 1);
+      $lightness: list.nth($saturation-lightness, 2);
+      $hsl: hsl($hue $saturation $lightness);
+      --color-accent-#{$color-name}: #{$hsl};
+      // display p3
+      $red: color.red($hsl) / 255;
+      $green: color.green($hsl) / 255;
+      $blue: color.blue($hsl) / 255;
+      --color-accent-#{$color-name}: color(display-p3 #{$red} #{$green} #{$blue});
     }
   } @else {
     @warn "Color or mode not found: #{$color}, #{$mode}";

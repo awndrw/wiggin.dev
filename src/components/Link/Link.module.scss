@@ -8,7 +8,7 @@ $hover-transition: 200ms ease;
   display: inline;
   text-decoration: none;
   border-radius: size.$border-radius-small;
-  color: color.$text;
+  color: color.$accent-primary;
   transition: color $hover-transition, background-color $hover-transition;
   margin-left: -2px;
   padding-left: 2px;
@@ -16,8 +16,8 @@ $hover-transition: 200ms ease;
 
   @include util.hover {
     outline: none;
-    color: color.$container-text;
-    background-color: color.$container-background;
+    color: color.$accent-secondary;
+    background-color: color.$accent-secondary-contrast;
   }
 }
 

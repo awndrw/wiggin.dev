@@ -14,7 +14,6 @@
 .link {
   width: 95%;
   max-width: 768px;
-  margin-bottom: 48px;
 
   display: flex;
   flex-direction: column;
@@ -29,5 +28,5 @@
   width: 100%;
   height: auto;
   border-radius: size.$border-radius-large;
-  border: 1px solid color.$text;
+  border: 1px solid color.$accent-primary;
 }

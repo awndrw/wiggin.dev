@@ -21,8 +21,8 @@ export default async function Page({
   }
 
   return (
-    <div>
+    <section>
       <h1>{post.title}</h1>
-    </div>
+    </section>
   );
 }
