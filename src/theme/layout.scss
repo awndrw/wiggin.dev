@@ -16,6 +16,7 @@ $themes: 'accent' 'neutral';
     @error "Theme not found: #{$theme}";
   }
   min-height: calc(100vh - 1px);
+  min-height: calc(100svh - 1px);
   padding: size.$spacing-large;
   @if $theme == 'accent' {
       background-color: color.$accent-primary-contrast;

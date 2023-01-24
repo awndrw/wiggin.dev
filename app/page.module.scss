@@ -44,6 +44,9 @@
       height: 140%;
       bottom: -70%;
   }
+  & path {
+    transition: opacity 800ms ease;
+  }
 }
 
 .about {

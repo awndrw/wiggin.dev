@@ -6,8 +6,12 @@ import React from "react";
 import Balancer from "react-wrap-balancer";
 import { sdk } from "cms";
 import { Separator } from "client/Separator";
-import { Scribble } from "./Scribble";
+import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
+
+const ScribblePath = dynamic(() =>
+  import("./ScribblePath").then((m) => m.ScribblePath)
+);
 
 const BALANCER_RATIO = 0.45;
 
@@ -32,7 +36,13 @@ export default async function Page() {
           I&apos;m an <abbr title="New York City">nyc</abbr> based design
           engineer excited by design systems, motion design and accessibility.
         </Balancer>
-        <Scribble className={styles.scribble} />
+        <svg
+          className={styles.scribble}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 347.95 1214.43"
+        >
+          <ScribblePath />
+        </svg>
       </section>
       {showWriting && (
         <>
