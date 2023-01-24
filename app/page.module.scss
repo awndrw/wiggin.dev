@@ -27,11 +27,14 @@
   position: absolute;
   bottom: -20%;
   right: 8%;
-  height: 95%;
   z-index: 0;
   display: none;
-  @include util.mw-md {
+  @include util.mw-sm {
     display: block;
+    height: 75%
+  }
+  @include util.mw-md {
+      height: 95%
   }
   & path {
     fill: color.$accent-secondary-contrast;

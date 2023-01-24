@@ -5,7 +5,7 @@
 $hover-transition: 200ms ease;
 
 .link {
-  display: inline;
+  display: inline-block;
   text-decoration: none;
   border-radius: size.$border-radius-small;
   color: color.$accent-primary;
