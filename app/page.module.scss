@@ -32,18 +32,19 @@
   overflow: visible;
 
   position: absolute;
-  right: 0;
-  transform: rotate(-2deg);
   z-index: 0;
   height: 100%;
-  bottom: -45%;
+  bottom: -35%;
+  right: -15%;
   @include util.mw-sm {
-    height: 120%;
-    bottom: -60%;
+    height: 130%;
+    bottom: -50%;
+    right: -5%;
   }
   @include util.mw-md {
       height: 140%;
-      bottom: -70%;
+      bottom: -60%;
+      right: 0;
   }
   & path {
     transition: opacity 800ms ease;

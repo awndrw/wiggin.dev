@@ -39,7 +39,7 @@ export default async function Page() {
         <svg
           className={styles.scribble}
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 347.95 1214.43"
+          viewBox="0 0 862.83 1809.95"
         >
           <ScribblePath />
         </svg>
