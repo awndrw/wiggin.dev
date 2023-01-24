@@ -11,8 +11,8 @@ export const LinkType = {
 export type LinkType = (typeof LinkType)[keyof typeof LinkType];
 
 export interface LinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    React.PropsWithChildren {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: string;
   href: string;
   type?: LinkType;
   srOnly?: boolean;
@@ -28,6 +28,10 @@ export function Link({
   rel,
   ...linkProps
 }: LinkProps) {
+  const words = children.split(" ");
+  const lastWord = words.at(-1);
+  const rest = words.slice(0, -1).join(" ");
+
   if (type === "internal") {
     return (
       <InternalLink
@@ -35,13 +39,16 @@ export function Link({
         className={c(styles.link, className)}
         {...linkProps}
       >
-        {children}
-        <Icon
-          iconName="arrow-right"
-          className={styles.icon}
-          aria-hidden
-          focusable={false}
-        />
+        {rest.length ? rest + " " : ""}
+        <span style={{ display: "inline-block" }}>
+          {lastWord}
+          <Icon
+            iconName="arrow-right"
+            className={styles.icon}
+            aria-hidden
+            focusable={false}
+          />
+        </span>
       </InternalLink>
     );
   } else {
@@ -53,13 +60,16 @@ export function Link({
         className={c(styles.link, className)}
         {...linkProps}
       >
-        {children}
-        <Icon
-          iconName="arrow-up-right"
-          className={styles.icon}
-          aria-hidden
-          focusable={false}
-        />
+        {rest.length ? rest + " " : ""}
+        <span style={{ display: "inline-block" }}>
+          {lastWord}
+          <Icon
+            iconName="arrow-up-right"
+            className={styles.icon}
+            aria-hidden
+            focusable={false}
+          />
+        </span>
       </a>
     );
   }
