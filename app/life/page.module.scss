@@ -20,3 +20,13 @@
   border-radius: size.$border-radius-large;
   border: 1px solid color.$accent-primary;
 }
+
+.text {
+  width: 300px;
+  height: 400px;
+  color: color.$text-primary;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: size.$spacing-large;
+}

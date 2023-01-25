@@ -8,19 +8,28 @@ import styles from "./page.module.scss";
 
 const images = [image1, image2, image3, image4, image5];
 
+const baseProps = {
+  className: styles.image,
+  placeholder: "blur",
+} as const;
+
 export default function Page() {
+  const showCopy = false;
+
   return (
     <div className={styles.page}>
       <section className={styles.section}>
-        {images.map((image) => (
-          <Image
-            src={image}
-            key={image.src}
-            className={styles.image}
-            alt="image"
-            placeholder="blur"
-          />
-        ))}
+        <Image {...baseProps} src={image1} alt="image" />
+        {showCopy && (
+          <div className={styles.text}>
+            I couldn&apos;t resist including a few cat and dog pictures. so here
+            they are.
+          </div>
+        )}
+        <Image {...baseProps} src={image2} alt="image" />
+        <Image {...baseProps} src={image3} alt="image" />
+        <Image {...baseProps} src={image4} alt="image" />
+        <Image {...baseProps} src={image5} alt="image" />
       </section>
     </div>
   );
