@@ -44,19 +44,6 @@ export default async function Page() {
           <ScribblePath />
         </svg>
       </section>
-      {showWriting && (
-        <>
-          <Separator orientation="horizontal" className={styles.separator} />
-          <section className={c(styles.neutral, styles.writing)}>
-            <h2>Writing</h2>
-            <div className={styles.articleList}>
-              {allPosts.allPosts.map((post) => (
-                <ArticleCard {...post} key={post.slug} />
-              ))}
-            </div>
-          </section>
-        </>
-      )}
       <Separator orientation="horizontal" className={styles.separator} />
       <section data-section="about" className={styles.about}>
         <Balancer ratio={BALANCER_RATIO} as="p">
@@ -91,6 +78,19 @@ export default async function Page() {
           </span>
         </Balancer>
       </section>
+      {showWriting && (
+        <>
+          <Separator orientation="horizontal" className={styles.separator} />
+          <section className={c(styles.neutral, styles.writing)}>
+            <h2>Writing</h2>
+            <div className={styles.articleList}>
+              {allPosts.allPosts.map((post) => (
+                <ArticleCard {...post} key={post.slug} />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
     </div>
   );
 }
