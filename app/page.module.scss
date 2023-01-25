@@ -54,6 +54,23 @@
   }
 }
 
+.two {
+  height: 55%;
+  bottom: -30%;
+  left: -60%;
+  transform: rotate(55deg);
+  @include util.mw-sm {
+    height: 55%;
+    bottom: -35%;
+    left: -20%;
+  }
+  @include util.mw-md {
+    height: 55%;
+    bottom: -35%;
+    left: -15%;
+  }
+}
+
 .about {
   @include layout.section('neutral');
   &[class] {
