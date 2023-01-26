@@ -22,19 +22,6 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   const [pathLength, setPathLength] = React.useState(0);
   const strokeDashoffset = useSpringValue<number>(0, { config: config.stiff });
 
-  const updatePosition = React.useCallback(
-    (immediate: boolean) => {
-      const about = document.querySelector("main > section:nth-of-type(2)");
-      if (!about) return;
-      const scrollProgress =
-        1 - about.getBoundingClientRect().top / window.innerHeight;
-      const pathProgress = pathLength * scrollProgress;
-      const startingPosition = pathLength + pathLength / animatedPathRatio;
-      strokeDashoffset.start(startingPosition - pathProgress, { immediate });
-    },
-    [animatedPathRatio, pathLength, strokeDashoffset]
-  );
-
   useIsomorphicLayoutEffect(() => {
     const path = pathRef.current;
     if (!path) {
@@ -45,12 +32,22 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     setPathLength(scaledLength);
   }, [pathRef]);
 
-  useIsomorphicLayoutEffect(() => {
-    updatePosition(true);
-    const handleScroll = () => updatePosition(false);
+  React.useEffect(() => {
+    let immediate = true;
+    const handleScroll = () => {
+      const about = document.querySelector("main > section:nth-of-type(2)");
+      if (!about) return;
+      const scrollProgress =
+        1 - about.getBoundingClientRect().top / window.innerHeight;
+      const pathProgress = pathLength * scrollProgress;
+      const startingPosition = pathLength + pathLength / animatedPathRatio;
+      strokeDashoffset.start(startingPosition - pathProgress, { immediate });
+    };
+    handleScroll();
+    immediate = false;
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [updatePosition]);
+  }, [animatedPathRatio, pathLength, strokeDashoffset]);
 
   return (
     <animated.path
