@@ -3,6 +3,9 @@
 import { config, useSpringValue } from "@react-spring/web";
 import React from "react";
 
+const minmax = (value: number, min: number, max: number) =>
+  Math.min(Math.max(value, min), max);
+
 export interface AnimatedPathProps {
   pathRef: React.RefObject<SVGPathElement>;
   scrollTargetSelector: string;
@@ -30,23 +33,14 @@ export const useAnimatedPath = ({
     const handleScroll = () => {
       const scrollProgress =
         1 - scrollTarget.getBoundingClientRect().top / window.innerHeight;
-      const startingPosition = pathLength + pathLength / animatedSegmentLength;
-      const endingPosition =
-        pathLength - pathLength / (animatedSegmentLength - 1);
-      const travelDistance = startingPosition - endingPosition;
-      const pathProgress = scrollProgress * travelDistance;
-      strokeDashoffset.start(startingPosition - pathProgress);
+      const pathProgress = scrollProgress * pathLength;
+      strokeDashoffset.start(-1 * minmax(pathProgress, 0, pathLength));
     };
     // run once on load
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [
-    animatedSegmentLength,
-    pathLength,
-    scrollTargetSelector,
-    strokeDashoffset,
-  ]);
+  }, [pathLength, strokeDashoffset]);
 
   return {
     strokeDashoffset,
