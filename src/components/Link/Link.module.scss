@@ -2,22 +2,23 @@
 @use 'theme/util';
 @use 'theme/size';
 
-$hover-transition: 200ms ease;
-
 .link {
   display: inline;
   text-decoration: none;
   border-radius: size.$border-radius-small;
   color: color.$accent-primary;
-  transition: color $hover-transition, background-color $hover-transition;
-  margin-left: -2px;
-  padding-left: 2px;
+  transition-property: color, background-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+  margin-inline: -12px -6px;
+  padding-inline: 12px 4px;
   box-decoration-break: clone;
 
   @include util.hover {
     outline: none;
-    color: color.$accent-secondary;
     background-color: color.$accent-secondary-contrast;
+    color: color.$accent-secondary;
+    transition-duration: 400ms;
   }
 }
 
