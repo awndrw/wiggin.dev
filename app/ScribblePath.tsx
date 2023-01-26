@@ -22,7 +22,7 @@ export const ScribblePath = () => {
   }, [pathRef]);
 
   React.useEffect(() => {
-    const about = document.querySelector("section[data-about]");
+    const about = document.querySelector("main > section:nth-of-type(2)");
     if (!about) {
       return;
     }

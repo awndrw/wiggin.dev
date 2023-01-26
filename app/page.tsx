@@ -21,8 +21,8 @@ export default async function Page() {
   const allPosts = await sdk.AllPosts({ first: 6 });
 
   return (
-    <div className={styles.page}>
-      <section role="main" className={styles.hero}>
+    <main className={styles.page}>
+      <section className={styles.hero}>
         <h1>
           Hi, I&apos;m Andrew
           <Icon
@@ -44,8 +44,12 @@ export default async function Page() {
           <ScribblePath />
         </svg>
       </section>
-      <Separator orientation="horizontal" className={styles.separator} />
-      <section data-about="true" className={styles.about}>
+      <Separator
+        orientation="horizontal"
+        decorative
+        className={styles.separator}
+      />
+      <section className={styles.about}>
         <Balancer ratio={BALANCER_RATIO} as="p">
           I&apos;ve been working on{" "}
           <Link href="https://familycenter.meta.com" type="external">
@@ -91,6 +95,6 @@ export default async function Page() {
           </section>
         </>
       )}
-    </div>
+    </main>
   );
 }
