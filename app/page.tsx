@@ -9,8 +9,9 @@ import { Separator } from "client/Separator";
 import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
-const ScribblePath = dynamic(() =>
-  import("./ScribblePath").then((m) => m.ScribblePath)
+const ScribblePath = dynamic(
+  () => import("./ScribblePath").then((m) => m.ScribblePath),
+  { ssr: true }
 );
 
 const BALANCER_RATIO = 0.45;
