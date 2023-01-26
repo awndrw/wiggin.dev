@@ -3,9 +3,6 @@
 import { animated, config, useSpringValue } from "@react-spring/web";
 import React from "react";
 
-const minmax = (value: number, min: number, max: number) =>
-  Math.min(Math.max(value, min), max);
-
 // The ratio of the animated path length to the full path
 const PATH_SIZE = 2;
 
@@ -15,10 +12,13 @@ export const ScribblePath = () => {
   const strokeDashoffset = useSpringValue<number>(0, { config: config.stiff });
 
   React.useEffect(() => {
-    if (!pathRef.current) {
+    const path = pathRef.current;
+    if (!path) {
       return;
     }
-    setPathLength(pathRef.current.getTotalLength());
+    const scale = path.getBoundingClientRect().width / path.getBBox().width;
+    const scaledLength = path.getTotalLength() * scale;
+    setPathLength(scaledLength);
   }, [pathRef]);
 
   React.useEffect(() => {
@@ -30,8 +30,9 @@ export const ScribblePath = () => {
     const handleScroll = () => {
       const scrollProgress =
         1 - about.getBoundingClientRect().top / window.innerHeight;
-      const pathProgress = scrollProgress * pathLength;
-      strokeDashoffset.start(-1 * minmax(pathProgress, 0, pathLength));
+      const pathProgress = pathLength * scrollProgress;
+      const startingPosition = pathLength + pathLength / PATH_SIZE;
+      strokeDashoffset.start(startingPosition - pathProgress);
     };
     // run once on load
     handleScroll();

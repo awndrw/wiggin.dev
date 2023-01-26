@@ -25,29 +25,28 @@
 
 .scribble {
   stroke: color.$accent-secondary-contrast;
-  stroke-width: 24px;
+  stroke-width: 12px;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
   overflow: visible;
 
   position: absolute;
+  right: 0;
   z-index: 1;
   height: 100%;
   bottom: -35%;
-  right: -15%;
   @include util.mw-sm {
     height: 130%;
     bottom: -50%;
-    right: -5%;
   }
   @include util.mw-md {
       height: 140%;
       bottom: -60%;
-      right: 0;
   }
   & path {
     transition: opacity 800ms ease;
+    vector-effect: non-scaling-stroke;
   }
 }
 
