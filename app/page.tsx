@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
 const AnimatedPath = dynamic(
-  () => import("./AnimatedPath").then((m) => m.AnimatedPath),
+  () => import("client/AnimatedPath").then((m) => m.AnimatedPath),
   { ssr: true }
 );
 
