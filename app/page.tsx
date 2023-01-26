@@ -55,11 +55,8 @@ export default async function Page() {
           <Link href="https://familycenter.meta.com" type="external">
             parental supervision
           </Link>{" "}
-          at Instagram and playing with CSS and WebAssembly in my{" "}
-          <Link href="/life" type="internal">
-            free time
-          </Link>
-          . Check out my{" "}
+          at Instagram and playing with CSS and WebAssembly in my free time.
+          Check out my{" "}
           <Link href="/resume" type="internal">
             resume
           </Link>{" "}
