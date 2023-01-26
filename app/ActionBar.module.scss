@@ -30,7 +30,7 @@
   justify-content: center;
   gap: 8px;
   padding: 6px 10px;
-  border-radius: 44px;
+  border-radius: size.$border-radius-small;
   background-color: color.$accent-secondary-contrast;
   pointer-events: auto;
   animation-name: slideInFromBottom;

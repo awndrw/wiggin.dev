@@ -6,7 +6,8 @@ $font-large: var(--font-size-large);
 $spacing-small: var(--spacing-size-small);
 $spacing-large: var(--spacing-size-large);
 
-$border-radius-small: 12px;
+// this must be at least as big as the element's height
+$border-radius-small: 500px;
 $border-radius-large: 20px;
 
 @mixin init {
