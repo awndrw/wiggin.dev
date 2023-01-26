@@ -33,8 +33,8 @@ export default async function Page() {
           />
         </h1>
         <Balancer ratio={BALANCER_RATIO} as="p">
-          I&apos;m an <abbr title="New York City">nyc</abbr> based design
-          engineer excited by design systems, motion design and accessibility.
+          I&apos;m a brooklyn based design engineer excited by design systems,
+          motion design and accessibility.
         </Balancer>
         <svg
           className={styles.scribble}
