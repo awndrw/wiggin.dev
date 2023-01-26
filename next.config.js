@@ -1,5 +1,8 @@
 const path = require("path");
 const loaderUtils = require("loader-utils");
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 /**
  * @param {string} str A hashed classname
@@ -80,4 +83,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
