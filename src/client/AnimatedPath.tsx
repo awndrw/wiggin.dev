@@ -1,6 +1,11 @@
 "use client";
 
-import { animated, config, useSpringValue } from "@react-spring/web";
+import {
+  animated,
+  config,
+  useIsomorphicLayoutEffect,
+  useSpringValue,
+} from "@react-spring/web";
 import React from "react";
 
 export interface AnimatedPathProps {
@@ -17,7 +22,20 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   const [pathLength, setPathLength] = React.useState(0);
   const strokeDashoffset = useSpringValue<number>(0, { config: config.stiff });
 
-  React.useEffect(() => {
+  const updatePosition = React.useCallback(
+    (immediate: boolean) => {
+      const about = document.querySelector("main > section:nth-of-type(2)");
+      if (!about) return;
+      const scrollProgress =
+        1 - about.getBoundingClientRect().top / window.innerHeight;
+      const pathProgress = pathLength * scrollProgress;
+      const startingPosition = pathLength + pathLength / animatedPathRatio;
+      strokeDashoffset.start(startingPosition - pathProgress, { immediate });
+    },
+    [animatedPathRatio, pathLength, strokeDashoffset]
+  );
+
+  useIsomorphicLayoutEffect(() => {
     const path = pathRef.current;
     if (!path) {
       return;
@@ -27,24 +45,12 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     setPathLength(scaledLength);
   }, [pathRef]);
 
-  React.useEffect(() => {
-    const about = document.querySelector("main > section:nth-of-type(2)");
-    if (!about) {
-      return;
-    }
-
-    const handleScroll = () => {
-      const scrollProgress =
-        1 - about.getBoundingClientRect().top / window.innerHeight;
-      const pathProgress = pathLength * scrollProgress;
-      const startingPosition = pathLength + pathLength / animatedPathRatio;
-      strokeDashoffset.start(startingPosition - pathProgress);
-    };
-    // run once on load
-    handleScroll();
+  useIsomorphicLayoutEffect(() => {
+    updatePosition(true);
+    const handleScroll = () => updatePosition(false);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [animatedPathRatio, pathLength, strokeDashoffset]);
+  }, [updatePosition]);
 
   return (
     <animated.path
