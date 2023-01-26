@@ -2,7 +2,8 @@
 
 import { setCookie } from "cookies-next";
 import React from "react";
-import { Color } from "utils/theme";
+import { StorageKey } from "utils/constants";
+import { Color, DEFAULT_COLOR } from "utils/theme";
 
 export interface Context {
   setColor: (color: Color) => void;
@@ -11,7 +12,7 @@ export interface Context {
 
 export const Context = React.createContext<Context>({
   setColor: () => null,
-  color: "red",
+  color: DEFAULT_COLOR,
 });
 
 export function Provider({
@@ -27,7 +28,7 @@ export function Provider({
     (newColor: Color) => {
       if (newColor === color) return;
       document.body.setAttribute("data-color", newColor);
-      setCookie("color", newColor, { maxAge: 2_592_000 });
+      setCookie(StorageKey.COLOR, newColor, { maxAge: 2_592_000 });
       setColorRaw(newColor);
     },
     [color]
