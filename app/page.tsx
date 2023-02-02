@@ -7,6 +7,7 @@ import Balancer from "react-wrap-balancer";
 import { sdk } from "cms";
 import { Separator } from "client/Separator";
 import dynamic from "next/dynamic";
+import { ColorLink } from "./ColorLink";
 import styles from "./page.module.scss";
 
 const AnimatedPath = dynamic(
@@ -68,18 +69,9 @@ export default async function Page() {
           <Link href="mailto:andrew@wiggin.dev" type="external">
             email
           </Link>
-          .{" "}
-          <span className={styles.displayP3}>
-            These colors were brought to you by{" "}
-            <span style={{ display: "inline-block" }}>
-              <Link
-                href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/"
-                type="external"
-              >
-                Display-P3
-              </Link>
-              .
-            </span>
+          . These colors were brought to you by{" "}
+          <span style={{ display: "inline-block" }}>
+            <ColorLink />.
           </span>
         </Balancer>
       </section>
