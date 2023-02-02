@@ -34,6 +34,7 @@ $lightnessAndChromaValues: (
     @error "Mode not found: #{$mode}";
   }
   @each $color in $colors {
+    body[data-color="#{$color}"] *[data-color="initial"],
     *[data-color="#{$color}"] {
       @each $color-name, $lightness-chroma in map.get($lightnessAndChromaValues, $mode) {
         $lightness: list.nth($lightness-chroma, 1);
