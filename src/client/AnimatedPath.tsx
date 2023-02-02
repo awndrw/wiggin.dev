@@ -37,7 +37,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [pathRef]);
 
-  useIsomorphicLayoutEffect(() => {
+  React.useEffect(() => {
     let immediate = true;
     const handleScroll = () => {
       const about = document.querySelector("main > section:nth-of-type(2)");
