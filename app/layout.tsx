@@ -1,4 +1,4 @@
-import { Sora } from "@next/font/google";
+import { Work_Sans } from "@next/font/google";
 import { Analytics } from "client/Analytics";
 import { RouteChangeHandler } from "client/RouteChangeHandler";
 import { cookies as nextCookies } from "next/headers";
@@ -11,7 +11,7 @@ import { ActionBar } from "./ActionBar";
 
 import "./globals.scss";
 
-const sora = Sora({ subsets: ["latin"] });
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,
@@ -28,7 +28,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={sora.className} data-color={color}>
+      <body className={workSans.className} data-color={color}>
         <Providers initialColor={color}>
           <RouteChangeHandler>{children}</RouteChangeHandler>
           <ActionBar />
