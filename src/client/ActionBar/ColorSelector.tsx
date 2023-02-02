@@ -1,12 +1,12 @@
 "use client";
 
 import { animated } from "@react-spring/web";
-import c from "classnames";
 import { Context as ColorContext } from "client/providers/Color";
 import React from "react";
 import { Color } from "utils/theme";
 import useTimedSpring from "client/useTimedSpring";
-import styles from "./ActionBar.module.scss";
+import { ActionBarButton } from "./ActionBarButton";
+import styles from "./ColorSelector.module.scss";
 
 export default function ColorSelector({ color }: { color: Color }) {
   const [style, trigger] = useTimedSpring();
@@ -22,14 +22,16 @@ export default function ColorSelector({ color }: { color: Color }) {
   }, [color, currentColor, setColor, trigger]);
 
   return (
-    <animated.button
-      style={style}
-      className={c(styles.button, styles.colorSelector)}
-      data-color={color}
-      // TODO: figure out aria-pressed without state
-      aria-pressed={color === currentColor}
-      aria-label={color}
-      onClick={onClick}
-    />
+    <ActionBarButton focusArrowColor={color}>
+      <animated.button
+        style={style}
+        className={styles.colorSelector}
+        data-color={color}
+        // TODO: figure out aria-pressed without state
+        aria-pressed={color === currentColor}
+        aria-label={color}
+        onClick={onClick}
+      />
+    </ActionBarButton>
   );
 }

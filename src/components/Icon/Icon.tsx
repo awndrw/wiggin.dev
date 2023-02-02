@@ -8,6 +8,7 @@ export const IconName = {
   SMILE: "smile",
   ARROW_LEFT: "arrow-left",
   HOME: "home",
+  CARET_DOWN: "caret-down",
 } as const;
 export type IconName = (typeof IconName)[keyof typeof IconName];
 
@@ -73,5 +74,7 @@ const getIconPath = (name: IconName) => {
           <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </>
       );
+    case "caret-down":
+      return <polyline points="6 9 12 15 18 9" />;
   }
 };

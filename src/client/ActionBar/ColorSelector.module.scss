@@ -1,0 +1,11 @@
+@use 'theme/color';
+
+.colorSelector {
+  background-color: color.$background;
+  border: 2px solid color.$accent-primary;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.focusArrow {
+  stroke: color.$accent-primary;
+}

@@ -1,10 +1,10 @@
 "use client";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import c from "classnames";
+import { ActionBarButton } from "client/ActionBar/ActionBarButton";
 import { Icon } from "components/Icon";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import styles from "./ActionBar.module.scss";
+import styles from "./NavButton.module.scss";
 
 export default function NavButton() {
   const pathname = usePathname();
@@ -17,17 +17,23 @@ export default function NavButton() {
   const isBackButton = searchParams.get("ref") === "internal";
 
   return (
-    <button
-      className={c(styles.button, styles.backButton)}
-      style={{
-        borderRadius: isBackButton ? undefined : 0,
-      }}
-      onClick={isBackButton ? router.back : () => router.push("/")}
-      role="link"
+    <ActionBarButton
+      focusArrowColor="initial"
+      focusArrowClassName={styles.focusArrow}
     >
-      <AccessibleIcon label={isBackButton ? "Back" : "Home"}>
-        <Icon iconName={isBackButton ? "arrow-left" : "home"} />
-      </AccessibleIcon>
-    </button>
+      <button
+        className={styles.navButton}
+        style={{
+          borderRadius: isBackButton ? undefined : 0,
+        }}
+        onClick={() => router.push("/")}
+        onMouseOver={() => router.prefetch("/")}
+        role="link"
+      >
+        <AccessibleIcon label={isBackButton ? "Back" : "Home"}>
+          <Icon iconName={isBackButton ? "arrow-left" : "home"} />
+        </AccessibleIcon>
+      </button>
+    </ActionBarButton>
   );
 }

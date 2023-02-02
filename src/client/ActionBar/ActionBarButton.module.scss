@@ -1,0 +1,51 @@
+@use 'theme/size';
+@use 'theme/color';
+
+.wrapper {
+  position: relative;
+  isolation: isolate;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-content: center;
+}
+
+.button {
+  all: unset;
+  width: 20px;
+  height: 20px;
+  border-radius: size.$border-radius-small;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+    & ~ .focusArrow,
+    & ~ .focusArrowBackdrop {
+      display: block;
+    }
+  }
+}
+
+.focusArrowBackdrop {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: color.$accent-secondary-contrast;
+  width: 24px;
+  height: 14px;
+  border-radius: 12px 12px 0 0;
+  z-index: 0;
+
+  display: none;
+}
+
+.focusArrow {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  stroke: color.$accent-primary;
+  display: none;
+  z-index: 1;
+}
