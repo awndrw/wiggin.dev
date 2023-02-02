@@ -36,6 +36,7 @@
   },
   "packageManager": "yarn@3.3.1",
   "devDependencies": {
+    "@csstools/postcss-oklab-function": "^2.0.1",
     "@graphql-codegen/cli": "2.16.4",
     "@graphql-codegen/typescript": "^2.8.7",
     "@graphql-codegen/typescript-graphql-request": "^4.5.8",
@@ -50,6 +51,8 @@
     "eslint-config-next": "13.1.5",
     "eslint-config-prettier": "^8.6.0",
     "loader-utils": "^3.2.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.3",
     "sass": "^1.57.1",
     "ts-node": "^10.9.1",

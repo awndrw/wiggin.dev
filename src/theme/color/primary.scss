@@ -3,49 +3,43 @@
 @use 'sass:color';
 
 $hues: (
-        'red': 354,
-        'blue': 203,
+        'red': 18,
+        'blue': 233,
         'green': 143
 );
 
 $colors: map.keys($hues);
 
-$hslValues: (
+$lightnessAndChromaValues: (
         'light': (
-                'primary': 42% 44%,
-                'primary-contrast': 100% 99%,
-                'secondary': 100% 13%,
-                'secondary-contrast': 100% 92%,
-                'tertiary': 100% 97%,
-                'tertiary-variant': 100% 100%,
+                'primary': 55% 0.15,
+                'primary-contrast': 99% 0.005,
+                'secondary': 27% 0.06,
+                'secondary-contrast': 93% 0.03,
+                'tertiary': 97% 0.011,
+                'tertiary-variant': 100% 0,
         ),
         'dark': (
-                'primary': 100% 85%,
-                'primary-contrast': 68% 22%,
-                'secondary': 100% 92%,
-                'secondary-contrast': 51% 33%,
-                'tertiary': 20% 17%,
-                'tertiary-variant': 45% 8%,
+                'primary': 88% 0.064,
+                'primary-contrast': 35% 0.1,
+                'secondary': 93% 0.03,
+                'secondary-contrast': 45% 0.1,
+                'tertiary': 28% 0.02,
+                'tertiary-variant': 20% 0.02,
         ),
 );
 
 @mixin make-theme($mode) {
-  @if not map.has-key($hslValues, $mode) {
+  @if not map.has-key($lightnessAndChromaValues, $mode) {
     @error "Mode not found: #{$mode}";
   }
   @each $color in $colors {
     *[data-color="#{$color}"] {
-      @each $color-name, $saturation-lightness in map.get($hslValues, $mode) {
+      @each $color-name, $lightness-chroma in map.get($lightnessAndChromaValues, $mode) {
+        $lightness: list.nth($lightness-chroma, 1);
+        $chroma: list.nth($lightness-chroma, 2);
         $hue: map.get($hues, $color);
-        $saturation: list.nth($saturation-lightness, 1);
-        $lightness: list.nth($saturation-lightness, 2);
-        $hsl: hsl($hue $saturation $lightness);
-        --color-accent-#{$color-name}: #{$hsl};
-        // display p3
-        $red: color.red($hsl) / 255;
-        $green: color.green($hsl) / 255;
-        $blue: color.blue($hsl) / 255;
-        --color-accent-#{$color-name}: color(display-p3 #{$red} #{$green} #{$blue});
+        --color-accent-#{$color-name}: oklch(#{$lightness} #{$chroma} #{$hue});
       }
     }
   }
