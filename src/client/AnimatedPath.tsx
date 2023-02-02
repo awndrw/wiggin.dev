@@ -27,12 +27,17 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     if (!path) {
       return;
     }
-    const scale = path.getBoundingClientRect().width / path.getBBox().width;
-    const scaledLength = path.getTotalLength() * scale;
-    setPathLength(scaledLength);
+    const handleResize = () => {
+      const scale = path.getBoundingClientRect().width / path.getBBox().width;
+      const scaledLength = path.getTotalLength() * scale;
+      setPathLength(scaledLength);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [pathRef]);
 
-  React.useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let immediate = true;
     const handleScroll = () => {
       const about = document.querySelector("main > section:nth-of-type(2)");
