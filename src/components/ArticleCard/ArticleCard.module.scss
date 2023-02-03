@@ -15,7 +15,7 @@
   display: grid;
   gap: size.$spacing-small;
   position: relative;
-  background-color: color.$accent-tertiary;
+  background-color: color.$accent-tint;
   color: color.$text-primary;
   transition-property: background-color, color, border-color;
   transition-duration: 200ms;

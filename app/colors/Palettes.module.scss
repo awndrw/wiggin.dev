@@ -7,7 +7,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: color.$accent-tertiary;
+  background-color: color.$accent-tint;
   padding: size.$spacing-small;
   gap: size.$spacing-large;
   border-radius: calc(#{size.$border-radius-large} + #{size.$spacing-small});
@@ -50,20 +50,20 @@
 
 .secondary {
   @include tone;
-  background-color: color.$accent-secondary;
+  background-color: color.$accent-container;
 }
 
 .secondaryContrast {
   @include tone;
-  background-color: color.$accent-secondary-contrast;
+  background-color: color.$accent-container-contrast;
 }
 
 .tertiary {
   @include tone;
-  background-color: color.$accent-tertiary;
+  background-color: color.$accent-tint;
 }
 
 .tertiaryContrast {
   @include tone;
-  background-color: color.$accent-tertiary-variant;
+  background-color: color.$accent-tint-contrast;
 }

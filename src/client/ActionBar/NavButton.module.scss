@@ -1,9 +1,9 @@
 @use 'theme/color';
 
 .navButton {
-  stroke: color.$accent-secondary;
+  stroke: color.$accent-container;
 }
 
 .focusArrow {
-  stroke: color.$accent-secondary;
+  stroke: color.$accent-container;
 }

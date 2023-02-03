@@ -28,7 +28,7 @@ $themes: 'accent' 'neutral';
       background-color: color.$accent-primary-contrast;
       color: color.$accent-primary;
   } @else if $theme == 'neutral' {
-      background-color: color.$accent-tertiary-variant;
+      background-color: color.$accent-tint-contrast;
       color: color.$text-primary;
   }
 }

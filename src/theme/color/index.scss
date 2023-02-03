@@ -6,10 +6,10 @@ $text-secondary: var(--color-text-secondary);
 $background: var(--color-background);
 $accent-primary: var(--color-accent-primary);
 $accent-primary-contrast: var(--color-accent-primary-contrast);
-$accent-secondary: var(--color-accent-secondary);
-$accent-secondary-contrast: var(--color-accent-secondary-contrast);
-$accent-tertiary: var(--color-accent-tertiary);
-$accent-tertiary-variant: var(--color-accent-tertiary-variant);
+$accent-container: var(--color-accent-container);
+$accent-container-contrast: var(--color-accent-container-contrast);
+$accent-tint: var(--color-accent-tint);
+$accent-tint-contrast: var(--color-accent-tint-contrast);
 
 @mixin init {
   @include primary.make-theme('light');

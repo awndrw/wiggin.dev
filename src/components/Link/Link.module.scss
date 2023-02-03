@@ -16,8 +16,8 @@
 
   @include util.hover {
     outline: none;
-    background-color: color.$accent-secondary-contrast;
-    color: color.$accent-secondary;
+    background-color: color.$accent-container-contrast;
+    color: color.$accent-container;
     transition-duration: 400ms;
   }
 
