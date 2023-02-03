@@ -19,10 +19,7 @@ export default function NavButton() {
 
   return (
     <>
-      <ActionBarButton
-        focusArrowColor="initial"
-        focusArrowClassName={styles.focusArrow}
-      >
+      <ActionBarButton focusArrowClassName={styles.focusArrow}>
         <button
           className={styles.navButton}
           style={{
