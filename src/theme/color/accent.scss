@@ -8,8 +8,6 @@ $hues: (
         'green': 143
 );
 
-$colors: map.keys($hues);
-
 $lightnessAndChromaValues: (
         'light': (
                 'primary': 55% 0.15,
@@ -29,18 +27,22 @@ $lightnessAndChromaValues: (
         ),
 );
 
-@mixin make-theme($mode) {
-  @if not map.has-key($lightnessAndChromaValues, $mode) {
-    @error "Mode not found: #{$mode}";
+$colors: map.keys($hues);
+
+@mixin make-color-mode($color, $mode) {
+  @each $color-name, $lightness-chroma in map.get($lightnessAndChromaValues, $mode) {
+    $lightness: list.nth($lightness-chroma, 1);
+    $chroma: list.nth($lightness-chroma, 2);
+    $hue: map.get($hues, $color);
+    --color-accent-#{$color-name}: oklch(#{$lightness} #{$chroma} #{$hue});
   }
+}
+
+@mixin make-mode($mode) {
   @each $color in $colors {
-    *[data-color="#{$color}"] {
-      @each $color-name, $lightness-chroma in map.get($lightnessAndChromaValues, $mode) {
-        $lightness: list.nth($lightness-chroma, 1);
-        $chroma: list.nth($lightness-chroma, 2);
-        $hue: map.get($hues, $color);
-        --color-accent-#{$color-name}: oklch(#{$lightness} #{$chroma} #{$hue});
-      }
+    & [data-color="#{$color}"],
+    &[data-color="#{$color}"] {
+      @include make-color-mode($color, $mode);
     }
   }
 }

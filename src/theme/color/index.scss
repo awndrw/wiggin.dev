@@ -1,5 +1,6 @@
 @use 'sass:map';
-@use './primary';
+@use './accent';
+@use './neutral';
 
 $text-primary: var(--color-text-primary);
 $text-secondary: var(--color-text-secondary);
@@ -11,17 +12,24 @@ $accent-container-contrast: var(--color-accent-container-contrast);
 $accent-tint: var(--color-accent-tint);
 $accent-tint-contrast: var(--color-accent-tint-contrast);
 
+@mixin make-mode($mode) {
+  @include accent.make-mode($mode);
+  @include neutral.make-mode($mode);
+}
+
 @mixin init {
-  @include primary.make-theme('light');
-  --color-text-primary: oklch(30% 0.002 250);
-  --color-text-secondary: oklch(45% 0.004 250);
-  --color-background: oklch(99% 0.004 308);
+  @include make-mode('light');
 
   @media (prefers-color-scheme: dark) {
-    @include primary.make-theme('dark');
-    --color-text-primary: oklch(91% 0.003 308);
-    --color-text-secondary: oklch(81% 0.004 308);
-    --color-background: oklch(22% 0.005 248);
+    @include make-mode('dark');
+  }
+
+  body[data-mode='light'] {
+    @include make-mode('light');
+  }
+
+  body[data-mode='dark'] {
+    @include make-mode('dark');
   }
 }
 

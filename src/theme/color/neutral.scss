@@ -1,0 +1,20 @@
+@use 'sass:map';
+
+$lchValues: (
+        'light': (
+                'text-primary': 30% 0.002 250,
+                'text-secondary': 45% 0.004 250,
+                'background': 99% 0.004 308,
+        ),
+        'dark': (
+                'text-primary': 91% 0.003 308,
+                'text-secondary': 81% 0.004 308,
+                'background': 22% 0.005 248,
+        ),
+);
+
+@mixin make-mode($mode) {
+  @each $color, $lchValue in map.get($lchValues, $mode) {
+    --color-#{$color}: oklch(#{$lchValue});
+  }
+}
