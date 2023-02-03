@@ -1,6 +1,7 @@
+import { Separator } from "client/Separator";
 import { Link } from "components/Link";
+import Image from "next/image";
 import React from "react";
-import Balancer from "react-wrap-balancer";
 import { COLORS } from "utils/theme";
 import { Palettes } from "./Palettes";
 import { Swatch } from "./Swatch";
@@ -23,6 +24,14 @@ export default function Page() {
           <h1>OKLCH and P3 Color</h1>
         </div>
         <p>
+          This site uses three color roles: primary, container and tint. Each
+          tone (and its contrast) is assigned a lightness and chroma and the hue
+          is rotated depending on the selected color. Here are three hues
+          applied to each color role, making up the color palette used on this
+          site:
+        </p>
+        <Palettes />
+        <p>
           Introduced in the{" "}
           <Link
             href="https://w3c.github.io/csswg-drafts/css-color/#lab-colors"
@@ -41,7 +50,32 @@ export default function Page() {
           goes into detail about the importance of systematic contrast for
           accessible design.
         </p>
-        <Palettes />
+        <Image
+          src="/buttons-hsl-vs-oklch.webp"
+          width={343}
+          height={218}
+          alt="There are 4 buttons. The first column has two buttons and represents the HSL space before and after using the rotation angle, and the second column with the other two buttons represents the OKLCH space before and after using the rotation angle. After changes in HSL, the contrast between the background and text is lower, unlike OKLCH."
+        />
+        <label className={styles.label}>
+          from{" "}
+          <Link
+            href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
+            type="external"
+          >
+            &quot;OKLCH in CSS&quot; by Evil Martians
+          </Link>
+        </label>
+        <p>
+          In this example, we see two buttons with the same HSL saturation and
+          lightness on the left and the same (translated) OKLCH saturation and
+          lightness on the right. Becuse of the dramatic difference in contrast
+          between HSL hues, the bottom left button is almost illegible.
+        </p>
+        <Separator
+          orientation="horizontal"
+          decorative
+          className={styles.separator}
+        />
         <p>
           Accessibility benefits aside, OKLCH displays a wider spectrum of
           colors from the{" "}
