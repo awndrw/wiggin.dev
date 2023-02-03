@@ -1,7 +1,7 @@
 @use 'theme/color';
 
 .colorSelector {
-  background-color: color.$background;
+  background-color: color.$accent-tint-contrast;
   border: 2px solid color.$accent-primary;
   -webkit-tap-highlight-color: transparent;
 }
