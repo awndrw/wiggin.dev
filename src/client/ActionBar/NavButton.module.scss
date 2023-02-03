@@ -7,3 +7,10 @@
 .focusArrow {
   stroke: color.$accent-container;
 }
+
+.separator {
+  height: 75%;
+  width: 1px;
+  background-color: color.$accent-container;
+  opacity: 0.4;
+}
