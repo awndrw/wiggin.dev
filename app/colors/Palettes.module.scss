@@ -33,37 +33,7 @@
   }
 }
 
-@mixin tone {
+.tone {
   width: 40px;
   height: 40px;
-}
-
-.primary {
-  @include tone;
-  background-color: color.$accent-primary;
-}
-
-.primaryContrast {
-  @include tone;
-  background-color: color.$accent-primary-contrast;
-}
-
-.secondary {
-  @include tone;
-  background-color: color.$accent-container;
-}
-
-.secondaryContrast {
-  @include tone;
-  background-color: color.$accent-container-contrast;
-}
-
-.tertiary {
-  @include tone;
-  background-color: color.$accent-tint;
-}
-
-.tertiaryContrast {
-  @include tone;
-  background-color: color.$accent-tint-contrast;
 }
