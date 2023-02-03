@@ -18,9 +18,6 @@ const AnimatedPath = dynamic(
 const BALANCER_RATIO = 0.45;
 
 export default async function Page() {
-  const showWriting = false;
-
-  const allPosts = await sdk.AllPosts({ first: 6 });
 
   return (
     <main className={styles.page}>
@@ -75,19 +72,6 @@ export default async function Page() {
           </span>
         </Balancer>
       </section>
-      {showWriting && (
-        <>
-          <Separator orientation="horizontal" className={styles.separator} />
-          <section className={c(styles.neutral, styles.writing)}>
-            <h2>Writing</h2>
-            <div className={styles.articleList}>
-              {allPosts.allPosts.map((post) => (
-                <ArticleCard {...post} key={post.slug} />
-              ))}
-            </div>
-          </section>
-        </>
-      )}
     </main>
   );
 }
