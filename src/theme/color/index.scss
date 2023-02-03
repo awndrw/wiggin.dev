@@ -13,15 +13,15 @@ $accent-tertiary-variant: var(--color-accent-tertiary-variant);
 
 @mixin init {
   @include primary.make-theme('light');
-  --color-text-primary: hsl(210, 2%, 18%);
-  --color-text-secondary: hsl(220, 2%, 34%);
-  --color-background: hsl(270, 50%, 99%);
+  --color-text-primary: oklch(30% 0.002 250);
+  --color-text-secondary: oklch(45% 0.004 250);
+  --color-background: oklch(99% 0.004 308);
 
   @media (prefers-color-scheme: dark) {
     @include primary.make-theme('dark');
-    --color-text-primary: hsl(270, 4%, 89%);
-    --color-text-secondary: hsl(270, 2%, 76%);
-    --color-background: hsl(210, 7%, 11%);
+    --color-text-primary: oklch(91% 0.003 308);
+    --color-text-secondary: oklch(81% 0.004 308);
+    --color-background: oklch(22% 0.005 248);
   }
 }
 
