@@ -1,0 +1,34 @@
+@use 'theme/color';
+@use 'theme/layout';
+@use 'theme/size';
+
+.page {
+  @include layout.page;
+}
+
+.section {
+  @include layout.section('neutral');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(2 * #{size.$spacing-small});
+  p {
+    font-weight: 350;
+    line-height: 1.3;
+    font-size: size.$font-small;
+    max-width: 60ch;
+  }
+}
+
+.title {
+  h1 {
+    text-align: center;
+  }
+}
+
+.swatches {
+  display: flex;
+  justify-content: center;
+  gap: size.$spacing-small;
+  padding-block-end: size.$spacing-small;
+}

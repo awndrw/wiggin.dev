@@ -1,0 +1,69 @@
+@use 'theme/color';
+@use 'theme/size';
+@use 'sass:math';
+
+.palettes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: color.$accent-tertiary;
+  padding: size.$spacing-small;
+  gap: size.$spacing-large;
+  border-radius: calc(#{size.$border-radius-large} + #{size.$spacing-small});
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+
+  & > span {
+    text-align: center;
+    font-size: size.$font-small;
+    margin-top: 6px;
+  }
+
+  & > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    border-radius: size.$border-radius-large;
+    overflow: hidden;
+  }
+}
+
+@mixin tone {
+  width: 40px;
+  height: 40px;
+}
+
+.primary {
+  @include tone;
+  background-color: color.$accent-primary;
+}
+
+.primaryContrast {
+  @include tone;
+  background-color: color.$accent-primary-contrast;
+}
+
+.secondary {
+  @include tone;
+  background-color: color.$accent-secondary;
+}
+
+.secondaryContrast {
+  @include tone;
+  background-color: color.$accent-secondary-contrast;
+}
+
+.tertiary {
+  @include tone;
+  background-color: color.$accent-tertiary;
+}
+
+.tertiaryContrast {
+  @include tone;
+  background-color: color.$accent-tertiary-variant;
+}

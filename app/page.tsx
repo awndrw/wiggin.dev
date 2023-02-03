@@ -1,13 +1,9 @@
-import c from "classnames";
-import { ArticleCard } from "components/ArticleCard";
 import { Icon } from "components/Icon";
 import { Link } from "components/Link";
 import React from "react";
 import Balancer from "react-wrap-balancer";
-import { sdk } from "cms";
 import { Separator } from "client/Separator";
 import dynamic from "next/dynamic";
-import { ColorLink } from "./ColorLink";
 import styles from "./page.module.scss";
 
 const AnimatedPath = dynamic(
@@ -64,13 +60,17 @@ export default async function Page() {
             resume
           </Link>{" "}
           or reach out via{" "}
-          <Link href="mailto:andrew@wiggin.dev" type="external">
-            email
-          </Link>
-          . These colors were brought to you by{" "}
           <span style={{ display: "inline-block" }}>
-            <ColorLink />.
-          </span>
+            <Link href="mailto:andrew@wiggin.dev" type="external">
+              email
+            </Link>
+            .
+          </span>{" "}
+          These colors were brought to you by{" "}
+          <Link href="/colors" type="internal">
+            the oklch color space
+          </Link>
+          .
         </Balancer>
       </section>
     </main>
