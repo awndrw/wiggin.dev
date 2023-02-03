@@ -2,11 +2,11 @@
   display: none;
 }
 .oklch {
-  display: inherit;
+  display: inline;
 }
 @supports (color: color(display-p3 0 0 0)) {
     .displayP3 {
-        display: inherit;
+        display: inline;
     }
     .oklch {
         display: none;
