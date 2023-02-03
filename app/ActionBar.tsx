@@ -1,3 +1,4 @@
+import { DarkModeToggle } from "client/ActionBar/DarkModeToggle";
 import React from "react";
 import NavButton from "client/ActionBar/NavButton";
 import ColorSelector from "client/ActionBar/ColorSelector";
@@ -14,6 +15,7 @@ export function ActionBar() {
             <ColorSelector color={color} key={color} />
           ))}
         </div>
+        <DarkModeToggle />
       </section>
     </div>
   );

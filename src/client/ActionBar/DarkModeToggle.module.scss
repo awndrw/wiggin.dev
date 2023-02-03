@@ -1,0 +1,9 @@
+@use 'theme/color';
+
+.darkModeToggle {
+  color: color.$accent-container;
+}
+
+.focusArrow {
+  stroke: color.$accent-container;
+}
