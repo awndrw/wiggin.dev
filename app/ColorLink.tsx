@@ -1,5 +1,3 @@
-"use client";
-
 import { Link } from "components/Link";
 import styles from "./ColorLink.module.scss";
 

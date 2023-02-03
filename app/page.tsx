@@ -18,7 +18,6 @@ const AnimatedPath = dynamic(
 const BALANCER_RATIO = 0.45;
 
 export default async function Page() {
-
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -39,6 +38,8 @@ export default async function Page() {
           className={styles.scribble}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 862.83 1809.95"
+          aria-hidden
+          focusable={false}
         >
           <AnimatedPath
             animatedPathRatio={2}
