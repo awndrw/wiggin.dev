@@ -58,21 +58,23 @@ export default function Page() {
           goes into detail about the importance of systematic contrast for
           accessible design.
         </p>
-        <Image
-          src="/buttons-hsl-vs-oklch.webp"
-          width={343}
-          height={218}
-          alt="There are 4 buttons. The first column has two buttons and represents the HSL space before and after using the rotation angle, and the second column with the other two buttons represents the OKLCH space before and after using the rotation angle. After changes in HSL, the contrast between the background and text is lower, unlike OKLCH."
-        />
-        <label className={styles.label}>
-          from{" "}
-          <Link
-            href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
-            type="external"
-          >
-            &quot;OKLCH in CSS&quot; by Evil Martians
-          </Link>
-        </label>
+        <div className={styles.image}>
+          <Image
+            src="/buttons-hsl-vs-oklch.webp"
+            width={343}
+            height={218}
+            alt="There are 4 buttons. The first column has two buttons and represents the HSL space before and after using the rotation angle, and the second column with the other two buttons represents the OKLCH space before and after using the rotation angle. After changes in HSL, the contrast between the background and text is lower, unlike OKLCH."
+          />
+          <label>
+            from{" "}
+            <Link
+              href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
+              type="external"
+            >
+              &quot;OKLCH in CSS&quot; by Evil Martians
+            </Link>
+          </label>
+        </div>
         <p>
           In this example, we see two buttons with the same HSL saturation and
           lightness on the left and the same (translated) OKLCH saturation and
@@ -96,6 +98,24 @@ export default function Page() {
           . This allows the browser to take advantage of the full color gamut of
           modern displays.
         </p>
+        <div className={styles.image}>
+          <Image
+            src="/p3.png"
+            width={842}
+            height={300}
+            className={styles.image}
+            alt="On the left side, a shape shows the extra P3 colors extending from sRGB, represented as an extended wedge from the original shape. On the right side, the left icon is rendered in sRGB, and the right icon is rendered with P3 colors, showing how they are more vibrant."
+          />
+          <label className={styles.label}>
+            from{" "}
+            <Link
+              href="https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl"
+              type="external"
+            >
+              &quot;OKLCH in CSS&quot; by Evil Martians
+            </Link>
+          </label>
+        </div>
       </section>
     </div>
   );
