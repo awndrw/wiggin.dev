@@ -7,9 +7,13 @@ import { Palettes } from "./Palettes";
 import { Swatch } from "./Swatch";
 import styles from "./page.module.scss";
 
-const Paragraph = ({ children }: { children: React.ReactNode }) => (
-  <p className={styles.paragraph}>{children}</p>
-);
+const swatchVariants = [
+  {},
+  { transform: "rotate(90deg)", flexDirection: "column-reverse" },
+  { transform: "rotate(180deg)" },
+] as const;
+
+const modifier = Math.round(Math.random() * swatchVariants.length);
 
 export default function Page() {
   return (
@@ -17,8 +21,12 @@ export default function Page() {
       <section className={styles.section}>
         <div className={styles.title}>
           <div className={styles.swatches}>
-            {COLORS.map((color) => (
-              <Swatch color={color} key={color} />
+            {COLORS.map((color, i) => (
+              <Swatch
+                color={color}
+                style={swatchVariants.at(i - modifier)}
+                key={color}
+              />
             ))}
           </div>
           <h1>OKLCH and P3 Color</h1>
