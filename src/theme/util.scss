@@ -53,3 +53,12 @@ $xl-min: 1280px;
     }
   }
 }
+
+@mixin dark {
+  body[data-mode='dark'] & {
+    @content;
+  }
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

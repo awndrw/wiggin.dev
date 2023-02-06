@@ -31,3 +31,17 @@
   border-radius: size.$border-radius-large;
   border: 1px solid color.$accent-primary;
 }
+
+.light {
+  display: contents;
+  @include util.dark {
+    display: none;
+  }
+}
+
+.dark {
+  display: none;
+  @include util.dark {
+      display: contents;
+  }
+}
