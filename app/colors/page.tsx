@@ -103,7 +103,6 @@ export default function Page() {
             src="/p3.png"
             width={842}
             height={300}
-            className={styles.image}
             alt="On the left side, a shape shows the extra P3 colors extending from sRGB, represented as an extended wedge from the original shape. On the right side, the left icon is rendered in sRGB, and the right icon is rendered with P3 colors, showing how they are more vibrant."
           />
           <label className={styles.label}>
