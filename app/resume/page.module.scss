@@ -33,15 +33,9 @@
 }
 
 .light {
-  display: contents;
-  @include util.dark {
-    display: none;
-  }
+  @include util.mode(display, contents, none);
 }
 
 .dark {
-  display: none;
-  @include util.dark {
-      display: contents;
-  }
+  @include util.mode(display, none, contents);
 }

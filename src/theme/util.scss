@@ -54,11 +54,15 @@ $xl-min: 1280px;
   }
 }
 
-@mixin dark {
-  body[data-mode='dark'] & {
-    @content;
-  }
+@mixin mode($property, $light, $dark) {
+  #{$property}: $light;
   @media (prefers-color-scheme: dark) {
-    @content;
+    #{$property}: $dark;
+  }
+  body[data-mode='light'] & {
+    #{$property}: $light;
+  }
+  body[data-mode='dark'] & {
+    #{$property}: $dark;
   }
 }
