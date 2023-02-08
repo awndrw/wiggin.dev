@@ -68,7 +68,7 @@ export default async function Page() {
           </span>{" "}
           These colors were brought to you by{" "}
           <Link href="/colors" type="internal">
-            the OKLCH color space
+            P3
           </Link>
           .
         </Balancer>
