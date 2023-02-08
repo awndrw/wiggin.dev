@@ -1,61 +1,32 @@
-import c from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import resumePage1Light from "../../public/resume/page1_light.png";
-import resumePage2Light from "../../public/resume/page2_light.png";
-import resumePage1Dark from "../../public/resume/page1_dark.png";
-import resumePage2Dark from "../../public/resume/page2_dark.png";
+import resumeLight from "../../public/resume/light.jpg";
+import resumeDark from "../../public/resume/dark.jpg";
 import styles from "./page.module.scss";
+
+const imageProps = {
+  className: styles.image,
+  priority: true,
+  placeholder: "blur",
+  "aria-hidden": true,
+  alt: "",
+} as const;
 
 export default function Page() {
   return (
     <div className={styles.page}>
       <section>
         <Link
-          href="/resume/resume.pdf"
+          href="/resume/Andrew%20Wiggin%20Resume.pdf"
           aria-label="Resume"
-          target="_blank"
           className={styles.link}
+          download
         >
           <div className={styles.light}>
-            <Image
-              src={resumePage1Light}
-              className={styles.image}
-              priority
-              width={768}
-              placeholder="blur"
-              aria-hidden
-              alt=""
-            />
-            <Image
-              src={resumePage2Light}
-              className={styles.image}
-              priority
-              width={768}
-              placeholder="blur"
-              aria-hidden
-              alt=""
-            />
+            <Image src={resumeLight} {...imageProps} />
           </div>
           <div className={styles.dark}>
-            <Image
-              src={resumePage1Dark}
-              className={styles.image}
-              priority
-              width={768}
-              placeholder="blur"
-              aria-hidden
-              alt=""
-            />
-            <Image
-              src={resumePage2Dark}
-              className={styles.image}
-              priority
-              width={768}
-              placeholder="blur"
-              aria-hidden
-              alt=""
-            />
+            <Image src={resumeDark} {...imageProps} />
           </div>
         </Link>
       </section>
