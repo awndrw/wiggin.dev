@@ -60,7 +60,7 @@ export default function Page() {
         </p>
         <div className={styles.image}>
           <Image
-            src="/buttons-hsl-vs-oklch.webp"
+            src="/images/buttons-hsl-vs-oklch.webp"
             width={343}
             height={218}
             alt="There are 4 buttons. The first column has two buttons and represents the HSL space before and after using the rotation angle, and the second column with the other two buttons represents the OKLCH space before and after using the rotation angle. After changes in HSL, the contrast between the background and text is lower, unlike OKLCH."
@@ -100,7 +100,7 @@ export default function Page() {
         </p>
         <div className={styles.image}>
           <Image
-            src="/p3.png"
+            src="/images/p3.png"
             width={842}
             height={300}
             alt="On the left side, a shape shows the extra P3 colors extending from sRGB, represented as an extended wedge from the original shape. On the right side, the left icon is rendered in sRGB, and the right icon is rendered with P3 colors, showing how they are more vibrant."
