@@ -7,10 +7,6 @@ import { Palettes } from "./Palettes";
 import { Swatch } from "./Swatch";
 import styles from "./page.module.scss";
 
-export const metadata = {
-  title: "colors",
-};
-
 const swatchVariants = [
   {},
   { transform: "rotate(90deg)", flexDirection: "column-reverse" },

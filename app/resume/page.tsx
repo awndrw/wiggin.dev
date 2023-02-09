@@ -4,10 +4,6 @@ import resumeLight from "../../public/resume/light.jpg";
 import resumeDark from "../../public/resume/dark.jpg";
 import styles from "./page.module.scss";
 
-export const metadata = {
-  title: "resume",
-};
-
 const imageProps = {
   className: styles.image,
   priority: true,
