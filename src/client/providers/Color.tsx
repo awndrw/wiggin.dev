@@ -3,16 +3,20 @@
 import { setCookie } from "cookies-next";
 import React from "react";
 import { StorageKey } from "utils/constants";
-import { Color, DEFAULT_COLOR } from "utils/theme";
+import { Color, DEFAULT_COLOR, DEFAULT_MODE, Mode } from "utils/theme";
 
 export interface Context {
   setColor: (color: Color) => void;
   color: Color;
+  setMode: (mode: Mode) => void;
+  mode: Mode;
 }
 
 export const Context = React.createContext<Context>({
   setColor: () => null,
   color: DEFAULT_COLOR,
+  setMode: () => null,
+  mode: DEFAULT_MODE,
 });
 
 export function Provider({
@@ -23,6 +27,19 @@ export function Provider({
   children: React.ReactNode;
 }) {
   const [color, setColorRaw] = React.useState<Color>(initialColor);
+  const [mode, setModeRaw] = React.useState<Mode>(DEFAULT_MODE);
+
+  React.useEffect(() => {
+    setModeRaw(
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+    );
+  }, []);
+
+  React.useEffect(() => {
+    updateMetaTags(color);
+  }, [color, mode]);
 
   const setColor = React.useCallback(
     (newColor: Color) => {
@@ -34,7 +51,35 @@ export function Provider({
     [color]
   );
 
-  return (
-    <Context.Provider value={{ setColor, color }}>{children}</Context.Provider>
+  const setMode = React.useCallback(
+    (newMode: Mode) => {
+      if (newMode === mode) return;
+      document.body.setAttribute("data-mode", newMode);
+      setModeRaw(newMode);
+    },
+    [mode]
   );
+
+  return (
+    <Context.Provider value={{ setColor, color, setMode, mode }}>
+      {children}
+    </Context.Provider>
+  );
+}
+
+function updateMetaTags(color: Color) {
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const activeColor = getComputedStyle(document.body).accentColor;
+  themeColor?.setAttribute("content", activeColor);
+
+  const appleTouchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+  appleTouchIcon?.setAttribute("href", `/icons/${color}_180.png`);
+
+  const svgIcon = document.querySelector(
+    'link[rel="icon"][type="image/svg+xml"]'
+  );
+  svgIcon?.setAttribute("href", `/icons/${color}.svg`);
+
+  const icon = document.querySelector('link[rel="icon"][sizes="any"]');
+  icon?.setAttribute("href", `/icons/${color}_32.png`);
 }

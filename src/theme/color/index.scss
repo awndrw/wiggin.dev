@@ -18,17 +18,22 @@ $accent-tint-contrast: var(--color-accent-tint-contrast);
 }
 
 @mixin init {
+  color-scheme: light;
   @include make-mode('light');
+  @include accent.make-accent-colors;
 
   @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
     @include make-mode('dark');
   }
 
   body[data-mode='light'] {
+    color-scheme: light;
     @include make-mode('light');
   }
 
   body[data-mode='dark'] {
+    color-scheme: dark;
     @include make-mode('dark');
   }
 }

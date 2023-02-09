@@ -3,15 +3,16 @@ import { Link } from "components/Link";
 import React from "react";
 import Balancer from "react-wrap-balancer";
 import { Separator } from "client/Separator";
-import dynamic from "next/dynamic";
+import { BALANCER_RATIO } from "utils/constants";
+import { AnimatedPath } from "client/AnimatedPath";
 import styles from "./page.module.scss";
 
-const AnimatedPath = dynamic(
-  () => import("client/AnimatedPath").then((m) => m.AnimatedPath),
-  { ssr: true }
-);
+const generateBlurb = (prefix: string) =>
+  `${prefix} a brooklyn based design engineer passionate about design systems, motion design and accessibility.`;
 
-const BALANCER_RATIO = 0.45;
+export const metadata = {
+  description: generateBlurb("Andrew Wiggin is"),
+};
 
 export default async function Page() {
   return (
@@ -27,8 +28,7 @@ export default async function Page() {
           />
         </h1>
         <Balancer ratio={BALANCER_RATIO} as="p">
-          I&apos;m a brooklyn based design engineer passionate about design
-          systems, motion design and accessibility.
+          {generateBlurb("I'm")}
         </Balancer>
         <svg
           className={styles.scribble}

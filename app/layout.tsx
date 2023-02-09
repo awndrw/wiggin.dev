@@ -11,6 +11,22 @@ import { ActionBar } from "./ActionBar";
 
 import "./globals.scss";
 
+export const metadata = {
+  title: {
+    default: "wiggin.dev",
+    template: "wiggin.dev/%s",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/blue_32.png", sizes: "any" },
+      { url: "/icons/blue.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icons/blue_180.png",
+  },
+  manifest: "/manifest.webmanifest",
+  themeColor: "rgb(0, 128, 184)",
+};
+
 const workSans = Work_Sans({ subsets: ["latin"] });
 
 export default async function RootLayout({

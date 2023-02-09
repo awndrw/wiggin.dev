@@ -46,3 +46,15 @@ $colors: map.keys($hues);
     }
   }
 }
+
+@mixin make-accent-colors() {
+  @each $color in $colors {
+    body[data-color="#{$color}"] {
+      $hue: map.get($hues, $color);
+      $lightness-chroma: map.get($lightnessAndChromaValues, 'light', 'primary');
+      $lightness: list.nth($lightness-chroma, 1);
+      $chroma: list.nth($lightness-chroma, 2);
+      accent-color: oklch(#{$lightness} #{$chroma} #{$hue});
+    }
+  }
+}

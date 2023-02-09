@@ -28,7 +28,7 @@
     "graphql-request": "^5.1.0",
     "graphql-tag": "^2.12.6",
     "milliseconds": "^1.0.3",
-    "next": "13.1.5",
+    "next": "canary",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^0.4.0",
