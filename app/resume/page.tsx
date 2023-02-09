@@ -17,7 +17,7 @@ export default function Page() {
     <div className={styles.page}>
       <section>
         <Link
-          href="/resume/Andrew%20Wiggin%20Resume.pdf"
+          href="/resume/AndrewWigginResume.pdf"
           aria-label="Resume"
           className={styles.link}
           download
