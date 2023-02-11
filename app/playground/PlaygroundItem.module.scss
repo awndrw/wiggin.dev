@@ -1,0 +1,65 @@
+@use 'theme/size';
+@use 'theme/color';
+
+.container {
+  position: relative;
+  width: 430px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: size.$border-radius-large;
+  border: 1px solid color.$accent-primary;
+  color: color.$text-primary;
+  text-decoration: none;
+  overflow: hidden;
+
+  h2 {
+    font-size: size.$font-small;
+    font-weight: 400;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 200ms ease;
+    box-shadow:
+            0     3px 2px rgba(0, 128, 184, 0.25),
+            2px   0   3px rgba(0, 128, 184, 0.25),
+            -2px  0px 3px rgba(0, 128, 184, 0.25);
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.image {
+  flex-grow: 1;
+  width: 430px;
+  height: 280px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: size.$spacing-small;
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid color.$accent-primary;
+  background-color: color.$accent-tint;
+}
+
+.tags {
+  display: flex;
+  gap: 4px;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+  }
+}

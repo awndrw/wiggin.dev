@@ -11,6 +11,8 @@ export const IconName = {
   CARET_DOWN: "caret-down",
   MOON: "moon",
   SUN: "sun",
+  SMARTPHONE: "smartphone",
+  MONITOR: "monitor",
 } as const;
 export type IconName = (typeof IconName)[keyof typeof IconName];
 
@@ -92,6 +94,21 @@ const getIconPath = (name: IconName) => {
           <line x1="21" y1="12" x2="23" y2="12" />
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </>
+      );
+    case "smartphone":
+      return (
+        <>
+          <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </>
+      );
+    case "monitor":
+      return (
+        <>
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
         </>
       );
   }

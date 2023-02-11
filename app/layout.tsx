@@ -1,4 +1,4 @@
-import { Work_Sans } from "@next/font/google";
+import localFont from "@next/font/local";
 import { Analytics } from "client/Analytics";
 import { RouteChangeHandler } from "client/RouteChangeHandler";
 import { cookies as nextCookies } from "next/headers";
@@ -23,7 +23,7 @@ export const metadata = {
   themeColor: "rgb(0, 128, 184)",
 };
 
-const workSans = Work_Sans({ subsets: ["latin"] });
+const planar = localFont({ src: "./Planar-Light.woff2" });
 
 export default async function RootLayout({
   children,
@@ -40,7 +40,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={workSans.className} data-color={color}>
+      <body className={planar.className} data-color={color}>
         <Providers initialColor={color}>
           <RouteChangeHandler>{children}</RouteChangeHandler>
           <ActionBar />

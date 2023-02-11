@@ -2322,6 +2322,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@use-gesture/core@npm:10.2.24":
+  version: 10.2.24
+  resolution: "@use-gesture/core@npm:10.2.24"
+  checksum: 92c2cedde03ca5a209f0f2abc120d834601bfa1631d61983ae6eede99bcf680ff229d006394f10dd3825f4da838c3cd0156f67a3b586ec031e52d3b3ec618bef
+  languageName: node
+  linkType: hard
+
+"@use-gesture/react@npm:^10.2.24":
+  version: 10.2.24
+  resolution: "@use-gesture/react@npm:10.2.24"
+  dependencies:
+    "@use-gesture/core": 10.2.24
+  peerDependencies:
+    react: ">= 16.8.0"
+  checksum: f8e651aa2e32f78af369b43366ae186aa8beb5b2684308da4262395663559a0eefb0124964db948d9636fe8fe5bfc870937f398dcb8f2cfe738a0c4a37d555c4
+  languageName: node
+  linkType: hard
+
 "@vercel/analytics@npm:^0.1.8":
   version: 0.1.8
   resolution: "@vercel/analytics@npm:0.1.8"
@@ -6366,6 +6384,7 @@ __metadata:
     "@types/prettier": ^2.7.2
     "@types/react": 18.0.27
     "@types/react-dom": 18.0.10
+    "@use-gesture/react": ^10.2.24
     "@vercel/analytics": ^0.1.8
     "@vercel/edge-config": ^0.1.1
     classnames: ^2.3.2

@@ -25,7 +25,7 @@ export default function NavButton() {
           style={{
             borderRadius: isBackButton ? undefined : 0,
           }}
-          onClick={() => router.push("/")}
+          onClick={isBackButton ? router.back : () => router.push("/")}
           onMouseOver={() => router.prefetch("/")}
           role="link"
         >
