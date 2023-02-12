@@ -1,5 +1,6 @@
 "use client";
 
+import * as VisuallyHidden from "client/radix/VisuallyHidden";
 import React from "react";
 import { flexaMono } from "fonts";
 import * as Toast from "@radix-ui/react-toast";
@@ -43,7 +44,12 @@ export const Paragraph = ({ children }: { children: string }) => {
   return (
     <Toast.Provider>
       <ResetMessage visible={hasDraggedCharacters} />
-      <p className={styles.paragraph} aria-label={children}>
+      <VisuallyHidden.Root>{children}</VisuallyHidden.Root>
+      <p
+        className={styles.paragraph}
+        role="group"
+        aria-label="Draggable characters"
+      >
         {words.map((word, wordIndex) => {
           const characters = word.split("");
           return (

@@ -61,14 +61,14 @@
 }
 
 .iconTooltip {
-  background: color.$accent-container;
-  color: color.$accent-container-contrast;
+  background: color.$accent-container-contrast;
+  color: color.$accent-container;
   padding: 8px 12px;
   border-radius: size.$border-radius-small;
 }
 
 .iconTooltipArrow {
-  fill: color.$accent-container;
+  fill: color.$accent-container-contrast;
 }
 
 .tags {

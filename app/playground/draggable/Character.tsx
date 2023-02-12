@@ -10,7 +10,6 @@ export const Character: React.FC<{
   registerReset: (id: string, reset: () => void) => void;
 }> = ({ children, registerReset }) => {
   const id = React.useId();
-  const wrapperRef = React.createRef<HTMLSpanElement>();
   const spanRef = React.createRef<HTMLButtonElement>();
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
   const [currentPosition, setCurrentPosition] = React.useState<Vector2>([0, 0]);
@@ -39,7 +38,7 @@ export const Character: React.FC<{
   );
 
   return (
-    <span ref={wrapperRef} className={styles.container}>
+    <span className={styles.container}>
       <animated.span
         ref={spanRef}
         tabIndex={0}
@@ -48,7 +47,7 @@ export const Character: React.FC<{
       >
         {children}
       </animated.span>
-      <span className={styles.shadow} aria-hidden tabIndex={-1}>
+      <span className={styles.shadow} aria-hidden>
         {children}
       </span>
     </span>

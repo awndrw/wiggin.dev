@@ -9,7 +9,7 @@ export const playgroundItemData: PlaygroundData = {
   image: previewPng.src,
   tags: [
     { name: "accessible", tooltip: "Mouse- or keyboard-based drag and drop" },
-    { name: "mobile", tooltip: "Works on touch screens" },
+    "mobile",
     "desktop",
   ],
 };
