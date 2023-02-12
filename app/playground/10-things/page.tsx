@@ -19,6 +19,7 @@ export const playgroundItemData: PlaygroundData = {
   name: 'Google\'s "Ten things"',
   image: previewPng.src,
   tags: ["desktop"],
+  warning: "This playground is not accessible or mobile-friendly.",
 };
 
 export default function Page() {

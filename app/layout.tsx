@@ -1,4 +1,3 @@
-import localFont from "@next/font/local";
 import { Analytics } from "client/Analytics";
 import { RouteChangeHandler } from "client/RouteChangeHandler";
 import { cookies as nextCookies } from "next/headers";

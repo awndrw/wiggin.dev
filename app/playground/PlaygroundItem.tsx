@@ -1,29 +1,51 @@
+import * as Dialog from "client/radix/Dialog";
 import * as Tooltip from "client/radix/Tooltip";
 import { Icon, IconName } from "components/Icon";
 import { InternalLink } from "components/InternalLink";
 import Image from "next/image";
+import React from "react";
+import { WarningDialog } from "./WarningDialog";
 import styles from "./PlaygroundItem.module.scss";
 import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";
 
-export const PlaygroundItem = ({ name, slug, image, tags }: Playground) => {
+export const PlaygroundItem = ({
+  name,
+  slug,
+  image,
+  tags,
+  warning,
+}: Playground) => {
+  const href = `/playground/${slug}`;
+
   return (
-    <InternalLink className={styles.container} href={`/playground/${slug}`}>
-      <Image
-        src={image}
-        alt=""
-        className={styles.image}
-        width={430}
-        height={280}
-      />
-      <div className={styles.footer}>
-        <h2 className={styles.link}>{name}</h2>
-        <div className={styles.tags}>
-          {tags.map((tag) => (
-            <Tag key={typeof tag === "string" ? tag : tag.name} tag={tag} />
-          ))}
+    <article className={styles.article}>
+      <Dialog.Root>
+        <Image
+          src={image}
+          alt=""
+          className={styles.image}
+          width={430}
+          height={280}
+        />
+        <div className={styles.footer}>
+          {warning ? (
+            <Dialog.Trigger role="link" className={styles.trigger}>
+              <h2 className={styles.link}>{name}</h2>
+            </Dialog.Trigger>
+          ) : (
+            <InternalLink href={href} className={styles.trigger}>
+              <h2 className={styles.link}>{name}</h2>
+            </InternalLink>
+          )}
+          <ul role="list" aria-label="Tags" className={styles.tags}>
+            {tags.map((tag) => (
+              <Tag key={typeof tag === "string" ? tag : tag.name} tag={tag} />
+            ))}
+          </ul>
         </div>
-      </div>
-    </InternalLink>
+        {warning && <WarningDialog warning={warning} continueHref={href} />}
+      </Dialog.Root>
+    </article>
   );
 };
 
@@ -50,8 +72,12 @@ const Tag = ({ tag }: { tag: PlaygroundTag }) => {
   }
   return (
     <Tooltip.Root>
-      <Tooltip.Trigger className={styles.iconButton}>
-        <Icon iconName={icon} />
+      <Tooltip.Trigger
+        role="listitem"
+        aria-label={tooltip}
+        className={styles.iconButton}
+      >
+        <Icon iconName={icon} aria-hidden />
       </Tooltip.Trigger>
       <Tooltip.Portal>
         <Tooltip.Content className={styles.iconTooltip}>

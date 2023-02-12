@@ -13,6 +13,7 @@ export const IconName = {
   SUN: "sun",
   SMARTPHONE: "smartphone",
   MONITOR: "monitor",
+  ALERT_TRIANGLE: "alert-triangle",
 } as const;
 export type IconName = (typeof IconName)[keyof typeof IconName];
 
@@ -109,6 +110,14 @@ const getIconPath = (name: IconName) => {
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
           <line x1="8" y1="21" x2="16" y2="21"></line>
           <line x1="12" y1="17" x2="12" y2="21"></line>
+        </>
+      );
+    case "alert-triangle":
+      return (
+        <>
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
         </>
       );
   }

@@ -1,7 +1,7 @@
 @use 'theme/size';
 @use 'theme/color';
 
-.container {
+.article {
   position: relative;
   width: 430px;
   height: min-content;
@@ -12,25 +12,23 @@
   color: color.$text-primary;
   text-decoration: none;
   overflow: hidden;
-
   h2 {
     font-size: size.$font-small;
     font-weight: 400;
   }
+}
+
+.trigger {
+  color: currentColor;
+  text-decoration: none;
+  background: none;
+  border: none;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0;
-    transition: opacity 200ms ease;
-    box-shadow:
-            0     3px 2px rgba(0, 128, 184, 0.25),
-            2px   0   3px rgba(0, 128, 184, 0.25),
-            -2px  0px 3px rgba(0, 128, 184, 0.25);
-  }
-  &:hover::before {
-    opacity: 1;
+    cursor: pointer;
   }
 }
 
@@ -58,7 +56,7 @@
   height: 20px;
   background: none;
   border: none;
-  z-index: 2;
+  z-index: 1;
   cursor: pointer;
 }
 

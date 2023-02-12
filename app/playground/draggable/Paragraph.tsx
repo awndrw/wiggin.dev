@@ -16,17 +16,27 @@ export const Paragraph = ({ children }: { children: string }) => {
   );
 
   React.useEffect(() => {
-    const onKeypress = (e: KeyboardEvent) => {
-      const resets = Object.values(characterResets);
-      if (e.key === "R" && e.shiftKey && resets.length > 0) {
-        resets.forEach((reset, index) => {
-          setTimeout(reset, 75 * index);
-        });
-        setCharacterResets({});
-      }
+    const reset = () => {
+      Object.values(characterResets).forEach((reset, index) => {
+        setTimeout(reset, 75 * index);
+      });
+      setCharacterResets({});
     };
-    window.addEventListener("keypress", onKeypress);
-    return () => window.removeEventListener("keypress", onKeypress);
+    if ("ontouchstart" in window) {
+      const onDoubleTap = () => {
+        reset();
+      };
+      window.addEventListener("dblclick", onDoubleTap);
+      return () => window.removeEventListener("dblclick", onDoubleTap);
+    } else {
+      const onKeypress = (e: KeyboardEvent) => {
+        if (e.key === "R" && e.shiftKey) {
+          reset();
+        }
+      };
+      window.addEventListener("keypress", onKeypress);
+      return () => window.removeEventListener("keypress", onKeypress);
+    }
   }, [characterResets]);
 
   const words = children.split(" ");
