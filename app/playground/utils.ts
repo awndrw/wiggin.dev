@@ -10,7 +10,7 @@ export type PlaygroundTagName = z.infer<typeof PlaygroundTagNameSchema>;
 export const PlaygroundTagSchema = PlaygroundTagNameSchema.or(
   z.object({
     name: PlaygroundTagNameSchema,
-    tooltip: z.string(),
+    tooltip: z.string().optional(),
   })
 );
 export type PlaygroundTag = z.infer<typeof PlaygroundTagSchema>;

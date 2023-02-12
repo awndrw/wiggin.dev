@@ -53,13 +53,33 @@
   background-color: color.$accent-tint;
 }
 
+.iconButton {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.iconTooltip {
+  background: color.$accent-container;
+  color: color.$accent-container-contrast;
+  padding: 8px 12px;
+  border-radius: size.$border-radius-small;
+}
+
+.iconTooltipArrow {
+  fill: color.$accent-container;
+}
+
 .tags {
   display: flex;
-  gap: 4px;
+  gap: 8px;
 
   & > svg {
     width: 20px;
     height: 20px;
-    stroke: currentColor;
+    stroke: color.$text-primary;
   }
 }

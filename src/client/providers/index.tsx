@@ -1,5 +1,6 @@
 "use client";
 
+import { TooltipProvider } from "@radix-ui/react-tooltip";
 import React from "react";
 import { Provider as ReactWrapProvider } from "react-wrap-balancer";
 import { Provider as ColorProvider } from "client/providers/Color";
@@ -14,7 +15,9 @@ export default function Providers({
 }) {
   return (
     <ReactWrapProvider>
-      <ColorProvider initialColor={initialColor}>{children}</ColorProvider>
+      <TooltipProvider>
+        <ColorProvider initialColor={initialColor}>{children}</ColorProvider>
+      </TooltipProvider>
     </ReactWrapProvider>
   );
 }

@@ -1,11 +1,12 @@
 import fs from "fs/promises";
 import path from "path";
-import styles from "./page.module.scss";
 import { PlaygroundItem } from "./PlaygroundItem";
+import styles from "./page.module.scss";
+import type { Playground } from "./utils";
 
 const getPlaygroundItemFromDirname = async (
   dirname: string
-): Promise<PlaygroundItem> => {
+): Promise<Playground> => {
   const pageModule = await import(`./${dirname}/page.tsx`);
   if (!pageModule.playgroundItemData) throw new Error("no metadata found");
   return {

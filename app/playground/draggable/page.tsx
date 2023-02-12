@@ -1,12 +1,17 @@
 import React from "react";
+import { PlaygroundData } from "../utils";
 import { Paragraph } from "./Paragraph";
 import styles from "./page.module.scss";
 import previewPng from "./preview.png";
 
-export const playgroundItemData = {
+export const playgroundItemData: PlaygroundData = {
   name: "Draggable",
   image: previewPng.src,
-  tags: ["accessible", "mobile", "desktop"],
+  tags: [
+    { name: "accessible", tooltip: "Mouse- or keyboard-based drag and drop" },
+    { name: "mobile", tooltip: "Works on touch screens" },
+    "desktop",
+  ],
 };
 
 export default function Page() {

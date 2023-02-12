@@ -1,6 +1,5 @@
 "use client";
 
-import localFont from "@next/font/local";
 import {
   animated,
   easings,
@@ -12,10 +11,11 @@ import {
 import c from "classnames";
 import React from "react";
 import { flexaMono } from "fonts";
+import { PlaygroundData } from "../utils";
 import styles from "./page.module.scss";
 import previewPng from "./preview.png";
 
-export const playgroundItemData = {
+export const playgroundItemData: PlaygroundData = {
   name: 'Google\'s "Ten things"',
   image: previewPng.src,
   tags: ["desktop"],
