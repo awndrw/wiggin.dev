@@ -1,10 +1,11 @@
 import React from "react";
 import { Paragraph } from "./Paragraph";
 import styles from "./page.module.scss";
+import previewPng from "./preview.png";
 
 export const playgroundItemData = {
   name: "Draggable",
-  image: "",
+  image: previewPng.src,
   tags: ["accessible", "mobile", "desktop"],
 };
 

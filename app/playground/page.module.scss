@@ -2,6 +2,7 @@
 
 .container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: size.$spacing-small;
   padding: size.$spacing-large;

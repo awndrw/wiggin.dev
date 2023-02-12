@@ -1,0 +1,23 @@
+@use 'theme/color';
+
+.container {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  & > span {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.character {
+  all: unset;
+  z-index: 1;
+  touch-action: none;
+}
+
+.shadow {
+  z-index: 0;
+  color: color.$accent-tint;
+}

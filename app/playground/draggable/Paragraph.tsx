@@ -1,103 +1,85 @@
 "use client";
 
-import { useSpring, animated } from "@react-spring/web";
-import { useDrag } from "@use-gesture/react";
 import React from "react";
+import { flexaMono } from "fonts";
+import * as Toast from "@radix-ui/react-toast";
+import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";
 
 export const Paragraph = ({ children }: { children: string }) => {
-  const [hasDraggedCharacters, setHasDraggedCharacters] = React.useState(false);
-  const characterRefs = React.useRef<Set<CharacterRef>>(new Set());
+  const [characterResets, setCharacterResets] = React.useState<
+    Record<string, () => void>
+  >({});
+  const hasDraggedCharacters = React.useMemo(
+    () => Object.keys(characterResets).length > 0,
+    [characterResets]
+  );
 
   React.useEffect(() => {
     const onKeypress = (e: KeyboardEvent) => {
-      if (e.key === "R" && e.shiftKey && hasDraggedCharacters) {
-        characterRefs.current.forEach((characterRef) => characterRef.reset());
+      const resets = Object.values(characterResets);
+      if (e.key === "R" && e.shiftKey && resets.length > 0) {
+        resets.forEach((reset, index) => {
+          setTimeout(reset, 75 * index);
+        });
+        setCharacterResets({});
       }
     };
     window.addEventListener("keypress", onKeypress);
     return () => window.removeEventListener("keypress", onKeypress);
-  }, [hasDraggedCharacters]);
+  }, [characterResets]);
 
   const words = children.split(" ");
   return (
-    <p>
-      {words.map((word, wordIndex) => {
-        const characters = word.split("");
-        return (
-          <React.Fragment key={wordIndex}>
-            <span className={styles.word}>
-              {characters.map((character, characterIndex) => (
-                <Character
-                  ref={(ref) => ref && characterRefs.current.add(ref)}
-                  setDragged={() =>
-                    !hasDraggedCharacters && setHasDraggedCharacters(true)
-                  }
-                  key={characterIndex}
-                >
-                  {character}
-                </Character>
-              ))}
-            </span>
-            <span>&nbsp;</span>
-          </React.Fragment>
-        );
-      })}
-    </p>
+    <Toast.Provider>
+      <ResetMessage visible={hasDraggedCharacters} />
+      <p className={styles.paragraph} aria-label={children}>
+        {words.map((word, wordIndex) => {
+          const characters = word.split("");
+          return (
+            <React.Fragment key={wordIndex}>
+              <span className={styles.word}>
+                {characters.map((character, characterIndex) => (
+                  <Character
+                    registerReset={(id, reset) =>
+                      setCharacterResets((resets) => {
+                        if (resets[id]) return resets;
+                        return {
+                          ...resets,
+                          [id]: reset,
+                        };
+                      })
+                    }
+                    key={characterIndex}
+                  >
+                    {character}
+                  </Character>
+                ))}
+              </span>
+              <span>&nbsp;</span>
+            </React.Fragment>
+          );
+        })}
+      </p>
+      <Toast.Viewport className={styles.resetMessageViewport} />
+    </Toast.Provider>
   );
 };
 
-interface CharacterRef {
-  reset: () => void;
-}
-
-interface CharacterProps {
-  children: string;
-  setDragged: () => void;
-}
-
-const Character = React.forwardRef<CharacterRef, CharacterProps>(
-  ({ children, setDragged }, ref) => {
-    const spanRef = React.createRef<HTMLSpanElement>();
-    const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
-
-    React.useImperativeHandle(
-      ref,
-      () => ({
-        reset: () => api.start({ x: 0, y: 0 }),
-      }),
-      [api]
-    );
-
-    useDrag(
-      ({ offset: [ox, oy] }) => {
-        setDragged();
-        api.start({ x: ox, y: oy, immediate: true });
-      },
-      { target: spanRef, filterTaps: true }
-    );
-
-    React.useEffect(() => {
-      const span = spanRef.current;
-      if (!span) return;
-      const onClick = () => api.start({ x: 0, y: 0 });
-      span.addEventListener("dblclick", onClick);
-      return () => span.removeEventListener("dblclick", onClick);
-    }, [api, spanRef]);
-
-    return (
-      <span className={styles.characterContainer}>
-        <animated.span
-          ref={spanRef}
-          style={{ x, y }}
-          className={styles.character}
-        >
-          {children}
-        </animated.span>
-        <span className={styles.shadow}>{children}</span>
-      </span>
-    );
-  }
-);
-
-Character.displayName = "Character";
+const ResetMessage = ({ visible }: { visible: boolean }) => {
+  const [isTouchScreen] = React.useState(() => "ontouchstart" in window);
+  return (
+    <Toast.Root open={visible} className={styles.resetMessage}>
+      <Toast.Description asChild>
+        {isTouchScreen ? (
+          <span>double tap anywhere to reset</span>
+        ) : (
+          <span>
+            press <kbd className={flexaMono.className}>shift</kbd> +{" "}
+            <kbd className={flexaMono.className}>r</kbd> to reset
+          </span>
+        )}
+      </Toast.Description>
+    </Toast.Root>
+  );
+};
