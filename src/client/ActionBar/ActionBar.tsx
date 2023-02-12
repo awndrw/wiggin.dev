@@ -1,8 +1,10 @@
-import { DarkModeToggle } from "client/ActionBar/DarkModeToggle";
+"use client";
+
 import React from "react";
-import NavButton from "client/ActionBar/NavButton";
-import ColorSelector from "client/ActionBar/ColorSelector";
 import { COLORS } from "utils/theme";
+import { DarkModeToggle } from "./DarkModeToggle";
+import NavButton from "./NavButton";
+import ColorSelector from "./ColorSelector";
 import styles from "./ActionBar.module.scss";
 
 export function ActionBar() {

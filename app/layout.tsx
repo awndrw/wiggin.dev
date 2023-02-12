@@ -7,7 +7,7 @@ import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
 import { planarLight } from "fonts";
-import { ActionBar } from "./ActionBar";
+import { ActionBar } from "client/ActionBar";
 
 import "./globals.scss";
 
