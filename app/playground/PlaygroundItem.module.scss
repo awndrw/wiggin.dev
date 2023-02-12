@@ -1,9 +1,9 @@
 @use 'theme/size';
 @use 'theme/color';
+@use 'theme/util';
 
 .article {
   position: relative;
-  width: 430px;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,15 @@
   color: color.$text-primary;
   text-decoration: none;
   overflow: hidden;
+
+  width: 280px;
+  @include util.mw-md {
+    width: 320px;
+  }
+  @include util.mw-lg {
+      width: 430px;
+  }
+
   h2 {
     font-size: size.$font-small;
     font-weight: 400;
@@ -33,9 +42,9 @@
 }
 
 .image {
-  flex-grow: 1;
-  width: 430px;
-  height: 280px;
+  aspect-ratio: 430 / 280;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
