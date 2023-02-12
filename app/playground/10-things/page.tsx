@@ -9,7 +9,9 @@ import {
   useSpring,
   useSpringRef,
 } from "@react-spring/web";
+import c from "classnames";
 import React from "react";
+import { flexaMono } from "fonts";
 import styles from "./page.module.scss";
 import previewPng from "./preview.png";
 
@@ -18,8 +20,6 @@ export const playgroundItemData = {
   image: previewPng.src,
   tags: ["desktop"],
 };
-
-const flexa = localFont({ src: "./Flexa-Mono.woff2" });
 
 export default function Page() {
   const [showBlueScreen, setShowBlueScreen] = React.useState(false);
@@ -116,7 +116,7 @@ export default function Page() {
       </animated.div>
 
       {showBlueScreen && (
-        <div className={styles.blueScreen + " " + flexa.className}>test</div>
+        <div className={c(styles.blueScreen, flexaMono.className)}>test</div>
       )}
     </main>
   );

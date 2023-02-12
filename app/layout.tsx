@@ -7,6 +7,7 @@ import React from "react";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
+import { planarLight } from "fonts";
 import { ActionBar } from "./ActionBar";
 
 import "./globals.scss";
@@ -23,8 +24,6 @@ export const metadata = {
   themeColor: "rgb(0, 128, 184)",
 };
 
-const planar = localFont({ src: "./Planar-Light.woff2" });
-
 export default async function RootLayout({
   children,
 }: {
@@ -40,7 +39,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={planar.className} data-color={color}>
+      <body className={planarLight.className} data-color={color}>
         <Providers initialColor={color}>
           <RouteChangeHandler>{children}</RouteChangeHandler>
           <ActionBar />
