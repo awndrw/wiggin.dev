@@ -1,8 +1,0 @@
-query PostBySlug($slug: String) {
-    post(filter: { slug: { eq: $slug } }) {
-        title
-        slug
-        description
-        content
-    }
-}
