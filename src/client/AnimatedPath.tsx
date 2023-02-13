@@ -18,45 +18,47 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   d,
   animatedPathRatio,
 }) => {
-  const pathRef = React.createRef<SVGPathElement>();
+  const pathRef = React.useRef<SVGPathElement>();
   const [pathLength, setPathLength] = React.useState(0);
-  const strokeDashoffset = useSpringValue<number>(0, { config: config.stiff });
+  const strokeDashoffset = useSpringValue<number>(0);
 
-  useIsomorphicLayoutEffect(() => {
+  const recalculatePathLength = () => {
+    console.log("in recalculatePathLength");
     const path = pathRef.current;
-    if (!path) {
-      return;
-    }
-    const handleResize = () => {
-      const scale = path.getBoundingClientRect().width / path.getBBox().width;
-      const scaledLength = path.getTotalLength() * scale;
-      setPathLength(scaledLength);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [pathRef]);
+    if (!path) return;
+    const scale = path.getBoundingClientRect().width / path.getBBox().width;
+    setPathLength(path.getTotalLength() * scale);
+  };
 
   React.useEffect(() => {
-    let immediate = true;
-    const handleScroll = () => {
+    const recalculateStrokeDashoffset = () => {
+      console.log("in recalculateStrokeDashoffset");
       const about = document.querySelector("main > section:nth-of-type(2)");
       if (!about) return;
       const scrollProgress =
         1 - about.getBoundingClientRect().top / window.innerHeight;
       const pathProgress = pathLength * scrollProgress;
       const startingPosition = pathLength + pathLength / animatedPathRatio;
-      strokeDashoffset.start(startingPosition - pathProgress, { immediate });
+      strokeDashoffset.start(startingPosition - pathProgress, {
+        immediate: true,
+      });
     };
-    handleScroll();
-    immediate = false;
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    recalculateStrokeDashoffset();
+    window.addEventListener("scroll", recalculateStrokeDashoffset);
+    window.addEventListener("resize", recalculatePathLength);
+    return () => {
+      window.removeEventListener("scroll", recalculateStrokeDashoffset);
+      window.removeEventListener("resize", recalculatePathLength);
+    };
   }, [animatedPathRatio, pathLength, strokeDashoffset]);
 
   return (
     <animated.path
-      ref={pathRef}
+      ref={(path) => {
+        // @ts-ignore current is mutable, not readonly
+        pathRef.current = path;
+        recalculatePathLength();
+      }}
       vectorEffect="non-scaling-stroke"
       style={{
         strokeDashoffset,
