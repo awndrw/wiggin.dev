@@ -62,6 +62,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
         strokeDashoffset,
         opacity: !pathLength ? 0 : 1,
         strokeDasharray: `${pathLength / animatedPathRatio} ${pathLength}`,
+        willChange: "stroke-dashoffset",
       }}
       d={d}
     />
