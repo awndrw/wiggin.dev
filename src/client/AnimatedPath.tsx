@@ -2,7 +2,6 @@
 
 import {
   animated,
-  config,
   useIsomorphicLayoutEffect,
   useSpringValue,
 } from "@react-spring/web";
@@ -29,23 +28,22 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     setPathLength(path.getTotalLength() * scale);
   };
 
-  React.useEffect(() => {
-    const recalculateStrokeDashoffset = () => {
+  useIsomorphicLayoutEffect(() => {
+    const recalculateStrokeDashoffset = (immediate: boolean) => {
       const about = document.querySelector("main > section:nth-of-type(2)");
       if (!about) return;
       const scrollProgress =
         1 - about.getBoundingClientRect().top / window.innerHeight;
       const pathProgress = pathLength * scrollProgress;
       const startingPosition = pathLength + pathLength / animatedPathRatio;
-      strokeDashoffset.start(startingPosition - pathProgress, {
-        immediate: true,
-      });
+      strokeDashoffset.start(startingPosition - pathProgress, { immediate });
     };
-    recalculateStrokeDashoffset();
-    window.addEventListener("scroll", recalculateStrokeDashoffset);
+    recalculateStrokeDashoffset(true);
+    const handleScroll = () => recalculateStrokeDashoffset(false);
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", recalculatePathLength);
     return () => {
-      window.removeEventListener("scroll", recalculateStrokeDashoffset);
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", recalculatePathLength);
     };
   }, [animatedPathRatio, pathLength, strokeDashoffset]);
@@ -62,7 +60,6 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
         strokeDashoffset,
         opacity: !pathLength ? 0 : 1,
         strokeDasharray: `${pathLength / animatedPathRatio} ${pathLength}`,
-        willChange: "stroke-dashoffset",
       }}
       d={d}
     />
