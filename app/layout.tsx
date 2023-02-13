@@ -12,6 +12,10 @@ import { ActionBar } from "client/ActionBar";
 import "./globals.scss";
 
 export const metadata = {
+  title: {
+    default: "wiggin.dev",
+    template: "wiggin.dev/%s",
+  },
   icons: {
     icon: [
       { url: "/icons/blue_32.png", sizes: "any" },

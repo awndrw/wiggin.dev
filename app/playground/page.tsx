@@ -5,6 +5,10 @@ import styles from "./page.module.scss";
 import { PlaygroundConfigSchema } from "./utils";
 import type { Playground } from "./utils";
 
+export const metadata = {
+  title: "playground",
+};
+
 const getPlaygroundItemFromDirname = async (
   dirname: string
 ): Promise<Playground> => {
