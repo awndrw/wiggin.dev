@@ -13,7 +13,7 @@ export const InternalLink: React.FC<InternalLinkProps> = ({
   ...props
 }) => {
   return (
-    <NextLink href={{ pathname: href, query: { ref: "internal" } }} {...props}>
+    <NextLink href={{ pathname: href, query: { ref: "i" } }} {...props}>
       {children}
     </NextLink>
   );

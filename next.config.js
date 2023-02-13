@@ -61,16 +61,6 @@ const nextConfig = {
     }
     return headers;
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "source.unsplash.com",
-        port: "",
-        pathname: "/random/**",
-      },
-    ],
-  },
   webpack: (config, { dev }) => {
     const oneOfRule = config.module.rules.find(
       (rule) => typeof rule.oneOf === "object"

@@ -4,39 +4,42 @@
 .container {
   position: fixed;
   bottom: size.$spacing-large;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  pointer-events: none;
   z-index: 2;
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(300%);
-  }
-  65% {
-    transform: translateY(300%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.actionbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 10px;
   border-radius: size.$border-radius-small;
-  background-color: color.$accent-container-contrast;
-  pointer-events: auto;
+  overflow: hidden;
   animation-name: slideInFromBottom;
   animation-duration: 2500ms;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: color.$accent-container-contrast;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translate(-50%, 300%);
+  }
+  65% {
+    transform: translate(-50%, 300%);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.separator {
+  height: 18px;
+  width: 1px;
+  background-color: color.$accent-container;
+  opacity: 0.4;
+  margin-right: 4px;
 }
