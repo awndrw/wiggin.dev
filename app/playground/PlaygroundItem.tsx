@@ -11,7 +11,7 @@ import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";
 export const PlaygroundItem = ({
   name,
   slug,
-  image,
+  preview,
   tags,
   warning,
 }: Playground) => {
@@ -21,7 +21,7 @@ export const PlaygroundItem = ({
     <article className={styles.article}>
       <Dialog.Root>
         <Image
-          src={image}
+          src={preview}
           alt=""
           className={styles.image}
           width={430}

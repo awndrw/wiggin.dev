@@ -11,16 +11,7 @@ import {
 import c from "classnames";
 import React from "react";
 import { flexaMono } from "fonts";
-import { PlaygroundData } from "../utils";
 import styles from "./page.module.scss";
-import previewPng from "./preview.png";
-
-export const playgroundItemData: PlaygroundData = {
-  name: 'Google\'s "Ten things"',
-  image: previewPng.src,
-  tags: ["desktop"],
-  warning: "This playground is not accessible or mobile-friendly.",
-};
 
 export default function Page() {
   const [showBlueScreen, setShowBlueScreen] = React.useState(false);

@@ -2,16 +2,20 @@ import fs from "fs/promises";
 import path from "path";
 import { PlaygroundItem } from "./PlaygroundItem";
 import styles from "./page.module.scss";
+import { PlaygroundConfigSchema } from "./utils";
 import type { Playground } from "./utils";
 
 const getPlaygroundItemFromDirname = async (
   dirname: string
 ): Promise<Playground> => {
-  const pageModule = await import(`./${dirname}/page.tsx`);
-  if (!pageModule.playgroundItemData) throw new Error("no metadata found");
+  const pageConfig = await import(`./${dirname}/config.ts`).then(
+    (m) => m.default
+  );
+  const parsedConfig = PlaygroundConfigSchema.safeParse(pageConfig);
+  if (!parsedConfig.success) throw new Error("invalid metadata");
   return {
     slug: dirname,
-    ...pageModule.playgroundItemData,
+    ...parsedConfig.data,
   };
 };
 

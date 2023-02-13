@@ -15,15 +15,15 @@ export const PlaygroundTagSchema = PlaygroundTagNameSchema.or(
 );
 export type PlaygroundTag = z.infer<typeof PlaygroundTagSchema>;
 
-export const PlaygroundDataSchema = z.object({
+export const PlaygroundConfigSchema = z.object({
   name: z.string(),
-  image: z.string(),
+  preview: z.string(),
   tags: z.array(PlaygroundTagSchema),
   warning: z.string().optional(),
 });
-export type PlaygroundData = z.infer<typeof PlaygroundDataSchema>;
+export type PlaygroundConfig = z.infer<typeof PlaygroundConfigSchema>;
 
-export const PlaygroundSchema = PlaygroundDataSchema.merge(
+export const PlaygroundSchema = PlaygroundConfigSchema.merge(
   z.object({
     slug: z.string(),
   })
