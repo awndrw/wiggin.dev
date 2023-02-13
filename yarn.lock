@@ -359,12 +359,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^13.1.5":
-  version: 13.1.5
-  resolution: "@next/bundle-analyzer@npm:13.1.5"
+"@next/bundle-analyzer@npm:canary":
+  version: 13.1.7-canary.11
+  resolution: "@next/bundle-analyzer@npm:13.1.7-canary.11"
   dependencies:
     webpack-bundle-analyzer: 4.7.0
-  checksum: cfe3ccc9b6ad00cfd9c687073e6af826c0a7637a1b0ad69dd805a588ae833bea677c646c69bbe204b6263ea1c3477d35dd2faacc3034212185f8dc4a2957aad0
+  checksum: 5f6a91e1cfce527d71ad353013cbf1ec3f044483664467e78699f65d4efec811b1f897326f2af983101a0080e759cf27b893ecb2ef3e59f0b95fe6f9455676bb
   languageName: node
   linkType: hard
 
@@ -384,10 +384,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:13.1.5":
-  version: 13.1.5
-  resolution: "@next/font@npm:13.1.5"
-  checksum: f3e8425ca77e1c6f08153c0fe91ee6bac37b67487bb5c6c69624bd3c1901184a3db4bd9281abf4bce6dbc4d42bd744bdc160dd82660de92b1b7e743f6e120295
+"@next/font@npm:canary":
+  version: 13.1.7-canary.11
+  resolution: "@next/font@npm:13.1.7-canary.11"
+  checksum: b89a5f53d7849fee007e9468084689eb5fea594c1fc47bc7d2e17698b904164c84d6b50ac1a1010b4b32656d9da31cfe582f976f6189672ed60c64bdb64858fa
   languageName: node
   linkType: hard
 
@@ -3839,8 +3839,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@next/bundle-analyzer": ^13.1.5
-    "@next/font": 13.1.5
+    "@next/bundle-analyzer": canary
+    "@next/font": canary
     "@radix-ui/react-accessible-icon": ^1.0.1
     "@radix-ui/react-dialog": ^1.0.2
     "@radix-ui/react-separator": ^1.0.1
@@ -3862,6 +3862,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     loader-utils: ^3.2.1
     next: canary
+    postcss: ^8.4.21
     postcss-flexbugs-fixes: ^5.0.2
     postcss-preset-env: ^8.0.1
     prettier: ^2.8.3
@@ -4266,6 +4267,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: fe58766ff32e4becf65a7d57678995cfd239df6deed2fe0557f038b47c94e4132e7e5f68b5aa820c13adfec32e523b693efaeb65798efb995ce49ccd83953816
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.21":
+  version: 8.4.21
+  resolution: "postcss@npm:8.4.21"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
   languageName: node
   linkType: hard
 

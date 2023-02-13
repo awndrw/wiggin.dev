@@ -11,8 +11,8 @@
     "format": "next lint --fix"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.1.5",
-    "@next/font": "13.1.5",
+    "@next/bundle-analyzer": "canary",
+    "@next/font": "canary",
     "@radix-ui/react-accessible-icon": "^1.0.1",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-separator": "^1.0.1",
@@ -41,6 +41,7 @@
     "eslint-config-next": "13.1.5",
     "eslint-config-prettier": "^8.6.0",
     "loader-utils": "^3.2.1",
+    "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.3",
