@@ -18,6 +18,7 @@
 }
 
 .resetMessage {
+  user-select: none;
   color: color.$text-secondary;
   font-size: size.$font-small;
 

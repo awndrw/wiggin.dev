@@ -50,7 +50,7 @@ export const PlaygroundItem = ({
 };
 
 const playgroundItemTagIconMap: Record<PlaygroundTagName, IconName> = {
-  accessible: "smile",
+  accessible: "heart",
   mobile: "smartphone",
   desktop: "monitor",
 };

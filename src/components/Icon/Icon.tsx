@@ -14,6 +14,7 @@ export const IconName = {
   SMARTPHONE: "smartphone",
   MONITOR: "monitor",
   ALERT_TRIANGLE: "alert-triangle",
+  HEART: "heart",
 } as const;
 export type IconName = (typeof IconName)[keyof typeof IconName];
 
@@ -119,6 +120,10 @@ const getIconPath = (name: IconName) => {
           <line x1="12" y1="9" x2="12" y2="13"></line>
           <line x1="12" y1="17" x2="12.01" y2="17"></line>
         </>
+      );
+    case "heart":
+      return (
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       );
   }
 };
