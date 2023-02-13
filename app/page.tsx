@@ -2,7 +2,7 @@ import { Icon } from "components/Icon";
 import { Link } from "components/Link";
 import React from "react";
 import Balancer from "react-wrap-balancer";
-import { Separator } from "client/Separator";
+import { Separator } from "client/radix/Separator";
 import { BALANCER_RATIO } from "utils/constants";
 import { AnimatedPath } from "client/AnimatedPath";
 import styles from "./page.module.scss";

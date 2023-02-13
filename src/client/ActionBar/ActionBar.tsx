@@ -2,7 +2,7 @@
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { ActionBarButton } from "client/ActionBar/ActionBarButton";
-import { Separator } from "client/Separator";
+import { Separator } from "client/radix/Separator";
 import { Icon } from "components/Icon";
 import { InternalLink } from "components/InternalLink";
 import { usePathname } from "next/navigation";

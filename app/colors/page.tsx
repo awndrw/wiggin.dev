@@ -1,4 +1,4 @@
-import { Separator } from "client/Separator";
+import { Separator } from "client/radix/Separator";
 import { Link } from "components/Link";
 import Image from "next/image";
 import React from "react";
