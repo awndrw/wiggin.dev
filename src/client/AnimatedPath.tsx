@@ -23,7 +23,6 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   const strokeDashoffset = useSpringValue<number>(0);
 
   const recalculatePathLength = () => {
-    console.log("in recalculatePathLength");
     const path = pathRef.current;
     if (!path) return;
     const scale = path.getBoundingClientRect().width / path.getBBox().width;
@@ -32,7 +31,6 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
 
   React.useEffect(() => {
     const recalculateStrokeDashoffset = () => {
-      console.log("in recalculateStrokeDashoffset");
       const about = document.querySelector("main > section:nth-of-type(2)");
       if (!about) return;
       const scrollProgress =
