@@ -6,7 +6,7 @@ import React from "react";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
-import { planarLight } from "fonts";
+import { haffer } from "fonts";
 import { ActionBar } from "client/ActionBar";
 
 import "./globals.scss";
@@ -38,7 +38,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={planarLight.className} data-color={color}>
+      <body className={haffer.className} data-color={color}>
         <Providers initialColor={color}>
           <RouteChangeHandler>{children}</RouteChangeHandler>
           <ActionBar />
