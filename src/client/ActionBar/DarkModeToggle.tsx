@@ -3,7 +3,7 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";
-import { Context as ColorContext } from "client/providers/Color";
+import { ColorContext } from "client/ColorContext";
 import { ActionBarButton } from "./ActionBarButton";
 import styles from "./DarkModeToggle.module.scss";
 

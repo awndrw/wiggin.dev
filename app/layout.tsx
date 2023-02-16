@@ -1,8 +1,9 @@
+import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { Analytics } from "client/Analytics";
-import { RouteChangeHandler } from "client/RouteChangeHandler";
+import { ColorProvider } from "client/ColorContext";
 import { cookies as nextCookies } from "next/headers";
-import Providers from "client/providers";
 import React from "react";
+import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
@@ -33,9 +34,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookies = nextCookies();
-
-  const colorCookie = Color.safeParse(cookies.get(StorageKey.COLOR)?.value);
-  const color = colorCookie.success ? colorCookie.data : DEFAULT_COLOR;
+  const colorCookie = cookies.get(StorageKey.COLOR)?.value ?? "";
+  const parsedColor = Color.safeParse(colorCookie);
+  const color = parsedColor.success ? parsedColor.data : DEFAULT_COLOR;
 
   const analyticsMode =
     env.VERCEL_ENV === "production" ? "production" : "development";
@@ -43,10 +44,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={haffer.className} data-color={color}>
-        <Providers initialColor={color}>
-          <RouteChangeHandler>{children}</RouteChangeHandler>
+        <ColorProvider initialColor={color}>
+          <TooltipProvider>
+            <ReactWrapProvider>{children}</ReactWrapProvider>
+          </TooltipProvider>
           <ActionBar />
-        </Providers>
+        </ColorProvider>
         <Analytics mode={analyticsMode} />
       </body>
     </html>

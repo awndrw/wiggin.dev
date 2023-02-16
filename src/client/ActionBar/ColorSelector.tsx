@@ -1,7 +1,7 @@
 "use client";
 
 import { animated } from "@react-spring/web";
-import { Context as ColorContext } from "client/providers/Color";
+import { ColorContext } from "client/ColorContext";
 import React from "react";
 import { Color } from "utils/theme";
 import useTimedSpring from "client/useTimedSpring";
