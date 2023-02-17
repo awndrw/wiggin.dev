@@ -12,10 +12,9 @@ export type LinkType = (typeof LinkType)[keyof typeof LinkType];
 
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: string;
+  children: React.ReactNode;
   href: string;
   type?: LinkType;
-  srOnly?: boolean;
 }
 
 export function Link({
@@ -23,14 +22,41 @@ export function Link({
   type = "internal",
   className,
   children,
-  srOnly = false,
   target,
   rel,
   ...linkProps
 }: LinkProps) {
-  const words = children.split(" ");
-  const lastWord = words.at(-1);
-  const rest = words.slice(0, -1).join(" ");
+  const icon = (
+    <Icon
+      iconName={type === "internal" ? "arrow-right" : "arrow-up-right"}
+      className={styles.icon}
+      aria-hidden
+      focusable={false}
+    />
+  );
+
+  let content: React.ReactNode;
+  if (typeof children === "string") {
+    const words = children.split(" ");
+    const lastWord = words.at(-1);
+    const rest = words.slice(0, -1).join(" ");
+    content = (
+      <>
+        {rest.length ? rest + " " : ""}
+        <span style={{ display: "inline-block" }}>
+          {lastWord}
+          {icon}
+        </span>
+      </>
+    );
+  } else {
+    content = (
+      <>
+        {children}
+        {icon}
+      </>
+    );
+  }
 
   if (type === "internal") {
     return (
@@ -39,16 +65,7 @@ export function Link({
         className={c(styles.link, className)}
         {...linkProps}
       >
-        {rest.length ? rest + " " : ""}
-        <span style={{ display: "inline-block" }}>
-          {lastWord}
-          <Icon
-            iconName="arrow-right"
-            className={styles.icon}
-            aria-hidden
-            focusable={false}
-          />
-        </span>
+        {content}
       </InternalLink>
     );
   } else {
@@ -60,16 +77,7 @@ export function Link({
         className={c(styles.link, className)}
         {...linkProps}
       >
-        {rest.length ? rest + " " : ""}
-        <span style={{ display: "inline-block" }}>
-          {lastWord}
-          <Icon
-            iconName="arrow-up-right"
-            className={styles.icon}
-            aria-hidden
-            focusable={false}
-          />
-        </span>
+        {content}
       </a>
     );
   }
