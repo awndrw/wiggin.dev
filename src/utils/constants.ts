@@ -3,4 +3,4 @@ export const StorageKey = {
   USER_ID: "uid",
 } as const;
 
-export const BALANCER_RATIO = 0.45;
+export const BALANCER_RATIO = 0.6;
