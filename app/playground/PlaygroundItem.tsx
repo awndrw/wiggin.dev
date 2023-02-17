@@ -1,8 +1,8 @@
 import * as Dialog from "client/radix/Dialog";
 import * as Tooltip from "client/radix/Tooltip";
 import { Icon, IconName } from "components/Icon";
-import { InternalLink } from "components/InternalLink";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { WarningDialog } from "./WarningDialog";
 import styles from "./PlaygroundItem.module.scss";
@@ -33,9 +33,9 @@ export const PlaygroundItem = ({
               <h2 className={styles.link}>{name}</h2>
             </Dialog.Trigger>
           ) : (
-            <InternalLink href={href} className={styles.trigger}>
+            <Link href={href} className={styles.trigger}>
               <h2 className={styles.link}>{name}</h2>
-            </InternalLink>
+            </Link>
           )}
           <ul role="list" aria-label="Tags" className={styles.tags}>
             {tags.map((tag) => (

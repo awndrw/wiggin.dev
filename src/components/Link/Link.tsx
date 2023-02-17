@@ -1,7 +1,7 @@
 import c from "classnames";
 import { Icon } from "components/Icon";
-import { InternalLink } from "components/InternalLink";
 import React from "react";
+import NextLink from "next/link";
 import styles from "./Link.module.scss";
 
 export const LinkType = {
@@ -60,13 +60,13 @@ export function Link({
 
   if (type === "internal") {
     return (
-      <InternalLink
+      <NextLink
         href={href}
         className={c(styles.link, className)}
         {...linkProps}
       >
         {content}
-      </InternalLink>
+      </NextLink>
     );
   } else {
     return (

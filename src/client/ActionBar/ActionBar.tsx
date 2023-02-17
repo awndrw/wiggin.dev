@@ -4,7 +4,7 @@ import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { ActionBarButton } from "client/ActionBar/ActionBarButton";
 import { Separator } from "client/radix/Separator";
 import { Icon } from "components/Icon";
-import { InternalLink } from "components/InternalLink";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { COLORS } from "utils/theme";
@@ -23,11 +23,11 @@ export function ActionBar() {
       {isNestedPage && (
         <>
           <ActionBarButton focusArrowClassName={styles.focusArrow}>
-            <InternalLink href={parentPath} className={styles.navButton}>
+            <Link href={parentPath} className={styles.navButton}>
               <AccessibleIcon label="Back">
                 <Icon iconName="arrow-left" />
               </AccessibleIcon>
-            </InternalLink>
+            </Link>
           </ActionBarButton>
           <Separator
             orientation="vertical"

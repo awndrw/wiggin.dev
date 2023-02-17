@@ -1,7 +1,7 @@
 import c from "classnames";
 import * as Dialog from "client/radix/Dialog";
 import { Icon } from "components/Icon";
-import { InternalLink } from "components/InternalLink";
+import Link from "next/link";
 import styles from "./WarningDialog.module.scss";
 
 export const WarningDialog = ({
@@ -21,13 +21,13 @@ export const WarningDialog = ({
           Close
         </Dialog.Close>
         <Dialog.Close asChild>
-          <InternalLink
+          <Link
             role="button"
             href={continueHref}
             className={c(styles.closeButton, styles.primaryButton)}
           >
             Continue
-          </InternalLink>
+          </Link>
         </Dialog.Close>
       </div>
     </Dialog.Content>
