@@ -1181,12 +1181,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^0.1.9":
-  version: 0.1.9
-  resolution: "@vercel/analytics@npm:0.1.9"
+"@vercel/analytics@npm:^0.1.10":
+  version: 0.1.10
+  resolution: "@vercel/analytics@npm:0.1.10"
   peerDependencies:
     react: ^16.8||^17||^18
-  checksum: ebeea65f2e05ef69d99f7f6b4d09304cecd9ea732088a372479a4b6bc4bb2484f93a4dd69543550e24494fd58fd12c50a4b3e4ef2cc8f1b89686af2d0f3733d6
+  checksum: e6f6741f47363e32105593e003c7034a48af417019e2c6bf90156f65cee6432cac32b01ac89fe14b985161bb8639757047696de0c9e7dcd44217387828734e0c
   languageName: node
   linkType: hard
 
@@ -3854,7 +3854,7 @@ __metadata:
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
     "@use-gesture/react": ^10.2.24
-    "@vercel/analytics": ^0.1.9
+    "@vercel/analytics": ^0.1.10
     classnames: ^2.3.2
     cookies-next: ^2.1.1
     eslint: 8.34.0
@@ -3869,7 +3869,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-wrap-balancer: ^0.4.0
-    sass: ^1.58.1
+    sass: ^1.58.2
     typescript: 4.9.5
     zod: ^3.20.6
   languageName: unknown
@@ -4591,16 +4591,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.58.1":
-  version: 1.58.1
-  resolution: "sass@npm:1.58.1"
+"sass@npm:^1.58.2":
+  version: 1.58.2
+  resolution: "sass@npm:1.58.2"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: ff079887d906b5c0dde99084d14ac36336d238c0c07935ff6381bad68f05de212c1ff12657ac1e8a0533523cd7a393126facdc2508d758e7d5700344a0e6ea51
+  checksum: e0febe4d274af7b9490b9207ff7f05762d60df6b2ad307f7a823432cb4e1604eced6784ae635a6b80e4a6177c047f5a9623c53a15aaec3b9bf981ea86e8937a9
   languageName: node
   linkType: hard
 

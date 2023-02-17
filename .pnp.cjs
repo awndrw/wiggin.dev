@@ -43,7 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@use-gesture/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:10.2.24"],\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.9"],\
+            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.10"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\
             ["eslint", "npm:8.34.0"],\
@@ -58,7 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
             ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
-            ["sass", "npm:1.58.1"],\
+            ["sass", "npm:1.58.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"],\
             ["zod", "npm:3.20.6"]\
           ],\
@@ -2064,17 +2064,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@vercel/analytics", [\
-        ["npm:0.1.9", {\
-          "packageLocation": "./.yarn/cache/@vercel-analytics-npm-0.1.9-6865dc0960-ebeea65f2e.zip/node_modules/@vercel/analytics/",\
+        ["npm:0.1.10", {\
+          "packageLocation": "./.yarn/cache/@vercel-analytics-npm-0.1.10-7c113a70c1-e6f6741f47.zip/node_modules/@vercel/analytics/",\
           "packageDependencies": [\
-            ["@vercel/analytics", "npm:0.1.9"]\
+            ["@vercel/analytics", "npm:0.1.10"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.9", {\
-          "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-f6e7c9c6cb/0/cache/@vercel-analytics-npm-0.1.9-6865dc0960-ebeea65f2e.zip/node_modules/@vercel/analytics/",\
+        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.10", {\
+          "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-b3ac0073a7/0/cache/@vercel-analytics-npm-0.1.10-7c113a70c1-e6f6741f47.zip/node_modules/@vercel/analytics/",\
           "packageDependencies": [\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.9"],\
+            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.10"],\
             ["@types/react", "npm:18.0.28"],\
             ["react", "npm:18.2.0"]\
           ],\
@@ -4899,7 +4899,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.14"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
-            ["sass", "npm:1.58.1"],\
+            ["sass", "npm:1.58.2"],\
             ["styled-jsx", "virtual:3aecaf753262c90c87919894d8c87e62ba072e35e90f28085dd55e79d86ac62d2674d6a4753c018d2093c74f5c3c77f52a2510c6ad2e8f80a5ef7025faee12b0#npm:5.1.1"]\
           ],\
           "packagePeers": [\
@@ -5253,7 +5253,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@use-gesture/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:10.2.24"],\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.9"],\
+            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.10"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\
             ["eslint", "npm:8.34.0"],\
@@ -5268,7 +5268,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
             ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
-            ["sass", "npm:1.58.1"],\
+            ["sass", "npm:1.58.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"],\
             ["zod", "npm:3.20.6"]\
           ],\
@@ -6414,10 +6414,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["sass", [\
-        ["npm:1.58.1", {\
-          "packageLocation": "./.yarn/cache/sass-npm-1.58.1-c6576a2e70-ff079887d9.zip/node_modules/sass/",\
+        ["npm:1.58.2", {\
+          "packageLocation": "./.yarn/cache/sass-npm-1.58.2-97da7f5295-e0febe4d27.zip/node_modules/sass/",\
           "packageDependencies": [\
-            ["sass", "npm:1.58.1"],\
+            ["sass", "npm:1.58.2"],\
             ["chokidar", "npm:3.5.3"],\
             ["immutable", "npm:4.2.2"],\
             ["source-map-js", "npm:1.0.2"]\
