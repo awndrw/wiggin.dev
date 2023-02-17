@@ -1,8 +1,9 @@
 "use client";
 
+import c from "classnames";
 import * as VisuallyHidden from "client/radix/VisuallyHidden";
 import React from "react";
-import { flexaMono } from "fonts";
+import { flexaMono, tragedy } from "fonts";
 import * as Toast from "@radix-ui/react-toast";
 import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";
@@ -46,7 +47,7 @@ export const Paragraph = ({ children }: { children: string }) => {
       <ResetMessage visible={hasDraggedCharacters} />
       <VisuallyHidden.Root>{children}</VisuallyHidden.Root>
       <p
-        className={styles.paragraph}
+        className={c(styles.paragraph, tragedy.className)}
         role="group"
         aria-label="Draggable characters"
       >
