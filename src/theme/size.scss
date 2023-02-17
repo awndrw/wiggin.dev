@@ -1,3 +1,5 @@
+@use 'theme/util';
+
 $font-small: var(--font-size-small);
 $font-normal: var(--font-size-normal);
 $font-medium: var(--font-size-medium);
@@ -14,11 +16,11 @@ $border-radius-large: 20px;
   --font-size-small: 1rem;
   --font-size-normal: 1rem;
   --font-size-medium: 1.2rem;
-  --font-size-large: 2rem;
+  --font-size-large: 2.5rem;
   --spacing-size-small: 12px;
   --spacing-size-large: 16px;
 
-  @media (min-width: 768px) {
+  @include util.mw-sm {
     --font-size-small: 1rem;
     --font-size-normal: 1.25rem;
     --font-size-medium: 1.6rem;
@@ -27,7 +29,16 @@ $border-radius-large: 20px;
     --spacing-size-large: 24px;
   }
 
-  @media (min-width: 1280px) {
+  @include util.mw-md {
+    --font-size-small: 1rem;
+    --font-size-normal: 1.4rem;
+    --font-size-medium: 2rem;
+    --font-size-large: 3.6rem;
+    --spacing-size-small: 20px;
+    --spacing-size-large: 32px;
+  }
+
+  @include util.mw-lg {
     --font-size-small: 1rem;
     --font-size-normal: 1.5rem;
     --font-size-medium: 2rem;
