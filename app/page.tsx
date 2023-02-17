@@ -3,9 +3,8 @@ import { Icon } from "components/Icon";
 import { Link } from "components/Link";
 import { tragedy } from "fonts";
 import React from "react";
-import Balancer from "react-wrap-balancer";
+import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
-import { BALANCER_RATIO } from "utils/constants";
 import { AnimatedPath } from "client/AnimatedPath";
 import styles from "./page.module.scss";
 
@@ -29,9 +28,7 @@ export default async function Page() {
             focusable={false}
           />
         </h1>
-        <Balancer ratio={BALANCER_RATIO} as="p">
-          {generateBlurb("I'm")}
-        </Balancer>
+        <Balancer>{generateBlurb("I'm")}</Balancer>
         <svg
           className={styles.scribble}
           xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +48,7 @@ export default async function Page() {
         className={styles.separator}
       />
       <section className={styles.about}>
-        <Balancer ratio={BALANCER_RATIO} as="p">
+        <Balancer>
           I&apos;ve been working on{" "}
           <Link href="https://familycenter.meta.com" type="external">
             parental supervision
