@@ -32,11 +32,11 @@
 }
 
 .scribbleLeft {
-  display: none;
-  top: 60%;
   height: 60%;
+  left: -10vw;
+  top: 80%;
   @include util.mw-sm {
-    display: block;
     left: -5vw;
+    top: 70%;
   }
 }
