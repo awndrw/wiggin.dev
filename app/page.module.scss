@@ -31,10 +31,25 @@
   }
 }
 
-.smile {
+.icon {
   margin-left: 6px;
-  width: 0.8em;
-  height: 0.8em;
+  width: 0.6em;
+  height: 0.6em;
+  stroke: color.$accent-primary;
+  stroke-width: 50px;
+  fill: none;
+  animation: spin 25s linear infinite;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .separator {
