@@ -1,6 +1,6 @@
 import c from "classnames";
 import { Link } from "components/Link";
-import { tragedy } from "fonts";
+import { tragedyDisplay } from "fonts";
 import React from "react";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
@@ -16,7 +16,7 @@ export const metadata = {
 
 export default async function Page() {
   return (
-    <main className={c(styles.page, tragedy.className)}>
+    <main className={c(styles.page, tragedyDisplay.className)}>
       <section className={styles.hero}>
         <h1>
           Hi, I&apos;m Andrew
