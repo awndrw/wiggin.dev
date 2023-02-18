@@ -1,0 +1,42 @@
+@use 'theme/color';
+@use 'theme/util';
+
+.scribble {
+  stroke: color.$accent-container-contrast;
+  stroke-width: 12px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  overflow: visible;
+
+  position: absolute;
+  right: 0;
+  z-index: 1;
+
+  & path {
+    transition: opacity 800ms ease;
+  }
+}
+
+.scribbleRight {
+  height: 100%;
+  bottom: -35%;
+  @include util.mw-sm {
+    height: 130%;
+    bottom: -50%;
+  }
+  @include util.mw-md {
+    height: 140%;
+    bottom: -60%;
+  }
+}
+
+.scribbleLeft {
+  display: none;
+  top: 60%;
+  height: 60%;
+  @include util.mw-sm {
+    display: block;
+    left: -5vw;
+  }
+}

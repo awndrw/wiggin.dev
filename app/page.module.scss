@@ -23,43 +23,11 @@
   @include layout.section('accent');
 }
 
-.scribble {
-  stroke: color.$accent-container-contrast;
-  stroke-width: 12px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-  overflow: visible;
-
-  position: absolute;
-  right: 0;
-  z-index: 1;
-  height: 100%;
-  bottom: -35%;
-  @include util.mw-sm {
-    height: 130%;
-    bottom: -50%;
-  }
-  @include util.mw-md {
-      height: 140%;
-      bottom: -60%;
-  }
-  & path {
-    transition: opacity 800ms ease;
-  }
-}
-
 .about {
   @include layout.section('neutral');
   &[class] {
     // ActionBar affordance not needed here
     padding-block: 0;
-  }
-}
-
-.writing {
-  h2 {
-    margin-block: size.$spacing-small;
   }
 }
 
@@ -74,23 +42,4 @@
   height: 1px;
   width: calc(100% + #{size.$spacing-large});
   margin: 0 calc(-1 * #{size.$spacing-large});
-}
-
-.articleList {
-  display: grid;
-  grid-template-columns: repeat(
-        auto-fill,
-                  minmax(
-                                  min(360px, 100%), 1fr
-                  )
-    );
-  width: fit-content;
-  gap: size.$spacing-large calc(2 * #{size.$spacing-large});
-  padding-block: size.$spacing-large size.$spacing-small;
-  // max-height: 60vh;
-  // overflow-y: visible;
-
-  @include util.mw-md {
-    max-width: 80%;
-  }
 }
