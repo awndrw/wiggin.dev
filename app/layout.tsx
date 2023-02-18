@@ -1,13 +1,13 @@
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { Analytics } from "client/Analytics";
 import { ColorProvider } from "client/ColorContext";
+import { hyenaSunrise } from "fonts/hyena";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { StorageKey } from "utils/constants";
 import { env } from "utils/env";
 import { Color, DEFAULT_COLOR } from "utils/theme";
-import { haffer } from "fonts";
 import { ActionBar } from "client/ActionBar";
 
 import "./globals.scss";
@@ -43,7 +43,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={haffer.className} data-color={color}>
+      <body className={hyenaSunrise.className} data-color={color}>
         <ColorProvider initialColor={color}>
           <TooltipProvider>
             <ReactWrapProvider>{children}</ReactWrapProvider>

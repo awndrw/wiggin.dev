@@ -3,7 +3,8 @@
 import c from "classnames";
 import * as VisuallyHidden from "client/radix/VisuallyHidden";
 import React from "react";
-import { flexaMono, tragedyDisplay } from "fonts";
+import { tragedyDisplay } from "fonts/tragedy";
+import { flexaMono } from "fonts/flexa";
 import * as Toast from "@radix-ui/react-toast";
 import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";

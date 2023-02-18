@@ -1,6 +1,6 @@
 import c from "classnames";
 import { Link } from "components/Link";
-import { tragedyDisplay } from "fonts";
+import { tragedyDisplay } from "fonts/tragedy";
 import React from "react";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";

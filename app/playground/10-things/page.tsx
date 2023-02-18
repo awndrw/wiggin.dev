@@ -10,7 +10,7 @@ import {
 } from "@react-spring/web";
 import c from "classnames";
 import React from "react";
-import { flexaMono } from "fonts";
+import { flexaMono } from "fonts/flexa";
 import styles from "./page.module.scss";
 
 export default function Page() {
