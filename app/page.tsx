@@ -66,8 +66,11 @@ export default async function Page() {
             .
           </span>{" "}
           These colors were brought to you by{" "}
-          <Link href="/colors" type="internal">
-            P3
+          <Link
+            href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/"
+            type="external"
+          >
+            Display P3
           </Link>
           .
         </Balancer>
