@@ -1,8 +1,9 @@
 "use client";
 
 import {
-  animated,
+  a,
   useIsomorphicLayoutEffect,
+  useReducedMotion,
   useSpringValue,
 } from "@react-spring/web";
 import React from "react";
@@ -22,6 +23,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   const pathRef = React.useRef<SVGPathElement>();
   const [pathLength, setPathLength] = React.useState(0);
   const strokeDashoffset = useSpringValue<number>(0);
+  const reducedMotion = useReducedMotion();
 
   const segmentLength = pathLength / animatedPathRatio;
 
@@ -55,8 +57,8 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     };
   }, [animatedPathRatio, pathLength, strokeDashoffset]);
 
-  return (
-    <animated.path
+  return reducedMotion ? null : (
+    <a.path
       ref={(path) => {
         // @ts-ignore current is mutable, not readonly
         pathRef.current = path;

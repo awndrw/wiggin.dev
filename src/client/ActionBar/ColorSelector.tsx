@@ -1,6 +1,6 @@
 "use client";
 
-import { animated } from "@react-spring/web";
+import { a } from "@react-spring/web";
 import { ColorContext } from "client/ColorContext";
 import React from "react";
 import { Color } from "utils/theme";
@@ -23,7 +23,7 @@ export default function ColorSelector({ color }: { color: Color }) {
 
   return (
     <ActionBarButton focusArrowColor={color}>
-      <animated.button
+      <a.button
         style={style}
         className={styles.colorSelector}
         data-color={color}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSpring, animated, to } from "@react-spring/web";
+import { useSpring, a } from "@react-spring/web";
 import { useGesture, Vector2 } from "@use-gesture/react";
 import React from "react";
 import styles from "./Character.module.scss";
@@ -39,14 +39,14 @@ export const Character: React.FC<{
 
   return (
     <span className={styles.container}>
-      <animated.span
+      <a.span
         ref={spanRef}
         tabIndex={0}
         style={{ x, y, cursor: dragging ? "grabbing" : "grab" }}
         className={styles.character}
       >
         {children}
-      </animated.span>
+      </a.span>
       <span className={styles.shadow} aria-hidden>
         {children}
       </span>
