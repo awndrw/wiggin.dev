@@ -3,7 +3,7 @@
 import React from "react";
 import WrapBalancer from "react-wrap-balancer";
 
-const RATIO_MOBILE = 0.3;
+const RATIO_MOBILE = 0.25;
 const RATIO_DESKTOP = 0.6;
 
 export type BalancerProps = Omit<
