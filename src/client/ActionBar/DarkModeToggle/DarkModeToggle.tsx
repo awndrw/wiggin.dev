@@ -1,5 +1,3 @@
-"use client";
-
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";

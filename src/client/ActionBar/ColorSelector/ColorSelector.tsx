@@ -1,5 +1,3 @@
-"use client";
-
 import { a } from "@react-spring/web";
 import React from "react";
 import { HueContext } from "theme/Hue";
