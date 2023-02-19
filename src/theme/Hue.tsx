@@ -16,12 +16,14 @@ export const HueContext = React.createContext<HueContext>({
 });
 
 const hueStyleExists = (hue: number) =>
-  document.getElementById(`hue-${hue}`) !== null;
+  document.getElementById(id(hue)) !== null;
+
+const id = (hue: number) => `hue-${hue}`;
 
 const createHue = (hue: number) => {
   if (hueStyleExists(hue)) return;
   const styleEl = document.createElement("style");
-  styleEl.id = `hue-${hue}`;
+  styleEl.id = id(hue);
   styleEl.innerHTML = createHueStyles(hue);
   document.head.appendChild(styleEl);
 };
@@ -39,10 +41,7 @@ const recolor = () => {
       return;
     }
     const hue = parsedHue.data;
-    const styleEl = document.createElement("style");
-    styleEl.id = `hue-${hue}`;
-    styleEl.innerHTML = createHueStyles(hue);
-    document.head.appendChild(styleEl);
+    createHue(hue);
   });
 };
 
