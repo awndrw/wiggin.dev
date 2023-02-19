@@ -13,14 +13,14 @@ $accent-tint: var(--color-accent-tint);
 $accent-tint-contrast: var(--color-accent-tint-contrast);
 
 @mixin make-mode($mode) {
-  @include accent.make-mode($mode);
+  // @include accent.make-mode($mode);
   @include neutral.make-mode($mode);
 }
 
 @mixin init {
   color-scheme: light;
   @include make-mode('light');
-  @include accent.make-accent-colors;
+  // @include accent.make-accent-colors;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;

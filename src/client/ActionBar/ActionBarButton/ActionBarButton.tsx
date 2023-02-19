@@ -9,14 +9,15 @@ interface ActionBarButtonProps extends React.PropsWithChildren {
   focusArrowColor?: string;
 }
 
-export const ActionBarButton = ({
-  focusArrowClassName,
-  focusArrowColor,
-  children,
-}: ActionBarButtonProps) => {
+export const ActionBarButton = React.forwardRef<
+  HTMLElement,
+  ActionBarButtonProps
+>(({ focusArrowClassName, focusArrowColor, children }, ref) => {
   return (
     <div className={styles.wrapper}>
-      <Slot className={styles.button}>{children}</Slot>
+      <Slot ref={ref} className={styles.button}>
+        {children}
+      </Slot>
       <Icon
         iconName="caret-down"
         className={c(styles.focusArrow, focusArrowClassName)}
@@ -25,4 +26,5 @@ export const ActionBarButton = ({
       <span className={styles.focusArrowBackdrop} />
     </div>
   );
-};
+});
+ActionBarButton.displayName = "ActionBarButton";

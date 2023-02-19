@@ -1,14 +1,15 @@
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { Analytics } from "client/Analytics";
-import { ColorProvider } from "client/ColorContext";
 import { hyenaSunrise } from "fonts/hyena";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
-import { StorageKey } from "utils/constants";
+import { createHueStyles } from "utils/theme/style";
 import { env } from "utils/env";
-import { Color, DEFAULT_COLOR } from "utils/theme";
+import { HueSchema } from "utils/theme/color";
 import { ActionBar } from "client/ActionBar";
+import { HueProvider } from "theme/Hue";
+import { ModeProvider } from "theme/Mode";
 
 import "./globals.scss";
 
@@ -34,22 +35,32 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookies = nextCookies();
-  const colorCookie = cookies.get(StorageKey.COLOR)?.value ?? "";
-  const parsedColor = Color.safeParse(colorCookie);
-  const color = parsedColor.success ? parsedColor.data : DEFAULT_COLOR;
+  const hueCookie = cookies.get("hue")?.value;
+  const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
+  const hue = parsedHue?.success ? parsedHue.data : 233;
 
   const analyticsMode =
     env.VERCEL_ENV === "production" ? "production" : "development";
 
   return (
     <html lang="en">
-      <body className={hyenaSunrise.className} data-color={color}>
-        <ColorProvider initialColor={color}>
-          <TooltipProvider>
-            <ReactWrapProvider>{children}</ReactWrapProvider>
-          </TooltipProvider>
-          <ActionBar />
-        </ColorProvider>
+      <head>
+        <style
+          type="text/css"
+          id="hue-server"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: createHueStyles(hue) }}
+        />
+      </head>
+      <body className={hyenaSunrise.className} data-hue={hue}>
+        <HueProvider initialHue={hue}>
+          <ModeProvider>
+            <TooltipProvider>
+              <ReactWrapProvider>{children}</ReactWrapProvider>
+            </TooltipProvider>
+            <ActionBar />
+          </ModeProvider>
+        </HueProvider>
         <Analytics mode={analyticsMode} />
       </body>
     </html>

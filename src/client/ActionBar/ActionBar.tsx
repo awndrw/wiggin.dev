@@ -1,15 +1,15 @@
 "use client";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { ActionBarButton } from "client/ActionBar/ActionBarButton";
 import { Separator } from "client/radix/Separator";
 import { Icon } from "components/Icon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { COLORS } from "utils/theme";
+import { HUES } from "utils/theme/color";
+import { ActionBarButton } from "./ActionBarButton";
 import { DarkModeToggle } from "./DarkModeToggle";
-import ColorSelector from "./ColorSelector";
+import { ColorSelector } from "./ColorSelector";
 import styles from "./ActionBar.module.scss";
 
 export function ActionBar() {
@@ -37,11 +37,11 @@ export function ActionBar() {
         </>
       )}
       <div aria-label="Theme selector" style={{ display: "contents" }}>
-        {COLORS.map((color) => (
-          <ColorSelector color={color} key={color} />
+        {HUES.map((hue) => (
+          <ColorSelector hue={hue} key={hue} />
         ))}
+        <DarkModeToggle />
       </div>
-      <DarkModeToggle />
     </section>
   );
 }

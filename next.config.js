@@ -36,6 +36,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
+    optimizeCss: true,
     appDir: true,
     scrollRestoration: true,
   },
