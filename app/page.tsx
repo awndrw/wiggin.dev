@@ -1,5 +1,5 @@
 import c from "classnames";
-import { Link } from "components/Link";
+import { ExternalLink, InternalLink } from "components/Link";
 import { tragedyDisplay } from "fonts/tragedy";
 import React from "react";
 import { Balancer } from "client/Balancer";
@@ -41,28 +41,19 @@ export default async function Page() {
       <section className={styles.about}>
         <Balancer>
           I&apos;ve been working on{" "}
-          <Link href="https://familycenter.meta.com" type="external">
+          <ExternalLink href="https://familycenter.meta.com">
             parental supervision
-          </Link>{" "}
+          </ExternalLink>{" "}
           at Instagram and playing with CSS and WebAssembly in my free time.
-          Check out my{" "}
-          <Link href="/resume" type="internal">
-            resume
-          </Link>{" "}
-          or reach out via{" "}
+          Check out my <InternalLink href="/resume">resume</InternalLink> or
+          reach out via{" "}
           <span style={{ display: "inline-block" }}>
-            <Link href="mailto:andrew@wiggin.dev" type="external">
-              email
-            </Link>
-            .
+            <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
           </span>{" "}
           These colors were brought to you by{" "}
-          <Link
-            href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3/"
-            type="external"
-          >
+          <ExternalLink href="https://webkit.org/blog/10042/wide-gamut-color-in-css-with-display-p3">
             Display P3
-          </Link>
+          </ExternalLink>
           .
         </Balancer>
       </section>

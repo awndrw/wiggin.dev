@@ -2,9 +2,10 @@
 @use 'theme/util';
 @use 'theme/size';
 
-.link {
+.interaction {
+  all: inherit;
+  cursor: pointer;
   display: inline;
-  text-decoration: none;
   border-radius: size.$border-radius-small;
   color: color.$accent-primary;
   transition-property: color, background-color;
@@ -29,7 +30,8 @@
 
 // this is required to increase specificity and override the default size
 .icon[class] {
-  width: 0.8em;
-  height: 0.8em;
+  width: 0.6em;
+  height: 0.6em;
   vertical-align: middle;
+  margin-left: 0.1em;
 }
