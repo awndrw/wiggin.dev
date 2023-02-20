@@ -6,15 +6,18 @@ import { ArrowRight } from "react-feather";
 import styles from "./Interaction.module.scss";
 import type { Icon as FeatherIcon } from "react-feather";
 
-export type InteractionProps<
-  C extends React.ComponentType | React.ElementType
-> = React.ComponentProps<C> & {
-  component: C;
-  icon: FeatherIcon;
-  children: string;
-};
+type InteractionComponent = React.ComponentType | React.ElementType;
 
-export const Interaction = <C extends React.ComponentType | React.ElementType>({
+export type InteractionComponentProps<C extends InteractionComponent> =
+  React.ComponentProps<C> & { children: string };
+
+export type InteractionProps<C extends InteractionComponent> =
+  InteractionComponentProps<C> & {
+    component: C;
+    icon: FeatherIcon;
+  };
+
+export const Interaction = <C extends InteractionComponent>({
   component: Component,
   icon,
   children,

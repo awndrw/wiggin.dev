@@ -1,12 +1,9 @@
-import { Interaction, InteractionProps } from "components/Interaction";
+import { Interaction, InteractionComponentProps } from "components/Interaction";
 import { ArrowRight, ArrowUpRight } from "react-feather";
 import React from "react";
 import NextLink from "next/link";
 
-export type InternalLinkProps = Omit<
-  InteractionProps<typeof NextLink>,
-  "component" | "icon"
->;
+export type InternalLinkProps = InteractionComponentProps<typeof NextLink>;
 
 export const InternalLink: React.FC<InternalLinkProps> = ({
   children,
@@ -17,10 +14,8 @@ export const InternalLink: React.FC<InternalLinkProps> = ({
   </Interaction>
 );
 
-export type ExternalLinkProps = Omit<
-  InteractionProps<"a">,
-  "component" | "icon"
->;
+export type ExternalLinkProps = InteractionComponentProps<"a">;
+
 export const ExternalLink: React.FC<ExternalLinkProps> = ({
   children,
   ...props
