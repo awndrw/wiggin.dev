@@ -1,6 +1,4 @@
 @use 'sass:map';
-@use './accent';
-@use './neutral';
 
 $text-primary: var(--color-text-primary);
 $text-secondary: var(--color-text-secondary);
@@ -12,15 +10,31 @@ $accent-container-contrast: var(--color-accent-container-contrast);
 $accent-tint: var(--color-accent-tint);
 $accent-tint-contrast: var(--color-accent-tint-contrast);
 
+$lightnesses: (
+        'light': (
+                'text-primary': 30%,
+                'text-secondary': 64%,
+                'background': 100%,
+        ),
+        'dark': (
+                'text-primary': 92%,
+                'text-secondary': 78%,
+                'background': 22%,
+        ),
+);
+
+$chroma: 0;
+$hue: 0;
+
 @mixin make-mode($mode) {
-  // @include accent.make-mode($mode);
-  @include neutral.make-mode($mode);
+  @each $color, $lightness in map.get($lightnesses, $mode) {
+    --color-#{$color}: oklch(#{$lightness} #{$chroma} #{$hue});
+  }
 }
 
 @mixin init {
   color-scheme: light;
   @include make-mode('light');
-  // @include accent.make-accent-colors;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -37,4 +51,3 @@ $accent-tint-contrast: var(--color-accent-tint-contrast);
     @include make-mode('dark');
   }
 }
-
