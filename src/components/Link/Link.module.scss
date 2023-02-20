@@ -27,7 +27,8 @@
   }
 }
 
-.icon {
+// this is required to increase specificity and override the default size
+.icon[class] {
   width: 0.8em;
   height: 0.8em;
   vertical-align: middle;

@@ -1,6 +1,7 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";
+import { Edit2 } from "react-feather";
 import { HueContext } from "theme/Hue";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";
@@ -25,7 +26,7 @@ export const HueSelector = () => {
           className={styles.hueSelector}
         >
           <AccessibleIcon label="">
-            <Icon iconName="edit" />
+            <Icon icon={Edit2} />
           </AccessibleIcon>
         </button>
       </ActionBarButton>

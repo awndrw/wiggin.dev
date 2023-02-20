@@ -1,9 +1,10 @@
 import * as Dialog from "client/radix/Dialog";
 import * as Tooltip from "client/radix/Tooltip";
-import { Icon, IconName } from "components/Icon";
+import { Icon } from "components/Icon";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Heart, Monitor, Smartphone, Icon as FeatherIcon } from "react-feather";
 import { WarningDialog } from "./WarningDialog";
 import styles from "./PlaygroundItem.module.scss";
 import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";
@@ -49,10 +50,10 @@ export const PlaygroundItem = ({
   );
 };
 
-const playgroundItemTagIconMap: Record<PlaygroundTagName, IconName> = {
-  accessible: "heart",
-  mobile: "smartphone",
-  desktop: "monitor",
+const playgroundItemTagIconMap: Record<PlaygroundTagName, FeatherIcon> = {
+  accessible: Heart,
+  mobile: Smartphone,
+  desktop: Monitor,
 };
 
 const playgroundItemTagTooltipMap: Record<PlaygroundTagName, string> = {
@@ -62,7 +63,7 @@ const playgroundItemTagTooltipMap: Record<PlaygroundTagName, string> = {
 };
 
 const Tag = ({ tag }: { tag: PlaygroundTag }) => {
-  let icon: IconName, tooltip: string;
+  let icon: FeatherIcon, tooltip: string;
   if (typeof tag === "string") {
     icon = playgroundItemTagIconMap[tag];
     tooltip = playgroundItemTagTooltipMap[tag];
@@ -77,7 +78,7 @@ const Tag = ({ tag }: { tag: PlaygroundTag }) => {
         aria-label={tooltip}
         className={styles.iconButton}
       >
-        <Icon iconName={icon} aria-hidden />
+        <Icon icon={icon} aria-hidden />
       </Tooltip.Trigger>
       <Tooltip.Portal>
         <Tooltip.Content className={styles.iconTooltip}>

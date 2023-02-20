@@ -2,6 +2,7 @@ import c from "classnames";
 import * as Dialog from "client/radix/Dialog";
 import { Icon } from "components/Icon";
 import Link from "next/link";
+import { AlertTriangle } from "react-feather";
 import styles from "./WarningDialog.module.scss";
 
 export const WarningDialog = ({
@@ -14,7 +15,7 @@ export const WarningDialog = ({
   <Dialog.Portal>
     <Dialog.Overlay className={styles.overlay} />
     <Dialog.Content className={styles.container}>
-      <Icon iconName="alert-triangle" className={styles.header} />
+      <Icon icon={AlertTriangle} className={styles.header} />
       <Dialog.Description className={styles.body}>{warning}</Dialog.Description>
       <div className={styles.footer}>
         <Dialog.Close className={c(styles.closeButton, styles.secondaryButton)}>

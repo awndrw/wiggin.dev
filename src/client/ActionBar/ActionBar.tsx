@@ -6,6 +6,7 @@ import { Icon } from "components/Icon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { ArrowLeft } from "react-feather";
 import { HUES } from "utils/theme/color";
 import { ActionBarButton } from "./ActionBarButton";
 import { DarkModeToggle } from "./DarkModeToggle";
@@ -23,7 +24,7 @@ const ActionBarLink = () => {
       <ActionBarButton focusArrowClassName={styles.focusArrow}>
         <Link href={parentPath} className={styles.navButton}>
           <AccessibleIcon label="Back">
-            <Icon iconName="arrow-left" />
+            <Icon icon={ArrowLeft} />
           </AccessibleIcon>
         </Link>
       </ActionBarButton>

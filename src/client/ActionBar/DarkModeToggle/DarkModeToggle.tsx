@@ -2,6 +2,7 @@ import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";
 import { ModeContext } from "theme/Mode";
+import { Moon, Sun } from "react-feather";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./DarkModeToggle.module.scss";
 
@@ -17,7 +18,7 @@ export const DarkModeToggle = () => {
         onClick={() => setMode(nextMode)}
       >
         <AccessibleIcon label={`Set ${nextMode} mode`}>
-          <Icon iconName={mode === "dark" ? "moon" : "sun"} />
+          <Icon icon={mode === "dark" ? Moon : Sun} />
         </AccessibleIcon>
       </button>
     </ActionBarButton>

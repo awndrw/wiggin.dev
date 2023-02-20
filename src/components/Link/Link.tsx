@@ -1,5 +1,6 @@
 import c from "classnames";
 import { Icon } from "components/Icon";
+import { ArrowRight, ArrowUpRight } from "react-feather";
 import React from "react";
 import NextLink from "next/link";
 import styles from "./Link.module.scss";
@@ -28,7 +29,7 @@ export function Link({
 }: LinkProps) {
   const icon = (
     <Icon
-      iconName={type === "internal" ? "arrow-right" : "arrow-up-right"}
+      icon={type === "internal" ? ArrowRight : ArrowUpRight}
       className={styles.icon}
       aria-hidden
       focusable={false}
