@@ -2,6 +2,7 @@
 
 import React from "react";
 import { DEFAULT_MODE, Mode } from "utils/theme/color";
+import { updateThemeColor } from "utils/theme/style";
 
 export interface ModeContext {
   mode: Mode;
@@ -28,6 +29,7 @@ export const ModeProvider = ({ children }: { children: React.ReactNode }) => {
     (newMode: Mode) => {
       if (newMode === mode) return;
       document.body.setAttribute("data-mode", newMode);
+      updateThemeColor();
       setModeRaw(newMode);
     },
     [mode]

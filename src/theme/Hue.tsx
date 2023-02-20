@@ -3,7 +3,7 @@
 import { setCookie } from "cookies-next";
 import React from "react";
 import { DEFAULT_HUE, Hue, HueSchema } from "utils/theme/color";
-import { createHueStyles } from "utils/theme/style";
+import { createStyles, updateThemeColor } from "utils/theme/style";
 
 export interface HueContext {
   hue: Hue;
@@ -24,15 +24,11 @@ const createHue = (hue: number) => {
   if (hueStyleExists(hue)) return;
   const styleEl = document.createElement("style");
   styleEl.id = id(hue);
-  styleEl.innerHTML = createHueStyles(hue);
+  styleEl.innerHTML = createStyles(hue);
   document.head.appendChild(styleEl);
 };
 
 const recolor = () => {
-  const bodyHue = document.body.getAttribute("data-hue");
-  if (bodyHue) {
-    setCookie("hue", bodyHue, { maxAge: 2_592_000 });
-  }
   const coloredElements = document.querySelectorAll("[data-hue]");
   coloredElements.forEach((element) => {
     const hueAttr = element.getAttribute("data-hue")!;
@@ -43,6 +39,7 @@ const recolor = () => {
     const hue = parsedHue.data;
     createHue(hue);
   });
+  updateHueFromBody();
 };
 
 export const HueProvider = ({
@@ -83,4 +80,12 @@ export const HueProvider = ({
       {children}
     </HueContext.Provider>
   );
+};
+
+const updateHueFromBody = () => {
+  const hue = document.body.getAttribute("data-hue");
+  if (hue) {
+    setCookie("hue", hue, { maxAge: 2_592_000 });
+    updateThemeColor();
+  }
 };

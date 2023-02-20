@@ -24,6 +24,7 @@
     "@react-spring/web": "^9.6.1",
     "@use-gesture/react": "^10.2.24",
     "@vercel/analytics": "^0.1.10",
+    "better-color-tools": "^0.10.0",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "critters": "^0.0.16",

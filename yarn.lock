@@ -1472,6 +1472,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"better-color-tools@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "better-color-tools@npm:0.10.0"
+  checksum: 5fc32afb02e778f71dc6844a02ddec34d5404e498807de45aaba4f1139a11acfe2dc67eb96cd86da69c800d0bc02bc2006269ffd12172f8f1d7ca4db9dc5aee6
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -3980,6 +3987,7 @@ __metadata:
     "@types/react-dom": 18.0.11
     "@use-gesture/react": ^10.2.24
     "@vercel/analytics": ^0.1.10
+    better-color-tools: ^0.10.0
     classnames: ^2.3.2
     cookies-next: ^2.1.1
     critters: ^0.0.16

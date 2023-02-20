@@ -4,7 +4,7 @@ import { hyenaSunrise } from "fonts/hyena";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
-import { createHueStyles } from "utils/theme/style";
+import { createStyles } from "utils/theme/style";
 import { env } from "utils/env";
 import { HueSchema } from "utils/theme/color";
 import { ActionBar } from "client/ActionBar";
@@ -46,10 +46,9 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <style
-          type="text/css"
           id="hue-server"
           suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: createHueStyles(hue) }}
+          dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
         />
       </head>
       <body className={hyenaSunrise.className} data-hue={hue}>

@@ -1,3 +1,4 @@
+import better from "better-color-tools";
 import postcss from "postcss";
 import postcssOklabFunction from "@csstools/postcss-oklab-function";
 // @ts-ignore untyped module
@@ -14,14 +15,17 @@ const createHueModeMap = (hue: Hue, mode: Mode) => {
   return res;
 };
 
-const createStyles = (map: Record<Color, string>) =>
-  Object.entries(map)
+const createCSSVars = (map: Record<Color, string>) => {
+  let vars = Object.entries(map)
     .map(([name, color]) => `--color-accent-${name}: ${color};`)
     .join("");
+  vars += `accent-color: var(--color-accent-primary);`;
+  return vars;
+};
 
-export const createHueStyles = (hue: Hue) => {
-  const lightStyles = createStyles(createHueModeMap(hue, "light"));
-  const darkStyles = createStyles(createHueModeMap(hue, "dark"));
+export const createStyles = (hue: Hue) => {
+  const lightStyles = createCSSVars(createHueModeMap(hue, "light"));
+  const darkStyles = createCSSVars(createHueModeMap(hue, "dark"));
   const styles = `
   [data-hue="${hue}"] { ${lightStyles} }
   @media (prefers-color-scheme: dark) {
@@ -33,4 +37,12 @@ export const createHueStyles = (hue: Hue) => {
   body[data-mode="dark"] [data-hue="${hue}"] { ${darkStyles} }
   `;
   return postcss(postcssOklabFunction(), postcssMinify()).process(styles).css;
+};
+
+export const updateThemeColor = () => {
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const accentColor = getComputedStyle(document.body).accentColor;
+  if (!accentColor) return;
+  const activeColor = better.from(accentColor).hex;
+  themeColor?.setAttribute("content", activeColor);
 };

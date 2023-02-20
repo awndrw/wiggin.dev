@@ -12,30 +12,34 @@ import { DarkModeToggle } from "./DarkModeToggle";
 import { ColorSelector } from "./ColorSelector";
 import styles from "./ActionBar.module.scss";
 
-export function ActionBar() {
+const ActionBarLink = () => {
   const pathname = usePathname() ?? "";
 
   const isNestedPage = pathname !== "/";
   const parentPath = pathname.slice(0, pathname.lastIndexOf("/") + 1);
 
+  return isNestedPage ? (
+    <>
+      <ActionBarButton focusArrowClassName={styles.focusArrow}>
+        <Link href={parentPath} className={styles.navButton}>
+          <AccessibleIcon label="Back">
+            <Icon iconName="arrow-left" />
+          </AccessibleIcon>
+        </Link>
+      </ActionBarButton>
+      <Separator
+        orientation="vertical"
+        decorative
+        className={styles.separator}
+      />
+    </>
+  ) : null;
+};
+
+export function ActionBar() {
   return (
     <section className={styles.container} aria-label="Action Bar">
-      {isNestedPage && (
-        <>
-          <ActionBarButton focusArrowClassName={styles.focusArrow}>
-            <Link href={parentPath} className={styles.navButton}>
-              <AccessibleIcon label="Back">
-                <Icon iconName="arrow-left" />
-              </AccessibleIcon>
-            </Link>
-          </ActionBarButton>
-          <Separator
-            orientation="vertical"
-            decorative
-            className={styles.separator}
-          />
-        </>
-      )}
+      <ActionBarLink />
       <div aria-label="Theme selector" style={{ display: "contents" }}>
         {HUES.map((hue) => (
           <ColorSelector hue={hue} key={hue} />
