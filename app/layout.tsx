@@ -46,7 +46,7 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <style
-          id="hue-server"
+          id={`hue-${hue}`}
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
         />

@@ -21,7 +21,6 @@ const hueStyleExists = (hue: number) =>
 const id = (hue: number) => `hue-${hue}`;
 
 const createHue = (hue: number) => {
-  if (hueStyleExists(hue)) return;
   const styleEl = document.createElement("style");
   styleEl.id = id(hue);
   styleEl.innerHTML = createStyles(hue);
@@ -68,7 +67,9 @@ export const HueProvider = ({
   const setHue = React.useCallback(
     (newHue: number) => {
       if (newHue === hue) return;
-      createHue(newHue);
+      if (!hueStyleExists(newHue)) {
+        createHue(newHue);
+      }
       document.body.setAttribute("data-hue", newHue.toString());
       setHueRaw(newHue);
     },
