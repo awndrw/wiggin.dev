@@ -1,0 +1,18 @@
+@use 'theme/size';
+
+.scale {
+  display: flex;
+  flex-direction: column;
+  margin-block: calc(#{size.$spacing-large} * 2);
+}
+
+.wrapper {
+  display: flex;
+}
+
+.scaleItem {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-content: center;
+}
