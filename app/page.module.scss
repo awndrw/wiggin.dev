@@ -33,14 +33,16 @@
 
 .icon {
   margin-left: 6px;
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.6em;
+  height: 0.6em;
   stroke: color.$accent-primary;
-  stroke-width: 40px;
+  stroke-width: 10px;
   fill: none;
   animation: spin 25s linear infinite;
   stroke-linecap: round;
   stroke-linejoin: round;
+  vertical-align: middle;
+  overflow: visible;
 }
 
 @keyframes spin {

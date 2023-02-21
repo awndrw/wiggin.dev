@@ -20,10 +20,10 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: "/icons/blue_32.png", sizes: "any" },
-      { url: "/icons/blue.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
     ],
-    apple: "/icons/blue_180.png",
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",
   themeColor: "rgb(0, 128, 184)",

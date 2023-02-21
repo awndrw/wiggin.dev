@@ -17,13 +17,16 @@ export type InteractionProps<C extends InteractionComponent> =
     icon: FeatherIcon;
   };
 
-export const Interaction = <C extends InteractionComponent>({
-  component: Component,
-  icon,
-  children,
-  className,
-  ...props
-}: InteractionProps<C>) => {
+const InteractionImpl = <C extends InteractionComponent>(
+  {
+    component: Component,
+    icon,
+    children,
+    className,
+    ...props
+  }: InteractionProps<C>,
+  ref: React.ForwardedRef<C>
+) => {
   const words = children.split(" ");
   const lastWord = words.at(-1);
   const rest = words.slice(0, -1).join(" ");
@@ -43,19 +46,18 @@ export const Interaction = <C extends InteractionComponent>({
   );
 
   return (
-    <Component className={c(styles.interaction, className)} {...props}>
+    <Component
+      ref={ref}
+      className={c(styles.interaction, className)}
+      {...props}
+    >
       {content}
     </Component>
   );
 };
 
-const Test1 = (
-  <Interaction component="a" icon={ArrowRight} href="/test">
-    Test 1
-  </Interaction>
-);
-const Test2 = (
-  <Interaction component={NextLink} icon={ArrowRight} href="/test">
-    Test 2
-  </Interaction>
-);
+export const Interaction = React.forwardRef(InteractionImpl) as <
+  C extends InteractionComponent
+>(
+  props: InteractionProps<C> & { ref?: React.ForwardedRef<C> }
+) => ReturnType<typeof InteractionImpl>;
