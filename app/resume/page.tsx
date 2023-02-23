@@ -24,6 +24,7 @@ export default function Page() {
           href="/resume/AndrewWigginResume.pdf"
           aria-label="Resume"
           className={styles.link}
+          target="_blank"
           download
         >
           <div className={styles.light}>

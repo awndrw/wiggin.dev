@@ -16,36 +16,4 @@
   height: 20px;
   border-radius: size.$border-radius-small;
   cursor: pointer;
-
-  &:focus-visible {
-    outline: none;
-    & ~ .focusArrow,
-    & ~ .focusArrowBackdrop {
-      display: block;
-    }
-  }
-}
-
-.focusArrowBackdrop {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: color.$accent-container-contrast;
-  width: 24px;
-  height: 14px;
-  border-radius: 12px 12px 0 0;
-  z-index: 0;
-
-  display: none;
-}
-
-.focusArrow {
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  stroke: color.$accent-primary;
-  display: none;
-  z-index: 1;
 }

@@ -8,10 +8,10 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { ArrowLeft } from "react-feather";
 import { HUES } from "utils/theme/color";
-import { CustomColorSelector } from "./CustomColorSelector";
+import { CustomHueSelector } from "./CustomHueSelector";
 import { ActionBarButton } from "./ActionBarButton";
 import { DarkModeToggle } from "./DarkModeToggle";
-import { ColorSelector } from "./ColorSelector";
+import { HueSelector } from "./HueSelector";
 import styles from "./ActionBar.module.scss";
 
 const ActionBarLink = () => {
@@ -22,7 +22,7 @@ const ActionBarLink = () => {
 
   return isNestedPage ? (
     <>
-      <ActionBarButton focusArrowClassName={styles.focusArrow}>
+      <ActionBarButton>
         <Link href={parentPath} className={styles.navButton}>
           <AccessibleIcon label="Back">
             <Icon icon={ArrowLeft} />
@@ -44,9 +44,9 @@ export function ActionBar() {
       <ActionBarLink />
       <div aria-label="Theme selector" style={{ display: "contents" }}>
         {HUES.map((hue) => (
-          <ColorSelector hue={hue} key={hue} />
+          <HueSelector hue={hue} key={hue} />
         ))}
-        <CustomColorSelector />
+        <CustomHueSelector />
         <DarkModeToggle />
       </div>
     </section>

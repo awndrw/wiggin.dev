@@ -3,9 +3,9 @@ import React from "react";
 import { HueContext } from "store/Hue";
 import useTimedSpring from "client/useTimedSpring";
 import { ActionBarButton } from "../ActionBarButton";
-import styles from "./ColorSelector.module.scss";
+import styles from "./HueSelector.module.scss";
 
-export function ColorSelector({ hue }: { hue: number }) {
+export function HueSelector({ hue }: { hue: number }) {
   const [style, trigger] = useTimedSpring();
   const { hue: currentHue, setHue } = React.useContext(HueContext);
 
@@ -22,7 +22,7 @@ export function ColorSelector({ hue }: { hue: number }) {
     <ActionBarButton>
       <a.button
         style={style}
-        className={styles.colorSelector}
+        className={styles.hueSelector}
         data-hue={hue}
         // TODO: figure out aria-pressed without state
         aria-pressed={hue === currentHue}
