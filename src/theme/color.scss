@@ -32,22 +32,52 @@ $hue: 0;
   }
 }
 
-@mixin init {
-  color-scheme: light;
-  @include make-mode('light');
+$gradient-steps: 0, 45deg, 90deg, 135deg, 180deg, 225deg, 270deg, 315deg, 360deg;
+$gradientLightnessAndChroma: (
+        'light': 0.56 0.15,
+        'dark': 0.88 0.064,
+);
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-    @include make-mode('dark');
+@mixin make-gradients($mode) {
+  @for $i from 1 through length($gradient-steps) {
+    $step: nth($gradient-steps, $i);
+    $lc: map.get($gradientLightnessAndChroma, $mode);
+    --gradient-#{$i}: oklch(#{$lc} #{$step});
+  }
+}
+
+@mixin all {
+  &, & ::before, & ::after {
+    @content;
+  }
+}
+
+@mixin init {
+  @include all {
+    color-scheme: light;
+    @include make-mode('light');
+    @include make-gradients('light');
+
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+      @include make-mode('dark');
+      @include make-gradients('dark');
+    }
   }
 
   body[data-mode='light'] {
-    color-scheme: light;
-    @include make-mode('light');
+    @include all {
+      color-scheme: light;
+      @include make-mode('light');
+      @include make-gradients('light');
+    }
   }
 
   body[data-mode='dark'] {
-    color-scheme: dark;
-    @include make-mode('dark');
+    @include all {
+      color-scheme: dark;
+      @include make-mode('dark');
+      @include make-gradients('dark');
+    }
   }
 }
