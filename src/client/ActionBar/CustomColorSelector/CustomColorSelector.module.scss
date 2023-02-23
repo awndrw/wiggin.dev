@@ -3,23 +3,25 @@
 @use 'theme/util';
 @use 'sass:list';
 
-$radial-gradient: radial-gradient(#{color.$background}, transparent 60%), conic-gradient(#{util.gradient-steps()});
-
+$radial-gradient: radial-gradient(#{color.$background}, transparent var(--radial-distance));
+$conic-gradient: conic-gradient(#{util.gradient-steps()});
 $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
 
 .customColorSelector {
-
+  --radial-distance: 190%;
   position: relative;
   background: color.$accent-tint-contrast;
   -webkit-tap-highlight-color: transparent;
+  background: $radial-gradient, $conic-gradient;
 
   &::before {
+    --radial-distance: 60%;
     content: '';
     position: absolute;
     inset: -2px;
     z-index: -1;
     border-radius: 20px;
-    background: $radial-gradient;
+    background: $radial-gradient, $conic-gradient;
   }
 }
 
@@ -31,10 +33,11 @@ $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
 }
 
 .customColorSelectorIndicatorInner {
+  --radial-distance: 60%;
   width: 100%;
   height: 100%;
   transition: transform 2s ease;
-  background: $radial-gradient;
+  background: $radial-gradient, $conic-gradient;
 }
 
 .popoverContent {
