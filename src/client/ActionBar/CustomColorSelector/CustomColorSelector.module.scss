@@ -1,27 +1,60 @@
 @use 'theme/color';
 @use 'theme/size';
+@use 'theme/util';
 
-$radial: radial-gradient(color.$background, transparent var(--radial-size));
-$rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00);
+$gradient-steps-light:
+        oklch(0.56 0.15 0),
+        oklch(0.56 0.15 52deg),
+        oklch(0.56 0.15 104deg),
+        oklch(0.56 0.15 156deg),
+        oklch(0.56 0.15 208deg),
+        oklch(0.56 0.15 260deg),
+        oklch(0.56 0.15 312deg),
+        oklch(0.56 0.15 360deg);
+
+$gradient-steps-dark:
+        oklch(0.88 0.064 0),
+        oklch(0.88 0.064 52deg),
+        oklch(0.88 0.064 104deg),
+        oklch(0.88 0.064 156deg),
+        oklch(0.88 0.064 208deg),
+        oklch(0.88 0.064 260deg),
+        oklch(0.88 0.064 312deg),
+        oklch(0.88 0.064 360deg);
+
+$radial-gradient-light: radial-gradient(color.$background, transparent 60%), conic-gradient($gradient-steps-light);
+$radial-gradient-dark: radial-gradient(color.$background, transparent 60%), conic-gradient($gradient-steps-dark);
+
+$linear-gradient-light: linear-gradient(to right, $gradient-steps-light);
+$linear-gradient-dark: linear-gradient(to right, $gradient-steps-dark);
 
 .customColorSelector {
-  --radial-size: 240%;
-
-  -webkit-tap-highlight-color: transparent;
   position: relative;
-  background: $radial, $rainbow;
+  background: color.$accent-tint-contrast;
+  -webkit-tap-highlight-color: transparent;
 
-
-  &::after {
-    --radial-size: 60%;
-
+  &::before {
     content: '';
     position: absolute;
     inset: -2px;
     z-index: -1;
     border-radius: 20px;
-    background: $radial, $rainbow;
+    @include util.mode(background, $radial-gradient-light, $radial-gradient-dark);
   }
+}
+
+.customColorSelectorIndicator {
+  position: absolute;
+  inset: 0;
+  transition: transform 2s ease;
+  clip-path: inset(0px 9px 50% 45%);
+}
+
+.customColorSelectorIndicatorInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 2s ease;
+  @include util.mode(background, $radial-gradient-light, $radial-gradient-dark);
 }
 
 .popoverContent {
@@ -36,17 +69,8 @@ $rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #
   will-change: transform, opacity;
   z-index: 4;
 
-  &[data-state='open'][data-side='top'] {
+  &[data-state='open'] {
     animation-name: slideDownAndFade;
-  }
-  &[data-state='open'][data-side='right'] {
-    animation-name: slideLeftAndFade;
-  }
-  &[data-state='open'][data-side='bottom'] {
-    animation-name: slideUpAndFade;
-  }
-  &[data-state='open'][data-side='left'] {
-    animation-name: slideRightAndFade;
   }
 }
 
@@ -61,16 +85,7 @@ $rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #
 }
 
 .sliderTrack {
-  background: linear-gradient(
-                  to right,
-                  #ff0000 0%,
-                  #ffff00 17%,
-                  #00ff00 33%,
-                  #00ffff 50%,
-                  #0000ff 67%,
-                  #ff00ff 83%,
-                  #ff0000 100%
-  );
+  @include util.mode(background, $linear-gradient-light, $linear-gradient-dark);
   position: relative;
   flex-grow: 1;
   border-radius: 9999px;
@@ -87,6 +102,7 @@ $rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #
   &:not(:hover) {
     background-color: color.$accent-tint-contrast;
   }
+
   &:hover {
     background-color: color.$accent-tint;
   }
@@ -98,4 +114,15 @@ $rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #
 
 .popoverArrow {
   fill: color.$accent-container-contrast;
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

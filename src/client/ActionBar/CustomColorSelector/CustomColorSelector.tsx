@@ -9,12 +9,23 @@ import { ActionBarButton } from "../ActionBarButton";
 import styles from "./CustomColorSelector.module.scss";
 
 export const CustomColorSelector: React.FC = () => {
+  const { hue } = React.useContext(HueContext);
   const { showPopover, setShowPopover } = React.useContext(CustomHueContext);
 
   return (
     <Popover.Root open={showPopover} onOpenChange={setShowPopover}>
       <ActionBarButton>
-        <Popover.Trigger className={styles.customColorSelector} />
+        <Popover.Trigger className={styles.customColorSelector}>
+          <div
+            style={{ transform: `rotate(${hue}deg)` }}
+            className={styles.customColorSelectorIndicator}
+          >
+            <div
+              style={{ transform: `rotate(-${hue}deg)` }}
+              className={styles.customColorSelectorIndicatorInner}
+            />
+          </div>
+        </Popover.Trigger>
       </ActionBarButton>
       <Popover.Portal>
         <CustomColorSelectorPopover />
