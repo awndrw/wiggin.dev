@@ -39,6 +39,11 @@ export const createStyles = (hue: Hue) => {
   return postcss(postcssOklabFunction(), postcssMinify()).process(styles).css;
 };
 
+export const getStyle = (hue: Hue, mode: Mode, color: Color) => {
+  const lightnessAndChroma = oklch[mode][color];
+  return better.from(`oklch(${lightnessAndChroma} ${hue})`).hex;
+};
+
 export const updateThemeColor = () => {
   const themeColor = document.querySelector('meta[name="theme-color"]');
   const accentColor = getComputedStyle(document.body).accentColor;

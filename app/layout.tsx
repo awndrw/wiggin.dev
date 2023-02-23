@@ -3,9 +3,9 @@ import { hyenaSunrise } from "fonts/hyena";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { Providers } from "store/Providers";
-import { createStyles } from "utils/theme/style";
+import { createStyles, getStyle } from "utils/theme/style";
 import { env } from "utils/env";
-import { HueSchema } from "utils/theme/color";
+import { DEFAULT_MODE, HueSchema } from "utils/theme/color";
 
 import "./globals.scss";
 
@@ -22,7 +22,6 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",
-  themeColor: "rgb(0, 128, 184)",
 };
 
 export default async function RootLayout({
@@ -45,6 +44,10 @@ export default async function RootLayout({
           id={`hue-${hue}`}
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
+        />
+        <meta
+          name="theme-color"
+          content={getStyle(hue, DEFAULT_MODE, "primary")}
         />
       </head>
       <body className={hyenaSunrise.className} data-hue={hue}>

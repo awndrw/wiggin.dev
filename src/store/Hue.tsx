@@ -66,6 +66,7 @@ export const HueProvider = ({
 
   React.useEffect(() => {
     recolor();
+    updateThemeColor();
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
         if (mutation.attributeName !== "data-hue") continue;
