@@ -8,6 +8,25 @@
   height: 24px;
   display: grid;
   place-content: center;
+
+  & :focus-visible {
+    outline: none;
+  }
+
+  &:not(:has(:focus-visible))::before {
+    display: none;
+  }
+  &:has(:focus-visible)::before {
+    display: block;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--accent-color, color.$accent-primary);
+    animation: rotate 6s linear infinite;
+  }
 }
 
 .button {
@@ -16,4 +35,10 @@
   height: 20px;
   border-radius: size.$border-radius-small;
   cursor: pointer;
+  position: relative;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0) }
+  100% { transform: rotate(360deg) }
 }

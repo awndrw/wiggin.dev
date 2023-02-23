@@ -18,6 +18,7 @@ export const HueSelectButton: React.FC<HueSelectButtonProps> = ({
     <Interaction
       component="span"
       role="button"
+      tabIndex={0}
       icon={Target}
       onClick={() => setShowPopover(true)}
     >

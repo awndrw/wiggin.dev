@@ -19,11 +19,10 @@ export function HueSelector({ hue }: { hue: number }) {
   };
 
   return (
-    <ActionBarButton>
+    <ActionBarButton data-hue={hue}>
       <a.button
         style={style}
         className={styles.hueSelector}
-        data-hue={hue}
         // TODO: figure out aria-pressed without state
         aria-pressed={hue === currentHue}
         aria-label={`Hue: ${hue}`}

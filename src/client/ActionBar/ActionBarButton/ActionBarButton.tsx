@@ -2,16 +2,22 @@ import { Slot } from "@radix-ui/react-slot";
 import React from "react";
 import styles from "./ActionBarButton.module.scss";
 
-export interface ActionBarButtonProps extends React.PropsWithChildren {
+export interface ActionBarButtonProps {
   children: React.ReactNode;
+  accentColor?: string;
 }
 
 export const ActionBarButton = React.forwardRef<
   HTMLElement,
   ActionBarButtonProps
->(({ children }, ref) => {
+>(({ children, accentColor, ...props }, ref) => {
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      // @ts-ignore
+      style={{ "--accent-color": accentColor }}
+      {...props}
+    >
       <Slot ref={ref} className={styles.button}>
         {children}
       </Slot>

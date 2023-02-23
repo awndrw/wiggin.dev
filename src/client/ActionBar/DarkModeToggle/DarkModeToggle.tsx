@@ -12,7 +12,7 @@ export const DarkModeToggle = () => {
   const nextMode = mode === "dark" ? "light" : "dark";
 
   return (
-    <ActionBarButton focusArrowClassName={styles.focusArrow}>
+    <ActionBarButton accentColor="var(--color-text-primary)">
       <button
         className={styles.darkModeToggle}
         onClick={() => setMode(nextMode)}
