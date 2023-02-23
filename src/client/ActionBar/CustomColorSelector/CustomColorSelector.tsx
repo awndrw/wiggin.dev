@@ -41,7 +41,7 @@ const CustomColorSelectorPopover = React.forwardRef<HTMLDivElement>(
       <Popover.Portal>
         <Popover.Content
           side="top"
-          sideOffset={3}
+          sideOffset={6}
           className={styles.popoverContent}
           ref={ref}
         >
