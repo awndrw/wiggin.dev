@@ -27,18 +27,20 @@ const createHue = (hue: number) => {
   document.head.appendChild(styleEl);
 };
 
+const getHue = (element: Element) => {
+  const hueAttr = element.getAttribute("data-hue");
+  if (!hueAttr) return null;
+  const parsedHue = HueSchema.safeParse(parseInt(hueAttr));
+  return parsedHue.success ? parsedHue.data : null;
+};
+
 const recolor = () => {
   const coloredElements = document.querySelectorAll("[data-hue]");
   coloredElements.forEach((element) => {
-    const hueAttr = element.getAttribute("data-hue")!;
-    const parsedHue = HueSchema.safeParse(parseInt(hueAttr));
-    if (!parsedHue.success || hueStyleExists(parsedHue.data)) {
-      return;
-    }
-    const hue = parsedHue.data;
+    const hue = getHue(element);
+    if (hue === null || hueStyleExists(hue)) return;
     createHue(hue);
   });
-  updateHueFromBody();
 };
 
 export const HueProvider = ({
@@ -49,20 +51,6 @@ export const HueProvider = ({
   children: React.ReactNode;
 }) => {
   const [hue, setHueRaw] = React.useState<Hue>(initialHue);
-
-  React.useEffect(() => {
-    recolor();
-    const observer = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        recolor();
-      }
-    });
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ["data-hue"],
-    });
-    return () => observer.disconnect();
-  }, []);
 
   const setHue = React.useCallback(
     (newHue: number) => {
@@ -75,6 +63,28 @@ export const HueProvider = ({
     },
     [hue]
   );
+
+  React.useEffect(() => {
+    recolor();
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.attributeName !== "data-hue") continue;
+        recolor();
+        if (mutation.target === document.body) {
+          const hue = getHue(document.body);
+          if (hue === null) return;
+          setHueRaw(hue);
+          setCookie("hue", hue, { maxAge: 2_592_000 });
+          updateThemeColor();
+        }
+      }
+    });
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["data-hue"],
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <HueContext.Provider value={{ hue, setHue }}>
