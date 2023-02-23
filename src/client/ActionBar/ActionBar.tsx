@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { ArrowLeft } from "react-feather";
 import { HUES } from "utils/theme/color";
+import { CustomColorSelector } from "./CustomColorSelector";
 import { ActionBarButton } from "./ActionBarButton";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { ColorSelector } from "./ColorSelector";
@@ -45,6 +46,7 @@ export function ActionBar() {
         {HUES.map((hue) => (
           <ColorSelector hue={hue} key={hue} />
         ))}
+        <CustomColorSelector />
         <DarkModeToggle />
       </div>
     </section>

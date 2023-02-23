@@ -1,0 +1,101 @@
+@use 'theme/color';
+@use 'theme/size';
+
+$radial: radial-gradient(color.$background, transparent var(--radial-size));
+$rainbow: conic-gradient(#e43f00, #fae410, #55cc3b, #09adff, #6b0efd, #e70d86, #e43f00);
+
+.customColorSelector {
+  --radial-size: 240%;
+
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  background: $radial, $rainbow;
+
+
+  &::after {
+    --radial-size: 60%;
+
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: 20px;
+    background: $radial, $rainbow;
+  }
+}
+
+.popoverContent {
+  display: flex;
+  gap: size.$spacing-small;
+  border-radius: size.$border-radius-small;
+  padding: 6px 12px;
+  background-color: color.$accent-container-contrast;
+  box-shadow: hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  z-index: 4;
+
+  &[data-state='open'][data-side='top'] {
+    animation-name: slideDownAndFade;
+  }
+  &[data-state='open'][data-side='right'] {
+    animation-name: slideLeftAndFade;
+  }
+  &[data-state='open'][data-side='bottom'] {
+    animation-name: slideUpAndFade;
+  }
+  &[data-state='open'][data-side='left'] {
+    animation-name: slideRightAndFade;
+  }
+}
+
+.sliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 200px;
+  height: 20px;
+}
+
+.sliderTrack {
+  background: linear-gradient(
+                  to right,
+                  #ff0000 0%,
+                  #ffff00 17%,
+                  #00ff00 33%,
+                  #00ffff 50%,
+                  #0000ff 67%,
+                  #ff00ff 83%,
+                  #ff0000 100%
+  );
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  height: 3px;
+}
+
+.sliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+
+  &:not(:hover) {
+    background-color: color.$accent-tint-contrast;
+  }
+  &:hover {
+    background-color: color.$accent-tint;
+  }
+}
+
+.output {
+  font-variant-numeric: tabular-nums;
+}
+
+.popoverArrow {
+  fill: color.$accent-container-contrast;
+}
