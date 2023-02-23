@@ -110,6 +110,9 @@ $linear-gradient-dark: linear-gradient(to right, $gradient-steps-dark);
 
 .output {
   font-variant-numeric: tabular-nums;
+  display: grid;
+  place-content: center;
+  width: 35px;
 }
 
 .popoverArrow {

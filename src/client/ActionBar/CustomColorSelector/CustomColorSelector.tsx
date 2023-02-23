@@ -1,5 +1,3 @@
-import c from "classnames";
-import { tragedyDisplay } from "fonts/tragedy";
 import React from "react";
 import { CustomHueContext } from "store/CustomHue";
 import { HueContext } from "store/Hue";
@@ -59,9 +57,7 @@ const CustomColorSelectorPopover = React.forwardRef<HTMLDivElement>(
             <Slider.Track className={styles.sliderTrack} />
             <Slider.Thumb className={styles.sliderThumb} />
           </Slider.Root>
-          <output className={c(styles.output, tragedyDisplay.className)}>
-            {currentHue}º
-          </output>
+          <output className={styles.output}>{currentHue}º</output>
           <Popover.Arrow className={styles.popoverArrow} />
         </Popover.Content>
       </Popover.Portal>
