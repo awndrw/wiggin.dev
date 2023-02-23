@@ -2,7 +2,7 @@ import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";
 import { Edit2 } from "react-feather";
-import { HueContext } from "theme/Hue";
+import { HueContext } from "store/Hue";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";
 

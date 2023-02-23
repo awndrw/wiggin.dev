@@ -8,8 +8,8 @@ import { createStyles } from "utils/theme/style";
 import { env } from "utils/env";
 import { HueSchema } from "utils/theme/color";
 import { ActionBar } from "client/ActionBar";
-import { HueProvider } from "theme/Hue";
-import { ModeProvider } from "theme/Mode";
+import { HueProvider } from "store/Hue";
+import { ModeProvider } from "store/Mode";
 
 import "./globals.scss";
 

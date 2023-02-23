@@ -1,7 +1,7 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Icon } from "components/Icon";
 import React from "react";
-import { ModeContext } from "theme/Mode";
+import { ModeContext } from "store/Mode";
 import { Moon, Sun } from "react-feather";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./DarkModeToggle.module.scss";

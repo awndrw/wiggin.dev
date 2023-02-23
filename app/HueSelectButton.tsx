@@ -6,7 +6,7 @@ import { Interaction } from "components/Interaction";
 import { hyenaSunrise } from "fonts/hyena";
 import React from "react";
 import { Target } from "react-feather";
-import { HueContext } from "theme/Hue";
+import { HueContext } from "store/Hue";
 import styles from "./HueSelectButton.module.scss";
 
 export interface HueSelectButtonProps {
