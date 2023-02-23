@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { DEFAULT_MODE, Mode } from "utils/theme/color";
+import { DEFAULT_MODE, type Mode } from "utils/theme/color";
 import { updateThemeColor } from "utils/theme/style";
 
 export interface ModeContext {

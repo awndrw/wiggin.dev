@@ -1,4 +1,4 @@
-import { Mode, Color } from "utils/theme/color";
+import { type Mode, type Color } from "utils/theme/color";
 
 type LightnessAndChroma = `${number}% ${number}`;
 

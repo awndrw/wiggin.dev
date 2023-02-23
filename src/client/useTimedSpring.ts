@@ -1,6 +1,6 @@
 "use client";
 
-import { SpringConfig, SpringValue, useSpring } from "@react-spring/web";
+import { type SpringConfig, type SpringValue, useSpring } from "@react-spring/web";
 import React from "react";
 
 export interface TimedSpringStyle {

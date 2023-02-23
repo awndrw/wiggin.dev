@@ -60,7 +60,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   return reducedMotion ? null : (
     <a.path
       ref={(path) => {
-        // @ts-ignore current is mutable, not readonly
+        // @ts-expect-error current is mutable, not readonly
         pathRef.current = path;
         recalculatePathLength();
       }}

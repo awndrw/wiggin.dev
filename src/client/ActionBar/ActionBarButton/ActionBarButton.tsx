@@ -14,7 +14,7 @@ export const ActionBarButton = React.forwardRef<
   return (
     <div
       className={styles.wrapper}
-      // @ts-ignore
+      // @ts-expect-error custom properties work but aren't typed
       style={{ "--accent-color": accentColor }}
       {...props}
     >

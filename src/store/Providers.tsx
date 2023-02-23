@@ -7,7 +7,7 @@ import React from "react";
 import { CustomHueProvider } from "store/CustomHue";
 import { HueProvider } from "store/Hue";
 import { ModeProvider } from "store/Mode";
-import { Hue } from "utils/theme/color";
+import { type Hue } from "utils/theme/color";
 
 export const Providers = ({
   initialHue,

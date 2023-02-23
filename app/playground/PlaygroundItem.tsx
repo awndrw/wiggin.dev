@@ -4,7 +4,7 @@ import { Icon } from "components/Icon";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Heart, Monitor, Smartphone, Icon as FeatherIcon } from "react-feather";
+import { Heart, Monitor, Smartphone, type Icon as FeatherIcon } from "react-feather";
 import { WarningDialog } from "./WarningDialog";
 import styles from "./PlaygroundItem.module.scss";
 import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";

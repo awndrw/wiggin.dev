@@ -2,7 +2,7 @@
 
 import { setCookie } from "cookies-next";
 import React from "react";
-import { DEFAULT_HUE, Hue, HueSchema } from "utils/theme/color";
+import { DEFAULT_HUE, type Hue, HueSchema } from "utils/theme/color";
 import { createStyles, updateThemeColor } from "utils/theme/style";
 
 export interface HueContext {
@@ -92,12 +92,4 @@ export const HueProvider = ({
       {children}
     </HueContext.Provider>
   );
-};
-
-const updateHueFromBody = () => {
-  const hue = document.body.getAttribute("data-hue");
-  if (hue) {
-    setCookie("hue", hue, { maxAge: 2_592_000 });
-    updateThemeColor();
-  }
 };
