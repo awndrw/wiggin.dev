@@ -1,6 +1,7 @@
 import c from "classnames";
 import { tragedyDisplay } from "fonts/tragedy";
 import React from "react";
+import { CustomHueContext } from "store/CustomHue";
 import { HueContext } from "store/Hue";
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
@@ -8,8 +9,10 @@ import { ActionBarButton } from "../ActionBarButton";
 import styles from "./CustomColorSelector.module.scss";
 
 export const CustomColorSelector: React.FC = () => {
+  const { showPopover, setShowPopover } = React.useContext(CustomHueContext);
+
   return (
-    <Popover.Root>
+    <Popover.Root open={showPopover} onOpenChange={setShowPopover}>
       <ActionBarButton>
         <Popover.Trigger className={styles.customColorSelector} />
       </ActionBarButton>
