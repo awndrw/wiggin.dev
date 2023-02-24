@@ -1,8 +1,10 @@
+import { Provider as TooltipProvider } from "client/radix/Tooltip";
+import { ActionBar } from "client/ActionBar";
 import { Analytics } from "client/Analytics";
+import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { hyenaSunrise } from "fonts/hyena";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
-import { Providers } from "store/Providers";
 import { createStyles, getStyle } from "utils/theme/style";
 import { env } from "utils/env";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
@@ -51,7 +53,10 @@ export default async function RootLayout({
         />
       </head>
       <body className={hyenaSunrise.className} data-hue={hue}>
-        <Providers>{children}</Providers>
+        <TooltipProvider>
+          <ReactWrapProvider>{children}</ReactWrapProvider>
+        </TooltipProvider>
+        <ActionBar />
         <Analytics mode={analyticsMode} />
       </body>
     </html>
