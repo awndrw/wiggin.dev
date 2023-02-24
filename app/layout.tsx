@@ -8,7 +8,6 @@ import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { createStyles, getStyle } from "utils/theme/style";
-import { env } from "utils/env";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
 
 import "./globals.scss";
@@ -38,9 +37,6 @@ export default async function RootLayout({
   const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
   const hue = parsedHue?.success ? parsedHue.data : DEFAULT_HUE;
 
-  const analyticsMode =
-    env.VERCEL_ENV === "production" ? "production" : "development";
-
   return (
     <html lang="en">
       <head>
@@ -59,7 +55,7 @@ export default async function RootLayout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
-        <Analytics mode={analyticsMode} />
+        <Analytics />
       </body>
     </html>
   );
