@@ -3,6 +3,7 @@ import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
 import { ExternalLink } from "components/Link";
 import { tragedyDisplay } from "fonts/tragedy";
+// @ts-expect-error it does exist
 import { type Metadata } from "next";
 import styles from "./page.module.scss";
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";

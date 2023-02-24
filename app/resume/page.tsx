@@ -1,3 +1,4 @@
+// @ts-expect-error it does exist
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,6 +23,7 @@ export default function Page() {
     <div className={styles.page}>
       <section>
         <Link
+          // @ts-expect-error static type checking in beta. /public files exist
           href="/resume/AndrewWigginResume.pdf"
           aria-label="Resume"
           className={styles.link}

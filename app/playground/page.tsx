@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+// @ts-expect-error it does exist
 import { type Metadata } from "next";
 import { PlaygroundItem } from "./PlaygroundItem";
 import styles from "./page.module.scss";

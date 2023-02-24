@@ -23,6 +23,7 @@ const ActionBarLink = () => {
   return isNestedPage ? (
     <>
       <ActionBarButton>
+        {/* @ts-expect-error figure out how to type this href */}
         <Link href={parentPath} className={styles.navButton}>
           <AccessibleIcon label="Back">
             <Icon icon={ArrowLeft} />

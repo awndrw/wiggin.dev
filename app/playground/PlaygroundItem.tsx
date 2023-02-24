@@ -4,7 +4,12 @@ import { Icon } from "components/Icon";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Heart, Monitor, Smartphone, type Icon as FeatherIcon } from "react-feather";
+import {
+  Heart,
+  Monitor,
+  Smartphone,
+  type Icon as FeatherIcon,
+} from "react-feather";
 import { WarningDialog } from "./WarningDialog";
 import styles from "./PlaygroundItem.module.scss";
 import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";
@@ -34,6 +39,7 @@ export const PlaygroundItem = ({
               <h2 className={styles.link}>{name}</h2>
             </Dialog.Trigger>
           ) : (
+            // @ts-expect-error figure out how to type the playground hrefs
             <Link href={href} className={styles.trigger}>
               <h2 className={styles.link}>{name}</h2>
             </Link>
@@ -44,6 +50,7 @@ export const PlaygroundItem = ({
             ))}
           </ul>
         </div>
+        {/* @ts-expect-error figure out how to type the playground hrefs */}
         {warning && <WarningDialog warning={warning} continueHref={href} />}
       </Dialog.Root>
     </article>
