@@ -3,10 +3,11 @@ import { hueAtom } from "store";
 import { useAtom } from "jotai";
 import React from "react";
 import useTimedSpring from "client/useTimedSpring";
+import { type Hue } from "utils/theme/color";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";
 
-export function HueSelector({ hue }: { hue: number }) {
+export function HueSelector({ hue }: { hue: Hue }) {
   const [style, trigger] = useTimedSpring();
   const [currentHue, setHue] = useAtom(hueAtom);
 
