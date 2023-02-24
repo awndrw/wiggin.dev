@@ -2,6 +2,7 @@ import c from "classnames";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { tragedyDisplay } from "fonts/tragedy";
+import { type Metadata } from "next";
 import React from "react";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
@@ -12,7 +13,7 @@ import styles from "./page.module.scss";
 const generateBlurb = (prefix: string) =>
   `${prefix} a brooklyn based design engineer passionate about design systems, motion design and accessibility.`;
 
-export const metadata = {
+export const metadata: Metadata = {
   description: generateBlurb("Andrew Wiggin is"),
 };
 

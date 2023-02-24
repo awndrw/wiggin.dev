@@ -39,6 +39,7 @@ const nextConfig = {
     optimizeCss: true,
     appDir: true,
     scrollRestoration: true,
+    typedRoutes: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],

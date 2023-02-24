@@ -1,10 +1,11 @@
+import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import resumeLight from "../../public/resume/light.jpg";
 import resumeDark from "../../public/resume/dark.jpg";
 import styles from "./page.module.scss";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "resume",
 };
 

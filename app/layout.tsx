@@ -3,6 +3,7 @@ import { ActionBar } from "client/ActionBar";
 import { Analytics } from "client/Analytics";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { hyenaSunrise } from "fonts/hyena";
+import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { createStyles, getStyle } from "utils/theme/style";
@@ -11,7 +12,7 @@ import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
 
 import "./globals.scss";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "wiggin.dev",
     template: "wiggin.dev/%s",
