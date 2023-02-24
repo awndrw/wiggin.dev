@@ -1,0 +1,15 @@
+@use 'theme/color';
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.dragger {
+  position: absolute;
+  background-color: color.$accent-tint;
+  border: 1px solid color.$accent-primary;
+  opacity: 0.4;
+}

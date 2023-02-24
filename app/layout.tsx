@@ -10,6 +10,7 @@ import React from "react";
 import { createStyles, getStyle } from "utils/theme/style";
 import { env } from "utils/env";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
+import { Dragger } from "./Dragger";
 
 import "./globals.scss";
 
@@ -59,6 +60,7 @@ export default async function RootLayout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
+        <Dragger />
         <Analytics mode={analyticsMode} />
       </body>
     </html>

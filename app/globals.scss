@@ -20,6 +20,9 @@ body {
   min-height: 100vh;
   min-height: 100svh;
   height: 100%;
+  // dragger
+  cursor: crosshair;
+  user-select: none;
 }
 
 body {

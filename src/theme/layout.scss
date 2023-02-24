@@ -5,6 +5,7 @@
 @mixin page {
   position: relative;
   overflow-x: hidden;
+  z-index: 1;
 
   & > *:last-child {
     // ActionBar affordance
