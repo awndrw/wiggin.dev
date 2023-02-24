@@ -1,6 +1,5 @@
 import { setCookie } from "cookies-next";
 import { atom } from "jotai";
-import { createHueStyle, getHue, hueStyleExists, recolor } from "store/util";
 import { atomWithLifecycle } from "utils/atomWithLifecycle";
 import {
   DEFAULT_HUE,
@@ -9,6 +8,7 @@ import {
   type Mode,
 } from "utils/theme/color";
 import { updateThemeColor } from "utils/theme/style";
+import { createHueStyle, getHue, hueStyleExists, recolor } from "./util";
 
 export const modeAtom = atomWithLifecycle<Mode>(
   DEFAULT_MODE,
@@ -28,6 +28,10 @@ export const modeAtom = atomWithLifecycle<Mode>(
 export const hueAtom = atomWithLifecycle<Hue>(
   DEFAULT_HUE,
   (setHue) => {
+    const hue = getHue(document.body);
+    if (hue !== null) {
+      setHue(hue);
+    }
     recolor();
     updateThemeColor();
     const observer = new MutationObserver((mutations) => {
