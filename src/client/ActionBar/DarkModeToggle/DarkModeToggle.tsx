@@ -1,5 +1,5 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { modeAtom } from "atomStore";
+import { modeAtom } from "store";
 import { Icon } from "components/Icon";
 import { useAtom } from "jotai";
 import React from "react";

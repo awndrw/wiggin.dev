@@ -2,14 +2,16 @@ import { atom, type SetStateAction } from "jotai";
 
 export function atomWithListener<T>(
   initialValue: T,
-  listener: (newValue: T) => void
+  listener: (newValue: T, prevValue: T) => void
 ) {
   const valueAtom = atom<T>(initialValue);
   return atom(
     (get) => get(valueAtom),
     (get, set, arg: SetStateAction<T>) => {
+      const prevValue = get(valueAtom);
       set(valueAtom, arg);
-      listener(get(valueAtom));
+      const newValue = get(valueAtom);
+      listener(newValue, prevValue);
     }
   );
 }
