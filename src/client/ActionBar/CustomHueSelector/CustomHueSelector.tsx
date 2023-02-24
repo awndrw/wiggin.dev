@@ -45,6 +45,10 @@ const CustomHueSelectorPopover = React.forwardRef<
   const [hue, setHue] = useAtom(hueAtom);
   const [currentHue, setCurrentHue] = React.useState(hue);
 
+  React.useEffect(() => {
+    setCurrentHue(hue);
+  }, [hue]);
+
   return (
     <Popover.Portal>
       <Popover.Content
@@ -59,6 +63,7 @@ const CustomHueSelectorPopover = React.forwardRef<
           max={360}
           step={1}
           aria-label="Hue slider"
+          value={[currentHue]}
           onValueCommit={([value]) => isHue(value) && setHue(value)}
           onValueChange={([value]) => isHue(value) && setCurrentHue(value)}
           className={styles.sliderRoot}
