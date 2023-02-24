@@ -397,13 +397,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:canary":
-  version: 13.1.7-canary.11
-  resolution: "@next/font@npm:13.1.7-canary.11"
-  checksum: b89a5f53d7849fee007e9468084689eb5fea594c1fc47bc7d2e17698b904164c84d6b50ac1a1010b4b32656d9da31cfe582f976f6189672ed60c64bdb64858fa
-  languageName: node
-  linkType: hard
-
 "@next/swc-android-arm-eabi@npm:13.2.1":
   version: 13.2.1
   resolution: "@next/swc-android-arm-eabi@npm:13.2.1"
@@ -4234,7 +4227,6 @@ __metadata:
   dependencies:
     "@csstools/postcss-oklab-function": ^2.1.0
     "@next/bundle-analyzer": canary
-    "@next/font": canary
     "@radix-ui/react-accessible-icon": ^1.0.1
     "@radix-ui/react-dialog": ^1.0.2
     "@radix-ui/react-popover": ^1.0.4

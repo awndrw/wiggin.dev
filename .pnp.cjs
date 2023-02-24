@@ -30,7 +30,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
             ["@next/bundle-analyzer", "npm:13.1.7-canary.11"],\
-            ["@next/font", "npm:13.1.7-canary.11"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.1"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
             ["@radix-ui/react-popover", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.4"],\
@@ -800,15 +799,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@next/eslint-plugin-next", "npm:13.2.1"],\
             ["glob", "npm:7.1.7"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@next/font", [\
-        ["npm:13.1.7-canary.11", {\
-          "packageLocation": "./.yarn/cache/@next-font-npm-13.1.7-canary.11-8586afccbe-b89a5f53d7.zip/node_modules/@next/font/",\
-          "packageDependencies": [\
-            ["@next/font", "npm:13.1.7-canary.11"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5825,7 +5815,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["portfolio", "workspace:."],\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
             ["@next/bundle-analyzer", "npm:13.1.7-canary.11"],\
-            ["@next/font", "npm:13.1.7-canary.11"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.1"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
             ["@radix-ui/react-popover", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.4"],\
