@@ -1,14 +1,14 @@
-"use client";
-
+import c from "classnames";
+import React from "react";
 import {
   a,
   useIsomorphicLayoutEffect,
   useReducedMotion,
   useSpringValue,
 } from "@react-spring/web";
-import React from "react";
+import styles from "./AnimatedPath.module.scss";
 
-export interface AnimatedPathProps {
+export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {
   d: string;
   /* The ratio of the animated path length to the full path */
   animatedPathRatio: number;
@@ -19,6 +19,8 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   d,
   animatedPathRatio,
   startVisible = true,
+  className,
+  ...props
 }) => {
   const pathRef = React.useRef<SVGPathElement>();
   const [pathLength, setPathLength] = React.useState(0);
@@ -58,19 +60,27 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   }, [animatedPathRatio, pathLength, strokeDashoffset]);
 
   return reducedMotion ? null : (
-    <a.path
-      ref={(path) => {
-        // @ts-expect-error current is mutable, not readonly
-        pathRef.current = path;
-        recalculatePathLength();
-      }}
-      vectorEffect="non-scaling-stroke"
-      style={{
-        strokeDashoffset,
-        opacity: !pathLength ? 0 : 1,
-        strokeDasharray: `${segmentLength} ${pathLength}`,
-      }}
-      d={d}
-    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      focusable={false}
+      className={c(styles.animatedPath, className)}
+      {...props}
+    >
+      <a.path
+        ref={(path) => {
+          // @ts-expect-error current is mutable, not readonly
+          pathRef.current = path;
+          recalculatePathLength();
+        }}
+        vectorEffect="non-scaling-stroke"
+        style={{
+          strokeDashoffset,
+          opacity: !pathLength ? 0 : 1,
+          strokeDasharray: `${segmentLength} ${pathLength}`,
+        }}
+        d={d}
+      />
+    </svg>
   );
 };

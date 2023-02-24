@@ -59,3 +59,26 @@
   width: calc(100% + #{size.$spacing-large});
   margin: 0 calc(-1 * #{size.$spacing-large});
 }
+
+.scribbleRight {
+  height: 100%;
+  bottom: -35%;
+  @include util.mw-sm {
+    height: 130%;
+    bottom: -50%;
+  }
+  @include util.mw-md {
+    height: 140%;
+    bottom: -60%;
+  }
+}
+
+.scribbleLeft {
+  height: 60%;
+  left: -10vw;
+  top: 80%;
+  @include util.mw-sm {
+    left: -5vw;
+    top: 70%;
+  }
+}
