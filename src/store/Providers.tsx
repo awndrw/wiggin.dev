@@ -6,7 +6,6 @@ import { ReactWrapProvider } from "client/ReactWrapProvider";
 import React from "react";
 import { CustomHueProvider } from "store/CustomHue";
 import { HueProvider } from "store/Hue";
-import { ModeProvider } from "store/Mode";
 import { type Hue } from "utils/theme/color";
 
 export const Providers = ({
@@ -17,13 +16,11 @@ export const Providers = ({
   children: React.ReactNode;
 }) => (
   <HueProvider initialHue={initialHue}>
-    <ModeProvider>
-      <CustomHueProvider>
-        <TooltipProvider>
-          <ReactWrapProvider>{children}</ReactWrapProvider>
-        </TooltipProvider>
-        <ActionBar />
-      </CustomHueProvider>
-    </ModeProvider>
+    <CustomHueProvider>
+      <TooltipProvider>
+        <ReactWrapProvider>{children}</ReactWrapProvider>
+      </TooltipProvider>
+      <ActionBar />
+    </CustomHueProvider>
   </HueProvider>
 );

@@ -1,13 +1,14 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { modeAtom } from "atomStore";
 import { Icon } from "components/Icon";
+import { useAtom } from "jotai";
 import React from "react";
-import { ModeContext } from "store/Mode";
 import { Moon, Sun } from "react-feather";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./DarkModeToggle.module.scss";
 
 export const DarkModeToggle = () => {
-  const { mode, setMode } = React.useContext(ModeContext);
+  const [mode, setMode] = useAtom(modeAtom);
 
   const nextMode = mode === "dark" ? "light" : "dark";
 
