@@ -1,4 +1,5 @@
 import { setCookie } from "cookies-next";
+import { atom } from "jotai";
 import { createHueStyle, getHue, hueStyleExists, recolor } from "store/util";
 import { atomWithLifecycle } from "utils/atomWithLifecycle";
 import {
@@ -57,3 +58,5 @@ export const hueAtom = atomWithLifecycle<Hue>(
     document.body.setAttribute("data-hue", hue.toString());
   }
 );
+
+export const customHuePopoverAtom = atom(false);

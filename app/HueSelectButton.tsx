@@ -1,9 +1,10 @@
 "use client";
 
 import { Interaction } from "components/Interaction";
+import { useSetAtom } from "jotai";
 import React from "react";
 import { Target } from "react-feather";
-import { CustomHueContext } from "store/CustomHue";
+import { customHuePopoverAtom } from "store";
 
 export interface HueSelectButtonProps {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ export interface HueSelectButtonProps {
 export const HueSelectButton: React.FC<HueSelectButtonProps> = ({
   children,
 }) => {
-  const { setShowPopover } = React.useContext(CustomHueContext);
+  const setShowPopover = useSetAtom(customHuePopoverAtom);
 
   return (
     <Interaction

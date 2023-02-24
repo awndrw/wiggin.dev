@@ -1,7 +1,6 @@
 import { useAtom, useAtomValue } from "jotai";
 import React from "react";
-import { hueAtom } from "store";
-import { CustomHueContext } from "store/CustomHue";
+import { customHuePopoverAtom, hueAtom } from "store";
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
 import { isHue } from "utils/theme/color";
@@ -10,7 +9,7 @@ import styles from "./CustomHueSelector.module.scss";
 
 export const CustomHueSelector: React.FC = () => {
   const hue = useAtomValue(hueAtom);
-  const { showPopover, setShowPopover } = React.useContext(CustomHueContext);
+  const [showPopover, setShowPopover] = useAtom(customHuePopoverAtom);
   const triggerId = React.useId();
 
   return (
