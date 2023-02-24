@@ -2,7 +2,7 @@ import { a } from "@react-spring/web";
 import { hueAtom } from "store";
 import { useAtom } from "jotai";
 import React from "react";
-import useTimedSpring from "client/useTimedSpring";
+import useTimedSpring from "utils/useTimedSpring";
 import { type Hue } from "utils/theme/color";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";

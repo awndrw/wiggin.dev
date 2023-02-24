@@ -1,15 +1,7 @@
 "use client";
 
-import { type SpringConfig, type SpringValue, useSpring } from "@react-spring/web";
+import { type SpringConfig, useSpring } from "@react-spring/web";
 import React from "react";
-
-export interface TimedSpringStyle {
-  transform?: SpringValue<string>;
-}
-
-export type TimedSpringTrigger = (props: TimedSpringProps) => void;
-
-export type TimedSpring = [TimedSpringStyle, TimedSpringTrigger];
 
 export interface TimedSpringProps {
   x?: number;
@@ -32,9 +24,9 @@ const DEFAULT_PROPS: TimedSpringProps = {
     friction: 10,
   },
   delay: 0,
-};
+} as const;
 
-export default function useTimedSpring(): TimedSpring {
+export default function useTimedSpring() {
   const [isAnimating, setIsAnimating] = React.useState(false);
   const [props, setProps] = React.useState<TimedSpringProps>(DEFAULT_PROPS);
 
@@ -66,5 +58,5 @@ export default function useTimedSpring(): TimedSpring {
     setIsAnimating(true);
   }, []);
 
-  return [style, trigger];
+  return [style, trigger] as const;
 }
