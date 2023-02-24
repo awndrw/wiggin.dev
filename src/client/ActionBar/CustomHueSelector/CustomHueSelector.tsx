@@ -14,7 +14,7 @@ export const CustomHueSelector: React.FC = () => {
 
   return (
     <Popover.Root open={showPopover} onOpenChange={setShowPopover}>
-      <ActionBarButton>
+      <ActionBarButton className={styles.wrapper}>
         <Popover.Trigger
           id={triggerId}
           aria-label="Custom hue selector"
@@ -28,6 +28,9 @@ export const CustomHueSelector: React.FC = () => {
               style={{ transform: `rotate(-${hue}deg)` }}
               className={styles.customHueSelectorIndicatorInner}
             />
+          </div>
+          <div className={styles.focusIndicator}>
+            <div className={styles.focusIndicatorInner} />
           </div>
         </Popover.Trigger>
       </ActionBarButton>

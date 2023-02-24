@@ -1,19 +1,21 @@
 import { Slot } from "@radix-ui/react-slot";
+import c from "classnames";
 import React from "react";
 import styles from "./ActionBarButton.module.scss";
 
 export interface ActionBarButtonProps {
   children: React.ReactNode;
+  className?: string;
   accentColor?: string;
 }
 
 export const ActionBarButton = React.forwardRef<
   HTMLElement,
   ActionBarButtonProps
->(({ children, accentColor, ...props }, ref) => {
+>(({ children, className, accentColor, ...props }, ref) => {
   return (
     <div
-      className={styles.wrapper}
+      className={c(styles.wrapper, className)}
       // @ts-expect-error custom properties work but aren't typed
       style={{ "--accent-color": accentColor }}
       {...props}

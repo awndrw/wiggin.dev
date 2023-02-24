@@ -7,6 +7,20 @@ $radial-gradient: radial-gradient(#{color.$background}, transparent var(--radial
 $conic-gradient: conic-gradient(#{util.gradient-steps()});
 $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
 
+.wrapper {
+
+  &::before {
+    display: none !important;
+  }
+
+  &:not(:has(:focus-visible))::after {
+    display: none;
+  }
+  &:has(:focus-visible)::after {
+    display: block;
+  }
+}
+
 .customHueSelector {
   --radial-distance: 190%;
   position: relative;
@@ -23,6 +37,35 @@ $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
     border-radius: 20px;
     background: $radial-gradient, $conic-gradient;
   }
+
+  &:not(:focus-visible) .focusIndicator {
+    display: none;
+  }
+  &:focus-visible .focusIndicator {
+    display: block;
+  }
+}
+
+.focusIndicator {
+  position: absolute;
+  inset: -7px;
+  z-index: -1;
+  border-radius: 20px;
+  clip-path: polygon(5px 5px, 5px 29px, 7px 29px, 7px 7px, 27px 7px, 27px 27px, 7px 27px, 7px 29px, 29px 29px, 29px 5px);
+  animation: rotate 6s linear infinite;
+}
+
+.focusIndicatorInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 2s ease;
+  background: $conic-gradient;
+  animation: rotate 6s linear infinite reverse;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0) }
+  100% { transform: rotate(360deg) }
 }
 
 .customHueSelectorIndicator {
