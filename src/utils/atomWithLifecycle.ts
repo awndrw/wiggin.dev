@@ -1,17 +1,19 @@
-import { atom, type SetStateAction } from "jotai";
+import { atom, type SetStateAction, type WritableAtom } from "jotai";
 
-export function atomWithListener<T>(
+export function atomWithLifecycle<T>(
   initialValue: T,
-  listener: (newValue: T, prevValue: T) => void
+  onMount: WritableAtom<T, T[], T>["onMount"],
+  onUpdate: (newValue: T, prevValue: T) => void
 ) {
   const valueAtom = atom<T>(initialValue);
+  valueAtom.onMount = onMount;
   return atom(
     (get) => get(valueAtom),
     (get, set, arg: SetStateAction<T>) => {
       const prevValue = get(valueAtom);
       set(valueAtom, arg);
       const newValue = get(valueAtom);
-      listener(newValue, prevValue);
+      onUpdate(newValue, prevValue);
     }
   );
 }
