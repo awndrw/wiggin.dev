@@ -32,7 +32,6 @@ export const hueAtom = atomWithLifecycle<Hue>(
     updateThemeColor();
     const observer = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
-        console.log(mutation);
         if (mutation.attributeName !== "data-hue") continue;
         recolor();
         if (mutation.target === document.body) {
