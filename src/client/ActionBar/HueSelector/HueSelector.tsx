@@ -1,13 +1,14 @@
 import { a } from "@react-spring/web";
+import { hueAtom } from "store";
+import { useAtom } from "jotai";
 import React from "react";
-import { HueContext } from "store/Hue";
 import useTimedSpring from "client/useTimedSpring";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";
 
 export function HueSelector({ hue }: { hue: number }) {
   const [style, trigger] = useTimedSpring();
-  const { hue: currentHue, setHue } = React.useContext(HueContext);
+  const [currentHue, setHue] = useAtom(hueAtom);
 
   const onClick = () => {
     if (hue === currentHue) {

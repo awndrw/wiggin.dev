@@ -1,13 +1,15 @@
+import { useAtom, useAtomValue } from "jotai";
 import React from "react";
+import { hueAtom } from "store";
 import { CustomHueContext } from "store/CustomHue";
-import { HueContext } from "store/Hue";
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
+import { isHue } from "utils/theme/color";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./CustomHueSelector.module.scss";
 
 export const CustomHueSelector: React.FC = () => {
-  const { hue } = React.useContext(HueContext);
+  const hue = useAtomValue(hueAtom);
   const { showPopover, setShowPopover } = React.useContext(CustomHueContext);
   const triggerId = React.useId();
 
@@ -41,7 +43,7 @@ const CustomHueSelectorPopover = React.forwardRef<
   HTMLDivElement,
   { triggerId: string }
 >(({ triggerId }, ref) => {
-  const { hue, setHue } = React.useContext(HueContext);
+  const [hue, setHue] = useAtom(hueAtom);
   const [currentHue, setCurrentHue] = React.useState(hue);
 
   return (
@@ -58,8 +60,8 @@ const CustomHueSelectorPopover = React.forwardRef<
           max={360}
           step={1}
           aria-label="Hue slider"
-          onValueCommit={([value]) => setHue(value)}
-          onValueChange={([value]) => setCurrentHue(value)}
+          onValueCommit={([value]) => isHue(value) && setHue(value)}
+          onValueChange={([value]) => isHue(value) && setCurrentHue(value)}
           className={styles.sliderRoot}
         >
           <Slider.Track className={styles.sliderTrack} />
