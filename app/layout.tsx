@@ -3,7 +3,6 @@ import { ActionBar } from "client/ActionBar";
 import { Analytics } from "client/Analytics";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { hyenaSunrise } from "fonts/hyena";
-// @ts-expect-error it does exist
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";

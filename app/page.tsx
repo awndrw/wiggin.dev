@@ -3,7 +3,6 @@ import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { tragedyDisplay } from "fonts/tragedy";
-// @ts-expect-error it does exist
 import { type Metadata } from "next";
 import React from "react";
 import { Balancer } from "client/Balancer";
