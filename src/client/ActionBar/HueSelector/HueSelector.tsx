@@ -1,7 +1,9 @@
 import { a } from "@react-spring/web";
+import { Action } from "components/Action";
 import { hueAtom } from "store";
 import { useAtom } from "jotai";
 import React from "react";
+import { ActionName } from "utils/rum";
 import useTimedSpring from "utils/useTimedSpring";
 import { type Hue } from "utils/theme/color";
 import { ActionBarButton } from "../ActionBarButton";
@@ -21,15 +23,17 @@ export function HueSelector({ hue }: { hue: Hue }) {
   };
 
   return (
-    <ActionBarButton data-hue={hue}>
-      <a.button
-        style={style}
-        className={styles.hueSelector}
-        // TODO: figure out aria-pressed without state
-        aria-pressed={hue === currentHue}
-        aria-label={`Hue: ${hue}`}
-        onClick={onClick}
-      />
-    </ActionBarButton>
+    <Action name={ActionName.SET_HUE} hue={hue} preset={true}>
+      <ActionBarButton data-hue={hue}>
+        <a.button
+          style={style}
+          className={styles.hueSelector}
+          // TODO: figure out aria-pressed without state
+          aria-pressed={hue === currentHue}
+          aria-label={`Hue: ${hue}`}
+          onClick={onClick}
+        />
+      </ActionBarButton>
+    </Action>
   );
 }
