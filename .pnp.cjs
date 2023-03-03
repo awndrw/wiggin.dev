@@ -49,7 +49,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.54.0"],\
             ["@typescript-eslint/parser", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.54.0"],\
             ["@use-gesture/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:10.2.24"],\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.11"],\
             ["better-color-tools", "npm:0.10.0"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\
@@ -2494,28 +2493,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@use-gesture/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:10.2.24"],\
             ["@types/react", "npm:18.0.28"],\
             ["@use-gesture/core", "npm:10.2.24"],\
-            ["react", "npm:18.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vercel/analytics", [\
-        ["npm:0.1.11", {\
-          "packageLocation": "./.yarn/cache/@vercel-analytics-npm-0.1.11-9aba632258-05b8180ac6.zip/node_modules/@vercel/analytics/",\
-          "packageDependencies": [\
-            ["@vercel/analytics", "npm:0.1.11"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.11", {\
-          "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-8864cc9eb8/0/cache/@vercel-analytics-npm-0.1.11-9aba632258-05b8180ac6.zip/node_modules/@vercel/analytics/",\
-          "packageDependencies": [\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.11"],\
-            ["@types/react", "npm:18.0.28"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -5888,7 +5865,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.54.0"],\
             ["@typescript-eslint/parser", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.54.0"],\
             ["@use-gesture/react", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:10.2.24"],\
-            ["@vercel/analytics", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.1.11"],\
             ["better-color-tools", "npm:0.10.0"],\
             ["classnames", "npm:2.3.2"],\
             ["cookies-next", "npm:2.1.1"],\

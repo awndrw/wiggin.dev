@@ -25,7 +25,6 @@
     "@radix-ui/react-visually-hidden": "^1.0.1",
     "@react-spring/web": "^9.7.1",
     "@use-gesture/react": "^10.2.24",
-    "@vercel/analytics": "^0.1.11",
     "better-color-tools": "^0.10.0",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
