@@ -12,6 +12,7 @@
           "custom-properties": false
         }
       }
-    ]
+    ],
+    "postcss-combine-media-query"
   ]
 }
