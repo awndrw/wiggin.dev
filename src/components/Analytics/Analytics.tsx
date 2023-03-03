@@ -1,16 +1,22 @@
+import { useAtomValue } from "jotai";
 import React from "react";
 import { datadogRum } from "@datadog/browser-rum";
+import { hueAtom, modeAtom } from "store";
+import { init } from "utils/rum";
 
 export const Analytics: React.FC = () => {
+  const hue = useAtomValue(hueAtom);
+  const mode = useAtomValue(modeAtom);
+
   React.useEffect(() => {
-    datadogRum.init({
-      applicationId: process.env.NEXT_PUBLIC_DD_APP_ID!,
-      clientToken: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN!,
-      site: "datadoghq.com",
-      service: "wiggin.dev",
-      env: process.env.NEXT_PUBLIC_VERCEL_ENV,
-      silentMultipleInit: process.env.NEXT_PUBLIC_VERCEL_ENV === "production",
+    datadogRum.setRumGlobalContext({
+      hue,
+      mode,
     });
+  }, [hue, mode]);
+
+  React.useEffect(() => {
+    init();
   }, []);
 
   return null;
