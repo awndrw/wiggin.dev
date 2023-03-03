@@ -294,6 +294,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@datadog/browser-core@npm:4.34.3":
+  version: 4.34.3
+  resolution: "@datadog/browser-core@npm:4.34.3"
+  checksum: 50f3d63929a2848c30f03df8c376b85df7ec0821b6e45459586a86f30a570401bc4a71a0da405779d8bd92849cbbc738c95ebe2d5e8c1ac2457e7881c401819a
+  languageName: node
+  linkType: hard
+
+"@datadog/browser-rum-core@npm:4.34.3":
+  version: 4.34.3
+  resolution: "@datadog/browser-rum-core@npm:4.34.3"
+  dependencies:
+    "@datadog/browser-core": 4.34.3
+  checksum: 07616a22eb363208b96cece712eb2c49784788f328ada81f0d715d1637fc4cbb41e47e11483c83661cafb51715d820e0b9251a8f745df4149962ac21f993099f
+  languageName: node
+  linkType: hard
+
+"@datadog/browser-rum@npm:^4.34.3":
+  version: 4.34.3
+  resolution: "@datadog/browser-rum@npm:4.34.3"
+  dependencies:
+    "@datadog/browser-core": 4.34.3
+    "@datadog/browser-rum-core": 4.34.3
+  peerDependencies:
+    "@datadog/browser-logs": 4.34.3
+  peerDependenciesMeta:
+    "@datadog/browser-logs":
+      optional: true
+  checksum: 0b10606b39bfceaad9c8b9ef36f913b932b2b16e14030c4a8d211234a52c0b41fbb37101a9c592f88b96881c02fbedd75ca5a9ba2eec9eedcd1bd09eb13fc00c
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^2.0.0":
   version: 2.0.0
   resolution: "@eslint/eslintrc@npm:2.0.0"
@@ -4234,6 +4265,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@csstools/postcss-oklab-function": ^2.1.0
+    "@datadog/browser-rum": ^4.34.3
     "@next/bundle-analyzer": ^13.2.3
     "@radix-ui/react-accessible-icon": ^1.0.1
     "@radix-ui/react-dialog": ^1.0.2

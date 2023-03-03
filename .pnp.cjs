@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.34.3"],\
             ["@next/bundle-analyzer", "npm:13.2.3"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.1"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
@@ -666,6 +667,49 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/postcss",\
             "postcss-selector-parser",\
             "postcss"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@datadog/browser-core", [\
+        ["npm:4.34.3", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-core-npm-4.34.3-248d202428-50f3d63929.zip/node_modules/@datadog/browser-core/",\
+          "packageDependencies": [\
+            ["@datadog/browser-core", "npm:4.34.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@datadog/browser-rum", [\
+        ["npm:4.34.3", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-rum-npm-4.34.3-3151d48d21-0b10606b39.zip/node_modules/@datadog/browser-rum/",\
+          "packageDependencies": [\
+            ["@datadog/browser-rum", "npm:4.34.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.34.3", {\
+          "packageLocation": "./.yarn/__virtual__/@datadog-browser-rum-virtual-726d4a49f5/0/cache/@datadog-browser-rum-npm-4.34.3-3151d48d21-0b10606b39.zip/node_modules/@datadog/browser-rum/",\
+          "packageDependencies": [\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.34.3"],\
+            ["@datadog/browser-core", "npm:4.34.3"],\
+            ["@datadog/browser-logs", null],\
+            ["@datadog/browser-rum-core", "npm:4.34.3"],\
+            ["@types/datadog__browser-logs", null]\
+          ],\
+          "packagePeers": [\
+            "@datadog/browser-logs",\
+            "@types/datadog__browser-logs"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@datadog/browser-rum-core", [\
+        ["npm:4.34.3", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-rum-core-npm-4.34.3-e4d3c69cb6-07616a22eb.zip/node_modules/@datadog/browser-rum-core/",\
+          "packageDependencies": [\
+            ["@datadog/browser-rum-core", "npm:4.34.3"],\
+            ["@datadog/browser-core", "npm:4.34.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5824,6 +5868,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["portfolio", "workspace:."],\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.34.3"],\
             ["@next/bundle-analyzer", "npm:13.2.3"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.1"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\

@@ -1,6 +1,6 @@
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "client/ActionBar";
-import { Analytics } from "client/Analytics";
+import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
