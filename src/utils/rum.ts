@@ -10,6 +10,9 @@ export const init = () => {
     site: "datadoghq.com",
     service: "wiggin.dev",
     env,
+    trackFrustrations: true,
+    trackResources: true,
+    trackLongTasks: true,
     silentMultipleInit: env === "production",
     beforeSend: (event) => {
       const name =
