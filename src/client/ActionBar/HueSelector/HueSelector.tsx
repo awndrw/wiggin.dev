@@ -23,7 +23,12 @@ export function HueSelector({ hue }: { hue: Hue }) {
   };
 
   return (
-    <Action name={ActionName.SET_HUE} hue={hue} preset={true}>
+    <Action
+      name={ActionName.SET_HUE}
+      hue={hue}
+      preset={true}
+      canceled={hue === currentHue}
+    >
       <ActionBarButton data-hue={hue}>
         <a.button
           style={style}
