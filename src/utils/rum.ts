@@ -17,14 +17,16 @@ function makeMockDatadogApi() {
         }
       );
     },
-    setRumGlobalContext: (context: Record<string, unknown>) => {
+    setRumGlobalContext: (context: object) => {
       Object.assign(globalContext, context);
     },
   };
 }
 
-export const datadog =
-  env === "development" ? makeMockDatadogApi() : datadogRum;
+export const datadog: Pick<
+  typeof datadogRum,
+  "init" | "addAction" | "setRumGlobalContext"
+> = env === "development" ? makeMockDatadogApi() : datadogRum;
 
 export const init = () => {
   datadog.init({
