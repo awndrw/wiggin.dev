@@ -1,5 +1,4 @@
-import { datadogRum } from "@datadog/browser-rum";
-import { type ActionName } from "utils/rum";
+import { type ActionName, datadog } from "utils/rum";
 
 export interface ActionProps {
   name: ActionName;
@@ -8,7 +7,7 @@ export interface ActionProps {
 
 export const useAction = ({ name, ...props }: ActionProps) => {
   return (context?: object) =>
-    datadogRum.addAction(name, {
+    datadog.addAction(name, {
       ...props,
       ...context,
     });

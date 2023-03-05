@@ -1,12 +1,33 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
-import { Logger } from "utils/log";
 import { z } from "zod";
 
-const logger = new Logger("rum");
+function makeMockDatadogApi() {
+  const globalContext: Record<string, unknown> = {};
+  return {
+    init: () => null,
+    addAction: (name: string, context?: object) => {
+      console.log(
+        `%c[rum]%c ${name}\n`,
+        "color: rgb(120, 120, 120)",
+        "color: inherit",
+        {
+          ...globalContext,
+          ...context,
+        }
+      );
+    },
+    setRumGlobalContext: (context: Record<string, unknown>) => {
+      Object.assign(globalContext, context);
+    },
+  };
+}
+
+export const datadog =
+  env === "development" ? makeMockDatadogApi() : datadogRum;
 
 export const init = () => {
-  datadogRum.init({
+  datadog.init({
     applicationId: process.env.NEXT_PUBLIC_DD_APP_ID!,
     clientToken: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN!,
     site: "datadoghq.com",
@@ -14,15 +35,7 @@ export const init = () => {
     env,
     trackResources: true,
     trackLongTasks: true,
-    silentMultipleInit: env === "production",
-    beforeSend: (event) => {
-      const name =
-        event.type === "action"
-          ? event.action.target?.name ?? event.type
-          : event.type;
-      logger.log(name, event);
-      return true;
-    },
+    silentMultipleInit: true,
   });
 };
 
