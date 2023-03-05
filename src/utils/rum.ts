@@ -1,7 +1,9 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
-import { log } from "utils/log";
+import { Logger } from "utils/log";
 import { z } from "zod";
+
+const logger = new Logger("rum");
 
 export const init = () => {
   datadogRum.init({
@@ -10,7 +12,6 @@ export const init = () => {
     site: "datadoghq.com",
     service: "wiggin.dev",
     env,
-    trackFrustrations: true,
     trackResources: true,
     trackLongTasks: true,
     silentMultipleInit: env === "production",
@@ -19,7 +20,7 @@ export const init = () => {
         event.type === "action"
           ? event.action.target?.name ?? event.type
           : event.type;
-      log(name, event);
+      logger.log(name, event);
       return true;
     },
   });

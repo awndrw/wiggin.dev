@@ -1,12 +1,28 @@
 import { env } from "utils/env";
 
-export function log(...args: any[]) {
-  if (env === "development" || env === "preview") {
-    console.log(
-      `%c[wiggin.dev]%c ${args[0]}\n`,
-      "color: rgb(120, 120, 120)",
-      "color: inherit",
-      ...args.slice(1)
-    );
+export class Logger {
+  private static isolated: string;
+
+  constructor(private prefix: string) {}
+
+  log(message: string, ...args: any[]) {
+    if (this.enabled()) {
+      console.log(
+        `%c[${this.prefix}]%c ${message}\n`,
+        "color: rgb(120, 120, 120)",
+        "color: inherit",
+        ...args
+      );
+    }
+  }
+
+  isolate(prefix = this.prefix) {
+    Logger.isolated = prefix;
+  }
+
+  private enabled() {
+    const isDev = env === "development" || env === "preview";
+    const isIsolated = Logger.isolated && Logger.isolated !== this.prefix;
+    return isDev && !isIsolated;
   }
 }
