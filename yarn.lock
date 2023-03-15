@@ -4307,7 +4307,7 @@ __metadata:
     typescript: ^4.9.5
     zod: ^3.21.4
   dependenciesMeta:
-    next@13.2.3:
+    next:
       unplugged: true
   languageName: unknown
   linkType: soft
