@@ -4,7 +4,7 @@ import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
-import { getCookie } from "cookies-next";
+import { cookies as nextCookies } from "next/headers";
 import React from "react";
 import { createStyles, getStyle } from "utils/theme/style";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
@@ -31,9 +31,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const hueCookie = getCookie("hue");
-  const hueString = typeof hueCookie !== "string" ? "" : hueCookie;
-  const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueString)) : null;
+  const cookies = nextCookies();
+  const hueCookie = cookies.get("hue")?.value;
+  const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
   const hue = parsedHue?.success ? parsedHue.data : DEFAULT_HUE;
 
   return (
