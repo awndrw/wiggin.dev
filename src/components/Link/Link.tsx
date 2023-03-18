@@ -2,19 +2,13 @@ import {
   Interaction,
   type InteractionComponentProps,
 } from "components/Interaction";
-import { type Route } from "next";
 import { ArrowRight, ArrowUpRight } from "react-feather";
 import React from "react";
 import NextLink from "next/link";
 
-export type InternalLinkProps<R> = InteractionComponentProps<
-  typeof NextLink<R>
->;
+export type InternalLinkProps = InteractionComponentProps<typeof NextLink>;
 
-export const InternalLink = <R extends Route>({
-  children,
-  ...props
-}: InternalLinkProps<R>) => (
+export const InternalLink = ({ children, ...props }: InternalLinkProps) => (
   <Interaction component={NextLink} icon={ArrowRight} {...props}>
     {children}
   </Interaction>

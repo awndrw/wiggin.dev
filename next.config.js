@@ -41,10 +41,6 @@ const nextConfig = {
     scrollRestoration: true,
     typedRoutes: true,
   },
-  typescript: {
-    // TODO: CHANGE THIS WHEN NEXT UPDATES
-    ignoreBuildErrors: true,
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
   },
