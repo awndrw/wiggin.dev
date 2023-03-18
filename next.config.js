@@ -45,10 +45,6 @@ const nextConfig = {
     // TODO: CHANGE THIS WHEN NEXT UPDATES
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // TODO: Remove this when eslint build errors are fixed
-    ignoreDuringBuilds: true,
-  },
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
   },

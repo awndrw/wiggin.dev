@@ -29,9 +29,14 @@ export const datadog: Pick<
 > = env === "development" ? makeMockDatadogApi() : datadogRum;
 
 export const init = () => {
+  const ddAppId = process.env.NEXT_PUBLIC_DD_APP_ID;
+  const ddClientToken = process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN;
+  if (!ddAppId || !ddClientToken) {
+    return;
+  }
   datadog.init({
-    applicationId: process.env.NEXT_PUBLIC_DD_APP_ID!,
-    clientToken: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN!,
+    applicationId: ddAppId,
+    clientToken: ddClientToken,
     site: "datadoghq.com",
     service: "wiggin.dev",
     env,

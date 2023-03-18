@@ -2,7 +2,7 @@ import { type ActionName, datadog } from "utils/rum";
 
 export interface ActionProps {
   name: ActionName;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export const useAction = ({ name, ...props }: ActionProps) => {

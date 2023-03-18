@@ -14,7 +14,6 @@ const imageProps = {
   priority: true,
   placeholder: "blur",
   "aria-hidden": true,
-  alt: "",
 } as const;
 
 export default function Page() {
@@ -29,10 +28,10 @@ export default function Page() {
           download
         >
           <div className={styles.light}>
-            <Image src={resumeLight} {...imageProps} />
+            <Image src={resumeLight} alt="" {...imageProps} />
           </div>
           <div className={styles.dark}>
-            <Image src={resumeDark} {...imageProps} />
+            <Image src={resumeDark} alt="" {...imageProps} />
           </div>
         </Link>
       </section>
