@@ -6,7 +6,7 @@ import { customHuePopoverAtom, hueAtom } from "store";
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
 import { ActionName } from "utils/rum";
-import { isHue } from "utils/theme/color";
+import { isHue } from "theme/constants";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./CustomHueSelector.module.scss";
 

@@ -2,7 +2,7 @@
 
 import better from "better-color-tools";
 import React from "react";
-import { HUES } from "utils/theme/color";
+import { HUES } from "theme/constants";
 import styles from "./Scale.module.scss";
 
 const lightnesses: number[] = [];

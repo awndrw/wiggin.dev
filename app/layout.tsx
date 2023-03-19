@@ -6,8 +6,8 @@ import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
-import { createStyles, getStyle } from "utils/theme/style";
-import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "utils/theme/color";
+import { createStyles, getStyle } from "theme/utils";
+import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
 
 import "./globals.scss";
 

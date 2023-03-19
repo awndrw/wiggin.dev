@@ -3,7 +3,7 @@ import postcss from "postcss";
 import postcssOklabFunction from "@csstools/postcss-oklab-function";
 // @ts-expect-error untyped module
 import postcssMinify from "postcss-minify";
-import { type Hue, type Mode, type Color } from "./color";
+import { type Hue, type Mode, type Color } from "./constants";
 import { oklch } from "./oklch";
 
 const createHueModeMap = (hue: Hue, mode: Mode) => {

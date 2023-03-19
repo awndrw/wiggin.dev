@@ -1,5 +1,5 @@
-import { type Hue, HueSchema } from "utils/theme/color";
-import { createStyles } from "utils/theme/style";
+import { type Hue, HueSchema } from "theme/constants";
+import { createStyles } from "theme/utils";
 
 const id = (hue: number) => `hue-${hue}`;
 

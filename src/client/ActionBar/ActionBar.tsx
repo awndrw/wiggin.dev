@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { ArrowLeft } from "react-feather";
-import { HUES } from "utils/theme/color";
+import { HUES } from "theme/constants";
 import { CustomHueSelector } from "./CustomHueSelector";
 import { ActionBarButton } from "./ActionBarButton";
 import { DarkModeToggle } from "./DarkModeToggle";

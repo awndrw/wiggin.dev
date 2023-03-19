@@ -6,8 +6,8 @@ import {
   DEFAULT_MODE,
   type Hue,
   type Mode,
-} from "utils/theme/color";
-import { updateThemeColor } from "utils/theme/style";
+} from "theme/constants";
+import { updateThemeColor } from "theme/utils";
 import { createHueStyle, getHue, hueStyleExists, recolor } from "./util";
 
 export const modeAtom = atomWithLifecycle<Mode>(

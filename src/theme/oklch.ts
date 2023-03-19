@@ -1,4 +1,4 @@
-import { type Mode, type Color } from "utils/theme/color";
+import { type Mode, type Color } from "theme/constants";
 
 type LightnessAndChroma = `${number}% ${number}`;
 
@@ -19,4 +19,4 @@ export const oklch: Record<Mode, Record<Color, LightnessAndChroma>> = {
     tint: "28% 0.02",
     "tint-contrast": "16% 0.02",
   },
-};
+} as const;

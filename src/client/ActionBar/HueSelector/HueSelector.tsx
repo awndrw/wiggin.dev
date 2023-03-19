@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import React from "react";
 import { ActionName } from "utils/rum";
 import useTimedSpring from "utils/useTimedSpring";
-import { type Hue } from "utils/theme/color";
+import { type Hue } from "theme/constants";
 import { ActionBarButton } from "../ActionBarButton";
 import styles from "./HueSelector.module.scss";
 
