@@ -5,12 +5,14 @@ import postcssOklabFunction from "@csstools/postcss-oklab-function";
 import postcssMinify from "postcss-minify";
 import { mutate } from "utils/mutate";
 import { type Hue, type Mode, type Color } from "./constants";
-import { oklch } from "./oklch";
+import { lightnessAndChromaValues } from "./oklch";
+
+export const oklch = (lightness: number, chroma: number, hue: Hue) =>
+  `oklch(${lightness} ${chroma} ${hue})`;
 
 const createCSSVars = (hue: Hue, mode: Mode) => {
-  const map = mutate(
-    oklch[mode],
-    (lightnessAndChroma) => `oklch(${lightnessAndChroma} ${hue})`
+  const map = mutate(lightnessAndChromaValues[mode], ([lightness, chroma]) =>
+    oklch(lightness, chroma, hue)
   );
   let vars = Object.entries(map)
     .map(([name, color]) => `--color-accent-${name}: ${color};`)
@@ -35,8 +37,8 @@ export const createStyles = (hue: Hue) => {
 };
 
 export const getHexForColor = (hue: Hue, mode: Mode, color: Color) => {
-  const lightnessAndChroma = oklch[mode][color];
-  return better.from(`oklch(${lightnessAndChroma} ${hue})`).hex;
+  const [lightness, chroma] = lightnessAndChromaValues[mode][color];
+  return better.from(oklch(lightness, chroma, hue)).hex;
 };
 
 export const updateThemeColor = () => {
