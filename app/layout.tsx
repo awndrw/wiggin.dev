@@ -6,7 +6,7 @@ import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
-import { createStyles, getStyle } from "theme/utils";
+import { createStyles, getHexForColor } from "theme/utils";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
 
 import "./globals.scss";
@@ -46,7 +46,7 @@ export default async function RootLayout({
         />
         <meta
           name="theme-color"
-          content={getStyle(hue, DEFAULT_MODE, "primary")}
+          content={getHexForColor(hue, DEFAULT_MODE, "primary")}
         />
       </head>
       <body className={hyenaSunrise.className} data-hue={hue}>
