@@ -64,5 +64,6 @@
     "next": {
       "unplugged": true
     }
-  }
+  },
+  "license": "MIT"
 }
