@@ -1,38 +1,12 @@
 const path = require("path");
-const loaderUtils = require("loader-utils");
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
+const { getLocalIdentName } = require("css-loader-shorter-classnames");
 
-/**
- * @param {string} str A hashed classname
- * @returns A valid css classname scrubbed of all invalid characters.
- */
-const scrub = (str) => {
-  return str
-    .replace(/^(-?\d|--)/, "_$1")
-    .replaceAll("+", "_")
-    .replaceAll("/", "-");
-};
-
-const hashOnlyIdent = (context, _, exportName) => {
-  const hash = loaderUtils.getHashDigest(
-    Buffer.from(
-      `filePath:${path
-        .relative(context.rootContext, context.resourcePath)
-        .replace(/\\+/g, "/")}#className:${exportName}`
-    ),
-    "md4",
-    "base64",
-    6
-  );
-  return scrub(hash);
-};
+const getLocalIdent = getLocalIdentName();
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
@@ -76,7 +50,7 @@ const nextConfig = {
           const isPostCssLoader =
             moduleLoader.loader?.includes("postcss-loader");
           if (isCssLoader && !isPostCssLoader) {
-            moduleLoader.options.modules.getLocalIdent = hashOnlyIdent;
+            moduleLoader.options.modules.getLocalIdent = getLocalIdent;
           }
         });
       });
@@ -84,5 +58,3 @@ const nextConfig = {
     return config;
   },
 };
-
-module.exports = withBundleAnalyzer(nextConfig);
