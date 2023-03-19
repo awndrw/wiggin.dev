@@ -1,6 +1,6 @@
-@use 'theme/size';
-@use 'theme/color';
-@use 'theme/util';
+@use 'theme/scss/size';
+@use 'theme/scss/color';
+@use '../../src/theme/scss/util';
 
 .article {
   position: relative;

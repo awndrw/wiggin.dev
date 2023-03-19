@@ -1,6 +1,6 @@
-@use 'theme/color';
-@use 'theme/size';
-@use 'theme/util';
+@use 'theme/scss/color';
+@use 'theme/scss/size';
+@use '../../../theme/scss/util';
 @use 'sass:list';
 
 $radial-gradient: radial-gradient(#{color.$background}, transparent var(--radial-distance));

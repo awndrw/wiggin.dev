@@ -1,6 +1,6 @@
-@use 'theme/color';
-@use 'theme/util';
-@use 'theme/size';
+@use 'theme/scss/color';
+@use 'theme/scss/util';
+@use '../../theme/scss/size';
 
 .interaction {
   all: inherit;

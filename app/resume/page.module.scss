@@ -1,7 +1,7 @@
-@use 'theme/color';
-@use 'theme/size';
-@use 'theme/util';
-@use 'theme/layout';
+@use 'theme/scss/color';
+@use 'theme/scss/size';
+@use '../../src/theme/scss/util';
+@use '../../src/theme/scss/layout';
 
 .page {
   @include layout.page;

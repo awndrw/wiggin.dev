@@ -1,6 +1,6 @@
-@use 'theme/layout';
-@use 'theme/size';
-@use 'theme/color';
+@use 'theme/scss/layout';
+@use 'theme/scss/size';
+@use '../../src/theme/scss/color';
 
 .page {
   @include layout.page;

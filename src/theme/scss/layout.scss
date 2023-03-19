@@ -1,6 +1,6 @@
 @use 'sass:list';
-@use 'theme/color';
-@use 'theme/size';
+@use 'color';
+@use 'size';
 
 @mixin page {
   position: relative;

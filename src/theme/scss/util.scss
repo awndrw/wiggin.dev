@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use 'theme/color';
+@use 'color';
 
 @mixin mw-sm {
   @media (min-width: 425px) {

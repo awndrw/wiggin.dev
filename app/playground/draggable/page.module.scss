@@ -1,5 +1,5 @@
-@use 'theme/layout';
-@use 'theme/size';
+@use 'theme/scss/layout';
+@use 'theme/scss/size';
 
 .page {
   @include layout.page;
