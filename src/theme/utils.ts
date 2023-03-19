@@ -14,11 +14,9 @@ const createCSSVars = (hue: Hue, mode: Mode) => {
   const map = mutate(lightnessAndChromaValues[mode], ([lightness, chroma]) =>
     oklch(lightness, chroma, hue)
   );
-  let vars = Object.entries(map)
+  return Object.entries(map)
     .map(([name, color]) => `--color-accent-${name}: ${color};`)
     .join("");
-  vars += `accent-color: var(--color-accent-primary);`;
-  return vars;
 };
 
 export const createStyles = (hue: Hue) => {

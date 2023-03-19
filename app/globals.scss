@@ -32,3 +32,7 @@ body {
 abbr {
   text-decoration: none;
 }
+
+[data-hue] {
+  accent-color: var(--color-accent-primary);
+}
