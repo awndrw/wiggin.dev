@@ -86,7 +86,13 @@
 }
 
 .sectionThreeScribble {
-  top: -30vh;
+  top: -5vh;
   left: -5%;
   width: 110%;
+  @include util.mw-sm {
+    top: -10vh;
+  }
+  @include util.mw-md {
+    top: -30vh;
+  }
 }
