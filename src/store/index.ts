@@ -55,9 +55,6 @@ export const hueAtom = atomWithLifecycle<Hue>(
   },
   (hue, prevHue) => {
     if (hue === prevHue) return;
-    if (!hueStyleExists(hue)) {
-      createHueStyle(hue);
-    }
     document.body.setAttribute("data-hue", hue.toString());
   }
 );
