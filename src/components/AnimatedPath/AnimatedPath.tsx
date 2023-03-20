@@ -12,12 +12,14 @@ export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {
   d: string;
   /* The ratio of the animated path length to the full path */
   animatedPathRatio: number;
+  sectionSelector: Parameters<typeof document.querySelector>[0];
   startVisible?: boolean;
 }
 
 export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   d,
   animatedPathRatio,
+  sectionSelector,
   startVisible = true,
   className,
   ...props
@@ -38,7 +40,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
 
   useIsomorphicLayoutEffect(() => {
     const recalculateStrokeDashoffset = (immediate: boolean) => {
-      const about = document.querySelector("main > section:nth-of-type(2)");
+      const about = document.querySelector(sectionSelector);
       if (!about) return;
       const scrollProgress =
         1 - about.getBoundingClientRect().top / window.innerHeight;
