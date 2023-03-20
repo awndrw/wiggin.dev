@@ -1,5 +1,5 @@
 const path = require("path");
-const { getLocalIdentName } = require("css-loader-shorter-classnames");
+const { getLocalIdentName } = require("./lib/getLocalIdent");
 
 const getLocalIdent = getLocalIdentName();
 

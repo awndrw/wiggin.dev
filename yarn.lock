@@ -2080,13 +2080,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader-shorter-classnames@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "css-loader-shorter-classnames@npm:2.0.1"
-  checksum: 86140d7de14e2617f2550f5e48f1db46914c51ada068335310074c654b0d2c7c3398ba90406d86fbdc87681afc8091de70b9f0c70e55ac40d66af19a910cde24
-  languageName: node
-  linkType: hard
-
 "css-prefers-color-scheme@npm:^8.0.0":
   version: 8.0.1
   resolution: "css-prefers-color-scheme@npm:8.0.1"
@@ -4462,7 +4455,6 @@ __metadata:
     classnames: ^2.3.2
     cookies-next: ^2.1.1
     critters: ^0.0.16
-    css-loader-shorter-classnames: ^2.0.1
     eslint: ^8.36.0
     eslint-config-next: ^13.2.4
     eslint-config-prettier: ^8.7.0
