@@ -18,6 +18,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const showThirdSection = false;
+
   return (
     <main className={c(styles.page, tragedyDisplay.className)}>
       <section className={styles.hero}>
@@ -55,30 +57,34 @@ export default async function Page() {
           <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
         </Balancer>
       </section>
-      <Separator
-        orientation="horizontal"
-        decorative
-        className={styles.separator}
-      />
-      <section className={styles.neutral}>
-        <Balancer>
-          These colors use oklch to create an accessible color palette with{" "}
-          <HueSelectButton>any hue</HueSelectButton>. Interesed in how this
-          works? Check out{" "}
-          <ExternalLink href="https://github.com/wiggindev/wiggin.dev/blob/main/README.md">
-            the docs
-          </ExternalLink>
-          .
-        </Balancer>
-        <AnimatedPath
-          className={styles.sectionThreeScribble}
-          viewBox="0 0 1764.67 627.04"
-          sectionSelector="main > section:nth-of-type(3)"
-          d="m.02,483.23c176-7.34,349.15-71.9,486.99-181.58,52.24-41.56,102.01-94.15,112.2-160.12C609.41,75.56,561.69-1.73,494.97.55c-34.58,1.18-66.27,23.24-84.96,52.36-18.69,29.12-25.71,64.43-26.42,99.02-1.94,94.78,43.56,189.37,118.84,247,120.6,92.33,290.23,81.72,437.92,46.25,147.69-35.47,295.46-91.78,446.56-76.29,157.99,16.2,304.86,116.59,377.32,257.92"
-          animatedPathRatio={5}
-          startVisible={false}
-        />
-      </section>
+      {showThirdSection && (
+        <>
+          <Separator
+            orientation="horizontal"
+            decorative
+            className={styles.separator}
+          />
+          <section className={styles.neutral}>
+            <Balancer>
+              These colors use oklch to create an accessible color palette with{" "}
+              <HueSelectButton>any hue</HueSelectButton>. Interesed in how this
+              works? Check out{" "}
+              <ExternalLink href="https://github.com/wiggindev/wiggin.dev/blob/main/README.md">
+                the docs
+              </ExternalLink>
+              .
+            </Balancer>
+            <AnimatedPath
+              className={styles.sectionThreeScribble}
+              viewBox="0 0 1764.67 627.04"
+              sectionSelector="main > section:nth-of-type(3)"
+              d="m.02,483.23c176-7.34,349.15-71.9,486.99-181.58,52.24-41.56,102.01-94.15,112.2-160.12C609.41,75.56,561.69-1.73,494.97.55c-34.58,1.18-66.27,23.24-84.96,52.36-18.69,29.12-25.71,64.43-26.42,99.02-1.94,94.78,43.56,189.37,118.84,247,120.6,92.33,290.23,81.72,437.92,46.25,147.69-35.47,295.46-91.78,446.56-76.29,157.99,16.2,304.86,116.59,377.32,257.92"
+              animatedPathRatio={5}
+              startVisible={false}
+            />
+          </section>
+        </>
+      )}
     </main>
   );
 }
