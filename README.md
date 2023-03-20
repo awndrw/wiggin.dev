@@ -22,9 +22,10 @@ Using my `mode` state as an example:
 ### Theme
 I use OKLCH to create a consistent color scheme across hues. This allows me to use the same lightness and chroma values while rotating the hue.
 ```typescript
+type LightnessAndChroma = [number, number];
 const lightnessAndChromaValues: Record<
   Mode,
-  Record<Color, readonly [number, number]>
+  Record<Color, readonly LightnessAndChroma>
 > = {
   light: {
     primary: [0.56, 0.15],
