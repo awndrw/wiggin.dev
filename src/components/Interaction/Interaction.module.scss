@@ -5,7 +5,7 @@
 .interaction {
   all: inherit;
   cursor: pointer;
-  display: inline;
+  display: inline-block;
   border-radius: size.$border-radius-small;
   color: color.$accent-primary;
   transition-property: color, background-color;

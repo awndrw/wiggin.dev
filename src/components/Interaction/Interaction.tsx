@@ -25,31 +25,14 @@ const InteractionImpl = <C extends InteractionComponent>(
   }: InteractionProps<C>,
   ref: React.ForwardedRef<C>
 ) => {
-  const words = children.split(" ");
-  const lastWord = words.at(-1);
-  const rest = words.slice(0, -1).join(" ");
-  const content = (
-    <>
-      {rest.length ? rest + " " : ""}
-      <span style={{ display: "inline-block" }}>
-        {lastWord}
-        <Icon
-          icon={icon}
-          className={styles.icon}
-          aria-hidden
-          focusable={false}
-        />
-      </span>
-    </>
-  );
-
   return (
     <Component
       ref={ref}
       className={c(styles.interaction, className)}
       {...props}
     >
-      {content}
+      {children}
+      <Icon icon={icon} className={styles.icon} aria-hidden focusable={false} />
     </Component>
   );
 };
