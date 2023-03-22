@@ -8,7 +8,7 @@ import {
   type Mode,
 } from "theme/constants";
 import { updateThemeColor } from "theme/utils";
-import { createHueStyle, getHue, hueStyleExists, recolor } from "./util";
+import { getHue, recolor } from "./util";
 
 export const modeAtom = atomWithLifecycle<Mode>(
   DEFAULT_MODE,
