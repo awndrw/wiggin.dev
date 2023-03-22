@@ -3,6 +3,7 @@ import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { tragedyDisplay } from "fonts/tragedy";
+import { EMAIL, GITHUB } from "links";
 import { type Metadata } from "next";
 import React from "react";
 import { Balancer } from "client/Balancer";
@@ -55,7 +56,7 @@ export default async function Page() {
           I spent my childhood playing with JavaScript and love using CSS and
           WebAssembly to create performant animations. Check out my{" "}
           <InternalLink href="/resume">resume</InternalLink> or reach out via{" "}
-          <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
+          <ExternalLink href={EMAIL}>email</ExternalLink>.
         </Balancer>
       </section>
       <Separator
@@ -68,7 +69,7 @@ export default async function Page() {
           These colors use oklch to create an accessible color palette with{" "}
           <HueSelectButton>any hue</HueSelectButton>. Interesed in how it works?
           Check out{" "}
-          <ExternalLink href="https://github.com/wiggindev/wiggin.dev/blob/main/README.md">
+          <ExternalLink href={`${GITHUB}/wiggin.dev/blob/main/README.md`}>
             the docs
           </ExternalLink>
           .
