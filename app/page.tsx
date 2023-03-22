@@ -68,7 +68,7 @@ export default async function Page() {
           These colors use oklch to create an accessible color palette with{" "}
           <HueSelectButton>any hue</HueSelectButton>. Interesed in how it works?
           Check out{" "}
-          <ExternalLink href="https://github.com/wiggindev/wiggin.dev/blob/main/README.md">
+          <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
             the docs
           </ExternalLink>
           .
