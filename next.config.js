@@ -1,5 +1,7 @@
 const path = require("path");
-const getLocalIdent = require("./lib/getLocalIdent");
+const localIdentGenerator = require("./lib/getLocalIdent");
+
+const getLocalIdent = localIdentGenerator();
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
 
