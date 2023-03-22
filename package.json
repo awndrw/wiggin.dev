@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:analyze": "ANALYZE=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,7 +12,6 @@
   "dependencies": {
     "@csstools/postcss-oklab-function": "^2.1.0",
     "@datadog/browser-rum": "^4.35.0",
-    "@next/bundle-analyzer": "^13.2.4",
     "@radix-ui/react-accessible-icon": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-popover": "^1.0.5",
