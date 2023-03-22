@@ -31,7 +31,7 @@ export const datadog: Pick<
 export const init = () => {
   const ddAppId = process.env.NEXT_PUBLIC_DD_APP_ID;
   const ddClientToken = process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN;
-  if (!ddAppId || !ddClientToken) {
+  if (!ddAppId || !ddClientToken || navigator.userAgent.includes("Headless")) {
     return;
   }
   datadog.init({
