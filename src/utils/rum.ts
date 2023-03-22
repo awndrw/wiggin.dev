@@ -42,6 +42,8 @@ export const init = () => {
     env,
     trackResources: true,
     trackLongTasks: true,
+    trackUserInteractions: true,
+    trackFrustrations: true,
     silentMultipleInit: true,
   });
 };
