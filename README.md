@@ -1,5 +1,7 @@
 # wiggin.dev
 
+> 🚨 This is a submodule of [monowiggin](https://github.com/wiggindev/monowiggin) and relies on internal packages in the monorepo.
+
 * [Structure](#structure)
 * [Concepts](#concepts)
   * [State management](#state-management)
