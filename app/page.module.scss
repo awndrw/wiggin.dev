@@ -72,13 +72,13 @@
 }
 
 .scribbleTwo {
-  top: -5vh;
+  bottom: -10vh;
   left: -5%;
   width: 110%;
   @include util.mw-sm {
-    top: -10vh;
+    bottom: -20vh;
   }
   @include util.mw-md {
-    top: -30vh;
+      bottom: -30vh;
   }
 }
