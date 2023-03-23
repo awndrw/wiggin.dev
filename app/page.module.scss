@@ -1,11 +1,5 @@
 @use 'theme/scss/color';
-@use 'theme/scss/size';
-@use '../src/theme/scss/util';
-@use '../src/theme/scss/layout';
-
-.page {
-  @include layout.page;
-}
+@use 'theme/scss/util';
 
 .icon {
   margin-left: 6px;

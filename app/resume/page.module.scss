@@ -1,15 +1,9 @@
 @use 'theme/scss/color';
 @use 'theme/scss/size';
-@use '../../src/theme/scss/util';
-@use '../../src/theme/scss/layout';
+@use 'theme/scss/util';
 
-.page {
-  @include layout.page;
-  & > section {
-    @include layout.section('accent');
-    display: flex;
-    justify-content: center;
-  }
+.section {
+  align-items: center;
 }
 
 .link {

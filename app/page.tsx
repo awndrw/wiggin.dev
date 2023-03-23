@@ -1,8 +1,8 @@
-import c from "classnames";
 import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
-import {Section} from "components/Section";
+import { Section } from "components/Section";
+import { Page as PageWrapper } from "components/Page";
 import { tragedyDisplay } from "fonts/tragedy";
 import { type Metadata } from "next";
 import React from "react";
@@ -22,7 +22,7 @@ export default async function Page() {
   const sectionThreeId = "o4evnfd";
 
   return (
-    <main className={c(styles.page, tragedyDisplay.className)}>
+    <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
       <Section type="accent" fullHeight bottomSeparator>
         <h1>
           Hi, I&apos;m Andrew
@@ -64,6 +64,6 @@ export default async function Page() {
           .
         </Balancer>
       </Section>
-    </main>
+    </PageWrapper>
   );
 }

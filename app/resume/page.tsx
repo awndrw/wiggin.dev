@@ -1,6 +1,8 @@
 import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Section } from "components/Section";
+import { Page as PageWrapper } from "components/Page";
 import resumeLight from "../../public/resume/light.jpg";
 import resumeDark from "../../public/resume/dark.jpg";
 import styles from "./page.module.scss";
@@ -18,8 +20,8 @@ const imageProps = {
 
 export default function Page() {
   return (
-    <div className={styles.page}>
-      <section>
+    <PageWrapper>
+      <Section type="accent" fullHeight className={styles.section}>
         <Link
           href="/resume/AndrewWigginResume.pdf"
           aria-label="Resume"
@@ -34,7 +36,7 @@ export default function Page() {
             <Image src={resumeDark} alt="" {...imageProps} />
           </div>
         </Link>
-      </section>
-    </div>
+      </Section>
+    </PageWrapper>
   );
 }
