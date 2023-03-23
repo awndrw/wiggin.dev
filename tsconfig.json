@@ -30,7 +30,6 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "/Users/wiggindev/git/wiggin.dev/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

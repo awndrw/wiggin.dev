@@ -1,0 +1,37 @@
+@use 'theme/scss/color';
+@use 'theme/scss/size';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: size.$spacing-large;
+  position: relative;
+  h1, p {
+    font-weight: 400;
+    line-height: 1.3;
+    font-size: size.$font-large;
+  }
+}
+
+.fullHeight {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.accent {
+  background-color: color.$accent-primary-contrast;
+  color: color.$accent-primary;
+}
+
+.neutral {
+  background-color: color.$accent-tint-contrast;
+  color: color.$text-primary;
+}
+
+.separator {
+  background-color: color.$accent-primary;
+  height: 1px;
+  width: calc(100% + #{size.$spacing-large});
+  margin: 0 calc(-1 * #{size.$spacing-large});
+}
