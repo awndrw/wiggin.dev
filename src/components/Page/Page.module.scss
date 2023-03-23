@@ -1,0 +1,11 @@
+.page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.withAffordance {
+  & > *:last-child {
+    // ActionBar affordance
+    padding-block-end: 96px;
+  }
+}
