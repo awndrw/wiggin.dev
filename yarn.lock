@@ -294,34 +294,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/browser-core@npm:4.35.0":
-  version: 4.35.0
-  resolution: "@datadog/browser-core@npm:4.35.0"
-  checksum: 15fc73c48b553305b231f9469391934e5a5542ebc3c98d059e40e99fdb79a715d6275970f2e0897610873ca62d9971a0c2ef92d4f9f9e622a53bdfa83f194060
+"@datadog/browser-core@npm:4.36.0":
+  version: 4.36.0
+  resolution: "@datadog/browser-core@npm:4.36.0"
+  checksum: 29c41a79ed39467ed6cf654dbefa19acffd300af71691fbefbfec75848ead909da1ac5537de6b61b202c831e54cbf7b98064c1e33e4cf2ed31795ae806f80ea5
   languageName: node
   linkType: hard
 
-"@datadog/browser-rum-core@npm:4.35.0":
-  version: 4.35.0
-  resolution: "@datadog/browser-rum-core@npm:4.35.0"
+"@datadog/browser-rum-core@npm:4.36.0":
+  version: 4.36.0
+  resolution: "@datadog/browser-rum-core@npm:4.36.0"
   dependencies:
-    "@datadog/browser-core": 4.35.0
-  checksum: 4ef1e250389ee065e79dc561dadc59d5658a57223b80812ed2fe5908a625ec7168dfb4cb2f6e5d57372da017795c9de1541a1daf53edd4efe767e38c6eeb6ee0
+    "@datadog/browser-core": 4.36.0
+  checksum: 6683397f742a5b735c3a645cc6aab608328bbe8386e5db4947ea1de4d25119ca39c5c0985f03a0903092b862d6b7ebd410b9e84857fcb24bba3352c9017aa92a
   languageName: node
   linkType: hard
 
-"@datadog/browser-rum@npm:^4.35.0":
-  version: 4.35.0
-  resolution: "@datadog/browser-rum@npm:4.35.0"
+"@datadog/browser-rum@npm:^4.36.0":
+  version: 4.36.0
+  resolution: "@datadog/browser-rum@npm:4.36.0"
   dependencies:
-    "@datadog/browser-core": 4.35.0
-    "@datadog/browser-rum-core": 4.35.0
+    "@datadog/browser-core": 4.36.0
+    "@datadog/browser-rum-core": 4.36.0
   peerDependencies:
-    "@datadog/browser-logs": 4.35.0
+    "@datadog/browser-logs": 4.36.0
   peerDependenciesMeta:
     "@datadog/browser-logs":
       optional: true
-  checksum: 5cd56f1abd9c46ca65ad638129a9e1657c8d1ff718222c7eb23849aaf0e86860d61ceddb630e905bb023f1746b3c68717612a4f2970ee0b806464481d323bb44
+  checksum: ca56f07c5f968d2af53755cf0e25d6970b800c89914d6d4a2c03dd2af03cfc42733b1a160048dfccfff2295e1e11c1582b4dda97d9bfea6ff8dc6b7bdab8d6b5
   languageName: node
   linkType: hard
 
@@ -4353,7 +4353,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@csstools/postcss-oklab-function": ^2.1.0
-    "@datadog/browser-rum": ^4.35.0
+    "@datadog/browser-rum": ^4.36.0
     "@radix-ui/react-accessible-icon": ^1.0.2
     "@radix-ui/react-dialog": ^1.0.3
     "@radix-ui/react-popover": ^1.0.5

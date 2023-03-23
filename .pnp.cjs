@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
-            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.35.0"],\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.36.0"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.3"],\
             ["@radix-ui/react-popover", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.5"],\
@@ -672,29 +672,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@datadog/browser-core", [\
-        ["npm:4.35.0", {\
-          "packageLocation": "./.yarn/cache/@datadog-browser-core-npm-4.35.0-6453252632-15fc73c48b.zip/node_modules/@datadog/browser-core/",\
+        ["npm:4.36.0", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-core-npm-4.36.0-066a54bdfe-29c41a79ed.zip/node_modules/@datadog/browser-core/",\
           "packageDependencies": [\
-            ["@datadog/browser-core", "npm:4.35.0"]\
+            ["@datadog/browser-core", "npm:4.36.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@datadog/browser-rum", [\
-        ["npm:4.35.0", {\
-          "packageLocation": "./.yarn/cache/@datadog-browser-rum-npm-4.35.0-6100a58191-5cd56f1abd.zip/node_modules/@datadog/browser-rum/",\
+        ["npm:4.36.0", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-rum-npm-4.36.0-967b0ddfc3-ca56f07c5f.zip/node_modules/@datadog/browser-rum/",\
           "packageDependencies": [\
-            ["@datadog/browser-rum", "npm:4.35.0"]\
+            ["@datadog/browser-rum", "npm:4.36.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.35.0", {\
-          "packageLocation": "./.yarn/__virtual__/@datadog-browser-rum-virtual-22cd76f9d0/0/cache/@datadog-browser-rum-npm-4.35.0-6100a58191-5cd56f1abd.zip/node_modules/@datadog/browser-rum/",\
+        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.36.0", {\
+          "packageLocation": "./.yarn/__virtual__/@datadog-browser-rum-virtual-d203fc4008/0/cache/@datadog-browser-rum-npm-4.36.0-967b0ddfc3-ca56f07c5f.zip/node_modules/@datadog/browser-rum/",\
           "packageDependencies": [\
-            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.35.0"],\
-            ["@datadog/browser-core", "npm:4.35.0"],\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.36.0"],\
+            ["@datadog/browser-core", "npm:4.36.0"],\
             ["@datadog/browser-logs", null],\
-            ["@datadog/browser-rum-core", "npm:4.35.0"],\
+            ["@datadog/browser-rum-core", "npm:4.36.0"],\
             ["@types/datadog__browser-logs", null]\
           ],\
           "packagePeers": [\
@@ -705,11 +705,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@datadog/browser-rum-core", [\
-        ["npm:4.35.0", {\
-          "packageLocation": "./.yarn/cache/@datadog-browser-rum-core-npm-4.35.0-0e99cfa066-4ef1e25038.zip/node_modules/@datadog/browser-rum-core/",\
+        ["npm:4.36.0", {\
+          "packageLocation": "./.yarn/cache/@datadog-browser-rum-core-npm-4.36.0-12860b65fe-6683397f74.zip/node_modules/@datadog/browser-rum-core/",\
           "packageDependencies": [\
-            ["@datadog/browser-rum-core", "npm:4.35.0"],\
-            ["@datadog/browser-core", "npm:4.35.0"]\
+            ["@datadog/browser-rum-core", "npm:4.36.0"],\
+            ["@datadog/browser-core", "npm:4.36.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5963,7 +5963,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["portfolio", "workspace:."],\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.1.0"],\
-            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.35.0"],\
+            ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.36.0"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
             ["@radix-ui/react-dialog", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.3"],\
             ["@radix-ui/react-popover", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.5"],\
