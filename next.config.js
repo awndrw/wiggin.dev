@@ -51,7 +51,7 @@ module.exports = {
             moduleLoader.loader?.includes("postcss-loader");
           if (isCssLoader && !isPostCssLoader) {
             // TODO: Fix getLocalIdent. Collisions happen every other build.
-            moduleLoader.options.modules.getLocalIdent = getLocalIdent;
+            // moduleLoader.options.modules.getLocalIdent = getLocalIdent;
           }
         });
       });
