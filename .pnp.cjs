@@ -69,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-feather", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
             ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
             ["sass", "npm:1.59.3"],\
+            ["server-only", "npm:0.0.1"],\
             ["sharp", "npm:0.31.3"],\
             ["typescript", "patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"],\
             ["zod", "npm:3.21.4"]\
@@ -6003,6 +6004,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-feather", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
             ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.0"],\
             ["sass", "npm:1.59.3"],\
+            ["server-only", "npm:0.0.1"],\
             ["sharp", "npm:0.31.3"],\
             ["typescript", "patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"],\
             ["zod", "npm:3.21.4"]\
@@ -7304,6 +7306,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["semver", "npm:7.3.8"],\
             ["lru-cache", "npm:6.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["server-only", [\
+        ["npm:0.0.1", {\
+          "packageLocation": "./.yarn/cache/server-only-npm-0.0.1-24bf42bde2-c432348956.zip/node_modules/server-only/",\
+          "packageDependencies": [\
+            ["server-only", "npm:0.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\

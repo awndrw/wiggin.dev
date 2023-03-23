@@ -36,6 +36,7 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-wrap-balancer": "^0.4.0",
+    "server-only": "^0.0.1",
     "sharp": "^0.31.3",
     "zod": "^3.21.4"
   },

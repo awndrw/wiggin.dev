@@ -7,6 +7,7 @@ import { tragedyDisplay } from "fonts/tragedy";
 import { type Metadata } from "next";
 import React from "react";
 import { Balancer } from "client/Balancer";
+import { getId } from "utils/getId";
 import { HueSelectButton } from "./HueSelectButton";
 import styles from "./page.module.scss";
 
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const sectionTwoId = "oaigfnv";
-  const sectionThreeId = "o4evnfd";
+  const sectionTwoId = getId();
+  const sectionThreeId = getId();
 
   return (
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
