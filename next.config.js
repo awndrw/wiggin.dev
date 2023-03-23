@@ -1,7 +1,5 @@
 const path = require("path");
-const localIdentGenerator = require("./lib/getLocalIdent");
-
-const getLocalIdent = localIdentGenerator();
+const getLocalIdent = require("./scripts/getLocalIdent");
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
 
@@ -51,7 +49,7 @@ module.exports = {
             moduleLoader.loader?.includes("postcss-loader");
           if (isCssLoader && !isPostCssLoader) {
             // TODO: Fix getLocalIdent. Collisions happen every other build.
-            // moduleLoader.options.modules.getLocalIdent = getLocalIdent;
+            moduleLoader.options.modules.getLocalIdent = getLocalIdent;
           }
         });
       });
