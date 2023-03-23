@@ -1,0 +1,53 @@
+name: Bump version and push tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      strategy:
+        type: choice
+        description: The version bump strategy to use
+        required: true
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📨 Checkout development
+        uses: actions/checkout@v3
+        with:
+          ref: development
+          fetch-depth: 0
+
+      - name: ⏬ Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+
+      - name: 🧰 Install dependencies
+        run: yarn --prefer-offline
+
+      - name: ➕ Bump version
+        id: bump
+        run: |
+          NEW_VERSION=$(yarn version ${{ github.event.inputs.strategy }} | grep -oP "(?<=Bumped to )\d+\.\d+\.\d+")
+          echo "VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          git config --local user.name "Github Actions"
+          git config --local user.email "actions@github.com"
+          git commit -am "Bump to v$NEW_VERSION"
+
+      - name: ⛓️ Merge into main
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: development
+          target_branch: main
+          message: Merge v${{ steps.bump.outputs.VERSION }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📤 Push changes
+        run: git push --all
