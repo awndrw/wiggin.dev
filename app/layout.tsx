@@ -6,6 +6,7 @@ import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
+import { hueId } from "store/util";
 import { createStyles, getHexForColor } from "theme/utils";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
 
@@ -40,7 +41,7 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <style
-          id={`hue-${hue}`}
+          id={hueId(hue)}
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
         />

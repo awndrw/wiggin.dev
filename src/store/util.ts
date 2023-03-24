@@ -1,14 +1,14 @@
 import { type Hue, HueSchema } from "theme/constants";
 import { createStyles } from "theme/utils";
 
-const id = (hue: number) => `hue-${hue}`;
+export const hueId = (hue: number) => `hue-${hue}`;
 
 export const hueStyleExists = (hue: number) =>
-  document.getElementById(id(hue)) !== null;
+  document.getElementById(hueId(hue)) !== null;
 
 export const createHueStyle = (hue: Hue) => {
   const styleEl = document.createElement("style");
-  styleEl.id = id(hue);
+  styleEl.id = hueId(hue);
   styleEl.innerHTML = createStyles(hue);
   document.head.appendChild(styleEl);
 };
