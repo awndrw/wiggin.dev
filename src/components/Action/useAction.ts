@@ -1,11 +1,7 @@
-import { type ActionName, datadog } from "utils/rum";
+import { datadog } from "utils/rum";
+import { type Action } from "./Action";
 
-export interface ActionProps {
-  name: ActionName;
-  [key: string]: unknown;
-}
-
-export const useAction = ({ name, ...props }: ActionProps) => {
+export const useAction = ({ name, ...props }: Action) => {
   return (context?: object) =>
     datadog.addAction(name, {
       ...props,

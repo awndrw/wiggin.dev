@@ -2,11 +2,17 @@
 
 import { Slot } from "@radix-ui/react-slot";
 import React from "react";
-import { type ActionProps, useAction } from "./useAction";
+import { type ActionName } from "utils/rum";
+import { useAction } from "./useAction";
+
+export interface Action {
+  name: ActionName;
+  [key: string]: unknown;
+}
 
 export const Action = React.forwardRef<
   HTMLElement,
-  React.PropsWithChildren<ActionProps>
+  React.PropsWithChildren<Action>
 >(({ children, ...props }, ref) => {
   const trigger = useAction(props);
 
