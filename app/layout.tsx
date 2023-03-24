@@ -2,6 +2,7 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "client/ActionBar";
 import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
+import { key } from "constants/key";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
@@ -33,9 +34,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookies = nextCookies();
-  const hueCookie = cookies.get("hue")?.value;
+  const hueCookie = cookies.get(key.HUE)?.value;
   const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
   const hue = parsedHue?.success ? parsedHue.data : DEFAULT_HUE;
+
+  const isAndrew = Boolean(cookies.get(key.IS_ANDREW)?.value);
 
   return (
     <html lang="en">
@@ -55,7 +58,7 @@ export default async function RootLayout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
-        <Analytics />
+        {!isAndrew && <Analytics />}
       </body>
     </html>
   );
