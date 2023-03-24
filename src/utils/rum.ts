@@ -1,6 +1,7 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
 import { z } from "zod";
+import packageJson from "../../package.json";
 
 function makeMockDatadogApi() {
   const globalContext: Record<string, unknown> = {};
@@ -40,6 +41,7 @@ export const init = () => {
     site: "datadoghq.com",
     service: "wiggin.dev",
     env,
+    version: packageJson.version,
     trackResources: true,
     trackLongTasks: true,
     trackUserInteractions: true,
