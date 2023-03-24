@@ -57,8 +57,8 @@ export default async function Page() {
       <Section id={sectionThreeId} fullHeight>
         <Balancer>
           These colors use oklch to create an accessible color palette with{" "}
-          <HueSelectButton>any hue</HueSelectButton>. Interesed in how it works?
-          Check out{" "}
+          <HueSelectButton>any hue</HueSelectButton>. Interested in how it
+          works? Check out{" "}
           <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
             the docs
           </ExternalLink>
