@@ -20,8 +20,8 @@ const imageProps = {
 
 export default function Page() {
   return (
-    <PageWrapper>
-      <Section type="accent" fullHeight className={styles.section}>
+    <PageWrapper className={styles.page}>
+      <Section type="accent" fullHeight>
         <Link
           href="/resume/AndrewWigginResume.pdf"
           aria-label="Resume"
