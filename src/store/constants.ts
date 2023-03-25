@@ -1,4 +1,4 @@
-export const key = {
+export const StorageKey = {
   HUE: "hue",
   IS_ANDREW: "andrew",
 } as const;

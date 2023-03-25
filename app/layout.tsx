@@ -6,11 +6,12 @@ import { ActionBar } from "client/ActionBar";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { Analytics } from "components/Analytics";
-import { key } from "constants/key";
 import { hyenaSunrise } from "fonts/hyena";
-import { hueId } from "store/util";
+import { StorageKey } from "store/constants";
+import { hueId } from "store/utils";
+import { createStyles } from "theme";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
-import { createStyles, getHexForColor } from "theme/utils";
+import { getHexForColor } from "theme/utils";
 
 import "./globals.scss";
 
@@ -35,11 +36,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookies = nextCookies();
-  const hueCookie = cookies.get(key.HUE)?.value;
+  const hueCookie = cookies.get(StorageKey.HUE)?.value;
   const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
   const hue = parsedHue?.success ? parsedHue.data : DEFAULT_HUE;
 
-  const isAndrew = Boolean(cookies.get(key.IS_ANDREW)?.value);
+  const isAndrew = Boolean(cookies.get(StorageKey.IS_ANDREW)?.value);
 
   return (
     <html lang="en">

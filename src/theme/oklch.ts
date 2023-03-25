@@ -1,4 +1,4 @@
-import { type Mode, type Color } from "theme/constants";
+import { type Mode, type Color } from "./constants";
 
 export const lightnessAndChromaValues: Record<
   Mode,

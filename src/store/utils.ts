@@ -1,5 +1,5 @@
+import { createStyles } from "theme";
 import { type Hue, HueSchema } from "theme/constants";
-import { createStyles } from "theme/utils";
 
 export const hueId = (hue: number) => `hue-${hue}`;
 
