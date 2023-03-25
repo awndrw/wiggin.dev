@@ -1,8 +1,8 @@
 import React from "react";
 
+import { datadog, init } from "analytics";
 import { useAtomValue } from "jotai";
 import { hueAtom, modeAtom } from "store";
-import { datadog, init } from "utils/rum";
 
 export const Analytics: React.FC = () => {
   const hue = useAtomValue(hueAtom);

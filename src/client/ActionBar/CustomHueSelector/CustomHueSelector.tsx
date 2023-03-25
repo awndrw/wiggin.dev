@@ -2,12 +2,12 @@ import React from "react";
 
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
+import { ActionName } from "analytics/constants";
+import { useAction } from "analytics/useAction";
 import { Action } from "components/Action";
-import { useAction } from "components/Action/useAction";
 import { useAtom, useAtomValue } from "jotai";
 import { customHuePopoverAtom, hueAtom } from "store";
 import { isHue } from "theme/constants";
-import { ActionName } from "utils/rum";
 
 import styles from "./CustomHueSelector.module.scss";
 import { ActionBarButton } from "../ActionBarButton";

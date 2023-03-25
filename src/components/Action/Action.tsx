@@ -3,9 +3,8 @@
 import React from "react";
 
 import { Slot } from "@radix-ui/react-slot";
-import { type ActionName } from "utils/rum";
-
-import { useAction } from "./useAction";
+import { type ActionName } from "analytics/constants";
+import { useAction } from "analytics/useAction";
 
 export interface Action {
   name: ActionName;

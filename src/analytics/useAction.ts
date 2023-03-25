@@ -1,6 +1,6 @@
-import { datadog } from "utils/rum";
+import { type Action } from "components/Action";
 
-import { type Action } from "./Action";
+import { datadog } from "./index";
 
 export const useAction = ({ name, ...props }: Action) => {
   return (context?: object) =>

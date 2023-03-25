@@ -1,12 +1,12 @@
 import React from "react";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
 import { Icon } from "components/Icon";
 import { useAtom } from "jotai";
 import { Moon, Sun } from "react-feather";
 import { modeAtom } from "store";
-import { ActionName } from "utils/rum";
 
 import styles from "./DarkModeToggle.module.scss";
 import { ActionBarButton } from "../ActionBarButton";

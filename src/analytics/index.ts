@@ -1,6 +1,5 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
-import { z } from "zod";
 
 import packageJson from "../../package.json";
 
@@ -50,11 +49,3 @@ export const init = () => {
     silentMultipleInit: true,
   });
 };
-
-export const ActionName = {
-  SET_HUE: "Set hue",
-  SET_MODE: "Set mode",
-  TOGGLE_HUE_SLIDER: "Toggle hue slider",
-} as const;
-export const ActionNameSchema = z.nativeEnum(ActionName);
-export type ActionName = z.infer<typeof ActionNameSchema>;

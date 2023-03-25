@@ -2,12 +2,12 @@
 
 import React from "react";
 
+import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
 import { Interaction } from "components/Interaction";
 import { useSetAtom } from "jotai";
 import { Target } from "react-feather";
 import { customHuePopoverAtom } from "store";
-import { ActionName } from "utils/rum";
 
 export interface HueSelectButtonProps {
   children: React.ReactNode;
