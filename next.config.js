@@ -16,10 +16,6 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
   },
-  eslint: {
-    // TODO: Errors in Vercel builds but unable to repro locally
-    ignoreDuringBuilds: true,
-  },
   async headers() {
     const headers = [];
     if (process.env.VERCEL_ENV !== "production") {
