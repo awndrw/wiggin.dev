@@ -1,15 +1,16 @@
-import { Provider as TooltipProvider } from "client/radix/Tooltip";
-import { ActionBar } from "client/ActionBar";
-import { Analytics } from "components/Analytics";
-import { ReactWrapProvider } from "client/ReactWrapProvider";
-import { key } from "constants/key";
-import { hyenaSunrise } from "fonts/hyena";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
+
+import { ActionBar } from "client/ActionBar";
+import { ReactWrapProvider } from "client/ReactWrapProvider";
+import { Provider as TooltipProvider } from "client/radix/Tooltip";
+import { Analytics } from "components/Analytics";
+import { key } from "constants/key";
+import { hyenaSunrise } from "fonts/hyena";
 import { hueId } from "store/util";
-import { createStyles, getHexForColor } from "theme/utils";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
+import { createStyles, getHexForColor } from "theme/utils";
 
 import "./globals.scss";
 

@@ -1,13 +1,15 @@
+import React from "react";
+
 import { a } from "@react-spring/web";
 import { Action } from "components/Action";
-import { hueAtom } from "store";
 import { useAtom } from "jotai";
-import React from "react";
+import { hueAtom } from "store";
+import { type Hue } from "theme/constants";
 import { ActionName } from "utils/rum";
 import useTimedSpring from "utils/useTimedSpring";
-import { type Hue } from "theme/constants";
-import { ActionBarButton } from "../ActionBarButton";
+
 import styles from "./HueSelector.module.scss";
+import { ActionBarButton } from "../ActionBarButton";
 
 export function HueSelector({ hue }: { hue: Hue }) {
   const [style, trigger] = useTimedSpring();

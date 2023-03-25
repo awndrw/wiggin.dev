@@ -1,10 +1,12 @@
-import c from "classnames";
 import React from "react";
-import styles from "./Icon.module.scss";
+
+import c from "classnames";
 import type {
   Icon as FeatherIcon,
   IconProps as FeatherIconProps,
 } from "react-feather";
+
+import styles from "./Icon.module.scss";
 
 export interface IconProps extends FeatherIconProps {
   icon: FeatherIcon;

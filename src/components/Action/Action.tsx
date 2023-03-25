@@ -1,8 +1,10 @@
 "use client";
 
-import { Slot } from "@radix-ui/react-slot";
 import React from "react";
+
+import { Slot } from "@radix-ui/react-slot";
 import { type ActionName } from "utils/rum";
+
 import { useAction } from "./useAction";
 
 export interface Action {

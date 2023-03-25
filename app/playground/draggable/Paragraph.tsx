@@ -1,11 +1,13 @@
 "use client";
 
+import React from "react";
+
+import * as Toast from "@radix-ui/react-toast";
 import c from "classnames";
 import * as VisuallyHidden from "client/radix/VisuallyHidden";
-import React from "react";
-import { tragedyDisplay } from "fonts/tragedy";
 import { flexaMono } from "fonts/flexa";
-import * as Toast from "@radix-ui/react-toast";
+import { tragedyDisplay } from "fonts/tragedy";
+
 import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";
 

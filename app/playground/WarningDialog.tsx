@@ -1,9 +1,11 @@
+import { type Route } from "next";
+import Link from "next/link";
+
 import c from "classnames";
 import * as Dialog from "client/radix/Dialog";
 import { Icon } from "components/Icon";
-import { type Route } from "next";
-import Link from "next/link";
 import { AlertTriangle } from "react-feather";
+
 import styles from "./WarningDialog.module.scss";
 
 export const WarningDialog = ({

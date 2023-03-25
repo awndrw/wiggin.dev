@@ -1,9 +1,10 @@
+import postcssOklabFunction from "@csstools/postcss-oklab-function";
 import better from "better-color-tools";
 import postcss from "postcss";
-import postcssOklabFunction from "@csstools/postcss-oklab-function";
 // @ts-expect-error untyped module
 import postcssMinify from "postcss-minify";
 import { mutate } from "utils/mutate";
+
 import { type Hue, type Mode, type Color } from "./constants";
 import { lightnessAndChromaValues } from "./oklch";
 

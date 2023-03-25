@@ -1,8 +1,10 @@
+import React from "react";
+
 import c from "classnames";
 import { Icon } from "components/Icon";
-import React from "react";
-import styles from "./Interaction.module.scss";
 import type { Icon as FeatherIcon } from "react-feather";
+
+import styles from "./Interaction.module.scss";
 
 type InteractionComponent = React.ComponentType | React.ElementType;
 

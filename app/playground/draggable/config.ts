@@ -1,5 +1,5 @@
-import { type PlaygroundConfig } from "../utils";
 import previewPng from "./preview.png";
+import { type PlaygroundConfig } from "../utils";
 
 export default {
   name: "Draggable",

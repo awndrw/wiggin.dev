@@ -1,10 +1,11 @@
+import NextLink from "next/link";
+import React from "react";
+
 import {
   Interaction,
   type InteractionComponentProps,
 } from "components/Interaction";
 import { ArrowRight, ArrowUpRight } from "react-feather";
-import React from "react";
-import NextLink from "next/link";
 
 export type InternalLinkProps = InteractionComponentProps<typeof NextLink>;
 

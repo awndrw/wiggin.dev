@@ -1,14 +1,16 @@
+import React from "react";
+
+import * as Popover from "@radix-ui/react-popover";
+import * as Slider from "@radix-ui/react-slider";
 import { Action } from "components/Action";
 import { useAction } from "components/Action/useAction";
 import { useAtom, useAtomValue } from "jotai";
-import React from "react";
 import { customHuePopoverAtom, hueAtom } from "store";
-import * as Popover from "@radix-ui/react-popover";
-import * as Slider from "@radix-ui/react-slider";
-import { ActionName } from "utils/rum";
 import { isHue } from "theme/constants";
-import { ActionBarButton } from "../ActionBarButton";
+import { ActionName } from "utils/rum";
+
 import styles from "./CustomHueSelector.module.scss";
+import { ActionBarButton } from "../ActionBarButton";
 
 export const CustomHueSelector: React.FC = () => {
   const hue = useAtomValue(hueAtom);

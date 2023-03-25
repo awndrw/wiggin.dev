@@ -1,11 +1,13 @@
+import { type Metadata } from "next";
+
 import c from "classnames";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
 import { ExternalLink } from "components/Link";
 import { tragedyDisplay } from "fonts/tragedy";
-import { type Metadata } from "next";
-import styles from "./page.module.scss";
+
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";
+import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "color",

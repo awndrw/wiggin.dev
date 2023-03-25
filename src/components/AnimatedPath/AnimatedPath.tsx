@@ -1,11 +1,13 @@
-import c from "classnames";
 import React from "react";
+
 import {
   a,
   useIsomorphicLayoutEffect,
   useReducedMotion,
   useSpringValue,
 } from "@react-spring/web";
+import c from "classnames";
+
 import styles from "./AnimatedPath.module.scss";
 
 export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {

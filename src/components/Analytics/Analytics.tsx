@@ -1,5 +1,6 @@
-import { useAtomValue } from "jotai";
 import React from "react";
+
+import { useAtomValue } from "jotai";
 import { hueAtom, modeAtom } from "store";
 import { datadog, init } from "utils/rum";
 

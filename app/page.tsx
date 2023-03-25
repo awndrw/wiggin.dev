@@ -1,13 +1,15 @@
+import { type Metadata } from "next";
+import React from "react";
+
+import { Balancer } from "client/Balancer";
 import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
-import { Section } from "components/Section";
 import { Page as PageWrapper } from "components/Page";
+import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedy";
-import { type Metadata } from "next";
-import React from "react";
-import { Balancer } from "client/Balancer";
 import { getId } from "utils/getId";
+
 import { HueSelectButton } from "./HueSelectButton";
 import styles from "./page.module.scss";
 

@@ -1,17 +1,19 @@
-import * as Dialog from "client/radix/Dialog";
-import * as Tooltip from "client/radix/Tooltip";
-import { Icon } from "components/Icon";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import * as Dialog from "client/radix/Dialog";
+import * as Tooltip from "client/radix/Tooltip";
+import { Icon } from "components/Icon";
 import {
   Heart,
   Monitor,
   Smartphone,
   type Icon as FeatherIcon,
 } from "react-feather";
-import { WarningDialog } from "./WarningDialog";
+
 import styles from "./PlaygroundItem.module.scss";
+import { WarningDialog } from "./WarningDialog";
 import type { Playground, PlaygroundTag, PlaygroundTagName } from "./utils";
 
 export const PlaygroundItem = ({

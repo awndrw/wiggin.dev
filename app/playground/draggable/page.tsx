@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Paragraph } from "./Paragraph";
 import styles from "./page.module.scss";
 

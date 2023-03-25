@@ -1,9 +1,10 @@
 "use client";
 
+import React from "react";
+
 import { Action } from "components/Action";
 import { Interaction } from "components/Interaction";
 import { useSetAtom } from "jotai";
-import React from "react";
 import { Target } from "react-feather";
 import { customHuePopoverAtom } from "store";
 import { ActionName } from "utils/rum";

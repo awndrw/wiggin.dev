@@ -1,6 +1,8 @@
+import React from "react";
+
 import cx from "classnames";
 import { Separator } from "client/radix/Separator";
-import React from "react";
+
 import styles from "./Section.module.scss";
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {

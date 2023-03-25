@@ -1,6 +1,7 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
 import { z } from "zod";
+
 import packageJson from "../../package.json";
 
 function makeMockDatadogApi() {

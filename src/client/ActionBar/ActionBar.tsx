@@ -1,18 +1,20 @@
 "use client";
 
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { Separator } from "client/radix/Separator";
-import { Icon } from "components/Icon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+
+import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { Separator } from "client/radix/Separator";
+import { Icon } from "components/Icon";
 import { ArrowLeft } from "react-feather";
 import { HUES } from "theme/constants";
-import { CustomHueSelector } from "./CustomHueSelector";
+
+import styles from "./ActionBar.module.scss";
 import { ActionBarButton } from "./ActionBarButton";
+import { CustomHueSelector } from "./CustomHueSelector";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { HueSelector } from "./HueSelector";
-import styles from "./ActionBar.module.scss";
 
 const ActionBarLink = () => {
   const pathname = usePathname() ?? "";

@@ -1,6 +1,5 @@
 import { setCookie } from "cookies-next";
 import { atom } from "jotai";
-import { atomWithLifecycle } from "utils/atomWithLifecycle";
 import {
   DEFAULT_HUE,
   DEFAULT_MODE,
@@ -8,6 +7,8 @@ import {
   type Mode,
 } from "theme/constants";
 import { updateThemeColor } from "theme/utils";
+import { atomWithLifecycle } from "utils/atomWithLifecycle";
+
 import { getHue, recolor } from "./util";
 
 export const modeAtom = atomWithLifecycle<Mode>(
