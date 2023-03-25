@@ -1,0 +1,9 @@
+.next
+.vercel
+.vscode
+.yarn
+node_modules
+.pnp.cjs
+.pnp.loader.mjs
+tsconfig.tsbuildinfo
+yarn.lock
