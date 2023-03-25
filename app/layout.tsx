@@ -2,9 +2,9 @@ import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import React from "react";
 
-import { ActionBar } from "client/ActionBar";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
+import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
 import { StorageKey } from "store/constants";
