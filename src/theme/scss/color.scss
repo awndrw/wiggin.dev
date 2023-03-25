@@ -1,4 +1,4 @@
-@use 'sass:map';
+@use "sass:map";
 
 $text-primary: var(--color-text-primary);
 $text-secondary: var(--color-text-secondary);
@@ -11,16 +11,16 @@ $accent-tint: var(--color-accent-tint);
 $accent-tint-contrast: var(--color-accent-tint-contrast);
 
 $lightnesses: (
-        'light': (
-                'text-primary': 30%,
-                'text-secondary': 64%,
-                'background': 100%,
-        ),
-        'dark': (
-                'text-primary': 92%,
-                'text-secondary': 78%,
-                'background': 22%,
-        ),
+  "light": (
+    "text-primary": 30%,
+    "text-secondary": 64%,
+    "background": 100%,
+  ),
+  "dark": (
+    "text-primary": 92%,
+    "text-secondary": 78%,
+    "background": 22%,
+  ),
 );
 
 $chroma: 0;
@@ -34,8 +34,8 @@ $hue: 0;
 
 $gradient-steps: 0, 45deg, 90deg, 135deg, 180deg, 225deg, 270deg, 315deg, 360deg;
 $gradientLightnessAndChroma: (
-        'light': 0.56 0.15,
-        'dark': 0.88 0.064,
+  "light": 0.56 0.15,
+  "dark": 0.88 0.064,
 );
 
 @mixin make-gradients($mode) {
@@ -47,7 +47,9 @@ $gradientLightnessAndChroma: (
 }
 
 @mixin all {
-  &, & ::before, & ::after {
+  &,
+  & ::before,
+  & ::after {
     @content;
   }
 }
@@ -55,29 +57,29 @@ $gradientLightnessAndChroma: (
 @mixin init {
   @include all {
     color-scheme: light;
-    @include make-mode('light');
-    @include make-gradients('light');
+    @include make-mode("light");
+    @include make-gradients("light");
 
     @media (prefers-color-scheme: dark) {
       color-scheme: dark;
-      @include make-mode('dark');
-      @include make-gradients('dark');
+      @include make-mode("dark");
+      @include make-gradients("dark");
     }
   }
 
-  body[data-mode='light'] {
+  body[data-mode="light"] {
     @include all {
       color-scheme: light;
-      @include make-mode('light');
-      @include make-gradients('light');
+      @include make-mode("light");
+      @include make-gradients("light");
     }
   }
 
-  body[data-mode='dark'] {
+  body[data-mode="dark"] {
     @include all {
       color-scheme: dark;
-      @include make-mode('dark');
-      @include make-gradients('dark');
+      @include make-mode("dark");
+      @include make-gradients("dark");
     }
   }
 }

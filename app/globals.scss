@@ -1,11 +1,10 @@
-@use 'theme/scss/color';
-@use 'theme/scss/size';
+@use "theme/scss/color";
+@use "theme/scss/size";
 
 :root {
   @include color.init;
   @include size.init;
 }
-
 
 * {
   box-sizing: border-box;

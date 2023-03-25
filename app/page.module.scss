@@ -1,5 +1,5 @@
-@use 'theme/scss/color';
-@use 'theme/scss/util';
+@use "theme/scss/color";
+@use "theme/scss/util";
 
 .icon {
   margin-left: 6px;
@@ -44,6 +44,6 @@
     bottom: -20vh;
   }
   @include util.mw-md {
-      bottom: -30vh;
+    bottom: -30vh;
   }
 }

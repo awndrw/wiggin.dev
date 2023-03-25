@@ -1,5 +1,5 @@
-@use 'sass:list';
-@use 'color';
+@use "sass:list";
+@use "color";
 
 @mixin mw-sm {
   @media (min-width: 425px) {
@@ -43,8 +43,9 @@
 }
 
 @mixin hover {
-  @media(hover: hover) and (pointer: fine) {
-    &:hover, &:focus-visible {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
       @content;
     }
   }
@@ -55,10 +56,10 @@
   @media (prefers-color-scheme: dark) {
     #{$property}: $dark;
   }
-  body[data-mode='light'] & {
+  body[data-mode="light"] & {
     #{$property}: $light;
   }
-  body[data-mode='dark'] & {
+  body[data-mode="dark"] & {
     #{$property}: $dark;
   }
 }

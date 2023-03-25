@@ -1,6 +1,6 @@
-@use 'theme/scss/size';
-@use 'theme/scss/color';
-@use '../../src/theme/scss/util';
+@use "theme/scss/size";
+@use "theme/scss/color";
+@use "theme/scss/util";
 
 .article {
   position: relative;
@@ -18,7 +18,7 @@
     width: 320px;
   }
   @include util.mw-lg {
-      width: 430px;
+    width: 430px;
   }
 
   h2 {
@@ -34,7 +34,7 @@
   border: none;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     cursor: pointer;

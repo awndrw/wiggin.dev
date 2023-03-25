@@ -1,12 +1,12 @@
-@use 'theme/scss/layout';
-@use 'theme/scss/size';
+@use "theme/scss/layout";
+@use "theme/scss/size";
 
 .page {
   @include layout.page;
 }
 
 .section {
-  @include layout.section('neutral');
+  @include layout.section("neutral");
   display: flex;
   flex-direction: column;
   justify-content: center;

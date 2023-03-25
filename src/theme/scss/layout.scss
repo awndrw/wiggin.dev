@@ -1,6 +1,6 @@
-@use 'sass:list';
-@use 'color';
-@use 'size';
+@use "sass:list";
+@use "color";
+@use "size";
 
 @mixin page {
   position: relative;
@@ -14,9 +14,9 @@
   }
 }
 
-$themes: 'accent' 'neutral';
+$themes: "accent" "neutral";
 
-@mixin section($theme: 'accent') {
+@mixin section($theme: "accent") {
   @if not list.index($themes, $theme) {
     @error "Theme not found: #{$theme}";
   }
@@ -24,11 +24,11 @@ $themes: 'accent' 'neutral';
   min-height: 100svh;
   padding: size.$spacing-large;
   position: relative;
-  @if $theme == 'accent' {
-      background-color: color.$accent-primary-contrast;
-      color: color.$accent-primary;
-  } @else if $theme == 'neutral' {
-      background-color: color.$accent-tint-contrast;
-      color: color.$text-primary;
+  @if $theme == "accent" {
+    background-color: color.$accent-primary-contrast;
+    color: color.$accent-primary;
+  } @else if $theme == "neutral" {
+    background-color: color.$accent-tint-contrast;
+    color: color.$text-primary;
   }
 }
