@@ -80,7 +80,7 @@ export default async function RootLayout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
-        {!isAndrew && <Analytics />}
+        {!isAndrew && <Analytics locale={locale} />}
       </body>
     </html>
   );
