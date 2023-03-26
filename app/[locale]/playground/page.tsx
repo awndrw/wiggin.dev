@@ -4,8 +4,7 @@ import path from "path";
 
 import { PlaygroundItem } from "./PlaygroundItem";
 import styles from "./page.module.scss";
-import { PlaygroundConfigSchema } from "./utils";
-import type { Playground } from "./utils";
+import { PlaygroundConfigSchema, type Playground } from "./utils";
 
 export const metadata: Metadata = {
   title: "playground",

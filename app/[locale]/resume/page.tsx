@@ -6,8 +6,8 @@ import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 
 import styles from "./page.module.scss";
-import resumeDark from "../../public/resume/dark.jpg";
-import resumeLight from "../../public/resume/light.jpg";
+import resumeDark from "../../../public/resume/dark.jpg";
+import resumeLight from "../../../public/resume/light.jpg";
 
 export const metadata: Metadata = {
   title: "resume",

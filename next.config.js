@@ -1,10 +1,13 @@
 const path = require("path");
+
+const withNextIntl = require("next-intl/plugin")();
+
 const getLocalIdent = require("./scripts/getLocalIdent");
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
 
 /** @type {import('next').NextConfig} */
-module.exports = {
+const config = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
@@ -57,3 +60,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withNextIntl(config);

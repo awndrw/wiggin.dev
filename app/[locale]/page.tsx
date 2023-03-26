@@ -1,4 +1,3 @@
-import { type Metadata } from "next";
 import React from "react";
 
 import { Balancer } from "client/Balancer";
@@ -8,19 +7,15 @@ import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedy";
+import { useTranslations } from "next-intl";
 import { getId } from "utils/getId";
 
 import { HueSelectButton } from "./HueSelectButton";
 import styles from "./page.module.scss";
 
-const generateBlurb = (prefix: string) =>
-  `${prefix} a brooklyn based design engineer passionate about design systems, motion design and accessibility.`;
+export default function Page() {
+  const t = useTranslations("Home");
 
-export const metadata: Metadata = {
-  description: generateBlurb("Andrew Wiggin is"),
-};
-
-export default async function Page() {
   const sectionTwoId = getId();
   const sectionThreeId = getId();
 
@@ -28,10 +23,10 @@ export default async function Page() {
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
       <Section type="accent" fullHeight bottomSeparator>
         <h1>
-          Hi, I&apos;m Andrew
+          {t("headline")}
           <Logo className={styles.icon} aria-hidden focusable={false} />
         </h1>
-        <Balancer>{generateBlurb("I'm")}</Balancer>
+        <Balancer>{t("bio")}</Balancer>
         <AnimatedPath
           className={styles.scribbleOne}
           viewBox="0 0 862.83 1809.95"
@@ -42,10 +37,16 @@ export default async function Page() {
       </Section>
       <Section id={sectionTwoId} fullHeight bottomSeparator>
         <Balancer>
-          I spent my childhood playing with JavaScript and love using CSS and
-          WebAssembly to create performant animations. Check out my{" "}
-          <InternalLink href="/resume">resume</InternalLink> or reach out via{" "}
-          <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
+          {t.rich("about", {
+            resume: (chunks) => (
+              <InternalLink href="/resume">{chunks}</InternalLink>
+            ),
+            email: (chunks) => (
+              <ExternalLink href="mailto:andrew@wiggin.dev">
+                {chunks}
+              </ExternalLink>
+            ),
+          })}
         </Balancer>
         <AnimatedPath
           className={styles.scribbleTwo}
@@ -58,13 +59,14 @@ export default async function Page() {
       </Section>
       <Section id={sectionThreeId} fullHeight>
         <Balancer>
-          These colors use oklch to create an accessible color palette with{" "}
-          <HueSelectButton>any hue</HueSelectButton>. Interested in how it
-          works? Check out{" "}
-          <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
-            the docs
-          </ExternalLink>
-          .
+          {t.rich("how_it_works", {
+            any_hue: (chunks) => <HueSelectButton>{chunks}</HueSelectButton>,
+            docs: (chunks) => (
+              <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+                {chunks}
+              </ExternalLink>
+            ),
+          })}
         </Balancer>
       </Section>
     </PageWrapper>
