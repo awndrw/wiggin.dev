@@ -1,6 +1,5 @@
+import { DEFAULT_LOCALE, LOCALES } from "i18n/constants";
 import createIntlMiddleware from "next-intl/middleware";
-
-import { DEFAULT_LOCALE, LOCALES } from "locale/constants";
 
 export default createIntlMiddleware({
   locales: LOCALES,

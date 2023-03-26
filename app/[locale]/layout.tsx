@@ -8,7 +8,7 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
-import { type Locale } from "locale/constants";
+import { type Locale } from "i18n/constants";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { StorageKey } from "store/constants";
@@ -20,6 +20,7 @@ import "./globals.scss";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata");
+
   return {
     title: {
       default: "wiggin.dev",
