@@ -1,5 +1,7 @@
 import type React from "react";
 
+import { useTranslations } from "next-intl";
+
 type NestedKeyOf<ObjectType> = ObjectType extends object
   ? {
       [Key in keyof ObjectType]:
@@ -27,6 +29,18 @@ type NamespaceKeys<ObjectType, Keys extends string> = {
 
 export type Namespace = NamespaceKeys<IntlMessages, NestedKeyOf<IntlMessages>>;
 
-export type Translator<T extends Namespace> = () => {
+export type Translator<T extends Namespace> = (
+  translator: ReturnType<typeof useTranslations<T>>
+) => {
   [Key in keyof NestedValueOf<IntlMessages, T>]: React.ReactNode;
+};
+
+export const createContent = <T extends Namespace>(
+  namespace: T,
+  translator: Translator<T>
+) => {
+  return function useContent() {
+    const t = useTranslations(namespace);
+    return translator(t);
+  };
 };
