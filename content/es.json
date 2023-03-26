@@ -5,7 +5,7 @@
   "Home": {
     "headline": "Hola, soy Andrew",
     "bio": "Soy un ingeniero de diseño de brooklyn apasionado por los sistemas de diseño, el diseño de movimiento y la accesibilidad.",
-    "about": "Pasé mi infancia jugando con JavaScript y me encanta usar CSS y WebAssembly para crear animaciones de alto rendimiento. Revisa mi <resume>currículum</resume> o comunícate por <email>correo electrónico</email>.",
+    "about": "Exploro formas únicas de contar una historia en la web. En estos días, hago la mayor parte de mis retoques en el <mellon>Mellon Foundation</mellon>. Revisa mi <resume>currículum</resume> o comunícate por <email>correo electrónico</email>.",
     "how_it_works": "Estos colores usan oklch para crear una paleta de colores accesible con <any_hue>cualquier tono</any_hue>. ¿Interesado en cómo funciona? Consulte <docs>la documentación</docs>."
   }
 }

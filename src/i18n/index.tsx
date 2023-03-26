@@ -19,6 +19,9 @@ export const useHomeContent: Translator<"Home"> = () => {
     headline: t("headline"),
     bio: t("bio"),
     about: t.rich("about", {
+      mellon: (chunks) => (
+        <ExternalLink href="https://mellon.org">{chunks}</ExternalLink>
+      ),
       resume: (chunks) => <InternalLink href="/resume">{chunks}</InternalLink>,
       email: (chunks) => (
         <ExternalLink href="mailto:andrew@wiggin.dev">{chunks}</ExternalLink>
