@@ -1,9 +1,9 @@
-import Link from "next/link";
 import React from "react";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import { Separator } from "client/radix/Separator";
 import { Icon } from "components/Icon";
+import { Link } from "next-intl";
 import { usePathname } from "next-intl/client";
 import { ArrowLeft } from "react-feather";
 import { HUES } from "theme/constants";
