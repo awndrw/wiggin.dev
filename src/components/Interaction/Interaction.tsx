@@ -9,7 +9,7 @@ import styles from "./Interaction.module.scss";
 type InteractionComponent = React.ComponentType | React.ElementType;
 
 export type InteractionComponentProps<C extends InteractionComponent> =
-  React.ComponentProps<C> & { children: string };
+  React.ComponentProps<C>;
 
 export type InteractionProps<C extends InteractionComponent> =
   InteractionComponentProps<C> & {

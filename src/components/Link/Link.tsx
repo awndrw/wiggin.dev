@@ -7,13 +7,21 @@ import {
 } from "components/Interaction";
 import { ArrowRight, ArrowUpRight } from "react-feather";
 
-export type InternalLinkProps = InteractionComponentProps<typeof NextLink>;
+export type InternalLinkProps<T> = InteractionComponentProps<
+  typeof NextLink<T>
+>;
 
-export const InternalLink = ({ children, ...props }: InternalLinkProps) => (
-  <Interaction component={NextLink} icon={ArrowRight} {...props}>
-    {children}
-  </Interaction>
-);
+export const InternalLink = <T extends string>({
+  children,
+  ...props
+}: InternalLinkProps<T>) => {
+  const Link = NextLink<T>;
+  return (
+    <Interaction component={Link} icon={ArrowRight} {...props}>
+      {children}
+    </Interaction>
+  );
+};
 
 export type ExternalLinkProps = InteractionComponentProps<"a">;
 
