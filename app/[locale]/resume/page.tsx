@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 
+import resumeDark from "./dark.jpg";
+import resumeLight from "./light.jpg";
 import styles from "./page.module.scss";
-import resumeDark from "../../../public/resume/dark.jpg";
-import resumeLight from "../../../public/resume/light.jpg";
 
 export const metadata: Metadata = {
   title: "resume",
@@ -25,7 +25,7 @@ export default function Page() {
     <PageWrapper className={styles.page}>
       <Section type="accent" fullHeight>
         <Link
-          href="/resume/AndrewWigginResume.pdf"
+          href="/AndrewWigginResume.pdf"
           aria-label="Resume"
           className={styles.link}
           target="_blank"
