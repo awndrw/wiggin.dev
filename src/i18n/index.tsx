@@ -12,6 +12,17 @@ export const useMetadataContent: Translator<"Metadata"> = () => {
   };
 };
 
+export const useNotFoundContent: Translator<"NotFound"> = () => {
+  const t = useTranslations("NotFound");
+
+  return {
+    headline: t("headline"),
+    body: t.rich("body", {
+      home: (chunks) => <InternalLink href="/">{chunks}</InternalLink>,
+    }),
+  };
+};
+
 export const useHomeContent: Translator<"Home"> = () => {
   const t = useTranslations("Home");
 

@@ -2,6 +2,10 @@
   "Metadata": {
     "description": "Andrew Wiggin es un ingeniero de diseño de Brooklyn apasionado por los sistemas de diseño, el diseño de movimiento y la accesibilidad."
   },
+  "NotFound": {
+    "headline": "Cómo llegaste aquí?",
+    "body": "Cuando estés lista, te encontraré en <home>la página de inicio</home>."
+  },
   "Home": {
     "headline": "Hola, soy Andrew",
     "bio": "Soy un ingeniero de diseño de brooklyn apasionado por los sistemas de diseño, el diseño de movimiento y la accesibilidad.",

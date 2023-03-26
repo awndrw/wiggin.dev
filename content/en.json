@@ -2,6 +2,10 @@
   "Metadata": {
     "description": "Andrew Wiggin is a brooklyn based design engineer passionate about design systems, motion design and accessibility."
   },
+  "NotFound": {
+    "headline": "How’d you get here?",
+    "body": "When you’re ready, I’ll meet you at <home>home</home>."
+  },
   "Home": {
     "headline": "Hi, I’m Andrew",
     "bio": "I’m a brooklyn based design engineer passionate about design systems, motion design and accessibility.",
