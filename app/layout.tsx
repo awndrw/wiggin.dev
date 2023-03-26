@@ -8,10 +8,9 @@ import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
 import { StorageKey } from "store/constants";
-import { hueId } from "store/utils";
 import { createStyles } from "theme";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
-import { getHexForColor } from "theme/utils";
+import { hueId, getHexForColor } from "theme/utils";
 
 import "./globals.scss";
 

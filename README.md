@@ -17,7 +17,7 @@ This project uses the Next 13 App Router. Pages can be found in `/app` and all o
 
 [Jotai](https://jotai.org) helps prevent unnecessary re-renders by using read-only and write-only state. The global store is found in [`src/store`](src/store).
 
-The utility function [`atomWithLifecycle`](src/utils/atomWithLifecycle.ts) creates a jotai atom that has `onMount` and `onUpdate` callbacks.
+The utility function [`atomWithLifecycle`](src/store/utils.ts) creates a jotai atom that has `onMount` and `onUpdate` callbacks.
 Using my `mode` state as an example:
 
 - `onMount` uses the `prefers-color-scheme` media query to set the initial state value

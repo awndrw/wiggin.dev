@@ -1,30 +1,19 @@
-import { createStyles } from "theme";
-import { type Hue, HueSchema } from "theme/constants";
+import { atom, type SetStateAction, type WritableAtom } from "jotai";
 
-export const hueId = (hue: number) => `hue-${hue}`;
-
-export const hueStyleExists = (hue: number) =>
-  document.getElementById(hueId(hue)) !== null;
-
-export const createHueStyle = (hue: Hue) => {
-  const styleEl = document.createElement("style");
-  styleEl.id = hueId(hue);
-  styleEl.innerHTML = createStyles(hue);
-  document.head.appendChild(styleEl);
-};
-
-export const getHue = (element: Element) => {
-  const hueAttr = element.getAttribute("data-hue");
-  if (!hueAttr) return null;
-  const parsedHue = HueSchema.safeParse(parseInt(hueAttr));
-  return parsedHue.success ? parsedHue.data : null;
-};
-
-export const recolor = () => {
-  const coloredElements = document.querySelectorAll("[data-hue]");
-  coloredElements.forEach((element) => {
-    const hue = getHue(element);
-    if (hue === null || hueStyleExists(hue)) return;
-    createHueStyle(hue);
-  });
-};
+export function atomWithLifecycle<T>(
+  initialValue: T,
+  onMount: WritableAtom<T, T[], T>["onMount"],
+  onUpdate: (newValue: T, prevValue: T) => void
+) {
+  const valueAtom = atom<T>(initialValue);
+  valueAtom.onMount = onMount;
+  return atom(
+    (get) => get(valueAtom),
+    (get, set, arg: SetStateAction<T>) => {
+      const prevValue = get(valueAtom);
+      set(valueAtom, arg);
+      const newValue = get(valueAtom);
+      onUpdate(newValue, prevValue);
+    }
+  );
+}
