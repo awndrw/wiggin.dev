@@ -8,13 +8,14 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
-import { type Locale } from "i18n/constants";
+import { type Locale, LOCALES } from "i18n/constants";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
+import { env } from "utils/env";
 
 import "./globals.scss";
 
@@ -38,9 +39,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-/*export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
-}*/
+// https://github.com/vercel/next.js/issues/43427
+export const generateStaticParams =
+  env !== "development"
+    ? () => LOCALES.map((locale) => ({ locale }))
+    : undefined;
 
 export default async function RootLayout({
   children,
