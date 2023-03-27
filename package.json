@@ -3,14 +3,16 @@
   "version": "0.2.2",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn partytown && next dev",
+    "build": "yarn partytown && next build",
     "start": "next start",
     "lint": "next lint",
     "format": "next lint --fix",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.6",
     "@csstools/postcss-oklab-function": "^2.2.0",
     "@datadog/browser-rum": "^4.36.0",
     "@radix-ui/react-accessible-icon": "^1.0.2",
