@@ -4,6 +4,8 @@ import c from "classnames";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
 import { ExternalLink } from "components/Link";
+import { Page as PageWrapper } from "components/Page";
+import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedy";
 
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";
@@ -14,6 +16,48 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  return (
+    <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
+      <Section type="neutral" fullHeight bottomSeparator>
+        <Balancer>
+          The OKLCH color space, part of{" "}
+          <ExternalLink href="https://www.w3.org/TR/css-color-4">
+            CSS Color Module 4
+          </ExternalLink>
+          , uses Lightness, Chroma, and Hue to describe color.
+        </Balancer>
+      </Section>
+      <Section type="neutral" bottomSeparator>
+        <Balancer>
+          Lightness is the <em>perceived</em> brightness of a color (which is
+          different from HSL&apos;s lightness value)
+        </Balancer>
+        <div className={styles.scale}>
+          <LightnessScale />
+        </div>
+      </Section>
+      <Section type="neutral" bottomSeparator>
+        <Balancer>
+          Chroma represents the saturation of a color, from grey to fully
+          saturated.
+        </Balancer>
+        <div className={styles.scale}>
+          <ChromaScale />
+        </div>
+      </Section>
+      <Section type="neutral" bottomSeparator>
+        <Balancer>
+          Hue is the angle around the color wheel, from 0 to 360 degrees.
+        </Balancer>
+        <div className={styles.scale}>
+          <HueScale />
+        </div>
+      </Section>
+      <Section type="neutral">
+        <Balancer>Bla bla bla</Balancer>
+      </Section>
+    </PageWrapper>
+  );
   return (
     <main className={c(styles.page, tragedyDisplay.className)}>
       <section className={styles.section}>
