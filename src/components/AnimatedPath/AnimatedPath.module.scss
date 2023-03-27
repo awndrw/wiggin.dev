@@ -1,8 +1,8 @@
 @use "theme/scss/color";
+@use "theme/scss/util";
 
 .animatedPath {
   stroke: color.$accent-container-contrast;
-  stroke-width: 18px;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
@@ -11,6 +11,11 @@
   position: absolute;
   right: 0;
   z-index: 1;
+
+  stroke-width: 12px;
+  @include util.mw-md {
+    stroke-width: 18px;
+  }
 
   & path {
     transition: opacity 800ms ease;
