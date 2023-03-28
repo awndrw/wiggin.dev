@@ -1,7 +1,13 @@
 import better from "better-color-tools";
 import { createStyles } from "theme/index";
 
-import { type Hue, type Mode, type Color, HueSchema } from "./constants";
+import {
+  type Hue,
+  type Mode,
+  type Color,
+  HueSchema,
+  ModeSchema,
+} from "./constants";
 import { lightnessAndChromaValues } from "./oklch";
 
 export const hueId = (hue: number) => `hue-${hue}`;
@@ -26,6 +32,13 @@ export function getHue(element: Element) {
   if (!hueAttr) return null;
   const parsedHue = HueSchema.safeParse(parseInt(hueAttr));
   return parsedHue.success ? parsedHue.data : null;
+}
+
+export function getMode() {
+  const modeAttr = document.body.getAttribute("data-mode");
+  if (!modeAttr) return null;
+  const parsedMode = ModeSchema.safeParse(modeAttr);
+  return parsedMode.success ? parsedMode.data : null;
 }
 
 export function recolor() {
