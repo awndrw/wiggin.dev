@@ -8,7 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37a58dbc-c42b-4d5b-9e0f-8be7b9c692dd" name="Changes" comment="Create Balancer wrapper component">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pnp.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.pnp.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/@next-env-npm-13.2.4-fafa35e4a8-4123e08a79.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/@next-swc-darwin-arm64-npm-13.2.4-fe40cb3d8f-8.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/cache/next-npm-13.2.4-eedd00f0a6-8531dee41b.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/robots.txt/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +91,7 @@
     "prettierjs.PrettierConfiguration.Package": "/Users/wiggindev/git/wiggin.dev/.yarn/sdks/prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/wiggindev/git/wiggin.dev/.yarn/sdks/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -191,7 +198,7 @@
       <workItem from="1680559511071" duration="573000" />
       <workItem from="1680560087157" duration="47000" />
       <workItem from="1680560136299" duration="156000" />
-      <workItem from="1680560294929" duration="97000" />
+      <workItem from="1680560294929" duration="1721000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize new simple portfolio">
       <created>1674013484583</created>
