@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        disallow: env !== "production" ? "/" : "",
+        disallow: !env.isProduction ? "/" : "",
       },
     ],
     sitemap: `https://${url}/sitemap.xml`,

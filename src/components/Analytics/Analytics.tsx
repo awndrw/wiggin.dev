@@ -20,7 +20,7 @@ export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
 
   React.useEffect(() => {
     init();
-    if (env !== "development") {
+    if (env.isProduction) {
       console.log(`                .-====-.                
                -========-               
       .:-==-:.:===:  :===-.:-==-:.      

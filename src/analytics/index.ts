@@ -30,8 +30,7 @@ function makeMockDatadogApi(): typeof datadogRum {
   };
 }
 
-export const datadog =
-  env === "development" ? makeMockDatadogApi() : datadogRum;
+export const datadog = env.isDevelopment ? makeMockDatadogApi() : datadogRum;
 
 export const init = () => {
   const ddAppId = process.env.NEXT_PUBLIC_DD_APP_ID;
@@ -44,7 +43,7 @@ export const init = () => {
     clientToken: ddClientToken,
     site: "datadoghq.com",
     service: "wiggin.dev",
-    env,
+    env: env.value,
     version: packageJson.version,
     trackResources: true,
     trackLongTasks: true,

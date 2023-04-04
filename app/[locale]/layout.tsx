@@ -43,10 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // https://github.com/vercel/next.js/issues/43427
-export const generateStaticParams =
-  env !== "development"
-    ? () => LOCALES.map((locale) => ({ locale }))
-    : undefined;
+export const generateStaticParams = !env.isDevelopment
+  ? () => LOCALES.map((locale) => ({ locale }))
+  : undefined;
 
 export default async function RootLayout({
   children,
@@ -71,7 +70,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <Partytown debug={env !== "production"} forward={["dataLayer.push"]} />
+        <Partytown debug={!env.isProduction} forward={["dataLayer.push"]} />
         <Script id={getId()} type="text/partytown">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NM2JLN5');`}
         </Script>
