@@ -1,33 +1,37 @@
 import { datadogRum } from "@datadog/browser-rum";
 import { env } from "utils/env";
+import { mutate } from "utils/mutate";
 
 import packageJson from "../../package.json";
 
-function makeMockDatadogApi() {
+function makeMockDatadogApi(): typeof datadogRum {
   const globalContext: Record<string, unknown> = {};
+  const log = (message: unknown, context?: object) => {
+    console.log(
+      `%c[rum]%c ${message}\n`,
+      "color: rgb(120, 120, 120)",
+      "color: inherit",
+      {
+        ...globalContext,
+        ...context,
+      }
+    );
+  };
+  const mock = mutate(datadogRum, () => {
+    return () => null;
+  }) as unknown as typeof datadogRum;
   return {
-    init: () => null,
-    addAction: (name: string, context?: object) => {
-      console.log(
-        `%c[rum]%c ${name}\n`,
-        "color: rgb(120, 120, 120)",
-        "color: inherit",
-        {
-          ...globalContext,
-          ...context,
-        }
-      );
-    },
+    ...mock,
+    addAction: (name: string, context?: object) => log(name, context),
+    addError: (error: unknown, context?: object) => log(error, context),
     setRumGlobalContext: (context: object) => {
       Object.assign(globalContext, context);
     },
   };
 }
 
-export const datadog: Pick<
-  typeof datadogRum,
-  "init" | "addAction" | "setRumGlobalContext"
-> = env === "development" ? makeMockDatadogApi() : datadogRum;
+export const datadog =
+  env === "development" ? makeMockDatadogApi() : datadogRum;
 
 export const init = () => {
   const ddAppId = process.env.NEXT_PUBLIC_DD_APP_ID;

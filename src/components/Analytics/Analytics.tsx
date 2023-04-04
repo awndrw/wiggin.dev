@@ -4,6 +4,7 @@ import { datadog, init } from "analytics";
 import { type Locale } from "i18n/constants";
 import { useAtomValue } from "jotai";
 import { hueAtom, modeAtom } from "store";
+import { env } from "utils/env";
 
 export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
   const hue = useAtomValue(hueAtom);
@@ -19,8 +20,8 @@ export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
 
   React.useEffect(() => {
     init();
-    console.log(`
-                .-====-.                
+    if (env !== "development") {
+      console.log(`                .-====-.                
                -========-               
       .:-==-:.:===:  :===-.:-==-:.      
      -===========-    :===========-     
@@ -41,6 +42,7 @@ export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
                -========-               
                 .-====-.                
 `);
+    }
   }, []);
 
   return null;
