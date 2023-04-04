@@ -41,6 +41,7 @@ export const PlaygroundItem = ({
               <h2 className={styles.link}>{name}</h2>
             </Dialog.Trigger>
           ) : (
+            // @ts-expect-error: href isn't typed
             <Link href={href} className={styles.trigger}>
               <h2 className={styles.link}>{name}</h2>
             </Link>
@@ -51,6 +52,7 @@ export const PlaygroundItem = ({
             ))}
           </ul>
         </div>
+        {/* @ts-expect-error: href isn't typed */}
         {warning && <WarningDialog warning={warning} continueHref={href} />}
       </Dialog.Root>
     </article>
