@@ -10,7 +10,7 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
-import { type Locale, LOCALES } from "i18n/constants";
+import { type Locale } from "i18n/constants";
 import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { StorageKey } from "store/constants";
@@ -41,11 +41,6 @@ export async function generateMetadata(): Promise<Metadata> {
     manifest: "/manifest.webmanifest",
   };
 }
-
-// https://github.com/vercel/next.js/issues/43427
-export const generateStaticParams = !env.isDevelopment
-  ? () => LOCALES.map((locale) => ({ locale }))
-  : undefined;
 
 export default async function RootLayout({
   children,
