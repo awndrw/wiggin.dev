@@ -2,9 +2,9 @@ import { useAtomValue } from "jotai";
 import React from "react";
 
 import { datadog, init } from "analytics";
+import { env } from "constants/env";
 import { type Locale } from "i18n/constants";
 import { hueAtom, modeAtom } from "store";
-import { env } from "utils/env";
 
 export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
   const hue = useAtomValue(hueAtom);

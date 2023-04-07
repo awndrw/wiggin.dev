@@ -1,6 +1,6 @@
 import { datadogRum } from "@datadog/browser-rum";
 
-import { env } from "utils/env";
+import { env } from "constants/env";
 import { mutate } from "utils/mutate";
 
 import packageJson from "../../package.json";

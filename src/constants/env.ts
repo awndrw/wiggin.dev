@@ -4,8 +4,8 @@ const EnvSchema = z.enum(["development", "preview", "production"]);
 type Env = z.infer<typeof EnvSchema>;
 
 const currentEnv = EnvSchema.parse(
-  process.env.VERCEL_ENV ??
-    process.env.NEXT_PUBLIC_VERCEL_ENV ??
+  process.env.VERCEL_ENV ||
+    process.env.NEXT_PUBLIC_VERCEL_ENV ||
     process.env.NODE_ENV
 );
 

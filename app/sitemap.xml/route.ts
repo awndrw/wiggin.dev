@@ -1,12 +1,13 @@
 import { globby } from "globby";
 
+import { url } from "constants/url";
 import { DEFAULT_LOCALE, type Locale, LOCALES } from "i18n/constants";
 
 const createPath = (path: string, locale?: Locale) => {
   const localeSegment =
     !locale || locale === DEFAULT_LOCALE ? "" : `/${locale}`;
   const pathSegment = path === "" ? "" : `/${path}`;
-  return `https://wiggin.dev${localeSegment}${pathSegment}`;
+  return `https://${url}${localeSegment}${pathSegment}`;
 };
 
 function format(html: string) {

@@ -1,8 +1,7 @@
 import { type MetadataRoute } from "next/dist/lib/metadata/types/metadata-interface";
 
-import { env } from "utils/env";
-
-const url = process.env.VERCEL_URL || "wiggin.dev";
+import { env } from "constants/env";
+import { url } from "constants/url";
 
 export default function robots(): MetadataRoute.Robots {
   return {

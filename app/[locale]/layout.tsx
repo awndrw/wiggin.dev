@@ -11,13 +11,14 @@ import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
+import { env } from "constants/env";
+import { url } from "constants/url";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Locale } from "i18n/constants";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
 import { DEFAULT_MODE } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
-import { env } from "utils/env";
 import { getId } from "utils/getId";
 import { getServerHue } from "utils/getServerHue";
 
@@ -28,8 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      default: "wiggin.dev",
-      template: "wiggin.dev/%s",
+      default: url,
+      template: `${url}/%s`,
     },
     description: t("description"),
     icons: {
