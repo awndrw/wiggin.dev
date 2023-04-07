@@ -7,7 +7,7 @@ const createPath = (path: string, locale?: Locale) => {
   const localeSegment =
     !locale || locale === DEFAULT_LOCALE ? "" : `/${locale}`;
   const pathSegment = path === "" ? "" : `/${path}`;
-  return `https://${url}${localeSegment}${pathSegment}`;
+  return new URL(`${localeSegment}${pathSegment}`, url).href;
 };
 
 function format(html: string) {

@@ -11,7 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: !env.isProduction ? "/" : "",
       },
     ],
-    sitemap: `https://${url}/sitemap.xml`,
-    host: `https://${url}`,
+    sitemap: new URL("/sitemap.xml", url).href,
   };
 }

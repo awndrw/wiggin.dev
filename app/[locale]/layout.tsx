@@ -12,7 +12,7 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { env } from "constants/env";
-import { url } from "constants/url";
+import { host, url } from "constants/url";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Locale } from "i18n/constants";
 import { StorageKey } from "store/constants";
@@ -29,8 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      default: url,
-      template: `${url}/%s`,
+      default: host,
+      template: `${host}/%s`,
     },
     description: t("description"),
     icons: {
@@ -41,6 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.webmanifest",
+    metadataBase: url,
   };
 }
 
