@@ -1,5 +1,6 @@
-import { DEFAULT_LOCALE, LOCALES } from "i18n/constants";
 import createIntlMiddleware from "next-intl/middleware";
+
+import { DEFAULT_LOCALE, LOCALES } from "i18n/constants";
 
 export default createIntlMiddleware({
   locales: LOCALES,
@@ -7,5 +8,7 @@ export default createIntlMiddleware({
 });
 
 export const config = {
-  matcher: "/((?!api|.*\\..*|_next).*)",
+  matcher: [
+    "/((?!api|.*\\..*|_next|opengraph-image).*)", // Match all routes except api, files, _next, and og
+  ],
 };
