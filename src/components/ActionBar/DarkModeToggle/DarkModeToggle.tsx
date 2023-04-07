@@ -1,11 +1,11 @@
-import React from "react";
-
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { useAtom } from "jotai";
+import React from "react";
+import { Moon, Sun } from "react-feather";
+
 import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
 import { Icon } from "components/Icon";
-import { useAtom } from "jotai";
-import { Moon, Sun } from "react-feather";
 import { modeAtom } from "store";
 
 import styles from "./DarkModeToggle.module.scss";

@@ -1,13 +1,13 @@
 import { type Route } from "next";
 import NextLink from "next/link";
 import React from "react";
+import { ArrowRight, ArrowUpRight } from "react-feather";
 
 import {
   Interaction,
   type InteractionComponentProps,
 } from "components/Interaction";
 import { type Locale } from "i18n/constants";
-import { ArrowRight, ArrowUpRight } from "react-feather";
 
 type NextLinkHref<T extends string = string> = T extends "/"
   ? "/"

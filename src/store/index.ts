@@ -1,5 +1,6 @@
 import { setCookie } from "cookies-next";
 import { atom } from "jotai";
+
 import { updateThemeColor } from "theme";
 import {
   DEFAULT_HUE,

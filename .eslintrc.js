@@ -18,6 +18,7 @@ module.exports = {
         project: "./tsconfig.json",
       },
     },
+    "import/external-module-folders": [".yarn"],
   },
   rules: {
     "@typescript-eslint/prefer-ts-expect-error": "error",

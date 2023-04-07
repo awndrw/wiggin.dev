@@ -1,6 +1,6 @@
+import cx from "classnames";
 import React from "react";
 
-import cx from "classnames";
 import { Separator } from "client/radix/Separator";
 
 import styles from "./Section.module.scss";

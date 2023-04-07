@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   a,
   useIsomorphicLayoutEffect,
@@ -7,6 +5,7 @@ import {
   useSpringValue,
 } from "@react-spring/web";
 import c from "classnames";
+import React from "react";
 
 import styles from "./AnimatedPath.module.scss";
 

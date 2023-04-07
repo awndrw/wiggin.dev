@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-
 import WrapBalancer from "react-wrap-balancer";
 
 const RATIO_MOBILE = 0.25;

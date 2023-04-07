@@ -1,6 +1,6 @@
+import c from "classnames";
 import { type Metadata } from "next";
 
-import c from "classnames";
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
 import { ExternalLink } from "components/Link";

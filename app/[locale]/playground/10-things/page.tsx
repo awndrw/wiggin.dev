@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import {
   a,
   easings,
@@ -11,6 +9,8 @@ import {
   useSpringRef,
 } from "@react-spring/web";
 import c from "classnames";
+import React from "react";
+
 import { flexaMono } from "fonts/flexa";
 
 import styles from "./page.module.scss";

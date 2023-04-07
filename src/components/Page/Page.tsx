@@ -1,6 +1,6 @@
+import cx from "classnames";
 import React from "react";
 
-import cx from "classnames";
 import styles from "components/Page/Page.module.scss";
 
 export interface PageProps extends React.HTMLAttributes<HTMLElement> {

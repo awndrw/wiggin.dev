@@ -1,8 +1,8 @@
 "use client";
 
+import better from "better-color-tools";
 import React from "react";
 
-import better from "better-color-tools";
 import { HUES } from "theme/constants";
 
 import styles from "./Scale.module.scss";

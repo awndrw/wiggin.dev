@@ -1,6 +1,5 @@
-import React from "react";
-
 import c from "classnames";
+import React from "react";
 import type {
   Icon as FeatherIcon,
   IconProps as FeatherIconProps,

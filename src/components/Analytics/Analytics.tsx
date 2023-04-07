@@ -1,8 +1,8 @@
+import { useAtomValue } from "jotai";
 import React from "react";
 
 import { datadog, init } from "analytics";
 import { type Locale } from "i18n/constants";
-import { useAtomValue } from "jotai";
 import { hueAtom, modeAtom } from "store";
 import { env } from "utils/env";
 

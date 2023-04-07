@@ -1,12 +1,12 @@
 "use client";
 
+import { useSetAtom } from "jotai";
 import React from "react";
+import { Target } from "react-feather";
 
 import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
 import { Interaction } from "components/Interaction";
-import { useSetAtom } from "jotai";
-import { Target } from "react-feather";
 import { customHuePopoverAtom } from "store";
 
 export interface HueSelectButtonProps {

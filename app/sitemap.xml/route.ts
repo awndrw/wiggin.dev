@@ -1,4 +1,5 @@
 import { globby } from "globby";
+
 import { DEFAULT_LOCALE, type Locale, LOCALES } from "i18n/constants";
 
 const createPath = (path: string, locale?: Locale) => {

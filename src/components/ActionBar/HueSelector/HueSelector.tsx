@@ -1,9 +1,9 @@
+import { a } from "@react-spring/web";
+import { useAtom } from "jotai";
 import React from "react";
 
-import { a } from "@react-spring/web";
 import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
-import { useAtom } from "jotai";
 import { hueAtom } from "store";
 import { type Hue } from "theme/constants";
 import useTimedSpring from "utils/useTimedSpring";

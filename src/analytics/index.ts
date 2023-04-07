@@ -1,4 +1,5 @@
 import { datadogRum } from "@datadog/browser-rum";
+
 import { env } from "utils/env";
 import { mutate } from "utils/mutate";
 

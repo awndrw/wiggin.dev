@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-
 import { useSpring, a } from "@react-spring/web";
 import { useGesture, type Vector2 } from "@use-gesture/react";
+import React from "react";
 
 import styles from "./Character.module.scss";
 

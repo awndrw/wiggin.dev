@@ -1,7 +1,6 @@
-import React from "react";
-
 import { Slot } from "@radix-ui/react-slot";
 import c from "classnames";
+import React from "react";
 
 import styles from "./ActionBarButton.module.scss";
 

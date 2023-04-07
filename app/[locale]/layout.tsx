@@ -1,18 +1,18 @@
+import { Partytown } from "@builder.io/partytown/react";
 import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import { useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import React from "react";
 
-import { Partytown } from "@builder.io/partytown/react";
 import { ReactWrapProvider } from "client/ReactWrapProvider";
 import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { hyenaSunrise } from "fonts/hyena";
 import { type Locale } from "i18n/constants";
-import { useLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
 import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
