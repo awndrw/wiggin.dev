@@ -1,18 +1,20 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 import { Balancer } from "client/Balancer";
 import { AnimatedPath } from "components/AnimatedPath";
+import { HueSelectButton } from "components/HueSelectButton";
+import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedy";
-import { useHomeContent } from "i18n";
 import { getId } from "utils/getId";
 
 import styles from "./page.module.scss";
 
 export default function Page() {
-  const content = useHomeContent();
+  const t = useTranslations("Home");
 
   const sectionTwoId = getId();
   const sectionThreeId = getId();
@@ -21,10 +23,10 @@ export default function Page() {
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
       <Section type="accent" fullHeight bottomSeparator>
         <h1>
-          {content.headline}
+          {t("headline")}
           <Logo className={styles.icon} aria-hidden focusable={false} />
         </h1>
-        <Balancer>{content.bio}</Balancer>
+        <Balancer>{t("bio")}</Balancer>
         <AnimatedPath
           className={styles.scribbleOne}
           viewBox="0 0 862.83 1809.95"
@@ -34,7 +36,21 @@ export default function Page() {
         />
       </Section>
       <Section id={sectionTwoId} fullHeight bottomSeparator>
-        <Balancer>{content.about}</Balancer>
+        <Balancer>
+          {t.rich("about", {
+            mellon: (chunks) => (
+              <ExternalLink href="https://mellon.org">{chunks}</ExternalLink>
+            ),
+            resume: (chunks) => (
+              <InternalLink href="/resume">{chunks}</InternalLink>
+            ),
+            email: (chunks) => (
+              <ExternalLink href="mailto:andrew@wiggin.dev">
+                {chunks}
+              </ExternalLink>
+            ),
+          })}
+        </Balancer>
         <AnimatedPath
           className={styles.scribbleTwo}
           viewBox="0 0 1764.67 627.04"
@@ -45,7 +61,16 @@ export default function Page() {
         />
       </Section>
       <Section id={sectionThreeId} fullHeight>
-        <Balancer>{content.how_it_works}</Balancer>
+        <Balancer>
+          {t.rich("how_it_works", {
+            any_hue: (chunks) => <HueSelectButton>{chunks}</HueSelectButton>,
+            docs: (chunks) => (
+              <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+                {chunks}
+              </ExternalLink>
+            ),
+          })}
+        </Balancer>
       </Section>
     </PageWrapper>
   );

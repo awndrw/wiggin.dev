@@ -1,16 +1,22 @@
+import { useTranslations } from "next-intl";
+
+import { InternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedy";
-import { useNotFoundContent } from "i18n";
 
 export default function NotFound() {
-  const content = useNotFoundContent();
+  const t = useTranslations("NotFound");
 
   return (
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
       <Section type="accent" fullHeight>
-        <h1>{content.headline}</h1>
-        <p>{content.body}</p>
+        <h1>{t("headline")}</h1>
+        <p>
+          {t.rich("body", {
+            home: (chunks) => <InternalLink href="/">{chunks}</InternalLink>,
+          })}
+        </p>
       </Section>
     </PageWrapper>
   );
