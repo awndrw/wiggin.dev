@@ -1,12 +1,14 @@
-import Link from "next/link";
-import React from "react";
-
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
+import { useRouter } from "next/navigation";
+import { Link } from "next-intl";
+import { usePathname } from "next-intl/client";
+import React from "react";
+import { ArrowLeft, Home } from "react-feather";
+
 import { Separator } from "client/radix/Separator";
 import { Icon } from "components/Icon";
-import { usePathname } from "next-intl/client";
-import { ArrowLeft } from "react-feather";
 import { HUES } from "theme/constants";
+import { usePrevious } from "utils/usePrevious";
 
 import styles from "./ActionBar.module.scss";
 import { ActionBarButton } from "./ActionBarButton";
@@ -15,20 +17,34 @@ import { DarkModeToggle } from "./DarkModeToggle";
 import { HueSelector } from "./HueSelector";
 
 const ActionBarLink = () => {
-  const pathname = usePathname() ?? "";
+  const router = useRouter();
+  const pathname = usePathname();
+  const previousPathname = usePrevious(pathname) ?? null;
 
-  const isNestedPage = pathname !== "/";
-  const parentPath = pathname.slice(0, pathname.lastIndexOf("/") + 1);
+  if (pathname === "/") {
+    return null;
+  }
 
-  return isNestedPage ? (
+  // pathname !== "/" is repeated to prevent a flash of the back button
+  const showBackButton = previousPathname !== null && pathname !== "/";
+
+  return (
     <>
       <ActionBarButton>
-        {/* @ts-expect-error: href isn't typed */}
-        <Link href={parentPath} className={styles.navButton}>
-          <AccessibleIcon label="Back">
-            <Icon icon={ArrowLeft} />
-          </AccessibleIcon>
-        </Link>
+        {showBackButton ? (
+          <button onClick={router.back} className={styles.navButton}>
+            <AccessibleIcon label="Back">
+              <Icon icon={ArrowLeft} />
+            </AccessibleIcon>
+          </button>
+        ) : (
+          // @ts-expect-error: typed routes don't work yet
+          <Link href="/" className={styles.navButton}>
+            <AccessibleIcon label="Home">
+              <Icon icon={Home} />
+            </AccessibleIcon>
+          </Link>
+        )}
       </ActionBarButton>
       <Separator
         orientation="vertical"
@@ -36,7 +52,7 @@ const ActionBarLink = () => {
         className={styles.separator}
       />
     </>
-  ) : null;
+  );
 };
 
 export function ActionBar() {
