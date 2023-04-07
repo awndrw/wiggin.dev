@@ -15,10 +15,11 @@ import { hyenaSunrise } from "fonts/hyena";
 import { type Locale } from "i18n/constants";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
-import { DEFAULT_HUE, DEFAULT_MODE, HueSchema } from "theme/constants";
+import { DEFAULT_MODE } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
 import { env } from "utils/env";
 import { getId } from "utils/getId";
+import { getServerHue } from "utils/getServerHue";
 
 import "./globals.scss";
 
@@ -56,10 +57,7 @@ export default async function RootLayout({
   }
 
   const cookies = nextCookies();
-  const hueCookie = cookies.get(StorageKey.HUE)?.value;
-  const parsedHue = hueCookie ? HueSchema.safeParse(parseInt(hueCookie)) : null;
-  const hue = parsedHue?.success ? parsedHue.data : DEFAULT_HUE;
-
+  const hue = getServerHue(cookies);
   const isAndrew = Boolean(cookies.get(StorageKey.IS_ANDREW)?.value);
 
   return (
