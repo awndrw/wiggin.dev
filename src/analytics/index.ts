@@ -1,6 +1,7 @@
 import { datadogRum } from "@datadog/browser-rum";
 
 import { env } from "constants/env";
+import { host } from "constants/url";
 import { mutate } from "utils/mutate";
 
 import packageJson from "../../package.json";
@@ -43,7 +44,7 @@ export const init = () => {
     applicationId: ddAppId,
     clientToken: ddClientToken,
     site: "datadoghq.com",
-    service: "wiggin.dev",
+    service: host,
     env: env.value,
     version: packageJson.version,
     trackResources: true,
