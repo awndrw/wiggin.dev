@@ -4,22 +4,39 @@
 
 .interaction {
   all: inherit;
+  position: relative;
   cursor: pointer;
   display: inline-block;
-  border-radius: size.$border-radius-small;
   color: color.$accent-primary;
-  transition-property: color, background-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
   margin-inline: -6px;
   padding-inline: 6px 4px;
   box-decoration-break: clone;
 
+  &,
+  &::before {
+    border-radius: size.$border-radius-small;
+    transition-property: color, background-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0.1em 0;
+    z-index: -1;
+  }
+
   @include util.hover {
     outline: none;
-    background-color: color.$accent-container-contrast;
     color: color.$accent-container;
-    transition-duration: 400ms;
+    &,
+    &::before {
+      transition-duration: 400ms;
+    }
+    &::before {
+      background-color: color.$accent-container-contrast;
+    }
   }
 
   @include util.mw-md {

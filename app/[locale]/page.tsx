@@ -24,7 +24,12 @@ export default function Page() {
       <Section type="accent" fullHeight bottomSeparator>
         <h1>
           {t("headline")}
-          <Logo className={styles.icon} aria-hidden focusable={false} />
+          <Logo
+            className={styles.icon}
+            aria-hidden
+            focusable={false}
+            weight="light"
+          />
         </h1>
         <Balancer>{t("bio")}</Balancer>
         <AnimatedPath
