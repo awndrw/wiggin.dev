@@ -8,7 +8,7 @@ import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
-import { tragedyDisplay } from "fonts/tragedy";
+import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getId } from "utils/getId";
 
 import styles from "./page.module.scss";

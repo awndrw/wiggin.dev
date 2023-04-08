@@ -6,7 +6,7 @@ import { Separator } from "client/radix/Separator";
 import { ExternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
-import { tragedyDisplay } from "fonts/tragedy";
+import { tragedyDisplay } from "fonts/tragedyDisplay";
 
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";
 import styles from "./page.module.scss";

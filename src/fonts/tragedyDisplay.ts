@@ -7,5 +7,10 @@ export const tragedyDisplay = localFont({
       weight: "400",
       style: "normal",
     },
+    {
+      path: "./TragedyDisplay-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
   ],
 });

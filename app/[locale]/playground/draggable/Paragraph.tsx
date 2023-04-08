@@ -6,7 +6,7 @@ import React from "react";
 
 import * as VisuallyHidden from "client/radix/VisuallyHidden";
 import { flexaMono } from "fonts/flexa";
-import { tragedyDisplay } from "fonts/tragedy";
+import { tragedyDisplay } from "fonts/tragedyDisplay";
 
 import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";

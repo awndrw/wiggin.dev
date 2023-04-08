@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { InternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
-import { tragedyDisplay } from "fonts/tragedy";
+import { tragedyDisplay } from "fonts/tragedyDisplay";
 
 export default function NotFound() {
   const t = useTranslations("NotFound");
