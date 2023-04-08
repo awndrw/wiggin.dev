@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/server";
 
 import { Logo } from "components/Logo";
+import { DEFAULT_HUE } from "theme/constants";
 import { getHexForColor } from "theme/utils";
-import { getServerHue } from "utils/getServerHue";
 
 export const alt = "";
 export const size = {
@@ -12,9 +12,12 @@ export const size = {
 export const contentType = "image/png";
 
 export default function opengraphImage() {
-  const hue = getServerHue();
-  const primary = getHexForColor(hue, "light", "primary");
-  const primaryContrast = getHexForColor(hue, "light", "primary-contrast");
+  const primary = getHexForColor(DEFAULT_HUE, "light", "primary");
+  const primaryContrast = getHexForColor(
+    DEFAULT_HUE,
+    "light",
+    "primary-contrast"
+  );
 
   return new ImageResponse(
     (
