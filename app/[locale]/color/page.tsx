@@ -1,5 +1,4 @@
 import c from "classnames";
-import { type Metadata } from "next";
 
 import { Balancer } from "client/Balancer";
 import { Separator } from "client/radix/Separator";
@@ -11,7 +10,7 @@ import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";
 import styles from "./page.module.scss";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "color",
 };
 

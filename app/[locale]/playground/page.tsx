@@ -1,12 +1,11 @@
 import fs from "fs/promises";
-import { type Metadata } from "next";
 import path from "path";
 
 import { PlaygroundItem } from "./PlaygroundItem";
 import styles from "./page.module.scss";
 import { PlaygroundConfigSchema, type Playground } from "./utils";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "playground",
 };
 
