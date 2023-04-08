@@ -157,6 +157,7 @@ $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
   display: grid;
   place-content: center;
   width: 35px;
+  font-family: monospace;
 }
 
 .popoverArrow {

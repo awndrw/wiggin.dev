@@ -12,7 +12,6 @@ import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { env } from "constants/env";
-import { hyenaSunrise } from "fonts/hyena";
 import { type Locale } from "i18n/constants";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
@@ -65,7 +64,7 @@ export default async function Layout({
           content={getHexForColor(hue, DEFAULT_MODE, "primary")}
         />
       </head>
-      <body className={hyenaSunrise.className} data-hue={hue}>
+      <body data-hue={hue}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NM2JLN5"
