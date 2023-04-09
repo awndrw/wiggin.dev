@@ -2,21 +2,24 @@
 @use "theme/scss/size";
 
 .container {
-  position: fixed;
-  bottom: size.$spacing-large;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
   z-index: 2;
-  border-radius: size.$border-radius-small;
-  overflow: hidden;
+  position: fixed;
+  inset: auto 0 size.$spacing-large;
+  display: grid;
+  place-content: center;
   animation-name: slideInFromBottom;
   animation-duration: 2500ms;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.actionBar {
+  display: flex;
+  justify-content: center;
+  border-radius: size.$border-radius-small;
+  overflow: hidden;
   flex-direction: row;
   align-items: center;
   gap: 8px;
@@ -26,13 +29,13 @@
 
 @keyframes slideInFromBottom {
   0% {
-    transform: translate(-50%, 300%);
+    transform: translateY(300%);
   }
   65% {
-    transform: translate(-50%, 300%);
+    transform: translateY(300%);
   }
   100% {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
 }
 
