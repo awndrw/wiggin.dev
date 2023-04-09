@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Separator } from "client/radix/Separator";
 import { BackHomeLink } from "components/ActionBar/BackHomeLink";
+import { Separator } from "components/external/radix/Separator";
 import { HUES } from "theme/constants";
 
 import styles from "./ActionBar.module.scss";

@@ -1,10 +1,10 @@
 "use client";
 
-import * as Toast from "@radix-ui/react-toast";
 import c from "classnames";
 import React from "react";
 
-import * as VisuallyHidden from "client/radix/VisuallyHidden";
+import * as Toast from "components/external/radix/Toast";
+import * as VisuallyHidden from "components/external/radix/VisuallyHidden";
 import { flexaMono } from "fonts/flexa";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 

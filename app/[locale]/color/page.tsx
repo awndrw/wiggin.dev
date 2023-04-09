@@ -1,10 +1,10 @@
 import c from "classnames";
 
-import { Balancer } from "client/Balancer";
-import { Separator } from "client/radix/Separator";
+import { Balancer } from "components/Balancer";
 import { ExternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Separator } from "components/external/radix/Separator";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 
 import { LightnessScale, ChromaScale, HueScale } from "./Scale";

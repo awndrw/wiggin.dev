@@ -8,9 +8,9 @@ import {
   type Icon as FeatherIcon,
 } from "react-feather";
 
-import * as Dialog from "client/radix/Dialog";
-import * as Tooltip from "client/radix/Tooltip";
 import { Icon } from "components/Icon";
+import * as Dialog from "components/external/radix/Dialog";
+import * as Tooltip from "components/external/radix/Tooltip";
 
 import styles from "./PlaygroundItem.module.scss";
 import { WarningDialog } from "./WarningDialog";

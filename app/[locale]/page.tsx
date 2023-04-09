@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import React from "react";
 
-import { Balancer } from "client/Balancer";
 import { AnimatedPath } from "components/AnimatedPath";
+import { Balancer } from "components/Balancer";
 import { HueSelectButton } from "components/HueSelectButton";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";

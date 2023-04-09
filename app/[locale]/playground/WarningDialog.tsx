@@ -3,8 +3,8 @@ import { type Route } from "next";
 import Link from "next/link";
 import { AlertTriangle } from "react-feather";
 
-import * as Dialog from "client/radix/Dialog";
 import { Icon } from "components/Icon";
+import * as Dialog from "components/external/radix/Dialog";
 
 import styles from "./WarningDialog.module.scss";
 

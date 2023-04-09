@@ -7,10 +7,10 @@ import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import React from "react";
 
-import { ReactWrapProvider } from "client/ReactWrapProvider";
-import { Provider as TooltipProvider } from "client/radix/Tooltip";
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
+import { ReactWrapProvider } from "components/external/ReactWrapProvider";
+import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { env } from "constants/env";
 import { type Locale } from "i18n/constants";
 import { StorageKey } from "store/constants";

@@ -1,7 +1,7 @@
 import cx from "classnames";
 import React from "react";
 
-import { Separator } from "client/radix/Separator";
+import { Separator } from "components/external/radix/Separator";
 
 import styles from "./Section.module.scss";
 
