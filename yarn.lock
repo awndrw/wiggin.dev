@@ -4348,18 +4348,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^2.13.0-beta.2":
-  version: 2.13.0-beta.2
-  resolution: "next-intl@npm:2.13.0-beta.2"
+"next-intl@npm:2.14.0-beta.2":
+  version: 2.14.0-beta.2
+  resolution: "next-intl@npm:2.14.0-beta.2"
   dependencies:
     "@formatjs/intl-localematcher": 0.2.32
     negotiator: 0.6.3
     server-only: 0.0.1
-    use-intl: 2.13.0-beta.2
+    use-intl: ^2.13.0
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 329141f1e1281d6629c25faa9ed526d973d6b422047b7d01bd15de4094f091c8b9924b441370f233b7caf7b87f940067f02d403e8eae750954fda63961acc269
+  checksum: bf1b360aa8b52ae216983e5b20cc948c90c4e893e5459d28d21c0f2c4c0715210e3a768be742bc5c8ae1d8e5d0dfcf92cd6a743c3fcfa6f3ae0b6c9a4ed123a8
   languageName: node
   linkType: hard
 
@@ -4825,7 +4825,7 @@ __metadata:
     jotai: ^2.0.3
     loader-utils: ^3.2.1
     next: ^13.3.0
-    next-intl: ^2.13.0-beta.2
+    next-intl: 2.14.0-beta.2
     postcss: ^8.4.21
     postcss-combine-media-query: ^1.0.1
     postcss-flexbugs-fixes: ^5.0.2
@@ -6287,15 +6287,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:2.13.0-beta.2":
-  version: 2.13.0-beta.2
-  resolution: "use-intl@npm:2.13.0-beta.2"
+"use-intl@npm:^2.13.0":
+  version: 2.13.1
+  resolution: "use-intl@npm:2.13.1"
   dependencies:
     "@formatjs/ecma402-abstract": ^1.11.4
     intl-messageformat: ^9.3.18
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 9de287e40a523da02d1134e554f802a546e8e5a57ae567957ed96a870e92003644bb439089494bb6e511d343c8c4922668dddbcf5a1ea592ff8a18aabfcfb378
+  checksum: 518d6a1bd0c9f4d8c2a1c5e1da5c9aa260931a5a430e4dc39712a1b6a53f954567faedcdea3c4efdaf5f477610f3ed2b449db85656f99a6c3fbb21d5d4fc4c61
   languageName: node
   linkType: hard
 

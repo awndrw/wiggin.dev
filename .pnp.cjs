@@ -64,7 +64,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jotai", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.3"],\
             ["loader-utils", "npm:3.2.1"],\
             ["next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:13.3.0"],\
-            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.13.0-beta.2"],\
+            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.14.0-beta.2"],\
             ["postcss", "npm:8.4.21"],\
             ["postcss-combine-media-query", "npm:1.0.1"],\
             ["postcss-flexbugs-fixes", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.0.2"],\
@@ -6234,17 +6234,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["next-intl", [\
-        ["npm:2.13.0-beta.2", {\
-          "packageLocation": "./.yarn/cache/next-intl-npm-2.13.0-beta.2-878e8ac77d-329141f1e1.zip/node_modules/next-intl/",\
+        ["npm:2.14.0-beta.2", {\
+          "packageLocation": "./.yarn/cache/next-intl-npm-2.14.0-beta.2-5b32d933aa-bf1b360aa8.zip/node_modules/next-intl/",\
           "packageDependencies": [\
-            ["next-intl", "npm:2.13.0-beta.2"]\
+            ["next-intl", "npm:2.14.0-beta.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.13.0-beta.2", {\
-          "packageLocation": "./.yarn/__virtual__/next-intl-virtual-97355ba93b/0/cache/next-intl-npm-2.13.0-beta.2-878e8ac77d-329141f1e1.zip/node_modules/next-intl/",\
+        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.14.0-beta.2", {\
+          "packageLocation": "./.yarn/__virtual__/next-intl-virtual-9970995dc9/0/cache/next-intl-npm-2.14.0-beta.2-5b32d933aa-bf1b360aa8.zip/node_modules/next-intl/",\
           "packageDependencies": [\
-            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.13.0-beta.2"],\
+            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.14.0-beta.2"],\
             ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["@types/next", null],\
             ["@types/react", "npm:18.0.33"],\
@@ -6252,7 +6252,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:13.3.0"],\
             ["react", "npm:18.2.0"],\
             ["server-only", "npm:0.0.1"],\
-            ["use-intl", "virtual:97355ba93b7105d9e307b2ee8a571aa944e13ec3718f034a2eb27e52cfb03f9c4f59acfa0ff610e6adcb10522122943bc78ff93e54b5151fc3881eac0ea2cd41#npm:2.13.0-beta.2"]\
+            ["use-intl", "virtual:9970995dc9cbc19fd5f6ab084f7a927f7445ec8e80c6bd37abfe604b91715ad02530c0a00dcdcbfdcb1922b81e1b8a2aaad91a0f22a56fde2ff902529bde5ac9#npm:2.13.1"]\
           ],\
           "packagePeers": [\
             "@types/next",\
@@ -6712,7 +6712,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jotai", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.3"],\
             ["loader-utils", "npm:3.2.1"],\
             ["next", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:13.3.0"],\
-            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.13.0-beta.2"],\
+            ["next-intl", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.14.0-beta.2"],\
             ["postcss", "npm:8.4.21"],\
             ["postcss-combine-media-query", "npm:1.0.1"],\
             ["postcss-flexbugs-fixes", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.0.2"],\
@@ -8725,17 +8725,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["use-intl", [\
-        ["npm:2.13.0-beta.2", {\
-          "packageLocation": "./.yarn/cache/use-intl-npm-2.13.0-beta.2-1c77d9287d-9de287e40a.zip/node_modules/use-intl/",\
+        ["npm:2.13.1", {\
+          "packageLocation": "./.yarn/cache/use-intl-npm-2.13.1-32394c4a99-518d6a1bd0.zip/node_modules/use-intl/",\
           "packageDependencies": [\
-            ["use-intl", "npm:2.13.0-beta.2"]\
+            ["use-intl", "npm:2.13.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:97355ba93b7105d9e307b2ee8a571aa944e13ec3718f034a2eb27e52cfb03f9c4f59acfa0ff610e6adcb10522122943bc78ff93e54b5151fc3881eac0ea2cd41#npm:2.13.0-beta.2", {\
-          "packageLocation": "./.yarn/__virtual__/use-intl-virtual-58aecb71f3/0/cache/use-intl-npm-2.13.0-beta.2-1c77d9287d-9de287e40a.zip/node_modules/use-intl/",\
+        ["virtual:9970995dc9cbc19fd5f6ab084f7a927f7445ec8e80c6bd37abfe604b91715ad02530c0a00dcdcbfdcb1922b81e1b8a2aaad91a0f22a56fde2ff902529bde5ac9#npm:2.13.1", {\
+          "packageLocation": "./.yarn/__virtual__/use-intl-virtual-ad7b50313c/0/cache/use-intl-npm-2.13.1-32394c4a99-518d6a1bd0.zip/node_modules/use-intl/",\
           "packageDependencies": [\
-            ["use-intl", "virtual:97355ba93b7105d9e307b2ee8a571aa944e13ec3718f034a2eb27e52cfb03f9c4f59acfa0ff610e6adcb10522122943bc78ff93e54b5151fc3881eac0ea2cd41#npm:2.13.0-beta.2"],\
+            ["use-intl", "virtual:9970995dc9cbc19fd5f6ab084f7a927f7445ec8e80c6bd37abfe604b91715ad02530c0a00dcdcbfdcb1922b81e1b8a2aaad91a0f22a56fde2ff902529bde5ac9#npm:2.13.1"],\
             ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
             ["@types/react", "npm:18.0.33"],\
             ["intl-messageformat", "npm:9.13.0"],\

@@ -9,6 +9,6 @@ export default createIntlMiddleware({
 
 export const config = {
   matcher: [
-    "/((?!api|.*\\..*|_next|opengraph-image).*)", // Match all routes except api, files, _next, and og
+    "/((?!api|.*\\..*|_next|opengraph-image|sitemap|robots).*)", // Match all routes except api, files, _next, and og
   ],
 };
