@@ -42,4 +42,4 @@ jobs:
           git checkout main
           git merge development
           git tag v${{ steps.bump.outputs.VERSION }}
-          HUSKY=0 git push --all --tags
+          HUSKY=0 git push --atomic origin main development v${{ steps.bump.outputs.VERSION }}
