@@ -24,6 +24,7 @@ export default function Page() {
     <PageWrapper className={styles.page}>
       <Section type="accent" fullHeight>
         <Link
+          // @ts-expect-error - Linking to file in /public is not supported
           href="/AndrewWigginResume.pdf"
           aria-label="Resume"
           className={styles.link}
