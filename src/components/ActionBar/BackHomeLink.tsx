@@ -1,9 +1,8 @@
 "use client";
 
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
-import { useRouter } from "next/navigation";
-import { Link } from "next-intl";
-import { usePathname } from "next-intl/client";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { ArrowLeft, Home } from "react-feather";
 
 import { ActionBarButton } from "components/ActionBar/ActionBarButton";
@@ -32,7 +31,6 @@ export function BackHomeLink({ children }: { children: React.ReactNode }) {
             </AccessibleIcon>
           </button>
         ) : (
-          // @ts-expect-error: typed routes don't work yet
           <Link href="/">
             <AccessibleIcon label="Home">
               <Icon icon={Home} />

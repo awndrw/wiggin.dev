@@ -3,10 +3,9 @@ import React from "react";
 
 import { datadog, init } from "analytics";
 import { env } from "constants/env";
-import { type Locale } from "i18n/constants";
 import { hueAtom, modeAtom } from "store";
 
-export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
+export const Analytics: React.FC = () => {
   const hue = useAtomValue(hueAtom);
   const mode = useAtomValue(modeAtom);
 
@@ -14,9 +13,8 @@ export const Analytics: React.FC<{ locale: Locale }> = ({ locale }) => {
     datadog.setRumGlobalContext({
       hue,
       mode,
-      locale,
     });
-  }, [hue, mode, locale]);
+  }, [hue, mode]);
 
   React.useEffect(() => {
     init();

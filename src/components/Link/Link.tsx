@@ -1,4 +1,3 @@
-import { type Route } from "next";
 import NextLink from "next/link";
 import React from "react";
 import { ArrowRight, ArrowUpRight } from "react-feather";
@@ -7,20 +6,9 @@ import {
   Interaction,
   type InteractionComponentProps,
 } from "components/Interaction";
-import { type Locale } from "i18n/constants";
 
-type NextLinkHref<T extends string = string> = T extends "/"
-  ? "/"
-  : `/${Locale}${T}` extends Route<`/${Locale}${T}`>
-  ? T
-  : never;
-
-export type InternalLinkProps<T extends string = string> = Omit<
-  InteractionComponentProps<typeof NextLink<T>>,
-  "href"
-> & {
-  href: NextLinkHref<T>;
-};
+export type InternalLinkProps<T extends string = string> =
+  InteractionComponentProps<typeof NextLink<T>>;
 
 export function InternalLink<T extends string = string>({
   children,
@@ -28,7 +16,6 @@ export function InternalLink<T extends string = string>({
 }: InternalLinkProps<T>) {
   const Link = NextLink<T>;
   return (
-    // @ts-expect-error: typed routes do not support internationalization
     <Interaction component={Link} icon={ArrowRight} {...props}>
       {children}
     </Interaction>

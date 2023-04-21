@@ -25,7 +25,7 @@ const getPlaygroundItemFromDirname = async (
 
 export default async function Page() {
   const playgroundDirs = await fs
-    .readdir(path.resolve("./app/playground"), {
+    .readdir(path.resolve("./."), {
       withFileTypes: true,
     })
     .then((directories) =>

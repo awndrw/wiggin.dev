@@ -1,7 +1,5 @@
 const path = require("path");
 
-const withNextIntl = require("next-intl/plugin")();
-
 const getLocalIdent = require("./scripts/getLocalIdent");
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
@@ -61,4 +59,4 @@ const config = {
   },
 };
 
-module.exports = withNextIntl(config);
+module.exports = config;

@@ -1,10 +1,6 @@
 import { Partytown } from "@builder.io/partytown/react";
-import { type Metadata } from "next";
 import { cookies as nextCookies } from "next/headers";
-import { notFound } from "next/navigation";
 import Script from "next/script";
-import { useLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
 import React from "react";
 
 import { ActionBar } from "components/ActionBar";
@@ -12,7 +8,7 @@ import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "components/external/ReactWrapProvider";
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { env } from "constants/env";
-import { type Locale } from "i18n/constants";
+import { url } from "constants/url";
 import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
 import { DEFAULT_MODE } from "theme/constants";
@@ -22,33 +18,40 @@ import { getServerHue } from "utils/getServerHue";
 
 import "./globals.scss";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Metadata");
-
-  return {
-    description: t("description"),
-  };
-}
+export const metadata = {
+  description:
+    "Andrew Wiggin is a brooklyn based design engineer passionate about design systems, motion design and accessibility.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.webmanifest",
+  metadataBase: url,
+  openGraph: {
+    type: "website",
+    title: "Andrew Wiggin",
+    description: "",
+  },
+  twitter: {
+    card: "summary",
+    site: "@wiggindev",
+  },
+};
 
 export default async function Layout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
 }) {
-  const locale = useLocale();
-
-  if (params.locale !== locale) {
-    notFound();
-  }
-
   const cookies = nextCookies();
   const hue = getServerHue(cookies);
   const isAndrew = Boolean(cookies.get(StorageKey.IS_ANDREW)?.value);
 
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <Partytown debug={!env.isProduction} forward={["dataLayer.push"]} />
         <Script id={getId()} type="text/partytown">
@@ -78,7 +81,7 @@ export default async function Layout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
-        {!isAndrew && <Analytics locale={locale} />}
+        {!isAndrew && <Analytics />}
       </body>
     </html>
   );

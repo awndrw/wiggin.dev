@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import React from "react";
 
 import { AnimatedPath } from "components/AnimatedPath";
@@ -22,8 +21,6 @@ export const metadata = {
 };
 
 export default function Page() {
-  const t = useTranslations("Home");
-
   const sectionTwoId = getId();
   const sectionThreeId = getId();
 
@@ -31,7 +28,7 @@ export default function Page() {
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
       <Section type="accent" fullHeight bottomSeparator>
         <h1>
-          {t("headline")}
+          Hi, I&rsquo;m Andrew
           <Logo
             className={styles.icon}
             aria-hidden
@@ -39,7 +36,10 @@ export default function Page() {
             weight="light"
           />
         </h1>
-        <Balancer>{t("bio")}</Balancer>
+        <Balancer>
+          I&rsquo;m a brooklyn based design engineer passionate about design
+          systems, motion design and accessibility.
+        </Balancer>
         <AnimatedPath
           className={styles.scribbleOne}
           viewBox="0 0 862.83 1809.95"
@@ -50,19 +50,14 @@ export default function Page() {
       </Section>
       <Section id={sectionTwoId} fullHeight bottomSeparator>
         <Balancer>
-          {t.rich("about", {
-            mellon: (chunks) => (
-              <ExternalLink href="https://mellon.org">{chunks}</ExternalLink>
-            ),
-            resume: (chunks) => (
-              <InternalLink href="/resume">{chunks}</InternalLink>
-            ),
-            email: (chunks) => (
-              <ExternalLink href="mailto:andrew@wiggin.dev">
-                {chunks}
-              </ExternalLink>
-            ),
-          })}
+          I explore unique ways to tell a story on the web. These days, I do
+          most of my tinkering at the{" "}
+          <ExternalLink href="https://mellon.org">
+            Mellon Foundation
+          </ExternalLink>
+          . Check out my <InternalLink href="/resume">resume</InternalLink> or
+          reach out via{" "}
+          <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
         </Balancer>
         <AnimatedPath
           className={styles.scribbleTwo}
@@ -75,14 +70,13 @@ export default function Page() {
       </Section>
       <Section id={sectionThreeId} fullHeight>
         <Balancer>
-          {t.rich("how_it_works", {
-            any_hue: (chunks) => <HueSelectButton>{chunks}</HueSelectButton>,
-            docs: (chunks) => (
-              <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
-                {chunks}
-              </ExternalLink>
-            ),
-          })}
+          These colors use oklch to create an accessible color palette with{" "}
+          <HueSelectButton>any color</HueSelectButton>. Interested in how it
+          works? Check out{" "}
+          <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+            the docs
+          </ExternalLink>
+          .
         </Balancer>
       </Section>
     </PageWrapper>
