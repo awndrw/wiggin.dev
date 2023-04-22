@@ -9,7 +9,8 @@
     "lint": "next lint",
     "format": "next lint --fix",
     "postinstall": "husky install",
-    "partytown": "partytown copylib public/~partytown"
+    "partytown": "partytown copylib public/~partytown",
+    "upload-sourcemaps": "node ./scripts/uploadSourcemaps.js"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.8.0",
@@ -31,6 +32,7 @@
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "critters": "^0.0.16",
+    "dotenv": "^16.0.3",
     "globby": "^13.1.4",
     "jotai": "^2.0.4",
     "next": "^13.3.0",

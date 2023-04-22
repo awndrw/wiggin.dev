@@ -14,6 +14,7 @@ const config = {
     scrollRestoration: true,
     typedRoutes: true,
   },
+  productionBrowserSourceMaps: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
   },
