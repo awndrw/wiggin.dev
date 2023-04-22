@@ -9,7 +9,6 @@ import { ReactWrapProvider } from "components/external/ReactWrapProvider";
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { env } from "constants/env";
 import { url } from "constants/url";
-import { StorageKey } from "store/constants";
 import { createStyles } from "theme";
 import { DEFAULT_MODE } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
@@ -48,7 +47,6 @@ export default async function Layout({
 }) {
   const cookies = nextCookies();
   const hue = getServerHue(cookies);
-  const isAndrew = Boolean(cookies.get(StorageKey.IS_ANDREW)?.value);
 
   return (
     <html lang="en">
@@ -86,7 +84,7 @@ export default async function Layout({
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>
         <ActionBar />
-        {!isAndrew && <Analytics />}
+        <Analytics />
       </body>
     </html>
   );
