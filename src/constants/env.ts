@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const EnvSchema = z.enum(["development", "preview", "preprod", "production"]);
+const EnvSchema = z.enum(["development", "preview", "production"]);
 type Env = z.infer<typeof EnvSchema>;
 
 const currentEnv = EnvSchema.parse(

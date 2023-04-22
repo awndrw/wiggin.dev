@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "scripts": {
     "dev": "yarn partytown && next dev",
@@ -9,7 +9,8 @@
     "lint": "next lint",
     "format": "next lint --fix",
     "postinstall": "husky install",
-    "partytown": "partytown copylib public/~partytown"
+    "partytown": "partytown copylib public/~partytown",
+    "upload-sourcemaps": "node ./scripts/uploadSourcemaps.js"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.8.0",
@@ -26,10 +27,12 @@
     "@radix-ui/react-visually-hidden": "^1.0.2",
     "@react-spring/web": "^9.7.2",
     "@use-gesture/react": "^10.2.26",
+    "@vercel/analytics": "^1.0.0",
     "better-color-tools": "^0.12.3",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "critters": "^0.0.16",
+    "dotenv": "^16.0.3",
     "globby": "^13.1.4",
     "jotai": "^2.0.4",
     "next": "^13.3.0",

@@ -1,5 +1,7 @@
 import { datadogRum } from "@datadog/browser-rum";
+import va from "@vercel/analytics";
 
+import { type ActionMap, type ActionName } from "analytics/constants";
 import { env } from "constants/env";
 import { host } from "constants/url";
 import { mutate } from "utils/mutate";
@@ -54,3 +56,12 @@ export const init = () => {
     silentMultipleInit: true,
   });
 };
+
+export function trackAction<Name extends ActionName>(
+  ...[name, props]: ActionMap[Name] extends never
+    ? [Name]
+    : [Name, ActionMap[Name]]
+) {
+  va.track(name, props);
+  datadog.addAction(name, props);
+}

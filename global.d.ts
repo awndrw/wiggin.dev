@@ -1,7 +1,8 @@
 import "@total-typescript/ts-reset";
+import type React from "react";
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-type Messages = typeof import("./content/en.json");
-declare global {
-  type IntlMessages = Messages;
+declare module "react" {
+  function forwardRef<T, P = object>(
+    render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
+  ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
 }

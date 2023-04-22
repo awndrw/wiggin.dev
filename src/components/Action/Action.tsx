@@ -1,26 +1,27 @@
-"use client";
-
 import { Slot } from "@radix-ui/react-slot";
 import React from "react";
 
-import { type ActionName } from "analytics/constants";
-import { useAction } from "analytics/useAction";
+import { trackAction } from "analytics";
+import { type ActionMap, type ActionName } from "analytics/constants";
 
-export interface Action {
-  name: ActionName;
-  [key: string]: unknown;
-}
+export type ActionProps<Name extends ActionName> = ActionMap[Name] extends never
+  ? {
+      name: Name;
+    }
+  : {
+      name: Name;
+    } & ActionMap[Name];
 
-export const Action = React.forwardRef<
-  HTMLElement,
-  React.PropsWithChildren<Action>
->(({ children, ...props }, ref) => {
-  const trigger = useAction(props);
-
+function ActionImpl<Name extends ActionName>(
+  { children, name, ...props }: React.PropsWithChildren<ActionProps<Name>>,
+  ref: React.ForwardedRef<HTMLHtmlElement>
+) {
   return (
-    <Slot ref={ref} onClick={trigger}>
+    // @ts-expect-error Poorly typed Action data
+    <Slot ref={ref} onClick={() => trackAction(name, props)}>
       {children}
     </Slot>
   );
-});
-Action.displayName = "Action";
+}
+
+export const Action = React.forwardRef(ActionImpl);

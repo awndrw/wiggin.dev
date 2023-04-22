@@ -2,8 +2,8 @@ import { a } from "@react-spring/web";
 import { useAtom } from "jotai";
 import React from "react";
 
+import { trackAction } from "analytics";
 import { ActionName } from "analytics/constants";
-import { Action } from "components/Action";
 import { hueAtom } from "store";
 import { type Hue } from "theme/constants";
 import useTimedSpring from "utils/useTimedSpring";
@@ -19,28 +19,22 @@ export function HueSelector({ hue }: { hue: Hue }) {
     if (hue === currentHue) {
       trigger({ rotation: -4, x: -4 });
     } else {
+      trackAction(ActionName.SET_HUE, { hue, preset: true });
       trigger({ y: 3 });
     }
     setHue(hue);
   };
 
   return (
-    <Action
-      name={ActionName.SET_HUE}
-      hue={hue}
-      preset={true}
-      canceled={hue === currentHue}
-    >
-      <ActionBarButton data-hue={hue}>
-        <a.button
-          style={style}
-          className={styles.hueSelector}
-          // TODO: figure out aria-pressed without state
-          aria-pressed={hue === currentHue}
-          aria-label={`Hue: ${hue}`}
-          onClick={onClick}
-        />
-      </ActionBarButton>
-    </Action>
+    <ActionBarButton data-hue={hue}>
+      <a.button
+        style={style}
+        className={styles.hueSelector}
+        // TODO: figure out aria-pressed without state
+        aria-pressed={hue === currentHue}
+        aria-label={`Hue: ${hue}`}
+        onClick={onClick}
+      />
+    </ActionBarButton>
   );
 }

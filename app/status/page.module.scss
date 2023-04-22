@@ -1,0 +1,38 @@
+@use "theme/scss/color";
+@use "theme/scss/size";
+
+.page {
+  & code {
+    font-size: 0.6em;
+    color: color.$accent-container;
+    background-color: color.$accent-container-contrast;
+    border-radius: 0.2em;
+    padding: 0.05em 0.15em;
+  }
+}
+
+.section {
+  padding: calc(2 * #{size.$spacing-large}) size.$spacing-large;
+}
+
+.icon {
+  margin-left: 0.2em;
+  width: 0.65em;
+  height: 0.65em;
+  stroke: color.$accent-primary;
+  fill: none;
+  animation: spin 25s linear infinite;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
