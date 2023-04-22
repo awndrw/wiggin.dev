@@ -8,7 +8,7 @@ import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "components/external/ReactWrapProvider";
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { env } from "constants/env";
-import { url } from "constants/url";
+import { host, url } from "constants/url";
 import { createStyles } from "theme";
 import { DEFAULT_MODE } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
@@ -18,6 +18,10 @@ import { getServerHue } from "utils/getServerHue";
 import "./globals.scss";
 
 export const metadata = {
+  title: {
+    default: host,
+    template: `${host}/%s`,
+  },
   description:
     "Andrew Wiggin is a brooklyn based design engineer passionate about design systems, motion design and accessibility.",
   icons: {

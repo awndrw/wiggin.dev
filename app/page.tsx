@@ -9,18 +9,10 @@ import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
-import { host } from "constants/url";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getId } from "utils/getId";
 
 import styles from "./page.module.scss";
-
-export const metadata = {
-  title: {
-    default: host,
-    template: `${host}/%s`,
-  },
-};
 
 export default function Page() {
   const sectionTwoId = getId();
