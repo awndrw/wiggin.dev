@@ -5,7 +5,6 @@ import React from "react";
 
 import { trackAction } from "analytics";
 import { ActionName } from "analytics/constants";
-import { Action } from "components/Action";
 import { customHuePopoverAtom, hueAtom } from "store";
 import { isHue } from "theme/constants";
 
@@ -19,28 +18,26 @@ export const CustomHueSelector: React.FC = () => {
 
   return (
     <Popover.Root open={showPopover} onOpenChange={setShowPopover}>
-      <Action name={ActionName.TOGGLE_HUE_SLIDER} source="actionbar">
-        <ActionBarButton className={styles.wrapper}>
-          <Popover.Trigger
-            id={triggerId}
-            aria-label="Custom hue selector"
-            className={styles.customHueSelector}
+      <ActionBarButton className={styles.wrapper}>
+        <Popover.Trigger
+          id={triggerId}
+          aria-label="Custom hue selector"
+          className={styles.customHueSelector}
+        >
+          <div
+            style={{ transform: `rotate(${hue}deg)` }}
+            className={styles.customHueSelectorIndicator}
           >
             <div
-              style={{ transform: `rotate(${hue}deg)` }}
-              className={styles.customHueSelectorIndicator}
-            >
-              <div
-                style={{ transform: `rotate(-${hue}deg)` }}
-                className={styles.customHueSelectorIndicatorInner}
-              />
-            </div>
-            <div className={styles.focusIndicator}>
-              <div className={styles.focusIndicatorInner} />
-            </div>
-          </Popover.Trigger>
-        </ActionBarButton>
-      </Action>
+              style={{ transform: `rotate(-${hue}deg)` }}
+              className={styles.customHueSelectorIndicatorInner}
+            />
+          </div>
+          <div className={styles.focusIndicator}>
+            <div className={styles.focusIndicatorInner} />
+          </div>
+        </Popover.Trigger>
+      </ActionBarButton>
       <Popover.Portal>
         <CustomHueSelectorPopover triggerId={triggerId} />
       </Popover.Portal>
