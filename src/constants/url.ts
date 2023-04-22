@@ -8,7 +8,7 @@ const DEVELOPMENT_HOST = "localhost:3000";
 
 export const host = env.isProduction
   ? PRODUCTION_HOST
-  : env.isPreprod
+  : process.env.IS_PREPROD
   ? PREPROD_HOST
   : env.isPreview
   ? PREVIEW_HOST
