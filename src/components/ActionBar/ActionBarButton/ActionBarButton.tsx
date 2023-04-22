@@ -4,16 +4,18 @@ import React from "react";
 
 import styles from "./ActionBarButton.module.scss";
 
-export interface ActionBarButtonProps {
+export interface ActionBarButtonProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   accentColor?: string;
 }
 
-export const ActionBarButton = React.forwardRef<
-  HTMLElement,
-  ActionBarButtonProps
->(({ children, className, accentColor, ...props }, ref) => {
+export const ActionBarButton = React.forwardRef(ActionBarButtonImpl);
+function ActionBarButtonImpl(
+  { children, className, accentColor, ...props }: ActionBarButtonProps,
+  ref: React.ForwardedRef<HTMLElement>
+) {
   return (
     <div
       className={c(styles.wrapper, className)}
@@ -26,5 +28,4 @@ export const ActionBarButton = React.forwardRef<
       </Slot>
     </div>
   );
-});
-ActionBarButton.displayName = "ActionBarButton";
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ActionName } from "analytics/constants";
+import { Action } from "components/Action";
 import { AnimatedPath } from "components/AnimatedPath";
 import { Balancer } from "components/Balancer";
 import { HueSelectButton } from "components/HueSelectButton";
@@ -73,9 +75,11 @@ export default function Page() {
           These colors use oklch to create an accessible color palette with{" "}
           <HueSelectButton>any color</HueSelectButton>. Interested in how it
           works? Check out{" "}
-          <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
-            the docs
-          </ExternalLink>
+          <Action name={ActionName.OPEN_DOCS}>
+            <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+              the docs
+            </ExternalLink>
+          </Action>
           .
         </Balancer>
       </Section>

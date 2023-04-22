@@ -19,7 +19,7 @@ export const HueSelectButton: React.FC<HueSelectButtonProps> = ({
   const setShowPopover = useSetAtom(customHuePopoverAtom);
 
   return (
-    <Action name={ActionName.TOGGLE_HUE_SLIDER} from="home">
+    <Action name={ActionName.TOGGLE_HUE_SLIDER} source="home">
       <Interaction
         component="span"
         role="button"
