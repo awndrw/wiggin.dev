@@ -6,10 +6,10 @@ import { Icon } from "components/Icon";
 
 import styles from "./Interaction.module.scss";
 
-type InteractionComponent = React.ComponentType | React.ElementType;
+type InteractionComponent = React.ElementType;
 
 export type InteractionComponentProps<C extends InteractionComponent> =
-  React.ComponentProps<C>;
+  React.ComponentPropsWithRef<C>;
 
 export type InteractionProps<C extends InteractionComponent> =
   InteractionComponentProps<C> & {
@@ -17,7 +17,8 @@ export type InteractionProps<C extends InteractionComponent> =
     icon: FeatherIcon;
   };
 
-const InteractionImpl = <C extends InteractionComponent>(
+export const Interaction = React.forwardRef(InteractionImpl);
+function InteractionImpl<C extends InteractionComponent>(
   {
     component: Component,
     icon,
@@ -25,8 +26,8 @@ const InteractionImpl = <C extends InteractionComponent>(
     className,
     ...props
   }: InteractionProps<C>,
-  ref: React.ForwardedRef<C>
-) => {
+  ref: React.ForwardedRef<React.ComponentRef<C>>
+) {
   return (
     <Component
       ref={ref}
@@ -37,10 +38,4 @@ const InteractionImpl = <C extends InteractionComponent>(
       <Icon icon={icon} className={styles.icon} aria-hidden focusable={false} />
     </Component>
   );
-};
-
-export const Interaction = React.forwardRef(InteractionImpl) as <
-  C extends InteractionComponent
->(
-  props: InteractionProps<C> & { ref?: React.ForwardedRef<C> }
-) => ReturnType<typeof InteractionImpl>;
+}
