@@ -1,5 +1,3 @@
-import cx from "classnames";
-
 import { ActionName } from "analytics/constants";
 import { Action } from "components/Action";
 import { Balancer } from "components/Balancer";
@@ -20,7 +18,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <PageWrapper className={cx(styles.page, tragedyDisplay.className)}>
+    <PageWrapper className={tragedyDisplay.className}>
       <Section fullHeight bottomSeparator type="accent">
         <h1>
           Status
