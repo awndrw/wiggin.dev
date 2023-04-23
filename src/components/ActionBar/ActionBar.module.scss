@@ -7,12 +7,6 @@
   inset: auto 0 size.$spacing-large;
   display: grid;
   place-content: center;
-  animation-name: slideInFromBottom;
-  animation-duration: 2500ms;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   pointer-events: none;
 }
 
@@ -27,18 +21,6 @@
   padding: 6px 10px;
   background-color: color.$accent-container-contrast;
   pointer-events: auto;
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(300%);
-  }
-  65% {
-    transform: translateY(300%);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .separator {
