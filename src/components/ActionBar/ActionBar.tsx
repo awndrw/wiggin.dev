@@ -9,7 +9,7 @@ import { CustomHueSelector } from "./CustomHueSelector";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { HueSelector } from "./HueSelector";
 
-export function ActionBar({ hues }: { hues: Hue[] }) {
+export function ActionBar({ presetHues }: { presetHues: Hue[] }) {
   return (
     <div className={styles.container}>
       <section className={styles.actionBar} aria-label="Action Bar">
@@ -21,7 +21,7 @@ export function ActionBar({ hues }: { hues: Hue[] }) {
           />
         </BackHomeLink>
         <div aria-label="Theme selector" style={{ display: "contents" }}>
-          {hues.map((hue) => (
+          {presetHues.map((hue) => (
             <HueSelector hue={hue} key={hue} />
           ))}
           <CustomHueSelector />
