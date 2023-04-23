@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import { trackAction } from "analytics";
+import { Action } from "analytics/constants";
 import { CopyToClipboard } from "components/CopyToClipboard";
 
 import styles from "./Item.module.scss";
@@ -16,17 +18,17 @@ export interface ItemProps {
 export const Item: React.FC<ItemProps> = ({ title, value }) => {
   return (
     <p>
-      {title}: <Tag>{value}</Tag>
+      {title}:{" "}
+      <CopyToClipboard content={value.toString()}>
+        <button
+          onClick={() =>
+            trackAction(Action.COPY_ENV_VAR, { name: title.toLowerCase() })
+          }
+          className={styles.tag}
+        >
+          <code>{value}</code>
+        </button>
+      </CopyToClipboard>
     </p>
-  );
-};
-
-const Tag: React.FC<{ children: Value }> = ({ children }) => {
-  return (
-    <CopyToClipboard content={children.toString()}>
-      <button className={styles.tag}>
-        <code>{children}</code>
-      </button>
-    </CopyToClipboard>
   );
 };

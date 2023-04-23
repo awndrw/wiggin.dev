@@ -46,12 +46,17 @@ export default function Page() {
         <Balancer>
           I explore unique ways to tell a story on the web. These days, I do
           most of my tinkering at the{" "}
-          <ExternalLink href="https://mellon.org">
-            Mellon Foundation
-          </ExternalLink>
+          <Trigger action={Action.LINK} from="home" to="mellon">
+            <ExternalLink href="https://mellon.org">
+              Mellon Foundation
+            </ExternalLink>
+          </Trigger>
           . Check out my <InternalLink href="/resume">resume</InternalLink> or
           reach out via{" "}
-          <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>.
+          <Trigger action={Action.LINK} from="home" to="email">
+            <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>
+          </Trigger>
+          .
         </Balancer>
         <AnimatedPath
           className={styles.scribbleTwo}
@@ -67,7 +72,7 @@ export default function Page() {
           These colors use oklch to create an accessible color palette with{" "}
           <HueSelectButton>any color</HueSelectButton>. Interested in how it
           works? Check out{" "}
-          <Trigger action={Action.OPEN_DOCS}>
+          <Trigger action={Action.LINK} from="home" to="docs">
             <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
               the docs
             </ExternalLink>

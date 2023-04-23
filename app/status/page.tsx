@@ -31,7 +31,7 @@ export default function Page() {
         </h1>
         <Balancer>
           Want to see what&rsquo;s going on behind the scenes? Check out{" "}
-          <Trigger action={Action.OPEN_DOCS}>
+          <Trigger action={Action.LINK} from="status" to="docs">
             <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
               the docs
             </ExternalLink>
