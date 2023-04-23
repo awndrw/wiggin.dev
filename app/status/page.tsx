@@ -1,10 +1,10 @@
-import { ActionName } from "analytics/constants";
-import { Action } from "components/Action";
+import { Action } from "analytics/constants";
 import { Balancer } from "components/Balancer";
 import { ExternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 
 import { AnalyticsSection } from "./AnalyticsSection";
@@ -31,11 +31,11 @@ export default function Page() {
         </h1>
         <Balancer>
           Want to see what&rsquo;s going on behind the scenes? Check out{" "}
-          <Action name={ActionName.OPEN_DOCS}>
+          <Trigger action={Action.OPEN_DOCS}>
             <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
               the docs
             </ExternalLink>
-          </Action>
+          </Trigger>
           .
         </Balancer>
       </Section>

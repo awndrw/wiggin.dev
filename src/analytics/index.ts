@@ -1,7 +1,7 @@
 import { datadogRum } from "@datadog/browser-rum";
 import va from "@vercel/analytics";
 
-import { type ActionMap, type ActionName } from "analytics/constants";
+import { type ActionMap, type Action } from "analytics/constants";
 import { env } from "constants/env";
 import { host } from "constants/url";
 import { mutate } from "utils/mutate";
@@ -57,7 +57,7 @@ export const init = () => {
   });
 };
 
-export function trackAction<Name extends ActionName>(
+export function trackAction<Name extends Action>(
   ...[name, props]: ActionMap[Name] extends never
     ? [Name]
     : [Name, ActionMap[Name]]
