@@ -1,18 +1,15 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 import { StorageKey } from "store/constants";
-import { parseHue, HueSchema } from "theme/constants";
-
-const getRandomHue = () => HueSchema.parse(Math.floor(Math.random() * 120));
+import { parseHue } from "theme/constants";
 
 export default function middleware(req: NextRequest) {
   const hueInPath = req.nextUrl.pathname.match(/^\/([0-9]{1,3})/)?.[1];
-  const hueCookie =
-    req.cookies.get(StorageKey.HUE_REDIRECT)?.value || undefined;
+  const hueCookie = req.cookies.get(StorageKey.HUE_REDIRECT)?.value;
 
   if (!hueInPath) {
     // direct to url – get hue cookie or random hue and rewrite to /[hue]/pathname
-    const hue = parseHue(hueCookie, getRandomHue());
+    const hue = parseHue(hueCookie);
     const url = req.nextUrl.clone();
     url.pathname = `/${hue}` + req.nextUrl.pathname;
     const res = NextResponse.rewrite(url);
@@ -31,6 +28,6 @@ export default function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next|robots|sitemap|manifest|favicon|icon|AndrewWigginResume).*)",
+    "/((?!api|_next|robots|sitemap|manifest|favicon|icon|AndrewWigginResume|apple-touch-icon).*)",
   ],
 };
