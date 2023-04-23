@@ -27,7 +27,6 @@ export default function Page() {
       <Section type="accent" fullHeight>
         <Trigger action={Action.DOWNLOAD_RESUME}>
           <Link
-            // @ts-expect-error - Linking to file in /public is not supported
             href="/AndrewWigginResume.pdf"
             aria-label="Resume"
             className={styles.link}

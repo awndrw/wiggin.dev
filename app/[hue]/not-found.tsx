@@ -1,4 +1,4 @@
-import { InternalLink } from "components/Link";
+import { InternalLink } from "components/Link/InternalLink";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 import { tragedyDisplay } from "fonts/tragedyDisplay";

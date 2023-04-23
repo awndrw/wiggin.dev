@@ -2,14 +2,14 @@ import React from "react";
 
 import { BackHomeLink } from "components/ActionBar/BackHomeLink";
 import { Separator } from "components/external/radix/Separator";
-import { HUES } from "theme/constants";
+import { type Hue } from "theme/constants";
 
 import styles from "./ActionBar.module.scss";
 import { CustomHueSelector } from "./CustomHueSelector";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { HueSelector } from "./HueSelector";
 
-export function ActionBar() {
+export function ActionBar({ hues }: { hues: Hue[] }) {
   return (
     <div className={styles.container}>
       <section className={styles.actionBar} aria-label="Action Bar">
@@ -21,7 +21,7 @@ export function ActionBar() {
           />
         </BackHomeLink>
         <div aria-label="Theme selector" style={{ display: "contents" }}>
-          {HUES.map((hue) => (
+          {hues.map((hue) => (
             <HueSelector hue={hue} key={hue} />
           ))}
           <CustomHueSelector />

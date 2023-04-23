@@ -1,4 +1,4 @@
-import previewPng from "./preview.png";
+import previewPng from "../10-things/preview.png";
 import { type PlaygroundConfig } from "../utils";
 
 export default {

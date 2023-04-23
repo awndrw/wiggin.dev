@@ -1,6 +1,7 @@
 import { setCookie } from "cookies-next";
 import { atom } from "jotai";
 
+import { StorageKey } from "store/constants";
 import { updateThemeColor } from "theme";
 import {
   DEFAULT_HUE,
@@ -56,7 +57,7 @@ export const hueAtom = atomWithLifecycle<Hue>(
         const hue = getHue(document.body);
         if (hue === null) return;
         setHue(hue);
-        setCookie("hue", hue, { maxAge: 2_592_000 });
+        setCookie(StorageKey.HUE, hue);
         updateThemeColor();
       }
     });
