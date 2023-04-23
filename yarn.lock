@@ -14,15 +14,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/partytown@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@builder.io/partytown@npm:0.8.0"
-  bin:
-    partytown: bin/partytown.cjs
-  checksum: 98f38806afad78d3a8b1ff9610462cdfcc0b31d5e039bc77617bc33d15debe63a803669da36d9e0d98e693f6f7cc5fef1b0f3d0fd11f45ca1c0b3bc8fdf75a22
-  languageName: node
-  linkType: hard
-
 "@csstools/cascade-layer-name-parser@npm:^1.0.2":
   version: 1.0.2
   resolution: "@csstools/cascade-layer-name-parser@npm:1.0.2"
@@ -4686,7 +4677,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@builder.io/partytown": ^0.8.0
     "@csstools/postcss-oklab-function": ^2.2.1
     "@datadog/browser-rum": ^4.39.0
     "@radix-ui/react-accessible-icon": ^1.0.2

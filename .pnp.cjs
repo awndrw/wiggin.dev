@@ -28,7 +28,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@builder.io/partytown", "npm:0.8.0"],\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.2.1"],\
             ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.39.0"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\
@@ -92,15 +91,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@babel/runtime", "npm:7.20.7"],\
             ["regenerator-runtime", "npm:0.13.11"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@builder.io/partytown", [\
-        ["npm:0.8.0", {\
-          "packageLocation": "./.yarn/cache/@builder.io-partytown-npm-0.8.0-becdd03c7d-98f38806af.zip/node_modules/@builder.io/partytown/",\
-          "packageDependencies": [\
-            ["@builder.io/partytown", "npm:0.8.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6529,7 +6519,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["portfolio", "workspace:."],\
-            ["@builder.io/partytown", "npm:0.8.0"],\
             ["@csstools/postcss-oklab-function", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.2.1"],\
             ["@datadog/browser-rum", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:4.39.0"],\
             ["@radix-ui/react-accessible-icon", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:1.0.2"],\

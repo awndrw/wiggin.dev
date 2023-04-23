@@ -4,7 +4,7 @@ import { useAtom, useAtomValue } from "jotai";
 import React from "react";
 
 import { trackAction } from "analytics";
-import { ActionName } from "analytics/constants";
+import { Action } from "analytics/constants";
 import { customHuePopoverAtom, hueAtom } from "store";
 import { isHue } from "theme/constants";
 
@@ -60,7 +60,7 @@ function CustomHueSelectorPopoverImpl(
   const onSet = (value: number) => {
     if (!isHue(value)) return;
     setHue(value);
-    trackAction(ActionName.SET_HUE, { hue: value, preset: false });
+    trackAction(Action.SET_HUE, { hue: value, preset: false });
   };
 
   return (

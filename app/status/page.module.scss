@@ -1,16 +1,6 @@
 @use "theme/scss/color";
 @use "theme/scss/size";
 
-.page {
-  & code {
-    font-size: 0.6em;
-    color: color.$accent-container;
-    background-color: color.$accent-container-contrast;
-    border-radius: 0.2em;
-    padding: 0.05em 0.15em;
-  }
-}
-
 .section {
   padding: calc(2 * #{size.$spacing-large}) size.$spacing-large;
 }

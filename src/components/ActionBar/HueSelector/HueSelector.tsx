@@ -3,7 +3,7 @@ import { useAtom } from "jotai";
 import React from "react";
 
 import { trackAction } from "analytics";
-import { ActionName } from "analytics/constants";
+import { Action } from "analytics/constants";
 import { hueAtom } from "store";
 import { type Hue } from "theme/constants";
 import useTimedSpring from "utils/useTimedSpring";
@@ -19,7 +19,7 @@ export function HueSelector({ hue }: { hue: Hue }) {
     if (hue === currentHue) {
       trigger({ rotation: -4, x: -4 });
     } else {
-      trackAction(ActionName.SET_HUE, { hue, preset: true });
+      trackAction(Action.SET_HUE, { hue, preset: true });
       trigger({ y: 3 });
     }
     setHue(hue);

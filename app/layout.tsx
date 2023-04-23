@@ -1,18 +1,14 @@
-import { Partytown } from "@builder.io/partytown/react";
 import { cookies as nextCookies } from "next/headers";
-import Script from "next/script";
 import React from "react";
 
 import { ActionBar } from "components/ActionBar";
 import { Analytics } from "components/Analytics";
 import { ReactWrapProvider } from "components/external/ReactWrapProvider";
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
-import { env } from "constants/env";
 import { host, url } from "constants/url";
 import { createStyles } from "theme";
 import { DEFAULT_MODE } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
-import { getId } from "utils/getId";
 import { getServerHue } from "utils/getServerHue";
 
 import "./globals.scss";
@@ -55,15 +51,6 @@ export default async function Layout({
   return (
     <html lang="en">
       <head>
-        <Partytown debug={!env.isProduction} forward={["dataLayer.push"]} />
-        <Script
-          id={getId()}
-          type="text/partytown"
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NM2JLN5');",
-          }}
-        />
         <style
           id={hueId(hue)}
           suppressHydrationWarning
@@ -75,15 +62,6 @@ export default async function Layout({
         />
       </head>
       <body data-hue={hue}>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NM2JLN5"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-
         <TooltipProvider>
           <ReactWrapProvider>{children}</ReactWrapProvider>
         </TooltipProvider>

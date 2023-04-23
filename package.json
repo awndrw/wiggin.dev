@@ -1,19 +1,17 @@
 {
   "name": "portfolio",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "scripts": {
-    "dev": "yarn partytown && next dev",
-    "build": "yarn partytown && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "next lint --fix",
     "postinstall": "husky install",
-    "partytown": "partytown copylib public/~partytown",
     "upload-sourcemaps": "node ./scripts/uploadSourcemaps.js"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.8.0",
     "@csstools/postcss-oklab-function": "^2.2.1",
     "@datadog/browser-rum": "^4.39.0",
     "@radix-ui/react-accessible-icon": "^1.0.2",

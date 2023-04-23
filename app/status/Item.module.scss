@@ -1,0 +1,11 @@
+@use "theme/scss/color";
+
+.tag {
+  all: unset;
+  font-size: 0.6em;
+  color: color.$accent-container;
+  background-color: color.$accent-container-contrast;
+  border-radius: 0.2em;
+  padding: 0.05em 0.15em;
+  cursor: pointer;
+}

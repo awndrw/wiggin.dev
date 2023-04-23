@@ -2,16 +2,20 @@ import { z } from "zod";
 
 import { type Hue, type Mode } from "theme/constants";
 
-export const ActionName = {
+export const Action = {
   SET_HUE: "Set hue",
   SET_MODE: "Set mode",
-  OPEN_DOCS: "Open docs",
+  LINK: "Link",
+  DOWNLOAD_RESUME: "Download resume",
+  COPY_ENV_VAR: "Copy environment variable",
 } as const;
-export const ActionNameSchema = z.nativeEnum(ActionName);
-export type ActionName = z.infer<typeof ActionNameSchema>;
+export const ActionSchema = z.nativeEnum(Action);
+export type Action = z.infer<typeof ActionSchema>;
 
 export interface ActionMap {
-  [ActionName.SET_HUE]: { hue: Hue; preset: boolean };
-  [ActionName.SET_MODE]: { mode: Mode };
-  [ActionName.OPEN_DOCS]: never;
+  [Action.SET_HUE]: { hue: Hue; preset: boolean };
+  [Action.SET_MODE]: { mode: Mode };
+  [Action.LINK]: { from: string; to: string };
+  [Action.DOWNLOAD_RESUME]: never;
+  [Action.COPY_ENV_VAR]: { name: string };
 }

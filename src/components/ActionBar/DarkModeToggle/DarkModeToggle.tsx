@@ -3,9 +3,9 @@ import { useAtom } from "jotai";
 import React from "react";
 import { Moon, Sun } from "react-feather";
 
-import { ActionName } from "analytics/constants";
-import { Action } from "components/Action";
+import { Action } from "analytics/constants";
 import { Icon } from "components/Icon";
+import { Trigger } from "components/Trigger";
 import { modeAtom } from "store";
 
 import styles from "./DarkModeToggle.module.scss";
@@ -17,7 +17,7 @@ export const DarkModeToggle = () => {
   const nextMode = mode === "dark" ? "light" : "dark";
 
   return (
-    <Action name={ActionName.SET_MODE} mode={nextMode}>
+    <Trigger action={Action.SET_MODE} mode={nextMode}>
       <ActionBarButton accentColor="var(--color-text-primary)">
         <button
           className={styles.darkModeToggle}
@@ -28,6 +28,6 @@ export const DarkModeToggle = () => {
           </AccessibleIcon>
         </button>
       </ActionBarButton>
-    </Action>
+    </Trigger>
   );
 };

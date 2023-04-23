@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Action } from "analytics/constants";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Trigger } from "components/Trigger";
 
 import resumeDark from "./dark.jpg";
 import resumeLight from "./light.jpg";
@@ -23,21 +25,23 @@ export default function Page() {
   return (
     <PageWrapper className={styles.page}>
       <Section type="accent" fullHeight>
-        <Link
-          // @ts-expect-error - Linking to file in /public is not supported
-          href="/AndrewWigginResume.pdf"
-          aria-label="Resume"
-          className={styles.link}
-          target="_blank"
-          download
-        >
-          <div className={styles.light}>
-            <Image src={resumeLight} alt="" {...imageProps} />
-          </div>
-          <div className={styles.dark}>
-            <Image src={resumeDark} alt="" {...imageProps} />
-          </div>
-        </Link>
+        <Trigger action={Action.DOWNLOAD_RESUME}>
+          <Link
+            // @ts-expect-error - Linking to file in /public is not supported
+            href="/AndrewWigginResume.pdf"
+            aria-label="Resume"
+            className={styles.link}
+            target="_blank"
+            download
+          >
+            <div className={styles.light}>
+              <Image src={resumeLight} alt="" {...imageProps} />
+            </div>
+            <div className={styles.dark}>
+              <Image src={resumeDark} alt="" {...imageProps} />
+            </div>
+          </Link>
+        </Trigger>
       </Section>
     </PageWrapper>
   );
