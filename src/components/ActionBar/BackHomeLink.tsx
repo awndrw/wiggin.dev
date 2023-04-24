@@ -13,20 +13,20 @@ export function BackHomeLink({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const homeLinkProps = useInternalLinkProps("/");
 
-  if (pathname === "/") {
-    return null;
+  if (pathname !== "/") {
+    return (
+      <>
+        <ActionBarButton>
+          <Link {...homeLinkProps}>
+            <AccessibleIcon label="Home">
+              <Icon icon={Home} />
+            </AccessibleIcon>
+          </Link>
+        </ActionBarButton>
+        {children}
+      </>
+    );
   }
 
-  return (
-    <>
-      <ActionBarButton>
-        <Link {...homeLinkProps}>
-          <AccessibleIcon label="Home">
-            <Icon icon={Home} />
-          </AccessibleIcon>
-        </Link>
-      </ActionBarButton>
-      {children}
-    </>
-  );
+  return null;
 }
