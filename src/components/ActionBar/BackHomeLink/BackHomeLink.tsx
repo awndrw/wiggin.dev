@@ -21,7 +21,7 @@ export const BackHomeLink: React.FC<BackHomeLinkProps> = ({
   const pathname = usePathname();
   const homeLinkProps = useInternalLinkProps("/");
 
-  if (pathname === "/") {
+  if (!pathname.match(/\/.+/)) {
     return null;
   }
 
