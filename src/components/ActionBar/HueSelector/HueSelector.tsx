@@ -1,4 +1,5 @@
 import { a } from "@react-spring/web";
+import cx from "classnames";
 import { useAtom } from "jotai";
 import React from "react";
 
@@ -9,9 +10,14 @@ import { type Hue } from "theme/constants";
 import useTimedSpring from "utils/useTimedSpring";
 
 import styles from "./HueSelector.module.scss";
-import { ActionBarButton } from "../ActionBarButton";
 
-export function HueSelector({ hue }: { hue: Hue }) {
+export function HueSelector({
+  hue,
+  className,
+}: {
+  hue: Hue;
+  className?: string;
+}) {
   const [style, trigger] = useTimedSpring();
   const [currentHue, setHue] = useAtom(hueAtom);
 
@@ -26,15 +32,13 @@ export function HueSelector({ hue }: { hue: Hue }) {
   };
 
   return (
-    <ActionBarButton data-hue={hue}>
-      <a.button
-        style={style}
-        className={styles.hueSelector}
-        // TODO: figure out aria-pressed without state
-        aria-pressed={hue === currentHue}
-        aria-label={`Hue: ${hue}`}
-        onClick={onClick}
-      />
-    </ActionBarButton>
+    <a.button
+      style={style}
+      className={cx(styles.hueSelector, className)}
+      // TODO: figure out aria-pressed without state
+      aria-pressed={hue === currentHue}
+      aria-label={`Hue: ${hue}`}
+      onClick={onClick}
+    />
   );
 }

@@ -10,19 +10,6 @@ $radial-gradient: radial-gradient(
 $conic-gradient: conic-gradient(#{util.gradient-steps()});
 $linear-gradient: linear-gradient(to right, #{util.gradient-steps()});
 
-.wrapper {
-  &::before {
-    display: none !important;
-  }
-
-  &:not(:has(:focus-visible))::after {
-    display: none;
-  }
-  &:has(:focus-visible)::after {
-    display: block;
-  }
-}
-
 .customHueSelector {
   --radial-distance: 190%;
   position: relative;

@@ -1,0 +1,9 @@
+@use "theme/scss/color";
+
+.separator {
+  height: 18px;
+  width: 1px;
+  background-color: color.$accent-container;
+  opacity: 0.4;
+  margin-right: 4px;
+}
