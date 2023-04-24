@@ -17,29 +17,13 @@ export const parseHue = (hue: unknown, fallback?: Hue): Hue => {
   const parsedHue = HueSchema.safeParse(hue);
   return parsedHue.success ? parsedHue.data : fallback ?? getRandomHue();
 };
-export const getRandomHue = (max = 120) =>
-  HueSchema.parse(Math.floor(Math.random() * max));
-export const getPresetHues = (baseHue: Hue) => {
-  if (baseHue <= 120) {
-    return [
-      baseHue,
-      HueSchema.parse(baseHue + 120),
-      HueSchema.parse(baseHue + 240),
-    ];
-  }
-  if (baseHue <= 240) {
-    return [
-      HueSchema.parse(baseHue - 120),
-      baseHue,
-      HueSchema.parse(baseHue + 120),
-    ];
-  }
-  return [
-    HueSchema.parse(baseHue - 240),
-    HueSchema.parse(baseHue - 120),
-    baseHue,
-  ];
-};
+export const getRandomHue = () =>
+  HueSchema.parse(Math.floor(Math.random() * 360));
+export const getPresetHues = (baseHue: Hue) => [
+  baseHue,
+  HueSchema.parse((baseHue + 120) % 360),
+  HueSchema.parse((baseHue + 240) % 360),
+];
 
 export const ModeSchema = z.enum(["light", "dark"] as const);
 export type Mode = z.infer<typeof ModeSchema>;
