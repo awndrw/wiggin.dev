@@ -1,3 +1,6 @@
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 const path = require("path");
 
 const getLocalIdent = require("./scripts/getLocalIdent");
@@ -60,4 +63,4 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = withBundleAnalyzer(config);
