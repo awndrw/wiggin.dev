@@ -1,8 +1,9 @@
 import child_process from "child_process";
 import fs from "fs";
+import path from "path";
+
 import { globby } from "globby";
 import { type MetadataRoute } from "next";
-import path from "path";
 import { z } from "zod";
 
 import { url } from "constants/url";
