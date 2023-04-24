@@ -7,6 +7,8 @@ import {
 import c from "classnames";
 import React from "react";
 
+import { useInView } from "utils/useInView";
+
 import styles from "./AnimatedPath.module.scss";
 
 export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {
@@ -29,6 +31,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   const [pathLength, setPathLength] = React.useState(0);
   const strokeDashoffset = useSpringValue<number>(0);
   const reducedMotion = useReducedMotion();
+  const targetInView = useInView(`#${targetId}`);
 
   const segmentLength = pathLength / animatedPathRatio;
 
@@ -62,6 +65,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
     };
   }, [animatedPathRatio, pathLength, strokeDashoffset]);
 
+  const opacity = !startVisible && !targetInView ? 0 : !pathLength ? 0 : 1;
   return reducedMotion ? null : (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +83,7 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
         vectorEffect="non-scaling-stroke"
         style={{
           strokeDashoffset,
-          opacity: !pathLength ? 0 : 1,
+          opacity,
           strokeDasharray: `${segmentLength} ${pathLength}`,
         }}
         d={d}

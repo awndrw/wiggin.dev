@@ -87,7 +87,12 @@ export const Paragraph = ({ children }: { children: string }) => {
 };
 
 const ResetMessage = ({ visible }: { visible: boolean }) => {
-  const [isTouchScreen] = React.useState(() => "ontouchstart" in window);
+  const [isTouchScreen, setIsTouchScreen] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsTouchScreen("ontouchstart" in window);
+  }, []);
+
   return (
     <Toast.Root open={visible} className={styles.resetMessage}>
       <Toast.Description asChild>

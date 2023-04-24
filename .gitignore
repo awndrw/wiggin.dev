@@ -38,4 +38,7 @@ node_modules
 
 # typescript
 *.tsbuildinfo
+
+# next
+analyze
 next-env.d.ts

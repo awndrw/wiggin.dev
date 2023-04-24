@@ -1,15 +1,6 @@
-import { cookies as nextCookies } from "next/headers";
-import React from "react";
+import type React from "react";
 
-import { ActionBar } from "components/ActionBar";
-import { Analytics } from "components/Analytics";
-import { ReactWrapProvider } from "components/external/ReactWrapProvider";
-import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { host, url } from "constants/url";
-import { createStyles } from "theme";
-import { DEFAULT_MODE } from "theme/constants";
-import { hueId, getHexForColor } from "theme/utils";
-import { getServerHue } from "utils/getServerHue";
 
 import "./globals.scss";
 
@@ -40,34 +31,6 @@ export const metadata = {
   },
 };
 
-export default async function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const cookies = nextCookies();
-  const hue = getServerHue(cookies);
-
-  return (
-    <html lang="en">
-      <head>
-        <style
-          id={hueId(hue)}
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
-        />
-        <meta
-          name="theme-color"
-          content={getHexForColor(hue, DEFAULT_MODE, "primary")}
-        />
-      </head>
-      <body data-hue={hue}>
-        <TooltipProvider>
-          <ReactWrapProvider>{children}</ReactWrapProvider>
-        </TooltipProvider>
-        <ActionBar />
-        <Analytics />
-      </body>
-    </html>
-  );
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
 }
