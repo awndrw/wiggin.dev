@@ -1,11 +1,13 @@
 import child_process from "child_process";
+import fs from "fs";
 import { globby } from "globby";
 import { type MetadataRoute } from "next";
+import path from "path";
 import { z } from "zod";
 
 import { url } from "constants/url";
 
-function getLastModifiedDate(filePath: string) {
+function getLastModifiedTimestamp(filePath: string) {
   const spawn = child_process.spawnSync("git", [
     "log",
     "-1",
@@ -18,8 +20,30 @@ function getLastModifiedDate(filePath: string) {
     .number()
     .safeParse(spawn.stdout.toString());
   return parsedLastModified.success
-    ? new Date(parsedLastModified.data * 1000)
-    : new Date();
+    ? parsedLastModified.data * 1000
+    : Date.now();
+}
+
+function getLastModifiedDate(filePath: string) {
+  const directoryPath = path.dirname(filePath);
+  const relatedFiles: string[] = [];
+  // push all files in the directory
+  fs.readdirSync(directoryPath).forEach((file) =>
+    relatedFiles.push(path.join(directoryPath, file))
+  );
+  // push all parent layouts
+  let currentDir = directoryPath;
+  while (currentDir !== "app") {
+    const parentLayout = path.join(currentDir, "layout.tsx");
+    if (fs.existsSync(parentLayout)) {
+      relatedFiles.push(parentLayout);
+    }
+    currentDir = path.dirname(currentDir);
+  }
+  // get the latest modified date of all related files
+  const lastModifiedTimestamps = relatedFiles.map(getLastModifiedTimestamp);
+  const lastModifiedTimestamp = Math.max(...lastModifiedTimestamps);
+  return new Date(lastModifiedTimestamp);
 }
 
 export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
