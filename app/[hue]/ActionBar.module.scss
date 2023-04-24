@@ -1,0 +1,71 @@
+@use "theme/scss/color";
+@use "theme/scss/size";
+
+.container {
+  z-index: 2;
+  position: fixed;
+  inset: auto 0 size.$spacing-large;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+}
+
+.actionbar {
+  display: flex;
+  justify-content: center;
+  border-radius: size.$border-radius-small;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background-color: color.$accent-container-contrast;
+  pointer-events: auto;
+}
+
+.buttonWrapper {
+  position: relative;
+  isolation: isolate;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-content: center;
+
+  & :focus-visible {
+    outline: none;
+  }
+
+  &:not(:has(:focus-visible))::before {
+    display: none;
+  }
+  &:has(:focus-visible)::before {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid color.$text-primary;
+    animation: rotate 6s linear infinite;
+    z-index: 2;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  border-radius: size.$border-radius-small;
+  cursor: pointer;
+  position: relative;
+  color: currentColor;
+}

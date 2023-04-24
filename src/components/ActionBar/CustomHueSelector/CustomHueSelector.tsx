@@ -1,5 +1,6 @@
 import * as Popover from "@radix-ui/react-popover";
 import * as Slider from "@radix-ui/react-slider";
+import cx from "classnames";
 import { useAtom, useAtomValue } from "jotai";
 import React from "react";
 
@@ -9,35 +10,34 @@ import { customHuePopoverAtom, hueAtom } from "store";
 import { isHue } from "theme/constants";
 
 import styles from "./CustomHueSelector.module.scss";
-import { ActionBarButton } from "../ActionBarButton";
 
-export const CustomHueSelector: React.FC = () => {
+export const CustomHueSelector: React.FC<{ className: string }> = ({
+  className,
+}) => {
   const hue = useAtomValue(hueAtom);
   const [showPopover, setShowPopover] = useAtom(customHuePopoverAtom);
   const triggerId = React.useId();
 
   return (
     <Popover.Root open={showPopover} onOpenChange={setShowPopover}>
-      <ActionBarButton className={styles.wrapper}>
-        <Popover.Trigger
-          id={triggerId}
-          aria-label="Custom hue selector"
-          className={styles.customHueSelector}
+      <Popover.Trigger
+        id={triggerId}
+        aria-label="Custom hue selector"
+        className={cx(styles.customHueSelector, className)}
+      >
+        <div
+          style={{ transform: `rotate(${hue}deg)` }}
+          className={styles.customHueSelectorIndicator}
         >
           <div
-            style={{ transform: `rotate(${hue}deg)` }}
-            className={styles.customHueSelectorIndicator}
-          >
-            <div
-              style={{ transform: `rotate(-${hue}deg)` }}
-              className={styles.customHueSelectorIndicatorInner}
-            />
-          </div>
-          <div className={styles.focusIndicator}>
-            <div className={styles.focusIndicatorInner} />
-          </div>
-        </Popover.Trigger>
-      </ActionBarButton>
+            style={{ transform: `rotate(-${hue}deg)` }}
+            className={styles.customHueSelectorIndicatorInner}
+          />
+        </div>
+        <div className={styles.focusIndicator}>
+          <div className={styles.focusIndicatorInner} />
+        </div>
+      </Popover.Trigger>
       <Popover.Portal>
         <CustomHueSelectorPopover triggerId={triggerId} />
       </Popover.Portal>
