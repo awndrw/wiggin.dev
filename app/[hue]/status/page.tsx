@@ -7,7 +7,6 @@ import { Section } from "components/Section";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 
-import { AnalyticsSection } from "./AnalyticsSection";
 import { EnvironmentSection } from "./EnvironmentSection";
 import { ThemeSection } from "./ThemeSection";
 import styles from "./page.module.scss";
@@ -40,8 +39,7 @@ export default function Page() {
         </Balancer>
       </Section>
       <EnvironmentSection bottomSeparator className={styles.section} />
-      <ThemeSection bottomSeparator className={styles.section} />
-      <AnalyticsSection className={styles.section} />
+      <ThemeSection className={styles.section} />
     </PageWrapper>
   );
 }

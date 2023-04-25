@@ -9,11 +9,10 @@
     "lint": "next lint",
     "format": "next lint --fix",
     "postinstall": "husky install",
-    "upload-sourcemaps": "node ./scripts/uploadSourcemaps.js"
+    "upload-sourcemaps": "exit 1"
   },
   "dependencies": {
     "@csstools/postcss-oklab-function": "^2.2.1",
-    "@datadog/browser-rum": "^4.40.0",
     "@next/bundle-analyzer": "^13.3.1",
     "@radix-ui/react-accessible-icon": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.3",
