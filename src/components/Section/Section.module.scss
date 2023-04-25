@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: size.$spacing-large;
+  padding: calc(2 * #{size.$spacing-large}) size.$spacing-large;
   position: relative;
   h1,
   h2,
@@ -25,6 +25,7 @@
 
 .fullHeight {
   min-height: 100vh;
+  padding: size.$spacing-large;
 }
 
 .accent {
