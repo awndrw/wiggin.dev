@@ -2,15 +2,35 @@
 @use "theme/scss/util";
 @use "theme/scss/size";
 
+@value accent from '../Section/Section.module.scss';
+
 .interaction {
   all: inherit;
   position: relative;
   cursor: pointer;
   display: inline-block;
-  color: color.$accent-primary;
   margin-inline: -6px;
   padding-inline: 6px 4px;
   box-decoration-break: clone;
+
+  & {
+    color: color.$accent-primary;
+    @include util.hover {
+      color: color.$accent-container;
+      &::before {
+        background-color: color.$accent-container-contrast;
+      }
+    }
+  }
+  .accent & {
+    color: color.$accent-container;
+    @include util.hover {
+      color: color.$accent-container;
+      &::before {
+        background-color: color.$accent-container-contrast;
+      }
+    }
+  }
 
   &,
   &::before {
@@ -29,13 +49,9 @@
 
   @include util.hover {
     outline: none;
-    color: color.$accent-container;
     &,
     &::before {
       transition-duration: 400ms;
-    }
-    &::before {
-      background-color: color.$accent-container-contrast;
     }
   }
 
