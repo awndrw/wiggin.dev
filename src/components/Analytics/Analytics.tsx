@@ -10,7 +10,7 @@ export const Analytics: React.FC<VercelAnalyticsProps> = (
   vercelAnalyticsProps
 ) => {
   React.useEffect(() => {
-    if (env.isProduction) {
+    if (!env.isDevelopment) {
       console.log(`                .-====-.                
                -========-               
       .:-==-:.:===:  :===-.:-==-:.      
