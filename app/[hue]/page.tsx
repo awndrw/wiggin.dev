@@ -4,7 +4,7 @@ import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
 import { Balancer } from "components/Balancer";
 import { HueSelectButton } from "components/HueSelectButton";
-import { ExternalLink, InternalLink } from "components/Link";
+import { ExternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
@@ -31,8 +31,8 @@ export default function Page() {
           />
         </h1>
         <Balancer>
-          I&rsquo;m a brooklyn based design engineer passionate about design
-          systems, motion design and accessibility.
+          I&rsquo;m a brooklyn based design engineer passionate about frontend
+          architecture, accessibility, and design systems.
         </Balancer>
         <AnimatedPath
           className={styles.scribbleOne}
@@ -44,15 +44,19 @@ export default function Page() {
       </Section>
       <Section id={sectionTwoId} fullHeight bottomSeparator>
         <Balancer>
-          I explore unique ways to tell a story on the web. These days, I do
-          most of my tinkering at the{" "}
+          I do most of my tinkering at the{" "}
           <Trigger action={Action.LINK} from="home" to="mellon">
             <ExternalLink href="https://mellon.org">
               Mellon Foundation
             </ExternalLink>
           </Trigger>
-          . Check out my <InternalLink href="/resume">resume</InternalLink> or
-          reach out via{" "}
+          , but I spend a lot of my free time{" "}
+          <Trigger action={Action.LINK} from="home" to="github">
+            <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+              playing with color
+            </ExternalLink>
+          </Trigger>
+          . Just want to chat? Send me an{" "}
           <Trigger action={Action.LINK} from="home" to="email">
             <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>
           </Trigger>
