@@ -23,7 +23,7 @@
   }
 }
 
-.scribbleOne {
+.scribble {
   height: 100%;
   bottom: -35%;
   @include util.mw-sm {
@@ -33,17 +33,5 @@
   @include util.mw-md {
     height: 140%;
     bottom: -60%;
-  }
-}
-
-.scribbleTwo {
-  bottom: -10vh;
-  left: -5%;
-  width: 110%;
-  @include util.mw-sm {
-    bottom: -20vh;
-  }
-  @include util.mw-md {
-    bottom: -30vh;
   }
 }
