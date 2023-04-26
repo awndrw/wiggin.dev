@@ -10,7 +10,7 @@ export const metadata = {
     template: `${host}/%s`,
   },
   description:
-    "Andrew Wiggin is a brooklyn based design engineer passionate about design systems, motion design and accessibility.",
+    "Andrew Wiggin is a brooklyn based design engineer passionate about frontend architecture, accessibility, and design systems.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

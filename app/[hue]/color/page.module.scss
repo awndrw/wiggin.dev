@@ -1,50 +1,32 @@
-@use "theme/scss/layout";
-@use "theme/scss/size";
+@use "theme/scss/util";
 @use "theme/scss/color";
+@use "theme/scss/size";
 
-.page {
-  @include layout.page;
+.scribble {
+  bottom: -10vh;
+  left: -5%;
+  width: 110%;
+  @include util.mw-sm {
+    bottom: -20vh;
+  }
+  @include util.mw-md {
+    bottom: -30vh;
+  }
 }
 
-.hero {
-  @include layout.section("neutral");
+.numberedSection {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  h1,
-  p {
-    font-weight: 400;
-    line-height: 1.3;
-    font-size: size.$font-large;
-    z-index: 2;
+  gap: size.$spacing-large;
+
+  @include util.mw-md {
+    flex-direction: row;
+    gap: calc(2 * #{size.$spacing-large});
   }
 }
 
-.lchDescription {
-  @include layout.section("neutral");
-  min-height: auto;
-  margin: size.$spacing-large;
-  h1,
-  p {
-    font-weight: 400;
-    line-height: 1.3;
-    font-size: size.$font-medium;
-    z-index: 2;
-  }
-}
-
-.scale {
-  flex: 1 0 auto;
-}
-
-.separatorPrimary {
-  background-color: color.$accent-primary;
-  height: 1px;
-  width: calc(100% + #{size.$spacing-large});
-  margin: 0 calc(-1 * #{size.$spacing-large});
-}
-.separatorSecondary {
-  background-color: color.$accent-container-contrast;
-  height: 1px;
-  margin-inline: size.$spacing-large;
+.number {
+  font-size: 8em !important;
+  color: color.$accent-primary;
 }

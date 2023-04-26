@@ -2,41 +2,37 @@
 @use "theme/scss/util";
 @use "theme/scss/size";
 
+@value accent from '../Section/Section.module.scss';
+
 .interaction {
   all: inherit;
   position: relative;
   cursor: pointer;
-  display: inline-block;
-  color: color.$accent-primary;
+  display: inline;
   margin-inline: -6px;
   padding-inline: 6px 4px;
   box-decoration-break: clone;
 
-  &,
-  &::before {
-    border-radius: size.$border-radius-small;
-    transition-property: color, background-color;
-    transition-duration: 200ms;
-    transition-timing-function: ease;
+  border-radius: size.$border-radius-small;
+  transition-property: color, background-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+  & {
+    --color: #{color.$accent-primary};
+    --hover-color: #{color.$accent-container};
+    --hover-bg-color: #{color.$accent-container-contrast};
+  }
+  .accent & {
+    --color: #{color.$accent-container};
+    --hover-color: #{color.$accent-container};
+    --hover-bg-color: #{color.$accent-container-contrast};
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0.1em 0;
-    z-index: -1;
-  }
-
+  color: var(--color);
   @include util.hover {
+    color: var(--hover-color);
     outline: none;
-    color: color.$accent-container;
-    &,
-    &::before {
-      transition-duration: 400ms;
-    }
-    &::before {
-      background-color: color.$accent-container-contrast;
-    }
+    background-color: var(--hover-bg-color);
   }
 
   @include util.mw-md {
@@ -51,4 +47,8 @@
   height: 0.6em;
   vertical-align: middle;
   margin-left: 0.1em;
+}
+
+.suffix {
+  color: unset;
 }

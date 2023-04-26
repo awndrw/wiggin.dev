@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: size.$spacing-large;
+  padding: calc(2 * #{size.$spacing-large}) size.$spacing-large;
   position: relative;
   h1,
   h2,
@@ -14,8 +14,7 @@
   h4,
   h5,
   h6,
-  p,
-  span {
+  p {
     font-weight: 300;
     line-height: 1.3;
     font-size: size.$font-large;
@@ -25,6 +24,7 @@
 
 .fullHeight {
   min-height: 100vh;
+  padding: size.$spacing-large;
 }
 
 .accent {
