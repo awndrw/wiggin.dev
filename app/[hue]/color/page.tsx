@@ -27,8 +27,8 @@ export default function Page() {
       <Section type="accent" fullHeight bottomSeparator>
         <Balancer>
           These colors use oklch to create an accessible color palette with{" "}
-          <HueSelectButton>any hue</HueSelectButton>. Have you tried{" "}
-          <ReloadButton>reloading the page</ReloadButton>?
+          <HueSelectButton suffix=".">any hue</HueSelectButton> Have you tried{" "}
+          <ReloadButton suffix="?">reloading the page</ReloadButton>
         </Balancer>
         <AnimatedPath
           className={styles.scribble}
@@ -73,11 +73,13 @@ export default function Page() {
         <Balancer>
           Want to learn more? Check out{" "}
           <Trigger action={Action.LINK} from="color" to="docs">
-            <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
+            <ExternalLink
+              href="https://github.com/wiggindev/wiggin.dev#readme"
+              suffix="."
+            >
               the docs
             </ExternalLink>
           </Trigger>
-          .
         </Balancer>
       </Section>
     </PageWrapper>

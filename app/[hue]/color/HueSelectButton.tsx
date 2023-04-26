@@ -3,17 +3,20 @@
 import { useSetAtom } from "jotai";
 import React from "react";
 
-import { Button } from "components/Button";
+import { Button, type ButtonProps } from "components/Button";
 import { customHuePopoverAtom } from "store";
 
-export interface HueSelectButtonProps {
-  children: React.ReactNode;
-}
+export type HueSelectButtonProps = Omit<ButtonProps, "onClick">;
 
 export const HueSelectButton: React.FC<HueSelectButtonProps> = ({
   children,
+  ...props
 }) => {
   const setShowPopover = useSetAtom(customHuePopoverAtom);
 
-  return <Button onClick={() => setShowPopover(true)}>{children}</Button>;
+  return (
+    <Button onClick={() => setShowPopover(true)} {...props}>
+      {children}
+    </Button>
+  );
 };

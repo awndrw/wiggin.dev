@@ -44,17 +44,20 @@ export default function Page() {
         <Balancer>
           I do most of my tinkering at the{" "}
           <Trigger action={Action.LINK} from="home" to="mellon">
-            <ExternalLink href="https://mellon.org">
+            <ExternalLink href="https://mellon.org" suffix=",">
               Mellon Foundation
             </ExternalLink>
-          </Trigger>
-          , but I spend a lot of my free time{" "}
-          <InternalLink href="/color">playing with color</InternalLink>. Just
-          want to chat? Send me an{" "}
+          </Trigger>{" "}
+          but I spend a lot of my free time{" "}
+          <InternalLink href="/color" suffix=".">
+            playing with color
+          </InternalLink>{" "}
+          Just want to chat? Send me an{" "}
           <Trigger action={Action.LINK} from="home" to="email">
-            <ExternalLink href="mailto:andrew@wiggin.dev">email</ExternalLink>
+            <ExternalLink href="mailto:andrew@wiggin.dev" suffix=".">
+              email
+            </ExternalLink>
           </Trigger>
-          .
         </Balancer>
       </Section>
     </PageWrapper>

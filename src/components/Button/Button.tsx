@@ -1,16 +1,15 @@
 import React from "react";
 import { Target } from "react-feather";
 
-import { Interaction } from "components/Interaction";
+import {
+  Interaction,
+  type InteractionComponentProps,
+} from "components/Interaction";
 
-type AvailableButtonProps = Omit<
-  React.ComponentPropsWithoutRef<"span">,
+export type ButtonProps = Omit<
+  InteractionComponentProps<"span">,
   "role" | "tabIndex"
 >;
-
-export interface ButtonProps extends AvailableButtonProps {
-  children: React.ReactNode;
-}
 
 export const Button = React.forwardRef(ButtonImpl);
 function ButtonImpl(
