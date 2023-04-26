@@ -1,5 +1,6 @@
 @use "theme/scss/util";
 @use "theme/scss/color";
+@use "theme/scss/size";
 
 .scribble {
   bottom: -10vh;
@@ -13,11 +14,16 @@
   }
 }
 
-.horizontal {
+.numberedSection {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: calc(2 * var(--spacing-size-large));
+  flex-direction: column;
+  gap: size.$spacing-large;
+
+  @include util.mw-md {
+    flex-direction: row;
+    gap: calc(2 * #{size.$spacing-large});
+  }
 }
 
 .number {

@@ -42,15 +42,15 @@ export default function Page() {
       </Section>
       <Section id={scribbleTargetId} fullHeight>
         <Balancer>
-          I do most of my tinkering at the{" "}
+          While I do most of my tinkering at the{" "}
           <Trigger action={Action.LINK} from="home" to="mellon">
             <ExternalLink href="https://mellon.org" suffix=",">
               Mellon Foundation
             </ExternalLink>
           </Trigger>{" "}
-          but I spend a lot of my free time{" "}
+          I spend my free time{" "}
           <InternalLink href="/color" suffix=".">
-            playing with color
+            playing with colors
           </InternalLink>{" "}
           Just want to chat? Send me an{" "}
           <Trigger action={Action.LINK} from="home" to="email">

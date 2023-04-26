@@ -8,7 +8,6 @@ import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
-import { getRandomHue } from "theme/constants";
 import { getId } from "utils/getId";
 
 import { HueSelectButton } from "./HueSelectButton";
@@ -40,38 +39,37 @@ export default function Page() {
         />
       </Section>
       <Section bottomSeparator id={animatedPathTargetId}>
-        <div className={styles.horizontal}>
+        <div className={styles.numberedSection}>
           <span className={styles.number}>1</span>
           <Balancer>
-            Colors needed on load are generated on the server and injected into
-            the DOM. Additional colors are generated on the client using the
-            PostCSS OKLAB Function.
+            An initial palette of three colors is generated on the server. Each
+            page is statically generated at build time using all possible hues
+            (0-360).
           </Balancer>
         </div>
       </Section>
       <Section bottomSeparator>
-        <div className={styles.horizontal}>
+        <div className={styles.numberedSection}>
           <span className={styles.number}>2</span>
           <Balancer>
-            Because each hue is rotated at 120º intervals, each page can be
-            generated at build time using all possible hues (0-360).
+            Additional colors are generated on the client on an as-needed basis
+            using the PostCSS OKLAB Function.
           </Balancer>
         </div>
       </Section>
       <Section bottomSeparator>
-        <div className={styles.horizontal}>
+        <div className={styles.numberedSection}>
           <span className={styles.number}>3</span>
           <Balancer>
-            Additional colors are generated on an as-needed basis. A
-            MutationObserver watches the data-hue attribute for hues that are
-            not already styled. Try adding data-hue=&quot;{getRandomHue()}&quot;
-            to an element.
+            A MutationObserver watches the DOM for data-hue attribute changes.
+            Styles are generated for new hues.
           </Balancer>
         </div>
       </Section>
       <Section fullHeight>
         <Balancer>
-          Want to learn more? Check out{" "}
+          Looking for something more technical? Just interested in the code?
+          Check out{" "}
           <Trigger action={Action.LINK} from="color" to="docs">
             <ExternalLink
               href="https://github.com/wiggindev/wiggin.dev#readme"
