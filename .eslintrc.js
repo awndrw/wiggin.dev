@@ -22,6 +22,7 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
       {

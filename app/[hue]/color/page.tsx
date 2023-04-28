@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Action } from "analytics/constants";
+import { Action, EventData } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
 import { Balancer } from "components/Balancer";
 import { ExternalLink } from "components/Link";
@@ -70,7 +70,7 @@ export default function Page() {
         <Balancer>
           Looking for something more technical? Just interested in the code?
           Check out{" "}
-          <Trigger action={Action.LINK} from="color" to="docs">
+          <Trigger action={Action.LINK} from={EventData.Route.COLOR} to="docs">
             <ExternalLink
               href="https://github.com/wiggindev/wiggin.dev#readme"
               suffix="."

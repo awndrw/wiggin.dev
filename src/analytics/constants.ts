@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import { RouteName } from ".types/route";
 import { type Hue, type Mode } from "theme/constants";
 
 export const Action = {
@@ -13,10 +14,20 @@ export const Action = {
 export const ActionSchema = z.nativeEnum(Action);
 export type Action = z.infer<typeof ActionSchema>;
 
+export namespace EventData {
+  export enum Boolean {
+    TRUE = "yes",
+    FALSE = "no",
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  export import Route = RouteName;
+}
+
 export interface ActionMap {
-  [Action.SET_HUE]: { hue: Hue; preset: boolean };
+  [Action.SET_HUE]: { hue: Hue; preset: EventData.Boolean };
   [Action.SET_MODE]: { mode: Mode };
-  [Action.LINK]: { from: string; to: string };
+  [Action.LINK]: { from: EventData.Route; to: string };
   [Action.DOWNLOAD_RESUME]: never;
   [Action.COPY_ENV_VAR]: { name: string };
   [Action.RELOAD]: never;
