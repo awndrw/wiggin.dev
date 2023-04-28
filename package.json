@@ -3,13 +3,12 @@
   "version": "0.5.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn generateTypes && next dev",
+    "build": "yarn generateTypes && next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "next lint --fix",
     "postinstall": "husky install",
-    "upload-sourcemaps": "exit 1"
+    "generateTypes": "ts-node scripts/generateTypes.ts"
   },
   "dependencies": {
     "@csstools/postcss-oklab-function": "^2.2.1",
@@ -42,6 +41,7 @@
     "react-wrap-balancer": "^0.4.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.0",
+    "ts-node": "^10.9.1",
     "zod": "^3.21.4"
   },
   "packageManager": "yarn@3.5.0",
