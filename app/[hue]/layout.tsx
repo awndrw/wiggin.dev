@@ -1,3 +1,4 @@
+import { type Metadata } from "next";
 import React from "react";
 
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
@@ -10,6 +11,18 @@ import { Analytics } from "./LayoutComponents/Analytics";
 
 export function generateStaticParams() {
   return [...Array(360).keys()].map((hue) => ({ hue: hue.toString() }));
+}
+
+export function generateMetadata({
+  params: { hue: hueParam },
+}: {
+  params: { hue: string };
+}): Metadata {
+  const hue = parseHue(hueParam);
+
+  return {
+    themeColor: getHexForColor(hue, DEFAULT_MODE, "primary"),
+  };
 }
 
 export default async function Layout({
@@ -32,10 +45,6 @@ export default async function Layout({
             dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
           />
         ))}
-        <meta
-          name="theme-color"
-          content={getHexForColor(hue, DEFAULT_MODE, "primary")}
-        />
       </head>
       <body data-hue={hue}>
         <TooltipProvider>{children}</TooltipProvider>

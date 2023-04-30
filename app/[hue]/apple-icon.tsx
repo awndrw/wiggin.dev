@@ -4,28 +4,25 @@ import { Logo } from "components/Logo";
 import { parseHue } from "theme/constants";
 import { getHexForColor } from "theme/utils";
 
-export const alt = "";
 export const size = {
-  width: 1200,
-  height: 630,
+  width: 180,
+  height: 180,
 };
 export const contentType = "image/png";
 export const runtime = "edge";
 
-export default function OpengraphImage({
+export default function Icon({
   params: { hue: hueParam },
 }: {
   params: { hue: string };
 }) {
   const hue = parseHue(hueParam);
   const primary = getHexForColor(hue, "light", "primary");
-  const primaryContrast = getHexForColor(hue, "light", "primary-contrast");
 
   return new ImageResponse(
     (
       <div
         style={{
-          background: primaryContrast,
           width: "100%",
           height: "100%",
           display: "flex",
@@ -33,7 +30,7 @@ export default function OpengraphImage({
           justifyContent: "center",
         }}
       >
-        <Logo width={400} height={400} stroke={primary} />
+        <Logo width={180} height={180} type="light" stroke={primary} />
       </div>
     ),
     size

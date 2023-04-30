@@ -6,5 +6,5 @@ import { type LocalRoute } from "./types";
 
 export function usePathname() {
   const pathname = useNextPathname();
-  return (pathname.replace(/^\/[0-9]{1,3}/, "") || "") as LocalRoute;
+  return (pathname.replace(/^\/[1-9][0-9]{0,2}/, "") || "") as LocalRoute;
 }

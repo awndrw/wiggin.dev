@@ -11,14 +11,6 @@ export const metadata = {
   },
   description:
     "Andrew Wiggin is a brooklyn based design engineer passionate about frontend architecture, accessibility, and design systems.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: "/manifest.webmanifest",
   metadataBase: url,
   openGraph: {
     type: "website",
