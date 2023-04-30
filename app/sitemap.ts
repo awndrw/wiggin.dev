@@ -49,8 +49,10 @@ function getLastModifiedDate(filePath: string) {
 
 export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
   const filePaths = await globby(["app/**/page.tsx"]);
+  console.log("filePaths", filePaths);
   return filePaths.map((filePath) => {
     const path = filePath.match(/^app\/\[hue](.+?)\/page\.tsx$/)?.[1] ?? "";
+    console.log("path", path);
     return {
       url: new URL(path, url).href,
       lastModified: getLastModifiedDate(filePath),
