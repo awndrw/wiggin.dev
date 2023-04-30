@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { type Hue, type Mode } from "theme/constants";
+import { type Mode } from "theme/constants";
 
 export const Action = {
   SET_HUE: "Set hue",
@@ -13,15 +13,8 @@ export const Action = {
 export const ActionSchema = z.nativeEnum(Action);
 export type Action = z.infer<typeof ActionSchema>;
 
-export namespace EventData {
-  export enum Boolean {
-    TRUE = "yes",
-    FALSE = "no",
-  }
-}
-
 export interface ActionMap {
-  [Action.SET_HUE]: { hue: Hue; preset: EventData.Boolean };
+  [Action.SET_HUE]: never;
   [Action.SET_MODE]: { mode: Mode };
   [Action.LINK]: { from: string; to: string };
   [Action.DOWNLOAD_RESUME]: never;

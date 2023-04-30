@@ -1,7 +1,6 @@
 import React from "react";
 
 import { BackHomeLink } from "components/ActionBar/BackHomeLink";
-import { CustomHueSelector } from "components/ActionBar/CustomHueSelector";
 import { DarkModeToggle } from "components/ActionBar/DarkModeToggle";
 import { HueSelector } from "components/ActionBar/HueSelector";
 import { type Hue } from "theme/constants";
@@ -22,9 +21,6 @@ export function ActionBar({ presetHues }: { presetHues: Hue[] }) {
               <HueSelector hue={hue} className={styles.button} />
             </div>
           ))}
-          <div className={styles.buttonWrapper}>
-            <CustomHueSelector className={styles.button} />
-          </div>
           <div className={styles.buttonWrapper}>
             <DarkModeToggle className={styles.button} />
           </div>

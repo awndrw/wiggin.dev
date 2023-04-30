@@ -10,7 +10,6 @@ import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getId } from "utils/getId";
 
-import { HueSelectButton } from "./HueSelectButton";
 import { ReloadButton } from "./ReloadButton";
 import styles from "./page.module.scss";
 
@@ -25,8 +24,8 @@ export default function Page() {
     <PageWrapper className={tragedyDisplay.className} withAffordance={false}>
       <Section type="accent" fullHeight bottomSeparator>
         <Text>
-          These colors use oklch to create an accessible color palette with{" "}
-          <HueSelectButton suffix=".">any hue</HueSelectButton> Have you tried{" "}
+          These colors use oklch to create an accessible color palette with any
+          hue. Have you tried{" "}
           <ReloadButton suffix="?">reloading the page</ReloadButton>
         </Text>
         <AnimatedPath

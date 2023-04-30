@@ -63,11 +63,3 @@
     #{$property}: $dark;
   }
 }
-
-@function gradient-steps() {
-  $steps: ();
-  @for $i from 1 through length(color.$gradient-steps) {
-    $steps: list.append($steps, var(--gradient-#{$i}), comma);
-  }
-  @return $steps;
-}
