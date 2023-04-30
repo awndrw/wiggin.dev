@@ -48,7 +48,7 @@ function getLastModifiedDate(filePath: string) {
 }
 
 export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
-  console.log("..", await globby([".."]));
+  console.log("..", await globby(["."]));
   const filePaths = await globby(["app/**/page.tsx"]);
   console.log("filePaths", filePaths);
   return filePaths.map((filePath) => {
