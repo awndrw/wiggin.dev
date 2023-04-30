@@ -13,8 +13,15 @@ export const Action = {
 export const ActionSchema = z.nativeEnum(Action);
 export type Action = z.infer<typeof ActionSchema>;
 
+export namespace EventData {
+  export enum Boolean {
+    TRUE = "yes",
+    FALSE = "no",
+  }
+}
+
 export interface ActionMap {
-  [Action.SET_HUE]: { hue: Hue; preset: boolean };
+  [Action.SET_HUE]: { hue: Hue; preset: EventData.Boolean };
   [Action.SET_MODE]: { mode: Mode };
   [Action.LINK]: { from: string; to: string };
   [Action.DOWNLOAD_RESUME]: never;

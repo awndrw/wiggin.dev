@@ -21,6 +21,7 @@ module.exports = {
     "import/external-module-folders": [".yarn"],
   },
   rules: {
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
