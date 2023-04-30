@@ -2,45 +2,32 @@ const child_process = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
+const dependencyTree = require("dependency-tree");
 const { z } = require("zod");
 
 const ROUTES_PATH = "src/.types/routes.ts";
 
-function getLastModifiedTimestamp(filePath) {
-  const spawn = child_process.spawnSync("git", [
-    "log",
-    "-1",
-    "--pretty=format:%at",
-    "--follow",
-    "--",
-    filePath,
-  ]);
-  const parsedLastModified = z.coerce
-    .number()
-    .safeParse(spawn.stdout.toString());
-  return parsedLastModified.success
-    ? parsedLastModified.data * 1000
-    : Date.now();
-}
-
 function getLastModifiedDate(pagePath) {
-  const pageDirectory = path.dirname(pagePath);
-  const relatedFiles = [];
-  // push all files in the directory
-  fs.readdirSync(pageDirectory).forEach((file) =>
-    relatedFiles.push(path.join(pageDirectory, file))
-  );
-  // push all parent layouts
-  let currentDir = pageDirectory;
-  while (currentDir !== "app") {
-    const parentLayout = path.join(currentDir, "layout.tsx");
-    if (fs.existsSync(parentLayout)) {
-      relatedFiles.push(parentLayout);
-    }
-    currentDir = path.dirname(currentDir);
-  }
-  // get the latest modified date of all related files
-  const lastModifiedTimestamps = relatedFiles.map(getLastModifiedTimestamp);
+  const deps = dependencyTree.toList({
+    filename: pagePath,
+    directory: ".",
+  });
+  const lastModifiedTimestamps = deps.map((dependency) => {
+    const spawn = child_process.spawnSync("git", [
+      "log",
+      "-1",
+      "--pretty=format:%at",
+      "--follow",
+      "--",
+      dependency,
+    ]);
+    const parsedLastModified = z.coerce
+      .number()
+      .safeParse(spawn.stdout.toString());
+    return parsedLastModified.success
+      ? parsedLastModified.data * 1000
+      : Date.now();
+  });
   return Math.max(...lastModifiedTimestamps);
 }
 

@@ -30,6 +30,7 @@
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "critters": "^0.0.16",
+    "dependency-tree": "^9.0.0",
     "dotenv": "^16.0.3",
     "globby": "^13.1.4",
     "jotai": "^2.0.4",
