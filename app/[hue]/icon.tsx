@@ -33,6 +33,9 @@ export default function Icon({
         <Logo width={32} height={32} type="light" stroke={primary} />
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [],
+    }
   );
 }

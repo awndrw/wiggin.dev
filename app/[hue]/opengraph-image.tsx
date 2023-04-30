@@ -36,6 +36,9 @@ export default function OpengraphImage({
         <Logo width={400} height={400} stroke={primary} />
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [],
+    }
   );
 }
