@@ -1,9 +1,9 @@
 import { Action } from "analytics/constants";
-import { Balancer } from "components/Balancer";
 import { ExternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 
@@ -28,7 +28,7 @@ export default function Page() {
             weight="light"
           />
         </h1>
-        <Balancer>
+        <Text>
           Want to see what&rsquo;s going on behind the scenes? Check out{" "}
           <Trigger action={Action.LINK} from="status" to="docs">
             <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
@@ -36,7 +36,7 @@ export default function Page() {
             </ExternalLink>
           </Trigger>
           .
-        </Balancer>
+        </Text>
       </Section>
       <EnvironmentSection bottomSeparator className={styles.section} />
       <ThemeSection className={styles.section} />

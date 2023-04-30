@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ReactWrapProvider } from "components/external/ReactWrapProvider";
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { createStyles } from "theme";
 import { DEFAULT_MODE, getPresetHues, parseHue } from "theme/constants";
@@ -39,9 +38,7 @@ export default async function Layout({
         />
       </head>
       <body data-hue={hue}>
-        <TooltipProvider>
-          <ReactWrapProvider>{children}</ReactWrapProvider>
-        </TooltipProvider>
+        <TooltipProvider>{children}</TooltipProvider>
         <ActionBar presetHues={presetHues} />
         <Analytics />
       </body>

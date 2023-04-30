@@ -75,7 +75,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
             ["react-feather", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.1"],\
             ["sass", "npm:1.62.1"],\
             ["server-only", "npm:0.0.1"],\
             ["sharp", "npm:0.32.1"],\
@@ -6613,7 +6612,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:18.2.0"],\
             ["react-feather", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:2.0.10"],\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.1"],\
             ["sass", "npm:1.62.1"],\
             ["server-only", "npm:0.0.1"],\
             ["sharp", "npm:0.32.1"],\
@@ -7730,28 +7728,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["invariant", "npm:2.2.4"],\
             ["react", "npm:18.2.0"],\
             ["tslib", "npm:2.4.1"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["react-wrap-balancer", [\
-        ["npm:0.4.1", {\
-          "packageLocation": "./.yarn/cache/react-wrap-balancer-npm-0.4.1-6ada1e5a9c-a5f104448e.zip/node_modules/react-wrap-balancer/",\
-          "packageDependencies": [\
-            ["react-wrap-balancer", "npm:0.4.1"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.1", {\
-          "packageLocation": "./.yarn/__virtual__/react-wrap-balancer-virtual-05bf9a43d4/0/cache/react-wrap-balancer-npm-0.4.1-6ada1e5a9c-a5f104448e.zip/node_modules/react-wrap-balancer/",\
-          "packageDependencies": [\
-            ["react-wrap-balancer", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:0.4.1"],\
-            ["@types/react", "npm:18.2.0"],\
-            ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
             "@types/react",\

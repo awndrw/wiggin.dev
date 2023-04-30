@@ -2,10 +2,10 @@ import React from "react";
 
 import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
-import { Balancer } from "components/Balancer";
 import { ExternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getId } from "utils/getId";
@@ -24,11 +24,11 @@ export default function Page() {
   return (
     <PageWrapper className={tragedyDisplay.className} withAffordance={false}>
       <Section type="accent" fullHeight bottomSeparator>
-        <Balancer>
+        <Text>
           These colors use oklch to create an accessible color palette with{" "}
           <HueSelectButton suffix=".">any hue</HueSelectButton> Have you tried{" "}
           <ReloadButton suffix="?">reloading the page</ReloadButton>
-        </Balancer>
+        </Text>
         <AnimatedPath
           className={styles.scribble}
           viewBox="0 0 1764.67 627.04"
@@ -41,33 +41,33 @@ export default function Page() {
       <Section bottomSeparator id={animatedPathTargetId}>
         <div className={styles.numberedSection}>
           <span className={styles.number}>1</span>
-          <Balancer>
+          <Text>
             An initial palette of three colors is generated on the server. Each
             page is statically generated at build time using all possible hues
             (0-360).
-          </Balancer>
+          </Text>
         </div>
       </Section>
       <Section bottomSeparator>
         <div className={styles.numberedSection}>
           <span className={styles.number}>2</span>
-          <Balancer>
+          <Text>
             Additional colors are generated on the client on an as-needed basis
             using the PostCSS OKLAB Function.
-          </Balancer>
+          </Text>
         </div>
       </Section>
       <Section bottomSeparator>
         <div className={styles.numberedSection}>
           <span className={styles.number}>3</span>
-          <Balancer>
+          <Text>
             A MutationObserver watches the DOM for data-hue attribute changes.
             Styles are generated for new hues.
-          </Balancer>
+          </Text>
         </div>
       </Section>
       <Section fullHeight>
-        <Balancer>
+        <Text>
           Looking for something more technical? Just interested in the code?
           Check out{" "}
           <Trigger action={Action.LINK} from="color" to="docs">
@@ -78,7 +78,7 @@ export default function Page() {
               the docs
             </ExternalLink>
           </Trigger>
-        </Balancer>
+        </Text>
       </Section>
     </PageWrapper>
   );

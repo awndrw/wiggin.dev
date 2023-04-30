@@ -4771,7 +4771,6 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-wrap-balancer: ^0.4.1
     sass: ^1.62.1
     server-only: ^0.0.1
     sharp: ^0.32.1
@@ -5443,15 +5442,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 7ee8ef3aab74c7ae1d70ff34a27643d11ba1a8d62d072c767827d9ff9a520905223e567002e0bf6c772929d8ea1c781a3ba0cc4a563e92b1e3dc2eaa817ecbe8
-  languageName: node
-  linkType: hard
-
-"react-wrap-balancer@npm:^0.4.1":
-  version: 0.4.1
-  resolution: "react-wrap-balancer@npm:0.4.1"
-  peerDependencies:
-    react: ^18.0.0
-  checksum: a5f104448eede8c939c929c6d7b4a090b6bc0510e7e77fd3fb2cf069db9a9114d72d97f5a98edc4ec4ca5abf91ca333c7718cd4237908c0e2419e3cfc5f969df
   languageName: node
   linkType: hard
 

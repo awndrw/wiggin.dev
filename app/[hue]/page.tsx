@@ -2,11 +2,11 @@ import React from "react";
 
 import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
-import { Balancer } from "components/Balancer";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
+import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getId } from "utils/getId";
@@ -28,10 +28,10 @@ export default function Page() {
             weight="light"
           />
         </h1>
-        <Balancer>
+        <Text>
           I&rsquo;m a brooklyn based design engineer passionate about frontend
           architecture, accessibility, and design systems.
-        </Balancer>
+        </Text>
         <AnimatedPath
           className={styles.scribble}
           viewBox="0 0 862.83 1809.95"
@@ -41,7 +41,7 @@ export default function Page() {
         />
       </Section>
       <Section id={scribbleTargetId} fullHeight>
-        <Balancer>
+        <Text>
           While I do most of my tinkering at the{" "}
           <Trigger action={Action.LINK} from="home" to="mellon">
             <ExternalLink href="https://mellon.org" suffix=",">
@@ -58,7 +58,7 @@ export default function Page() {
               email
             </ExternalLink>
           </Trigger>
-        </Balancer>
+        </Text>
       </Section>
     </PageWrapper>
   );

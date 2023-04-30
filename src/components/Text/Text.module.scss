@@ -1,0 +1,8 @@
+@use "theme/scss/util";
+
+.text {
+  max-width: 100%;
+  @include util.mw-lg {
+    max-width: 65%;
+  }
+}
