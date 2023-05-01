@@ -1,10 +1,12 @@
 import { type Metadata } from "next";
+import Script from "next/script";
 import React from "react";
 
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { createStyles } from "theme";
 import { DEFAULT_MODE, getPresetHues, parseHue } from "theme/constants";
 import { hueId, getHexForColor } from "theme/utils";
+import { getId } from "utils/getId";
 
 import { ActionBar } from "./LayoutComponents/ActionBar";
 import { Analytics } from "./LayoutComponents/Analytics";
@@ -38,6 +40,13 @@ export default async function Layout({
   return (
     <html lang="en">
       <head>
+        <Script
+          id={getId()}
+          strategy="worker"
+          data-partytown-config={{ forward: ["dataLayer.push"] }}
+        >
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NM2JLN5');`}
+        </Script>
         {presetHues.map((hue) => (
           <style
             id={hueId(hue)}
@@ -47,6 +56,14 @@ export default async function Layout({
         ))}
       </head>
       <body data-hue={hue}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NM2JLN5"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <TooltipProvider>{children}</TooltipProvider>
         <ActionBar presetHues={presetHues} />
         <Analytics />

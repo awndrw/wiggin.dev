@@ -44,6 +44,7 @@
   },
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "18.16.3",
     "@types/prettier": "^2.7.2",

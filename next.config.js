@@ -17,6 +17,7 @@ const config = {
     appDir: true,
     scrollRestoration: true,
     typedRoutes: true,
+    nextScriptWorkers: true,
   },
   productionBrowserSourceMaps: true,
   sassOptions: {
