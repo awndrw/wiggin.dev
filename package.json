@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "format": "next lint --fix",
-    "postinstall": "husky install",
     "generate-routes": "node ./scripts/generateRoutes.js"
   },
   "dependencies": {
@@ -59,7 +58,6 @@
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
     "loader-utils": "^3.2.1",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
