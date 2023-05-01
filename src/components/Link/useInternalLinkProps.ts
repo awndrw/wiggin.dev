@@ -1,16 +1,15 @@
 "use client";
 
 import { useAtomValue } from "jotai";
-import { type Route } from "next";
+import { type Route as NextRoute } from "next";
 
+import { type FullRoute, type Route } from ".types/routes";
 import { hueAtom } from "store";
 
-import { type LocalRoute, type RouteType } from "./types";
-
-export const useInternalLinkProps = (href: LocalRoute) => {
+export const useInternalLinkProps = (href: Route) => {
   const hue = useAtomValue(hueAtom);
   return {
-    href: `/${hue}${href}` as Route<RouteType>,
+    href: `/${hue}${href}` as NextRoute<FullRoute>,
     prefetch: false,
   };
 };
