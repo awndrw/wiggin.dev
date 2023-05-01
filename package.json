@@ -7,7 +7,6 @@
     "build": "yarn generate-routes && next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "next lint --fix",
     "generate-routes": "node ./scripts/generateRoutes.js"
   },
   "dependencies": {
