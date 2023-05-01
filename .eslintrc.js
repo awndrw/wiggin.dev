@@ -13,11 +13,7 @@ module.exports = {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
-    "import/resolver": {
-      typescript: {
-        project: "./tsconfig.json",
-      },
-    },
+    "import/resolver": {},
     "import/external-module-folders": [".yarn"],
   },
   rules: {
@@ -51,10 +47,6 @@ module.exports = {
           },
           {
             pattern: "next",
-            group: "builtin",
-          },
-          {
-            pattern: "next/**",
             group: "builtin",
           },
         ],
