@@ -1,3 +1,9 @@
+const path = require("path");
+
+const importResolverTypescriptPath = path.resolve(
+  "./node_modules/eslint-import-resolver-typescript/lib/index.cjs"
+);
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   extends: [
@@ -13,8 +19,9 @@ module.exports = {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
-    "import/resolver": {},
-    "import/external-module-folders": [".yarn"],
+    "import/resolver": {
+      [importResolverTypescriptPath]: {},
+    },
   },
   rules: {
     "@typescript-eslint/no-namespace": "off",
@@ -34,20 +41,18 @@ module.exports = {
       {
         "newlines-between": "always",
         groups: [
-          ["builtin"],
-          ["external"],
-          ["internal"],
+          "builtin",
+          "external",
+          "internal",
           ["parent", "sibling", "index"],
-          ["object"],
+          ["object", "unknown"],
         ],
         pathGroups: [
           {
             pattern: "react",
+            patternOptions: { matchBase: true },
             group: "builtin",
-          },
-          {
-            pattern: "next",
-            group: "builtin",
+            position: "before",
           },
         ],
         alphabetize: {
