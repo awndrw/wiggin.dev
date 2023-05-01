@@ -44,43 +44,47 @@ async function getRoutesFile() {
   const createKey = (route) =>
     route.slice(1).replace(/\//g, "_").replace(/-/g, "").toUpperCase() ||
     "HOME";
-  /**
-   * @param {string} route
-   * @param {string} value
-   */
-  const createEntry = (route, value) => `  ${createKey(route)}: "${value}",`;
+
+  const routeIdsArray = localRoutes
+    .map((route) => `"${createKey(route)}"`)
+    .join(", ");
 
   const routeNameEntries = localRoutes
-    .map((route) => createEntry(route, createKey(route)))
-    .join("\n");
-  const routeEntries = localRoutes
-    .map((route) => createEntry(route, route))
-    .join("\n");
-  const routeLastModifiedEntries = filePaths
-    .map((route) =>
-      createEntry(getLocalRoute(route), getLastModifiedDate(route).toString())
+    .map(
+      (route) => `  ${createKey(route)} = "${createKey(route).toLowerCase()}",`
     )
     .join("\n");
 
-  return `import { z } from "zod";
+  const routeEntries = localRoutes
+    .map((route) => `  ${createKey(route)}: "${route}",`)
+    .join("\n");
 
-import { Hue } from "theme/constants";
+  const routeLastModifiedEntries = filePaths
+    .map(
+      (route) =>
+        `  ${createKey(getLocalRoute(route))}: "${getLastModifiedDate(
+          route
+        ).toString()}",`
+    )
+    .join("\n");
 
-export const RouteName = {
+  return `import { Hue } from "theme/constants";
+
+export const routeIds = [${routeIdsArray}] as const;
+
+export enum RouteName {
 ${routeNameEntries}
-} as const;
-export const RouteNameSchema = z.nativeEnum(RouteName);
-export type RouteName = z.infer<typeof RouteNameSchema>;
+}
 
 export const Route = {
 ${routeEntries}
 } as const;
-export const RouteSchema = z.nativeEnum(Route);
-export type Route = z.infer<typeof RouteSchema>;
+export type Route = typeof Route[keyof typeof Route];
 
 export const RouteLastModified = {
 ${routeLastModifiedEntries}
 } as const;
+export type RouteLastModified = typeof RouteLastModified[keyof typeof RouteLastModified];
 
 export type FullRoute = \`/\${Hue}\${Route}\`;
 `;
