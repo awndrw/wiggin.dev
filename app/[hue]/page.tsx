@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Action, EventData } from "analytics/constants";
+import { Route } from ".types/routes";
+import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink, InternalLink } from "components/Link";
 import { Logo } from "components/Logo";
@@ -43,17 +44,17 @@ export default function Page() {
       <Section id={scribbleTargetId} fullHeight>
         <Text>
           While I do most of my tinkering at the{" "}
-          <Trigger action={Action.LINK} from={EventData.Route.HOME} to="mellon">
+          <Trigger action={Action.LINK} to="mellon" from={Route.HOME}>
             <ExternalLink href="https://mellon.org" suffix=",">
               Mellon Foundation
             </ExternalLink>
           </Trigger>{" "}
           I spend my free time{" "}
-          <InternalLink href="/color" suffix=".">
+          <InternalLink to={Route.COLOR} suffix=".">
             playing with colors
           </InternalLink>{" "}
           Just want to chat? Send me an{" "}
-          <Trigger action={Action.LINK} from={EventData.Route.HOME} to="email">
+          <Trigger action={Action.LINK} to="email" from={Route.HOME}>
             <ExternalLink href="mailto:andrew@wiggin.dev" suffix=".">
               email
             </ExternalLink>

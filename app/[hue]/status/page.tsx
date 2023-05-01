@@ -1,4 +1,5 @@
-import { Action, EventData } from "analytics/constants";
+import { Route } from ".types/routes";
+import { Action } from "analytics/constants";
 import { ExternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
@@ -30,7 +31,7 @@ export default function Page() {
         </h1>
         <Text>
           Want to see what&rsquo;s going on behind the scenes? Check out{" "}
-          <Trigger action={Action.LINK} from={EventData.Route.STATUS} to="docs">
+          <Trigger action={Action.LINK} to="docs" from={Route.STATUS}>
             <ExternalLink href="https://github.com/wiggindev/wiggin.dev#readme">
               the docs
             </ExternalLink>

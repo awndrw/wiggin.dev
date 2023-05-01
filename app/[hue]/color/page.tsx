@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Action, EventData } from "analytics/constants";
+import { Route } from ".types/routes";
+import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
@@ -69,7 +70,7 @@ export default function Page() {
         <Text>
           Looking for something more technical? Just interested in the code?
           Check out{" "}
-          <Trigger action={Action.LINK} from={EventData.Route.COLOR} to="docs">
+          <Trigger action={Action.LINK} to="docs" from={Route.COLOR}>
             <ExternalLink
               href="https://github.com/wiggindev/wiggin.dev#readme"
               suffix="."

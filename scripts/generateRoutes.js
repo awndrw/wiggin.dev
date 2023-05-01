@@ -31,8 +31,37 @@ function getLastModifiedDate(pagePath) {
   return Math.max(...lastModifiedTimestamps);
 }
 
+/**
+ * @param {string} filePath
+ * @returns {string}
+ */
 function getLocalRoute(filePath) {
   return filePath.match(/^app\/\[hue](.+?)\/page\.tsx$/)?.[1] ?? "/";
+}
+
+/**
+ * @param {string} name
+ * @param {object} obj
+ * @returns {string}
+ */
+function createObject(name, obj) {
+  const entries = Object.entries(obj)
+    .map(([key, value]) => createEntry(key, value))
+    .join("\n");
+  return `export const ${name} = {
+${entries}
+} as const;
+export const ${name}Schema = z.nativeEnum(${name});
+export type ${name} = z.infer<typeof ${name}Schema>;`;
+}
+
+/**
+ * @param {string} key
+ * @param {string} value
+ * @returns {string}
+ */
+function createEntry(key, value) {
+  return `  ${key}: "${value}",`;
 }
 
 async function getRoutesFile() {
@@ -45,48 +74,32 @@ async function getRoutesFile() {
     route.slice(1).replace(/\//g, "_").replace(/-/g, "").toUpperCase() ||
     "HOME";
 
-  const routeIdsArray = localRoutes
-    .map((route) => `"${createKey(route)}"`)
-    .join(", ");
+  const routeObj = localRoutes.reduce((obj, route) => {
+    obj[createKey(route)] = createKey(route);
+    return obj;
+  }, {});
 
-  const routeNameEntries = localRoutes
-    .map(
-      (route) => `  ${createKey(route)} = "${createKey(route).toLowerCase()}",`
-    )
-    .join("\n");
+  const routePathObj = localRoutes.reduce((obj, route) => {
+    obj[createKey(route)] = route;
+    return obj;
+  }, {});
 
-  const routeEntries = localRoutes
-    .map((route) => `  ${createKey(route)}: "${route}",`)
-    .join("\n");
+  const routeLastModifiedObj = filePaths.reduce((obj, path) => {
+    obj[createKey(getLocalRoute(path))] = getLastModifiedDate(path);
+    return obj;
+  }, {});
 
-  const routeLastModifiedEntries = filePaths
-    .map(
-      (route) =>
-        `  ${createKey(getLocalRoute(route))}: "${getLastModifiedDate(
-          route
-        ).toString()}",`
-    )
-    .join("\n");
+  return `import { z } from "zod";
 
-  return `import { Hue } from "theme/constants";
+import { Hue } from "theme/constants";
 
-export const routeIds = [${routeIdsArray}] as const;
+${createObject("Route", routeObj)}
 
-export enum RouteName {
-${routeNameEntries}
-}
+${createObject("RoutePath", routePathObj)}
 
-export const Route = {
-${routeEntries}
-} as const;
-export type Route = typeof Route[keyof typeof Route];
+${createObject("RouteLastModified", routeLastModifiedObj)}
 
-export const RouteLastModified = {
-${routeLastModifiedEntries}
-} as const;
-export type RouteLastModified = typeof RouteLastModified[keyof typeof RouteLastModified];
-
-export type FullRoute = \`/\${Hue}\${Route}\`;
+export type FullRoute = \`/\${Hue}\${RoutePath}\`;
 `;
 }
 

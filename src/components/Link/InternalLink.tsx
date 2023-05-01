@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import React from "react";
 import { ArrowRight } from "react-feather";
 
-import { type Route, type FullRoute } from ".types/routes";
+import { type Route, type FullRoute, RoutePath } from ".types/routes";
 import {
   Interaction,
   type InteractionComponentProps,
@@ -15,14 +15,14 @@ import { useInternalLinkProps } from "./useInternalLinkProps";
 export type InternalLinkProps = Omit<
   InteractionComponentProps<typeof NextLink<FullRoute>>,
   "href"
-> & { href: Route };
+> & { to: Route };
 
 export const InternalLink = React.forwardRef(InternalLinkImpl);
 function InternalLinkImpl(
-  { children, href, ...props }: InternalLinkProps,
+  { children, to, ...props }: InternalLinkProps,
   ref: React.ForwardedRef<HTMLAnchorElement>
 ) {
-  const internalLinkProps = useInternalLinkProps(href);
+  const internalLinkProps = useInternalLinkProps(RoutePath[to]);
 
   return (
     <Interaction
