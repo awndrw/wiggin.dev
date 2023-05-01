@@ -1,6 +1,7 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
+
 const path = require("path");
 
 const getLocalIdent = require("./scripts/getLocalIdent");
@@ -20,10 +21,6 @@ const config = {
   productionBrowserSourceMaps: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "src")],
-  },
-  eslint: {
-    // TODO: Errors in Vercel builds but unable to repro locally
-    ignoreDuringBuilds: true,
   },
   async headers() {
     const headers = [];
