@@ -10,6 +10,5 @@ export const useInternalLinkProps = (href: RoutePath) => {
   const hue = useAtomValue(hueAtom);
   return {
     href: `/${hue}${href}` as NextRoute<FullRoute>,
-    prefetch: false,
   };
 };
