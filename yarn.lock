@@ -1548,6 +1548,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/edge-config@npm:^0.1.9":
+  version: 0.1.9
+  resolution: "@vercel/edge-config@npm:0.1.9"
+  checksum: 1c5f748e35db6d870d61d5531199fdadf8fffd0594961dd1f5d15cea1050a57e97f10331baf1e957b2226a23b03c6a317cec54b3a72f77f5b0757c1d41faf826
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -5138,6 +5145,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.59.1
     "@use-gesture/react": ^10.2.26
     "@vercel/analytics": ^1.0.0
+    "@vercel/edge-config": ^0.1.9
     better-color-tools: ^0.12.3
     classnames: ^2.3.2
     cookies-next: ^2.1.1

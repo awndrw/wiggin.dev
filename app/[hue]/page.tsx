@@ -1,4 +1,5 @@
 import React from "react";
+import { z } from "zod";
 
 import { Route } from ".types/routes";
 import { Action } from "analytics/constants";
@@ -10,12 +11,15 @@ import { Section } from "components/Section";
 import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
+import { getEdgeConfig } from "utils/getEdgeConfig";
 import { getId } from "utils/getId";
 
 import styles from "./page.module.scss";
 
-export default function Page() {
+export default async function Page() {
   const scribbleTargetId = getId();
+
+  const tagline = await getEdgeConfig("tagline", z.string());
 
   return (
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
@@ -29,10 +33,7 @@ export default function Page() {
             weight="light"
           />
         </h1>
-        <Text>
-          I&rsquo;m a brooklyn based design engineer passionate about frontend
-          architecture, accessibility, and design systems.
-        </Text>
+        <Text>I&rsquo;m a {tagline}</Text>
         <AnimatedPath
           className={styles.scribble}
           viewBox="0 0 862.83 1809.95"
