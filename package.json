@@ -27,6 +27,7 @@
     "@use-gesture/react": "^10.2.26",
     "@vercel/analytics": "^1.0.0",
     "@vercel/edge-config": "^0.1.9",
+    "@vercel/otel": "^0.3.0",
     "better-color-tools": "^0.12.3",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
