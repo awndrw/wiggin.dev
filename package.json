@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@csstools/postcss-oklab-function": "^2.2.1",
+    "@datadog/browser-rum": "^4.42.0",
     "@next/bundle-analyzer": "^13.3.2",
     "@radix-ui/react-accessible-icon": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.3",
