@@ -5,7 +5,7 @@ import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
 import { ExternalLink } from "components/Link";
 import { Page as PageWrapper } from "components/Page";
-import { Section } from "components/Section";
+import { Section, type SectionProps } from "components/Section";
 import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
@@ -17,6 +17,24 @@ import styles from "./page.module.scss";
 export const metadata = {
   title: "color",
 };
+
+function NumberedSection({
+  num,
+  children,
+  ...sectionProps
+}: {
+  num: number;
+  children: React.ReactNode;
+} & SectionProps) {
+  return (
+    <Section bottomSeparator {...sectionProps}>
+      <div className={styles.numberedSection}>
+        <span className={styles.number}>{num}</span>
+        <Text>{children}</Text>
+      </div>
+    </Section>
+  );
+}
 
 export default function Page() {
   const animatedPathTargetId = getId();
@@ -38,34 +56,30 @@ export default function Page() {
           startVisible={false}
         />
       </Section>
-      <Section bottomSeparator id={animatedPathTargetId}>
-        <div className={styles.numberedSection}>
-          <span className={styles.number}>1</span>
-          <Text>
-            An initial palette of three colors is generated on the server. Each
-            page is statically generated at build time using all possible hues
-            (0-360).
-          </Text>
-        </div>
-      </Section>
-      <Section bottomSeparator>
-        <div className={styles.numberedSection}>
-          <span className={styles.number}>2</span>
-          <Text>
-            Additional colors are generated on the client on an as-needed basis
-            using the PostCSS OKLAB Function.
-          </Text>
-        </div>
-      </Section>
-      <Section bottomSeparator>
-        <div className={styles.numberedSection}>
-          <span className={styles.number}>3</span>
-          <Text>
-            A MutationObserver watches the DOM for data-hue attribute changes.
-            Styles are generated for new hues.
-          </Text>
-        </div>
-      </Section>
+      <NumberedSection num={1} id={animatedPathTargetId}>
+        This color scheme uses{" "}
+        <Trigger action={Action.LINK} to="oklch" from={Route.COLOR}>
+          <ExternalLink href="">OKLCH</ExternalLink>
+        </Trigger>{" "}
+        to create an accessible color palette with any hue. Lightness and chroma
+        values are fixed and can be found in{" "}
+        <Trigger action={Action.LINK} to="theme docs" from={Route.COLOR}>
+          <ExternalLink
+            href="https://github.com/wiggindev/wiggin.dev#theme"
+            suffix="."
+          >
+            the docs
+          </ExternalLink>
+        </Trigger>
+      </NumberedSection>
+      <NumberedSection num={2}>
+        Each page is statically generated at build time using all possible hues
+        (0-360º). Each hue is rotated on 120º intervals to create a palette.
+      </NumberedSection>
+      <NumberedSection num={3}>
+        A MutationObserver watches the DOM for data-hue attribute changes,
+        setting the theme-color meta tag and updating the favicon.
+      </NumberedSection>
       <Section fullHeight>
         <Text>
           Looking for something more technical? Just interested in the code?
