@@ -409,37 +409,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/browser-core@npm:4.42.0":
-  version: 4.42.0
-  resolution: "@datadog/browser-core@npm:4.42.0"
-  checksum: 7282ae745257f91a1aeb3104d2e3024ae99b711a6e0078d3ec238fca2f0a3e6f3930f90dac53f9ccfbb0655b07d9fee377f9365227ceec1862bb90556073d886
-  languageName: node
-  linkType: hard
-
-"@datadog/browser-rum-core@npm:4.42.0":
-  version: 4.42.0
-  resolution: "@datadog/browser-rum-core@npm:4.42.0"
-  dependencies:
-    "@datadog/browser-core": 4.42.0
-  checksum: dc093ec14fc1389fd7e6cc787e910d9d467df3e59dd4f2ea05cc8b1f370231ef0831d80952d1629827439460d03e281b30875575369d69b848c63764f25ed464
-  languageName: node
-  linkType: hard
-
-"@datadog/browser-rum@npm:^4.42.0":
-  version: 4.42.0
-  resolution: "@datadog/browser-rum@npm:4.42.0"
-  dependencies:
-    "@datadog/browser-core": 4.42.0
-    "@datadog/browser-rum-core": 4.42.0
-  peerDependencies:
-    "@datadog/browser-logs": 4.42.0
-  peerDependenciesMeta:
-    "@datadog/browser-logs":
-      optional: true
-  checksum: 8802c0cb055d41a1f18e8da7fe81421b983bf1c1466b0bf0b00856e1104085870ed5cfdd3ca5f5a485a15fddfd818b5eb4bd9dd196d8dc61c9ee3ddcc219519a
-  languageName: node
-  linkType: hard
-
 "@dependents/detective-less@npm:^3.0.1":
   version: 3.0.2
   resolution: "@dependents/detective-less@npm:3.0.2"
@@ -5198,7 +5167,6 @@ __metadata:
   dependencies:
     "@builder.io/partytown": ^0.8.0
     "@csstools/postcss-oklab-function": ^2.2.1
-    "@datadog/browser-rum": ^4.42.0
     "@next/bundle-analyzer": ^13.3.4
     "@radix-ui/react-accessible-icon": ^1.0.2
     "@radix-ui/react-dialog": ^1.0.3

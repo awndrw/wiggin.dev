@@ -1,4 +1,3 @@
-import { datadogRum } from "@datadog/browser-rum";
 import va from "@vercel/analytics";
 
 import { type Route, RouteSchema } from ".types/routes";
@@ -27,5 +26,4 @@ export function trackAction<Name extends Action>(
 ) {
   const processedProps = props ? preprocessProps(props) : undefined;
   va.track(name, processedProps);
-  datadogRum.addAction(name, processedProps);
 }
