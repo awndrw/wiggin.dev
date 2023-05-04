@@ -33,7 +33,7 @@ export default async function Page() {
             weight="light"
           />
         </h1>
-        <Text>I&rsquo;m a {tagline}</Text>
+        <Text>I&rsquo;m a {tagline}.</Text>
         <AnimatedPath
           className={styles.scribble}
           viewBox="0 0 862.83 1809.95"
