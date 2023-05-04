@@ -18,7 +18,6 @@ const config = {
     scrollRestoration: true,
     typedRoutes: true,
     nextScriptWorkers: true,
-    instrumentationHook: true,
   },
   productionBrowserSourceMaps: true,
   sassOptions: {
