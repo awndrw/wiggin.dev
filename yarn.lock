@@ -2115,13 +2115,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader-shorter-classnames@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "css-loader-shorter-classnames@npm:2.0.1"
-  checksum: 86140d7de14e2617f2550f5e48f1db46914c51ada068335310074c654b0d2c7c3398ba90406d86fbdc87681afc8091de70b9f0c70e55ac40d66af19a910cde24
-  languageName: node
-  linkType: hard
-
 "css-prefers-color-scheme@npm:^8.0.2":
   version: 8.0.2
   resolution: "css-prefers-color-scheme@npm:8.0.2"
@@ -4162,6 +4155,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"loader-utils@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "loader-utils@npm:3.2.1"
+  checksum: 4e3ea054cdc8be1ab1f1238f49f42fdf0483039eff920fb1d442039f3f0ad4ebd11fb8e584ccdf2cb7e3c56b3d40c1832416e6408a55651b843da288960cc792
+  languageName: node
+  linkType: hard
+
 "locate-path@npm:^5.0.0":
   version: 5.0.0
   resolution: "locate-path@npm:5.0.0"
@@ -5006,7 +5006,6 @@ __metadata:
     better-color-tools: ^0.12.3
     classnames: ^2.3.2
     critters: ^0.0.16
-    css-loader-shorter-classnames: ^2.0.1
     dependency-tree: ^10.0.7
     eslint: ^8.40.0
     eslint-config-next: ^13.4.2
@@ -5017,6 +5016,7 @@ __metadata:
     globby: ^13.1.4
     husky: ^8.0.3
     jotai: ^2.1.0
+    loader-utils: ^3.2.1
     next: ^13.4.2
     postcss: ^8.4.23
     postcss-combine-media-query: ^1.0.1
