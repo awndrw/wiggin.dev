@@ -47,8 +47,8 @@
   },
   "packageManager": "yarn@3.5.1",
   "engines": {
-    "yarn": "3.5.1",
-    "node": "20.1.0"
+    "yarn": "3.x",
+    "node": "18.x"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.8.0",
