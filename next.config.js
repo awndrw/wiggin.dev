@@ -3,8 +3,9 @@ const path = require("path");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
+const { getLocalIdentName } = require("css-loader-shorter-classnames");
 
-const getLocalIdent = require("./scripts/getLocalIdent");
+const getLocalIdent = getLocalIdentName();
 
 // TODO: Add CSP. Currently blocked by NextJS dev I believe
 
@@ -36,7 +37,6 @@ const config = {
           const isPostCssLoader =
             moduleLoader.loader?.includes("postcss-loader");
           if (isCssLoader && !isPostCssLoader) {
-            // TODO: Fix getLocalIdent. Collisions happen every other build.
             moduleLoader.options.modules.getLocalIdent = getLocalIdent;
           }
         });

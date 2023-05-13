@@ -30,6 +30,7 @@
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "critters": "^0.0.16",
+    "css-loader-shorter-classnames": "^2.0.1",
     "dependency-tree": "^10.0.7",
     "dotenv": "^16.0.3",
     "globby": "^13.1.4",
