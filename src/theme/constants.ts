@@ -11,19 +11,6 @@ export const HUES = [
   HueSchema.parse(233),
 ] as const;
 export const DEFAULT_HUE = HUES[0];
-export const isHue = (hue: number): hue is Hue =>
-  HueSchema.safeParse(hue).success;
-export const parseHue = (hue: unknown, fallback?: Hue): Hue => {
-  const parsedHue = HueSchema.safeParse(hue);
-  return parsedHue.success ? parsedHue.data : fallback ?? getRandomHue();
-};
-export const getRandomHue = () =>
-  HueSchema.parse(Math.floor(Math.random() * 360));
-export const getPresetHues = (baseHue: Hue) => [
-  baseHue,
-  HueSchema.parse((baseHue + 120) % 360),
-  HueSchema.parse((baseHue + 240) % 360),
-];
 
 export const ModeSchema = z.enum(["light", "dark"] as const);
 export type Mode = z.infer<typeof ModeSchema>;

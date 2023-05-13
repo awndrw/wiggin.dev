@@ -3,9 +3,9 @@ import Script from "next/script";
 import React from "react";
 
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
-import { createStyles } from "theme";
-import { DEFAULT_MODE, getPresetHues, parseHue } from "theme/constants";
-import { hueId, getHexForColor } from "theme/utils";
+import { DEFAULT_MODE } from "theme/constants";
+import { createStyles, getHexForColor } from "theme/server";
+import { hueId, getPresetHues, parseHue } from "theme/shared";
 import { getId } from "utils/getId";
 
 import { ActionBar } from "./LayoutComponents/ActionBar";

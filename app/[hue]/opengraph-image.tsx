@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/server";
 
 import { Logo } from "components/Logo";
-import { parseHue } from "theme/constants";
-import { getHexForColor } from "theme/utils";
+import { getHexForColor } from "theme/server";
+import { parseHue } from "theme/shared";
 
 export const alt = "";
 export const size = {
