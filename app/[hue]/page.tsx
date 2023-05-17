@@ -4,7 +4,7 @@ import { z } from "zod";
 import { Route } from ".types/routes";
 import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
-import { ExternalLink, InternalLink } from "components/Link";
+import { ExternalLink } from "components/Link";
 import { Logo } from "components/Logo";
 import { Page as PageWrapper } from "components/Page";
 import { Section } from "components/Section";
@@ -44,17 +44,14 @@ export default async function Page() {
       </Section>
       <Section id={scribbleTargetId} fullHeight>
         <Text>
-          While I do most of my tinkering at the{" "}
+          I&rsquo;m a digital storyteller and toolmaker. These days, I do most
+          of my tinkering at the{" "}
           <Trigger action={Action.LINK} to="mellon" from={Route.HOME}>
-            <ExternalLink href="https://mellon.org" suffix=",">
+            <ExternalLink href="https://mellon.org" suffix=".">
               Mellon Foundation
             </ExternalLink>
           </Trigger>{" "}
-          I spend my free time{" "}
-          <InternalLink to={Route.COLOR} suffix=".">
-            playing with colors
-          </InternalLink>{" "}
-          Just want to chat? Send me an{" "}
+          I&rsquo;m always available via{" "}
           <Trigger action={Action.LINK} to="email" from={Route.HOME}>
             <ExternalLink href="mailto:andrew@wiggin.dev" suffix=".">
               email
