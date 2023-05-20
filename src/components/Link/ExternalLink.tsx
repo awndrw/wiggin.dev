@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef, type ForwardedRef } from "react";
 import { ArrowUpRight } from "react-feather";
 
 import {
@@ -8,10 +8,10 @@ import {
 
 export type ExternalLinkProps = InteractionComponentProps<"a">;
 
-export const ExternalLink = React.forwardRef(ExternalLinkImpl);
+export const ExternalLink = forwardRef(ExternalLinkImpl);
 function ExternalLinkImpl(
   { children, ...props }: ExternalLinkProps,
-  ref: React.ForwardedRef<HTMLAnchorElement>
+  ref: ForwardedRef<HTMLAnchorElement>
 ) {
   return (
     <Interaction

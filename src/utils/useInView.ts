@@ -1,13 +1,13 @@
-import React from "react";
+import { type RefObject, useState, useEffect } from "react";
 
-export function useInView(ref: React.RefObject<HTMLElement>): boolean;
+export function useInView(ref: RefObject<HTMLElement>): boolean;
 export function useInView(selector: string): boolean;
 export function useInView(
-  refOrSelector: React.RefObject<HTMLElement> | string
+  refOrSelector: RefObject<HTMLElement> | string
 ): boolean {
-  const [inView, setInView] = React.useState(false);
+  const [inView, setInView] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const target =
       typeof refOrSelector === "string"
         ? document.querySelector(refOrSelector)

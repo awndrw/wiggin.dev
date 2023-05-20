@@ -1,12 +1,8 @@
-import React from "react";
+import { type FC, type ComponentPropsWithoutRef } from "react";
 
-export type NoWrapProps = React.ComponentPropsWithoutRef<"span">;
+export type NoWrapProps = ComponentPropsWithoutRef<"span">;
 
-export const NoWrap: React.FC<NoWrapProps> = ({
-  children,
-  style,
-  ...props
-}) => {
+export const NoWrap: FC<NoWrapProps> = ({ children, style, ...props }) => {
   return (
     <span style={{ display: "inline-block", ...style }} {...props}>
       {children}

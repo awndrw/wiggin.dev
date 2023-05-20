@@ -1,7 +1,7 @@
 "use client";
 
 import { type SpringConfig, useSpring } from "@react-spring/web";
-import React from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export interface TimedSpringProps {
   x?: number;
@@ -27,8 +27,8 @@ const DEFAULT_PROPS: TimedSpringProps = {
 } as const;
 
 export default function useTimedSpring() {
-  const [isAnimating, setIsAnimating] = React.useState(false);
-  const [props, setProps] = React.useState<TimedSpringProps>(DEFAULT_PROPS);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [props, setProps] = useState<TimedSpringProps>(DEFAULT_PROPS);
 
   const style = useSpring({
     transform: isAnimating
@@ -42,7 +42,7 @@ export default function useTimedSpring() {
     config: props.springConfig,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isAnimating) {
       return;
     }
@@ -53,7 +53,7 @@ export default function useTimedSpring() {
     return () => window.clearTimeout(timeoutId);
   }, [isAnimating, props.timing]);
 
-  const trigger = React.useCallback((newProps: TimedSpringProps) => {
+  const trigger = useCallback((newProps: TimedSpringProps) => {
     setProps({ ...DEFAULT_PROPS, ...newProps });
     setIsAnimating(true);
   }, []);

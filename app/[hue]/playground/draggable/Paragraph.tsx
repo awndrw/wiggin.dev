@@ -1,7 +1,7 @@
 "use client";
 
 import c from "classnames";
-import React from "react";
+import { useState, useMemo, useEffect, Fragment } from "react";
 
 import * as Toast from "components/external/radix/Toast";
 import * as VisuallyHidden from "components/external/radix/VisuallyHidden";
@@ -12,15 +12,15 @@ import { Character } from "./Character";
 import styles from "./Paragraph.module.scss";
 
 export const Paragraph = ({ children }: { children: string }) => {
-  const [characterResets, setCharacterResets] = React.useState<
+  const [characterResets, setCharacterResets] = useState<
     Record<string, () => void>
   >({});
-  const hasDraggedCharacters = React.useMemo(
+  const hasDraggedCharacters = useMemo(
     () => Object.keys(characterResets).length > 0,
     [characterResets]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     const reset = () => {
       Object.values(characterResets).forEach((reset, index) => {
         setTimeout(reset, 75 * index);
@@ -57,7 +57,7 @@ export const Paragraph = ({ children }: { children: string }) => {
         {words.map((word, wordIndex) => {
           const characters = word.split("");
           return (
-            <React.Fragment key={wordIndex}>
+            <Fragment key={wordIndex}>
               <span className={styles.word}>
                 {characters.map((character, characterIndex) => (
                   <Character
@@ -77,7 +77,7 @@ export const Paragraph = ({ children }: { children: string }) => {
                 ))}
               </span>
               <span>&nbsp;</span>
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </p>
@@ -87,9 +87,9 @@ export const Paragraph = ({ children }: { children: string }) => {
 };
 
 const ResetMessage = ({ visible }: { visible: boolean }) => {
-  const [isTouchScreen, setIsTouchScreen] = React.useState(false);
+  const [isTouchScreen, setIsTouchScreen] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsTouchScreen("ontouchstart" in window);
   }, []);
 

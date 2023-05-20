@@ -9,14 +9,14 @@ import {
   useSpringRef,
 } from "@react-spring/web";
 import c from "classnames";
-import React from "react";
+import { useState, type ComponentPropsWithoutRef } from "react";
 
 import { flexaMono } from "fonts/flexa";
 
 import styles from "./page.module.scss";
 
 export default function Page() {
-  const [showBlueScreen, setShowBlueScreen] = React.useState(false);
+  const [showBlueScreen, setShowBlueScreen] = useState(false);
 
   const [mainRef, inView] = useInView();
 
@@ -111,7 +111,7 @@ export default function Page() {
 }
 
 type AvailableSvgProps = Omit<
-  React.ComponentProps<typeof a.svg>,
+  ComponentPropsWithoutRef<typeof a.svg>,
   "width" | "height" | "viewBox" | "xmlns"
 >;
 

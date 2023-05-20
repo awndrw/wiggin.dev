@@ -1,5 +1,11 @@
 import c from "classnames";
-import React from "react";
+import {
+  type ElementType,
+  type ComponentPropsWithRef,
+  forwardRef,
+  type ForwardedRef,
+  type ComponentRef,
+} from "react";
 import type { Icon as FeatherIcon } from "react-feather";
 
 import { Icon } from "components/Icon";
@@ -8,10 +14,10 @@ import { NoWrap } from "components/NoWrap";
 import styles from "./Interaction.module.scss";
 import { Suffixed } from "./Suffixed";
 
-type InteractionComponent = React.ElementType;
+type InteractionComponent = ElementType;
 
 export type InteractionComponentProps<C extends InteractionComponent> =
-  React.ComponentPropsWithRef<C> & {
+  ComponentPropsWithRef<C> & {
     suffix?: string;
     children: string;
   };
@@ -22,7 +28,7 @@ export type InteractionProps<C extends InteractionComponent> =
     icon: FeatherIcon;
   };
 
-export const Interaction = React.forwardRef(InteractionImpl);
+export const Interaction = forwardRef(InteractionImpl);
 function InteractionImpl<C extends InteractionComponent>(
   {
     component: Component,
@@ -32,7 +38,7 @@ function InteractionImpl<C extends InteractionComponent>(
     className,
     ...props
   }: InteractionProps<C>,
-  ref: React.ForwardedRef<React.ComponentRef<C>>
+  ref: ForwardedRef<ComponentRef<C>>
 ) {
   const words = children.split(" ");
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { type ReactNode } from "react";
 
 import { Route } from ".types/routes";
 import { Action } from "analytics/constants";
@@ -24,7 +24,7 @@ function NumberedSection({
   ...sectionProps
 }: {
   num: number;
-  children: React.ReactNode;
+  children: ReactNode;
 } & SectionProps) {
   return (
     <Section bottomSeparator {...sectionProps}>

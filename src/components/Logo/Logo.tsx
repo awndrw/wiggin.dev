@@ -1,7 +1,7 @@
-import React from "react";
+import { type SVGAttributes, type FC } from "react";
 
 type AvailableSvgAttributes = Omit<
-  React.SVGAttributes<SVGSVGElement>,
+  SVGAttributes<SVGSVGElement>,
   "viewBox" | "xmlns"
 >;
 
@@ -9,10 +9,7 @@ export type LogoProps = AvailableSvgAttributes & {
   weight?: "regular" | "light";
 };
 
-export const Logo: React.FC<LogoProps> = ({
-  weight = "regular",
-  ...svgProps
-}) => {
+export const Logo: FC<LogoProps> = ({ weight = "regular", ...svgProps }) => {
   return (
     <svg
       viewBox="0 0 102 102"

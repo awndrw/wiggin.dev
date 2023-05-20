@@ -1,5 +1,5 @@
 import c from "classnames";
-import React from "react";
+import { type FC } from "react";
 import type {
   Icon as FeatherIcon,
   IconProps as FeatherIconProps,
@@ -11,7 +11,7 @@ export interface IconProps extends FeatherIconProps {
   icon: FeatherIcon;
 }
 
-export const Icon: React.FC<IconProps> = ({
+export const Icon: FC<IconProps> = ({
   icon: Icon,
   className,
   children,

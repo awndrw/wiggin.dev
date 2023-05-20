@@ -1,6 +1,6 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import Link from "next/link";
-import React from "react";
+import { type FC } from "react";
 import { Home } from "react-feather";
 
 import { Icon } from "components/Icon";
@@ -14,7 +14,7 @@ export interface BackHomeLinkProps {
   className?: string;
 }
 
-export const BackHomeLink: React.FC<BackHomeLinkProps> = ({
+export const BackHomeLink: FC<BackHomeLinkProps> = ({
   wrapperClassName,
   className,
 }) => {

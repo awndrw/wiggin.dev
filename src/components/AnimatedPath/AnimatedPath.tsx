@@ -5,13 +5,13 @@ import {
   useSpringValue,
 } from "@react-spring/web";
 import c from "classnames";
-import React from "react";
+import { type SVGProps, type FC, useRef, useState } from "react";
 
 import { useInView } from "utils/useInView";
 
 import styles from "./AnimatedPath.module.scss";
 
-export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {
+export interface AnimatedPathProps extends SVGProps<SVGSVGElement> {
   d: string;
   /* The ratio of the animated path length to the full path */
   animatedPathRatio: number;
@@ -19,7 +19,7 @@ export interface AnimatedPathProps extends React.SVGProps<SVGSVGElement> {
   startVisible?: boolean;
 }
 
-export const AnimatedPath: React.FC<AnimatedPathProps> = ({
+export const AnimatedPath: FC<AnimatedPathProps> = ({
   d,
   animatedPathRatio,
   targetId,
@@ -27,8 +27,8 @@ export const AnimatedPath: React.FC<AnimatedPathProps> = ({
   className,
   ...props
 }) => {
-  const pathRef = React.useRef<SVGPathElement>();
-  const [pathLength, setPathLength] = React.useState(0);
+  const pathRef = useRef<SVGPathElement>();
+  const [pathLength, setPathLength] = useState(0);
   const strokeDashoffset = useSpringValue<number>(0);
   const reducedMotion = useReducedMotion();
   const targetInView = useInView(`#${targetId}`);

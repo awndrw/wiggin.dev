@@ -1,18 +1,18 @@
 import cx from "classnames";
-import React from "react";
+import { type FC, type ReactNode, type HTMLAttributes } from "react";
 
 import { Separator } from "components/external/radix/Separator";
 
 import styles from "./Section.module.scss";
 
-export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+export interface SectionProps extends HTMLAttributes<HTMLElement> {
   type?: "accent" | "neutral";
   bottomSeparator?: boolean;
   fullHeight?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const Section: React.FC<SectionProps> = ({
+export const Section: FC<SectionProps> = ({
   type = "neutral",
   bottomSeparator = false,
   fullHeight = false,

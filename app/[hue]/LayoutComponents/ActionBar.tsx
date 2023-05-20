@@ -1,5 +1,3 @@
-import React from "react";
-
 import { BackHomeLink } from "components/ActionBar/BackHomeLink";
 import { DarkModeToggle } from "components/ActionBar/DarkModeToggle";
 import { HueSelector } from "components/ActionBar/HueSelector";

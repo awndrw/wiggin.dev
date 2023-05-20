@@ -1,14 +1,14 @@
 import cx from "classnames";
-import React from "react";
+import { type FC, type HTMLAttributes, type ReactNode } from "react";
 
 import styles from "components/Page/Page.module.scss";
 
-export interface PageProps extends React.HTMLAttributes<HTMLElement> {
+export interface PageProps extends HTMLAttributes<HTMLElement> {
   withAffordance?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-export const Page: React.FC<PageProps> = ({
+export const Page: FC<PageProps> = ({
   withAffordance = true,
   className,
   children,

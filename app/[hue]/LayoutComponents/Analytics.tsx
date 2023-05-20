@@ -4,16 +4,14 @@ import {
   Analytics as VercelAnalytics,
   type AnalyticsProps as VercelAnalyticsProps,
 } from "@vercel/analytics/react";
-import React from "react";
+import { type FC, useEffect } from "react";
 
 import { trackAction } from "analytics";
 import { Action } from "analytics/constants";
 import { env } from "constants/env";
 
-export const Analytics: React.FC<VercelAnalyticsProps> = (
-  vercelAnalyticsProps
-) => {
-  React.useEffect(() => {
+export const Analytics: FC<VercelAnalyticsProps> = (vercelAnalyticsProps) => {
+  useEffect(() => {
     if (!env.isDevelopment) {
       console.log(`                .-====-.                
                -========-               

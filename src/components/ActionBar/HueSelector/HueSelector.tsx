@@ -1,7 +1,6 @@
 import { a } from "@react-spring/web";
 import cx from "classnames";
 import { useAtom } from "jotai";
-import React from "react";
 
 import { trackAction } from "analytics";
 import { Action } from "analytics/constants";

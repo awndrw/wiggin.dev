@@ -1,7 +1,7 @@
 "use client";
 
 import NextLink from "next/link";
-import React from "react";
+import { forwardRef, type ForwardedRef } from "react";
 import { ArrowRight } from "react-feather";
 
 import { type Route, type FullRoute, RoutePath } from ".types/routes";
@@ -17,10 +17,10 @@ export type InternalLinkProps = Omit<
   "href"
 > & { to: Route };
 
-export const InternalLink = React.forwardRef(InternalLinkImpl);
+export const InternalLink = forwardRef(InternalLinkImpl);
 function InternalLinkImpl(
   { children, to, ...props }: InternalLinkProps,
-  ref: React.ForwardedRef<HTMLAnchorElement>
+  ref: ForwardedRef<HTMLAnchorElement>
 ) {
   const internalLinkProps = useInternalLinkProps(RoutePath[to]);
 

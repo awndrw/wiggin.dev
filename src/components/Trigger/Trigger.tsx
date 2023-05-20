@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
-import React from "react";
+import { type PropsWithChildren, type ForwardedRef, forwardRef } from "react";
 
 import { trackAction } from "analytics";
 import { type ActionMap, type Action } from "analytics/constants";
@@ -12,9 +12,10 @@ export type ActionProps<Name extends Action> = ActionMap[Name] extends never
       action: Name;
     } & ActionMap[Name];
 
+export const Trigger = forwardRef(TriggerImpl);
 function TriggerImpl<Name extends Action>(
-  { children, action, ...data }: React.PropsWithChildren<ActionProps<Name>>,
-  ref: React.ForwardedRef<HTMLHtmlElement>
+  { children, action, ...data }: PropsWithChildren<ActionProps<Name>>,
+  ref: ForwardedRef<HTMLHtmlElement>
 ) {
   return (
     // @ts-expect-error Poorly typed Action data
@@ -23,5 +24,3 @@ function TriggerImpl<Name extends Action>(
     </Slot>
   );
 }
-
-export const Trigger = React.forwardRef(TriggerImpl);

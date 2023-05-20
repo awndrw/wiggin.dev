@@ -1,7 +1,7 @@
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon";
 import cx from "classnames";
 import { useAtom } from "jotai";
-import React from "react";
+import { type FC } from "react";
 import { Moon, Sun } from "react-feather";
 
 import { Action } from "analytics/constants";
@@ -11,9 +11,7 @@ import { modeAtom } from "store";
 
 import styles from "./DarkModeToggle.module.scss";
 
-export const DarkModeToggle: React.FC<{ className: string }> = ({
-  className,
-}) => {
+export const DarkModeToggle: FC<{ className: string }> = ({ className }) => {
   const [mode, setMode] = useAtom(modeAtom);
 
   const nextMode = mode === "dark" ? "light" : "dark";

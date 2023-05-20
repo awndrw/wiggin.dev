@@ -1,4 +1,3 @@
-import React from "react";
 import { z } from "zod";
 
 import { Route } from ".types/routes";

@@ -1,7 +1,7 @@
 "use client";
 
 import { composeRefs } from "@radix-ui/react-compose-refs";
-import React from "react";
+import { type ReactNode, forwardRef, type ForwardedRef } from "react";
 
 import { sx } from "utils/style";
 import { useTextWidth } from "utils/useTextWidth";
@@ -10,13 +10,13 @@ import styles from "./Suffixed.module.scss";
 
 export interface SuffixedProps {
   suffix: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const Suffixed = React.forwardRef(SuffixedImpl);
+export const Suffixed = forwardRef(SuffixedImpl);
 function SuffixedImpl(
   { suffix, children }: SuffixedProps,
-  forwardedRef: React.ForwardedRef<HTMLSpanElement>
+  forwardedRef: ForwardedRef<HTMLSpanElement>
 ) {
   const [ref, suffixWidth] = useTextWidth(suffix);
 

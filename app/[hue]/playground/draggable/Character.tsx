@@ -2,19 +2,19 @@
 
 import { useSpring, a } from "@react-spring/web";
 import { useGesture, type Vector2 } from "@use-gesture/react";
-import React from "react";
+import { type FC, useId, createRef, useState } from "react";
 
 import styles from "./Character.module.scss";
 
-export const Character: React.FC<{
+export const Character: FC<{
   children: string;
   registerReset: (id: string, reset: () => void) => void;
 }> = ({ children, registerReset }) => {
-  const id = React.useId();
-  const spanRef = React.createRef<HTMLButtonElement>();
+  const id = useId();
+  const spanRef = createRef<HTMLButtonElement>();
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
-  const [currentPosition, setCurrentPosition] = React.useState<Vector2>([0, 0]);
-  const [dragging, setDragging] = React.useState(false);
+  const [currentPosition, setCurrentPosition] = useState<Vector2>([0, 0]);
+  const [dragging, setDragging] = useState(false);
 
   useGesture(
     {

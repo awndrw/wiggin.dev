@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import type React from "react";
+import { type ReactNode } from "react";
 import { z } from "zod";
 
 import { host, url } from "constants/url";
@@ -28,6 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return children;
 }

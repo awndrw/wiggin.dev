@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import Script from "next/script";
-import React from "react";
+import { type ReactNode } from "react";
 
 import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { DEFAULT_MODE } from "theme/constants";
@@ -31,7 +31,7 @@ export default async function Layout({
   children,
   params: { hue: hueParam },
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: { hue: string };
 }) {
   const hue = parseHue(hueParam);

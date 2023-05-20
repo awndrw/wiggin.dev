@@ -1,12 +1,12 @@
-import React from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function useTextWidth<T extends HTMLElement = HTMLElement>(
   text: string
 ) {
-  const ref = React.useRef<T>(null);
-  const [width, setWidth] = React.useState(0);
+  const ref = useRef<T>(null);
+  const [width, setWidth] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!ref.current) return;
 
     const span = document.createElement("span");

@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef, type ForwardedRef } from "react";
 import { Target } from "react-feather";
 
 import {
@@ -11,10 +11,10 @@ export type ButtonProps = Omit<
   "role" | "tabIndex"
 >;
 
-export const Button = React.forwardRef(ButtonImpl);
+export const Button = forwardRef(ButtonImpl);
 function ButtonImpl(
   { children, ...buttonProps }: ButtonProps,
-  ref: React.ForwardedRef<HTMLSpanElement>
+  ref: ForwardedRef<HTMLSpanElement>
 ) {
   return (
     <Interaction
