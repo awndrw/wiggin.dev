@@ -1,0 +1,10 @@
+.suffixed {
+  margin-right: var(--suffix-width);
+  position: relative;
+  &::after {
+    content: var(--suffix);
+    position: absolute;
+    right: calc(-1 * var(--suffix-width));
+    bottom: -0.15em;
+  }
+}

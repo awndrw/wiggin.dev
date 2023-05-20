@@ -6,6 +6,7 @@ import { Icon } from "components/Icon";
 import { NoWrap } from "components/NoWrap";
 
 import styles from "./Interaction.module.scss";
+import { Suffixed } from "./Suffixed";
 
 type InteractionComponent = React.ElementType;
 
@@ -50,12 +51,11 @@ function InteractionImpl<C extends InteractionComponent>(
           aria-hidden
           focusable={false}
         />
-        {suffix}
       </NoWrap>
     </>
   );
 
-  return (
+  const res = (
     <Component
       ref={ref}
       className={c(styles.interaction, className)}
@@ -64,4 +64,10 @@ function InteractionImpl<C extends InteractionComponent>(
       {content}
     </Component>
   );
+
+  if (suffix) {
+    return <Suffixed suffix={suffix}>{res}</Suffixed>;
+  }
+
+  return res;
 }

@@ -14,6 +14,7 @@
     "@csstools/postcss-oklab-function": "^2.2.1",
     "@next/bundle-analyzer": "^13.4.2",
     "@radix-ui/react-accessible-icon": "^1.0.2",
+    "@radix-ui/react-compose-refs": "^1.0.0",
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-separator": "^1.0.2",
     "@radix-ui/react-slot": "^1.0.1",
