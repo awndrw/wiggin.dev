@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { type FC, type ReactNode, type HTMLAttributes } from "react";
 
-import { Separator } from "components/external/radix/Separator";
+import { Separator } from "components/Separator";
 
 import styles from "./Section.module.scss";
 

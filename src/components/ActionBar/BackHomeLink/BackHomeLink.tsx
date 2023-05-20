@@ -5,7 +5,7 @@ import { Home } from "react-feather";
 
 import { Icon } from "components/Icon";
 import { useInternalLinkProps, usePathname } from "components/Link";
-import { Separator } from "components/external/radix/Separator";
+import { Separator } from "components/Separator";
 
 import styles from "./BackHomeLink.module.scss";
 
