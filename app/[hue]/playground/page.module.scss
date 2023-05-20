@@ -1,9 +1,0 @@
-@use "theme/scss/size";
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: size.$spacing-small;
-  padding: size.$spacing-large;
-}
