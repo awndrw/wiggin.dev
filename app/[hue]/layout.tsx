@@ -2,7 +2,6 @@ import { type Metadata } from "next";
 import Script from "next/script";
 import { type ReactNode } from "react";
 
-import { Provider as TooltipProvider } from "components/external/radix/Tooltip";
 import { DEFAULT_MODE } from "theme/constants";
 import { createStyles, getHexForColor } from "theme/server";
 import { hueId, getPresetHues, parseHue } from "theme/shared";
@@ -64,7 +63,7 @@ export default async function Layout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <TooltipProvider>{children}</TooltipProvider>
+        {children}
         <ActionBar presetHues={presetHues} />
         <Analytics />
       </body>
