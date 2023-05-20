@@ -7,8 +7,8 @@ import { createStyles, getHexForColor } from "theme/server";
 import { hueId, getPresetHues, parseHue } from "theme/shared";
 import { getId } from "utils/getId";
 
-import { ActionBar } from "./LayoutComponents/ActionBar";
-import { Analytics } from "./LayoutComponents/Analytics";
+import { ActionBar } from "./components/ActionBar";
+import { Analytics } from "./components/Analytics";
 
 export function generateStaticParams() {
   return [...Array(360).keys()].map((hue) => ({ hue: hue.toString() }));
