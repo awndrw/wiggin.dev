@@ -1,14 +1,11 @@
-const child_process = require("child_process");
-const fs = require("fs");
-const path = require("path");
+import child_process from "child_process";
 
-const dependencyTree = require("dependency-tree");
-const { z } = require("zod");
+import dependencyTree from "dependency-tree";
+import fg from "fast-glob";
+import { z } from "zod";
 
-const ROUTES_PATH = "src/.types/routes.ts";
-
-function getLastModifiedDate(pagePath) {
-  const deps = dependencyTree.toList({
+function getLastModifiedDate(pagePath: string) {
+  const deps: string[] = dependencyTree.toList({
     filename: pagePath,
     directory: ".",
   });
@@ -31,20 +28,11 @@ function getLastModifiedDate(pagePath) {
   return Math.max(...lastModifiedTimestamps);
 }
 
-/**
- * @param {string} filePath
- * @returns {string}
- */
-function getLocalRoute(filePath) {
+function getLocalRoute(filePath: string) {
   return filePath.match(/^app\/\[hue](.+?)\/page\.tsx$/)?.[1] ?? "/";
 }
 
-/**
- * @param {string} name
- * @param {object} obj
- * @returns {string}
- */
-function createObject(name, obj) {
+function createObject(name: string, obj: object) {
   const entries = Object.entries(obj)
     .map(([key, value]) => createEntry(key, value))
     .join("\n");
@@ -55,39 +43,32 @@ export const ${name}Schema = z.nativeEnum(${name});
 export type ${name} = z.infer<typeof ${name}Schema>;`;
 }
 
-/**
- * @param {string} key
- * @param {string} value
- * @returns {string}
- */
-function createEntry(key, value) {
+function createEntry(key: string, value: string) {
   return `  ${key}: "${value}",`;
 }
 
-async function getRoutesFile() {
-  const globby = await import("globby").then((m) => m.globby);
-  const filePaths = await globby(["app/**/page.tsx"]);
+export default async function generateRoutesTypes() {
+  const filePaths = await fg(["app/**/page.tsx"]);
   const localRoutes = filePaths.map(getLocalRoute);
 
-  /** @param {string} route */
-  const createKey = (route) =>
+  const createKey = (route: string) =>
     route.slice(1).replace(/\//g, "_").replace(/-/g, "").toUpperCase() ||
     "HOME";
 
   const routeObj = localRoutes.reduce((obj, route) => {
     obj[createKey(route)] = createKey(route);
     return obj;
-  }, {});
+  }, {} as Record<string, string>);
 
   const routePathObj = localRoutes.reduce((obj, route) => {
     obj[createKey(route)] = route;
     return obj;
-  }, {});
+  }, {} as Record<string, string>);
 
   const routeLastModifiedObj = filePaths.reduce((obj, path) => {
-    obj[createKey(getLocalRoute(path))] = getLastModifiedDate(path);
+    obj[createKey(getLocalRoute(path))] = getLastModifiedDate(path).toString();
     return obj;
-  }, {});
+  }, {} as Record<string, string>);
 
   return `import { z } from "zod";
 
@@ -102,13 +83,3 @@ ${createObject("RouteLastModified", routeLastModifiedObj)}
 export type FullRoute = \`/\${Hue}\${RoutePath}\`;
 `;
 }
-
-(async () => {
-  const routesFileContent = await getRoutesFile();
-  fs.mkdir(path.dirname(ROUTES_PATH), { recursive: true }, (err) => {
-    if (err) throw err;
-    fs.writeFile(ROUTES_PATH, routesFileContent, (err) => {
-      if (err) throw err;
-    });
-  });
-})();
