@@ -14,7 +14,6 @@ const config = {
   swcMinify: true,
   experimental: {
     optimizeCss: true,
-    appDir: true,
     scrollRestoration: true,
     typedRoutes: true,
     nextScriptWorkers: true,
