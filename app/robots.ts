@@ -8,7 +8,7 @@ export default function Robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        disallow: env.isProduction ? "/status" : "/",
+        disallow: env.isProduction ? "" : "/",
       },
     ],
     sitemap: new URL("/sitemap.xml", url).href,
