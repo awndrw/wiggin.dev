@@ -7,7 +7,7 @@ import { Moon, Sun } from "react-feather";
 import { Action } from "analytics/constants";
 import { Icon } from "components/Icon";
 import { Trigger } from "components/Trigger";
-import { modeAtom } from "store";
+import { modeAtom } from "store/client";
 
 import styles from "./DarkModeToggle.module.scss";
 

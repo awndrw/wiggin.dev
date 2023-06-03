@@ -4,7 +4,7 @@ import { useAtom } from "jotai";
 
 import { trackAction } from "analytics";
 import { Action } from "analytics/constants";
-import { hueAtom } from "store";
+import { hueAtom } from "store/client";
 import { type Hue } from "theme/constants";
 import useTimedSpring from "utils/useTimedSpring";
 

@@ -4,7 +4,7 @@ import { useAtomValue } from "jotai";
 import { type Route as NextRoute } from "next";
 
 import { type FullRoute, type RoutePath } from ".types/routes";
-import { hueAtom } from "store";
+import { hueAtom } from "store/client";
 
 export const useInternalLinkProps = (href: RoutePath) => {
   const hue = useAtomValue(hueAtom);
