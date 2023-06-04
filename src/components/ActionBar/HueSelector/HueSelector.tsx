@@ -6,9 +6,9 @@ import { trackAction } from "analytics";
 import { Action } from "analytics/constants";
 import { hueAtom } from "store/client";
 import { type Hue } from "theme/constants";
-import useTimedSpring from "utils/useTimedSpring";
 
 import styles from "./HueSelector.module.scss";
+import useTimedSpring from "./useTimedSpring";
 
 export function HueSelector({
   hue,
