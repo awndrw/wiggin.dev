@@ -1,14 +1,20 @@
-import postcssOklabFunction from "@csstools/postcss-oklab-function";
-import postcss from "postcss";
-// @ts-expect-error Untyped module
-import postcssMinify from "postcss-minify";
-
 import { type Hue } from "theme/constants";
 import { createCSSVars } from "theme/utils";
 import { warnOnClient } from "utils/warnOnClient";
 
-export function createStyles(hue: Hue) {
-  warnOnClient();
+export async function createStyles(hue: Hue) {
+  warnOnClient("postcss", "@csstools/postcss-oklab-function", "postcss-minify");
+
+  const [
+    { default: postcss },
+    { default: postcssOklabFunction },
+    { default: postcssMinify },
+  ] = await Promise.all([
+    import("postcss"),
+    import("@csstools/postcss-oklab-function"),
+    // @ts-expect-error Untyped package
+    import("postcss-minify"),
+  ]);
 
   const lightStyles = createCSSVars(hue, "light");
   const darkStyles = createCSSVars(hue, "dark");

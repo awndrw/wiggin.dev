@@ -40,6 +40,10 @@ export default async function Layout({
 }) {
   const hue = parseHue(hueParam);
   const presetHues = getPresetHues(hue);
+  const presetHueStyles: Record<string, string> = {};
+  for (const presetHue of presetHues) {
+    presetHueStyles[hueId(presetHue)] = await createStyles(presetHue);
+  }
 
   return (
     <html lang="en">
@@ -51,12 +55,8 @@ export default async function Layout({
         >
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NM2JLN5');`}
         </Script>
-        {presetHues.map((hue) => (
-          <style
-            id={hueId(hue)}
-            key={hue}
-            dangerouslySetInnerHTML={{ __html: createStyles(hue) }}
-          />
+        {Object.entries(presetHueStyles).map(([id, style]) => (
+          <style id={id} key={id} dangerouslySetInnerHTML={{ __html: style }} />
         ))}
       </head>
       <body data-hue={hue}>

@@ -17,12 +17,18 @@ function getFunctionNames(stack: ErrorStackParser.StackFrame[]) {
   return functions;
 }
 
-export function warnOnClient() {
+export function warnOnClient(...packages: string[]) {
   const isClient = typeof window !== "undefined";
   if (isClient) {
+    let message = "Heavyweight packages ran on client.";
+    if (packages.length > 0) {
+      message += ` Packages: ${packages.join(", ")}`;
+    }
     const stack = ErrorStackParser.parse(new Error());
     const callerFunctions = getFunctionNames(stack);
-    warnOnce(`Heavyweight packages ran on client. Stack:
-${callerFunctions.join("\n")}`);
+    message += `
+Stack:
+${callerFunctions.join("\n")}`;
+    warnOnce(message);
   }
 }

@@ -49,16 +49,16 @@ export const hueAtom = atomWithLifecycle<Hue>(
     if (hue !== null) {
       setHue(hue);
     }
-    updateGeneratedStyles();
     updateThemeColor();
     attributeObserver.observe("data-hue", (mutation) => {
-      updateGeneratedStyles();
-      if (mutation.target === document.body) {
-        const hue = getHue();
-        if (hue === null) return;
-        setHue(hue);
-        updateThemeColor();
-      }
+      updateGeneratedStyles().then(() => {
+        if (mutation.target === document.body) {
+          const hue = getHue();
+          if (hue === null) return;
+          setHue(hue);
+          updateThemeColor();
+        }
+      });
     });
     return () => attributeObserver.disconnect("data-hue");
   },
