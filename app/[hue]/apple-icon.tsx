@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/server";
 
 import { Logo } from "components/Logo";
-import { getHexForColor } from "theme/server";
-import { parseHue } from "theme/shared";
+import { parseHue, getHexForColor } from "theme/utils";
 
 export const size = {
   width: 180,

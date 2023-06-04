@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 import { StorageKey } from "store/constants";
-import { parseHue } from "theme/shared";
+import { parseHue } from "theme/utils";
 
 const IMAGES = ["icon", "apple-icon", "opengraph-image"];
 

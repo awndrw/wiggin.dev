@@ -32,6 +32,7 @@ export class AttributeObserver {
       this.observer.observe(document.body, {
         attributes: true,
         attributeFilter: [...this.attributes.keys()],
+        subtree: true,
       });
       return;
     }

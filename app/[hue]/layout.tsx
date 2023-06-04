@@ -3,8 +3,13 @@ import Script from "next/script";
 import { type ReactNode } from "react";
 
 import { DEFAULT_MODE } from "theme/constants";
-import { createStyles, getHexForColor } from "theme/server";
-import { hueId, getPresetHues, parseHue } from "theme/shared";
+import {
+  hueId,
+  getPresetHues,
+  parseHue,
+  createStyles,
+  getHexForColor,
+} from "theme/utils";
 import { getId } from "utils/getId";
 
 import { ActionBar } from "./components/ActionBar";

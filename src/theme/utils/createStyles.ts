@@ -1,15 +1,15 @@
 import postcssOklabFunction from "@csstools/postcss-oklab-function";
-import better from "better-color-tools";
 import postcss from "postcss";
 // @ts-expect-error Untyped module
 import postcssMinify from "postcss-minify";
-import "server-only";
 
-import { type Color, type Hue, type Mode } from "./constants";
-import { lightnessAndChromaValues } from "./oklch";
-import { createCSSVars, oklch } from "./shared";
+import { type Hue } from "theme/constants";
+import { createCSSVars } from "theme/utils";
+import { warnOnClient } from "utils/warnOnClient";
 
 export function createStyles(hue: Hue) {
+  warnOnClient();
+
   const lightStyles = createCSSVars(hue, "light");
   const darkStyles = createCSSVars(hue, "dark");
   const styles = `
@@ -22,9 +22,4 @@ export function createStyles(hue: Hue) {
   body[data-mode="dark"][data-hue="${hue}"],
   body[data-mode="dark"] [data-hue="${hue}"] { ${darkStyles} }`;
   return postcss(postcssOklabFunction(), postcssMinify()).process(styles).css;
-}
-
-export function getHexForColor(hue: Hue, mode: Mode, color: Color) {
-  const [lightness, chroma] = lightnessAndChromaValues[mode][color];
-  return better.from(oklch(lightness, chroma, hue)).hex;
 }

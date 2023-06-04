@@ -1,15 +1,10 @@
 import {
-  updateThemeColor,
-  getHue,
-  getMode,
-  getAvailableHues,
-} from "theme/client";
-import {
   DEFAULT_HUE,
   DEFAULT_MODE,
   type Hue,
   type Mode,
 } from "theme/constants";
+import { getHue, getMode, recolor, updateThemeColor } from "theme/utils";
 
 import { atomWithLifecycle, AttributeObserver } from "./utils";
 
@@ -45,22 +40,17 @@ export const modeAtom = atomWithLifecycle<Mode>(
 export const hueAtom = atomWithLifecycle<Hue>(
   DEFAULT_HUE,
   (setHue) => {
-    const hue = getHue(document.body);
+    const hue = getHue();
     if (hue !== null) {
       setHue(hue);
     }
+    recolor();
     updateThemeColor();
     attributeObserver.observe("data-hue", (mutation) => {
+      recolor();
       if (mutation.target === document.body) {
-        let hue = getHue(document.body);
+        const hue = getHue();
         if (hue === null) return;
-        const availableHues = getAvailableHues();
-        if (!availableHues.includes(hue)) {
-          hue = availableHues.sort(
-            (a, b) => Math.abs(hue! - a) - Math.abs(hue! - b)
-          )[0];
-          document.body.setAttribute("data-hue", hue.toString());
-        }
         setHue(hue);
         updateThemeColor();
       }
