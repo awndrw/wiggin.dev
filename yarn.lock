@@ -2662,6 +2662,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-sort-export-all@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "eslint-plugin-sort-export-all@npm:1.4.1"
+  dependencies:
+    natural-compare: ^1.4.0
+  peerDependencies:
+    eslint: ^4 || ^5 || ^6 || ^7 || ^8
+  checksum: 96851e6feb0d423911e947318d347b0a1543dea4364421421f03948b20f44a0e4ff8fd185a562217e35a0baf8724a63b9653988211ee46b449802c55f55cd33e
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^5.1.1":
   version: 5.1.1
   resolution: "eslint-scope@npm:5.1.1"
@@ -4798,6 +4809,7 @@ __metadata:
     eslint-import-resolver-typescript: ^3.5.5
     eslint-plugin-import: ^2.27.5
     eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-sort-export-all: ^1.4.1
     fast-glob: ^3.2.12
     husky: ^8.0.3
     jotai: ^2.1.1

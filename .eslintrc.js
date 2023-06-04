@@ -7,6 +7,7 @@ const importResolverTypescriptPath = path.resolve(
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   extends: [
+    "plugin:sort-export-all/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
