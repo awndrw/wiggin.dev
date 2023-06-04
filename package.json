@@ -25,6 +25,7 @@
     "classnames": "^2.3.2",
     "critters": "^0.0.18",
     "dependency-tree": "^10.0.9",
+    "error-stack-parser": "^2.1.4",
     "fast-glob": "^3.2.12",
     "jotai": "^2.1.1",
     "loader-utils": "^3.2.1",
