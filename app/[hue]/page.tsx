@@ -13,6 +13,7 @@ import { tragedyDisplay } from "fonts/tragedyDisplay";
 import { getEdgeConfig } from "utils/getEdgeConfig";
 import { getId } from "utils/getId";
 
+import { StickerBoard } from "./components/StickerBoard";
 import styles from "./page.module.scss";
 
 export default async function Page() {
@@ -22,8 +23,9 @@ export default async function Page() {
 
   return (
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
+      <StickerBoard />
       <Section type="accent" fullHeight bottomSeparator>
-        <h1>
+        <h1 data-text>
           Hi, I&rsquo;m Andrew
           <Logo
             className={styles.icon}

@@ -3,9 +3,11 @@ import { type NextRequest, NextResponse } from "next/server";
 import { StorageKey } from "store/constants";
 import { parseHue } from "theme/shared";
 
+import { getUser } from "./src/stickerboard/server";
+
 const IMAGES = ["icon", "apple-icon", "opengraph-image"];
 
-export default function middleware(req: NextRequest) {
+function hueMiddleware(req: NextRequest): NextResponse {
   const hueInPath = req.nextUrl.pathname.match(/^\/([1-9][0-9]{0,2})/)?.[1];
   const hueCookie = req.cookies.get(StorageKey.HUE_REDIRECT)?.value;
 
@@ -40,6 +42,13 @@ export default function middleware(req: NextRequest) {
     res.cookies.set(StorageKey.HUE_REDIRECT, hue.toString());
     return res;
   }
+}
+
+export default async function middleware(req: NextRequest) {
+  const res = hueMiddleware(req);
+  const user = await getUser(req.cookies);
+  res.cookies.set("uid", user.id, { maxAge: 31_536_000 });
+  return res;
 }
 
 export const config = {

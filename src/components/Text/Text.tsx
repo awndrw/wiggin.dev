@@ -15,7 +15,7 @@ function TextImpl(
   ref: ForwardedRef<HTMLParagraphElement>
 ) {
   return (
-    <p className={cx(styles.text, className)} ref={ref} {...props}>
+    <p className={cx(styles.text, className)} ref={ref} data-text {...props}>
       {children}
     </p>
   );

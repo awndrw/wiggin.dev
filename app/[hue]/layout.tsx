@@ -10,9 +10,9 @@ import { getId } from "utils/getId";
 import { ActionBar } from "./components/ActionBar";
 import { Analytics } from "./components/Analytics";
 
-export function generateStaticParams() {
+/*export function generateStaticParams() {
   return [...Array(360).keys()].map((hue) => ({ hue: hue.toString() }));
-}
+}*/
 
 export function generateMetadata({
   params: { hue: hueParam },

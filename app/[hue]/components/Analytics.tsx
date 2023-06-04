@@ -8,7 +8,7 @@ import { type FC, useEffect } from "react";
 
 import { trackAction } from "analytics";
 import { Action } from "analytics/constants";
-import { env } from "constants/env";
+import { env } from "constants/nodeEnv";
 
 export const Analytics: FC<VercelAnalyticsProps> = (vercelAnalyticsProps) => {
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { env } from "constants/env";
+import { env } from "constants/nodeEnv";
 
 const PRODUCTION_HOST = "wiggin.dev";
 const PREPROD_HOST = "dev.wiggin.dev";

@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       default: host,
       template: `${host}/%s`,
     },
-    description: `Andrew Wiggin is ${tagline}.`,
+    description: `Andrew Wiggin is a ${tagline}.`,
     metadataBase: url,
     openGraph: {
       type: "website",

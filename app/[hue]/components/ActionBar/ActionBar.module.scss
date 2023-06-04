@@ -2,7 +2,7 @@
 @use "theme/scss/size";
 
 .container {
-  z-index: 2;
+  z-index: 4;
   position: fixed;
   inset: auto 0 size.$spacing-large;
   display: grid;
