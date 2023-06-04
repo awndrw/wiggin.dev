@@ -4,7 +4,12 @@ import {
   type Hue,
   type Mode,
 } from "theme/constants";
-import { getHue, getMode, recolor, updateThemeColor } from "theme/utils";
+import {
+  getHue,
+  getMode,
+  updateGeneratedStyles,
+  updateThemeColor,
+} from "theme/utils";
 
 import { atomWithLifecycle, AttributeObserver } from "./utils";
 
@@ -44,10 +49,10 @@ export const hueAtom = atomWithLifecycle<Hue>(
     if (hue !== null) {
       setHue(hue);
     }
-    recolor();
+    updateGeneratedStyles();
     updateThemeColor();
     attributeObserver.observe("data-hue", (mutation) => {
-      recolor();
+      updateGeneratedStyles();
       if (mutation.target === document.body) {
         const hue = getHue();
         if (hue === null) return;

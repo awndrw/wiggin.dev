@@ -1,6 +1,6 @@
 import { hueId, createStyles, getHue } from "theme/utils";
 
-export function recolor() {
+export function updateGeneratedStyles() {
   document.querySelectorAll("[data-hue]").forEach((element) => {
     const hue = getHue(element);
     const hueStyleExists = hue && document.getElementById(hueId(hue)) !== null;

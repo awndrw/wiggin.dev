@@ -8,5 +8,5 @@ export * from "./getRandomHue";
 export * from "./hueId";
 export * from "./oklch";
 export * from "./parseHue";
-export * from "./recolor";
+export * from "./updateGeneratedStyles";
 export * from "./updateThemeColor";
