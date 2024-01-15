@@ -20,7 +20,7 @@ export type InternalLinkProps = Omit<
 export const InternalLink = forwardRef(InternalLinkImpl);
 function InternalLinkImpl(
   { children, to, ...props }: InternalLinkProps,
-  ref: ForwardedRef<HTMLAnchorElement>
+  ref: ForwardedRef<HTMLAnchorElement>,
 ) {
   const internalLinkProps = useInternalLinkProps(RoutePath[to]);
 
@@ -29,7 +29,6 @@ function InternalLinkImpl(
       component={NextLink<FullRoute>}
       icon={ArrowRight}
       {...internalLinkProps}
-      /* @ts-expect-error NextLink's ref type can't be extracted by TS */
       ref={ref}
       {...props}
     >
