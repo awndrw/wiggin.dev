@@ -24,7 +24,7 @@ const config = {
   },
   webpack: (config, { dev }) => {
     const oneOfRule = config.module.rules.find(
-      (rule) => typeof rule.oneOf === "object"
+      (rule) => typeof rule.oneOf === "object",
     );
     if (!dev && oneOfRule) {
       const rules = oneOfRule.oneOf.filter((rule) => Array.isArray(rule.use));
@@ -36,7 +36,13 @@ const config = {
             moduleLoader.loader?.includes("postcss-loader");
           if (isCssLoader && !isPostCssLoader) {
             // TODO: Fix getLocalIdent. Collisions happen every other build.
-            moduleLoader.options.modules.getLocalIdent = getLocalIdent;
+            moduleLoader.options = {
+              ...moduleLoader.options,
+              modules: {
+                ...moduleLoader.options.modules,
+                getLocalIdent,
+              },
+            };
           }
         });
       });
