@@ -1,5 +1,3 @@
-import { z } from "zod";
-
 import { Route } from ".types/routes";
 import { Action } from "analytics/constants";
 import { AnimatedPath } from "components/AnimatedPath";
@@ -10,15 +8,12 @@ import { Section } from "components/Section";
 import { Text } from "components/Text";
 import { Trigger } from "components/Trigger";
 import { tragedyDisplay } from "fonts/tragedyDisplay";
-import { getEdgeConfig } from "utils/getEdgeConfig";
 import { getId } from "utils/getId";
 
 import styles from "./page.module.scss";
 
 export default async function Page() {
   const scribbleTargetId = getId();
-
-  const tagline = await getEdgeConfig("tagline", z.string());
 
   return (
     <PageWrapper withAffordance={false} className={tragedyDisplay.className}>
@@ -32,7 +27,10 @@ export default async function Page() {
             weight="light"
           />
         </h1>
-        <Text>I&rsquo;m a {tagline}.</Text>
+        <Text>
+          I&rsquo;m a Brooklyn based design engineer passionate about
+          interaction, accessibility, and design systems.
+        </Text>
         <AnimatedPath
           className={styles.scribble}
           viewBox="0 0 862.83 1809.95"
@@ -52,7 +50,7 @@ export default async function Page() {
           </Trigger>{" "}
           I&rsquo;m always available via{" "}
           <Trigger action={Action.LINK} to="email" from={Route.HOME}>
-            <ExternalLink href="mailto:andrew@wiggin.dev" suffix=".">
+            <ExternalLink href="mailto:me@awndrw.com" suffix=".">
               email
             </ExternalLink>
           </Trigger>
