@@ -3,7 +3,7 @@ import { atom, type SetStateAction, type WritableAtom } from "jotai";
 export function atomWithLifecycle<T>(
   initialValue: T,
   onMount: WritableAtom<T, T[], T>["onMount"],
-  onUpdate: (newValue: T, prevValue: T) => void
+  onUpdate: (newValue: T, prevValue: T) => void,
 ) {
   const valueAtom = atom<T>(initialValue);
   valueAtom.onMount = onMount;
@@ -14,7 +14,7 @@ export function atomWithLifecycle<T>(
       set(valueAtom, arg);
       const newValue = get(valueAtom);
       onUpdate(newValue, prevValue);
-    }
+    },
   );
 }
 
@@ -24,7 +24,7 @@ export class AttributeObserver {
 
   public observe(
     attribute: string,
-    callback: (mutation: MutationRecord) => void
+    callback: (mutation: MutationRecord) => void,
   ) {
     if (!this.observer) {
       this.observer = this.getObserver();

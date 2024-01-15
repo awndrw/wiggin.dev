@@ -38,7 +38,7 @@ export const Analytics: FC<VercelAnalyticsProps> = (vercelAnalyticsProps) => {
 
     const entries = performance.getEntriesByType("navigation");
     const hasReloadEntry = entries.some(
-      (entry) => "type" in entry && entry.type === "reload"
+      (entry) => "type" in entry && entry.type === "reload",
     );
     if (hasReloadEntry) {
       trackAction(Action.RELOAD);

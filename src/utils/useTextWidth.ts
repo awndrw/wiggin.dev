@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 export function useTextWidth<T extends HTMLElement = HTMLElement>(
-  text: string
+  text: string,
 ) {
   const ref = useRef<T>(null);
   const [width, setWidth] = useState(0);

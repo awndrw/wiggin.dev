@@ -15,7 +15,7 @@ export type ActionProps<Name extends Action> = ActionMap[Name] extends never
 export const Trigger = forwardRef(TriggerImpl);
 function TriggerImpl<Name extends Action>(
   { children, action, ...data }: PropsWithChildren<ActionProps<Name>>,
-  ref: ForwardedRef<HTMLHtmlElement>
+  ref: ForwardedRef<HTMLHtmlElement>,
 ) {
   return (
     // @ts-expect-error Poorly typed Action data

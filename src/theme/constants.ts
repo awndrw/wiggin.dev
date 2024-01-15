@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const HueSchema = z.preprocess(
   (arg) => (typeof arg === "string" ? parseInt(arg) : arg),
-  z.number().gte(0).lte(360).int().brand<"Hue">()
+  z.number().gte(0).lte(360).int().brand<"Hue">(),
 );
 export type Hue = z.infer<typeof HueSchema>;
 export const HUES = [

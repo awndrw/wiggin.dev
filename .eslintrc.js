@@ -1,7 +1,7 @@
 const path = require("path");
 
 const importResolverTypescriptPath = path.resolve(
-  "./node_modules/eslint-import-resolver-typescript/lib/index.cjs"
+  "./node_modules/eslint-import-resolver-typescript/lib/index.cjs",
 );
 
 /** @type {import('eslint').Linter.Config} */

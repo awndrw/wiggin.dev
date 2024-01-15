@@ -38,6 +38,6 @@ export default function OpengraphImage({
     {
       ...size,
       fonts: [],
-    }
+    },
   );
 }

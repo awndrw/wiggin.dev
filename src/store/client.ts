@@ -39,7 +39,7 @@ export const modeAtom = atomWithLifecycle<Mode>(
     if (mode === prevMode) return;
     document.body.setAttribute("data-mode", mode);
     updateThemeColor();
-  }
+  },
 );
 
 export const hueAtom = atomWithLifecycle<Hue>(
@@ -65,5 +65,5 @@ export const hueAtom = atomWithLifecycle<Hue>(
   (hue, prevHue) => {
     if (hue === prevHue) return;
     document.body.setAttribute("data-hue", hue.toString());
-  }
+  },
 );

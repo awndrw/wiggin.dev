@@ -8,7 +8,7 @@ export function createCSSVars(hue: Hue, mode: Mode) {
       entries[name as Color] = oklch(lightness, chroma, hue);
       return entries;
     },
-    {} as Record<Color, string>
+    {} as Record<Color, string>,
   );
   return Object.entries(map)
     .map(([name, color]) => `--color-accent-${name}: ${color};`)

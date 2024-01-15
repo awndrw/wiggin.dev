@@ -3,7 +3,7 @@ import { type RefObject, useState, useEffect } from "react";
 export function useInView(ref: RefObject<HTMLElement>): boolean;
 export function useInView(selector: string): boolean;
 export function useInView(
-  refOrSelector: RefObject<HTMLElement> | string
+  refOrSelector: RefObject<HTMLElement> | string,
 ): boolean {
   const [inView, setInView] = useState(false);
 

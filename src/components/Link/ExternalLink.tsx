@@ -11,7 +11,7 @@ export type ExternalLinkProps = InteractionComponentProps<"a">;
 export const ExternalLink = forwardRef(ExternalLinkImpl);
 function ExternalLinkImpl(
   { children, ...props }: ExternalLinkProps,
-  ref: ForwardedRef<HTMLAnchorElement>
+  ref: ForwardedRef<HTMLAnchorElement>,
 ) {
   return (
     <Interaction

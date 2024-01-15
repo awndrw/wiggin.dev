@@ -55,20 +55,30 @@ export default async function generateRoutesTypes() {
     route.slice(1).replace(/\//g, "_").replace(/-/g, "").toUpperCase() ||
     "HOME";
 
-  const routeObj = localRoutes.reduce((obj, route) => {
-    obj[createKey(route)] = createKey(route);
-    return obj;
-  }, {} as Record<string, string>);
+  const routeObj = localRoutes.reduce(
+    (obj, route) => {
+      obj[createKey(route)] = createKey(route);
+      return obj;
+    },
+    {} as Record<string, string>,
+  );
 
-  const routePathObj = localRoutes.reduce((obj, route) => {
-    obj[createKey(route)] = route;
-    return obj;
-  }, {} as Record<string, string>);
+  const routePathObj = localRoutes.reduce(
+    (obj, route) => {
+      obj[createKey(route)] = route;
+      return obj;
+    },
+    {} as Record<string, string>,
+  );
 
-  const routeLastModifiedObj = filePaths.reduce((obj, path) => {
-    obj[createKey(getLocalRoute(path))] = getLastModifiedDate(path).toString();
-    return obj;
-  }, {} as Record<string, string>);
+  const routeLastModifiedObj = filePaths.reduce(
+    (obj, path) => {
+      obj[createKey(getLocalRoute(path))] =
+        getLastModifiedDate(path).toString();
+      return obj;
+    },
+    {} as Record<string, string>,
+  );
 
   return `import { z } from "zod";
 

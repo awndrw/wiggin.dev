@@ -12,7 +12,7 @@ export type TextProps = ComponentPropsWithoutRef<"p">;
 export const Text = forwardRef(TextImpl);
 function TextImpl(
   { children, className, ...props }: TextProps,
-  ref: ForwardedRef<HTMLParagraphElement>
+  ref: ForwardedRef<HTMLParagraphElement>,
 ) {
   return (
     <p className={cx(styles.text, className)} ref={ref} {...props}>

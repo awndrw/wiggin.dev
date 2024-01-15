@@ -48,7 +48,7 @@ export default function useTimedSpring() {
     }
     const timeoutId = window.setTimeout(
       () => setIsAnimating(false),
-      props.timing
+      props.timing,
     );
     return () => window.clearTimeout(timeoutId);
   }, [isAnimating, props.timing]);

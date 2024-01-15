@@ -15,11 +15,11 @@ module.exports = function getLocalIdent(context, _, localName) {
       Buffer.from(
         `filePath:${path
           .relative(context.rootContext, context.resourcePath)
-          .replace(/\\+/g, "/")}#className:${localName}`
+          .replace(/\\+/g, "/")}#className:${localName}`,
       ),
       "md4",
       "base64",
-      6
+      6,
     )
     .replace(/[^a-zA-Z0-9-_]/g, "_")
     .replace(/^(-?\d|--)/, "_$1");

@@ -16,7 +16,7 @@ export interface SuffixedProps {
 export const Suffixed = forwardRef(SuffixedImpl);
 function SuffixedImpl(
   { suffix, children }: SuffixedProps,
-  forwardedRef: ForwardedRef<HTMLSpanElement>
+  forwardedRef: ForwardedRef<HTMLSpanElement>,
 ) {
   const [ref, suffixWidth] = useTextWidth(suffix);
 

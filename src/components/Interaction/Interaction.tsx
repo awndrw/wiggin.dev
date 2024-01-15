@@ -38,7 +38,7 @@ function InteractionImpl<C extends InteractionComponent>(
     className,
     ...props
   }: InteractionProps<C>,
-  ref: ForwardedRef<ComponentRef<C>>
+  ref: ForwardedRef<ComponentRef<C>>,
 ) {
   const words = children.split(" ");
 

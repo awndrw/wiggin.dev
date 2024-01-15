@@ -14,7 +14,7 @@ export type ButtonProps = Omit<
 export const Button = forwardRef(ButtonImpl);
 function ButtonImpl(
   { children, ...buttonProps }: ButtonProps,
-  ref: ForwardedRef<HTMLSpanElement>
+  ref: ForwardedRef<HTMLSpanElement>,
 ) {
   return (
     <Interaction
